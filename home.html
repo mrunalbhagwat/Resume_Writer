@@ -4,362 +4,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stargatez CV Writing Services - Helping you craft the perfect resume for your career journey.">
     <title>Hero Section</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-    </style>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="bg-cover bg-black bg-center h-screen" style="background-image: url('./assests/images/banner.png');">
+<body class="font-montserrat">
+
+    <!-- Hero Section -->
+    <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-cover bg-black bg-center bg-no-repeat bg-fixed"
+        style="background-image: url('./assets/images/banner.png');">
+        <!-- Overlay for better readability -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
         <!-- Navbar -->
-        <nav class="bg-black/20 px-12 lg:px-48 py-8">
-            <div class="flex items-center justify-between">
+        <nav class="absolute top-0 left-0 w-full bg-black/40 backdrop-blur-md z-50">
+            <div
+                class="max-w-screen-2xl mx-auto px-6 sm:px-12 lg:px-24 py-8 flex items-center justify-between relative">
                 <!-- Logo -->
-                <img class="text-white text-2xl font-bold" src="./assests/images/logo.png" alt="logo">
+                <img class="h-10 sm:h-12 relative z-20" src="./assets/images/logo.png" alt="Stargatez Logo"
+                    loading="lazy">
 
                 <!-- Desktop Menu -->
-                <ul class="hidden lg:flex space-x-8 text-white text-lg">
-                    <li><a href="#" class="hover:text-yellow-400">HOME</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">ABOUT US</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">SERVICES</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">INDUSTRIES</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">CAREER</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">PARTNER</a></li>
+                <ul class="hidden lg:flex space-x-6 text-base md:text-lg relative z-20">
+                    <li><a href="#" class="hover:text-yellow-400 transition">HOME</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">ABOUT US</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">SERVICES</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">INDUSTRIES</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">CAREER</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">PARTNER</a></li>
                 </ul>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="lg:hidden text-white text-3xl">☰</button>
+                <button id="mobile-menu-button"
+                    class="lg:hidden text-3xl text-white relative z-20 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    aria-label="Open menu">☰</button>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden mt-4 bg-black bg-opacity-75 p-4 rounded-lg">
-                <ul class="space-y-4 text-white text-lg">
-                    <li><a href="#" class="hover:text-yellow-400">HOME</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">ABOUT US</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">SERVICES</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">INDUSTRIES</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">CAREER</a></li>
-                    <li><a href="#" class="hover:text-yellow-400">PARTNER</a></li>
+            <div id="mobile-menu"
+                class=" fixed top-0 right-0 w-full h-full bg-black/90 transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+                <button id="close-menu"
+                    class="absolute top-4 right-4 text-3xl text-white p-4 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    aria-label="Close menu">×</button>
+                <ul class="bg-black mt-16 space-y-4 text-lg px-8 py-4">
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">HOME</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">ABOUT
+                            US</a></li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">SERVICES</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">INDUSTRIES</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">CAREER</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">PARTNER</a>
+                    </li>
                 </ul>
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <div class="h-[75%] flex items-center px-12 lg:px-48">
-            <div class="text-white max-w-4xl space-y-9">
-                <p class="text-xl">Your Career Journey Starts with the Perfect Resume</p>
-                <h1 class="text-5xl lg:text-6xl font-bold">WELCOME TO <span
-                        class="text-yellow-400">STARGATEZ</span><br>CV
-                    WRITING SERVICES</h1>
-                <p class="text-xl">Email: <a href="mailto:bushra@stargatez.com"
-                        class="underline">bushra@stargatez.com</a>
-                </p>
-                <p class="text-xl">Ready to take your career to the next level?</p>
-                <a href="#"
-                    class="inline-block bg-yellow-400 text-black font-medium text-lg py-4 px-8 rounded-lg hover:bg-yellow-500">GET
-                    STARTED</a>
-            </div>
+        <!-- Hero Section Content -->
+        <div
+            class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start max-w-7xl space-y-6 mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
+            <p class="text-lg sm:text-xl md:text-2xl">Your Career Journey Starts with the Perfect Resume</p>
+            <h1 class="text-3xl sm:text-4xl lg:text-7xl font-bold">
+                WELCOME TO <span class="text-yellow-400">STARGATEZ</span><br>CV WRITING SERVICES
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl">
+                Email: <a href="mailto:bushra@stargatez.com" class="underline">bushra@stargatez.com</a>
+            </p>
+            <p class="text-lg sm:text-xl md:text-2xl">Ready to take your career to the next level?</p>
+            <a href="#"
+                class="inline-block bg-yellow-400 text-black font-medium text-lg py-4 px-8 text-center rounded-lg hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-500 transition-all">
+                GET STARTED
+            </a>
         </div>
 
-        <!-- About Section -->
-        <section class="bg-white px-6 lg:px-24 py-16">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl lg:text-5xl font-semibold text-center text-black mb-10 leading-tight">
-                    About Stargatez <span class="text-yellow-500 font-bold">Resume Writer’s</span>
-                </h2>
-                <div class="flex flex-col gap-12 lg:flex-row py-8 lg:space-x-12">
-                    <!-- Images Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:w-1/2">
-                        <img height="570x" width="270px" src="./assests/images/about1.png"
-                            alt="Professional woman holding a cup"
+    </div>
+
+    <!-- About Section -->
+    <section class="bg-white px-6 lg:px-24 py-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl lg:text-5xl font-semibold text-center text-black mb-10 leading-tight">
+                About Stargatez <span class="text-yellow-500 font-bold">Resume Writers</span>
+            </h2>
+            <div class="flex flex-col gap-12 lg:flex-row py-8">
+                <!-- Images Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:w-1/2">
+                    <img src="./assets/images/about1.png" alt="Professional woman holding a cup"
+                        class="rounded-lg w-full h-auto object-cover shadow-md" />
+                    <div class="space-y-8">
+                        <img src="./assets/images/about2.png" alt="Smiling professional woman"
                             class="rounded-lg w-full h-auto object-cover shadow-md" />
-                        <div><img height="308x" width="431px" src="./assests/images/about2.png"
-                                alt="Smiling professional woman"
-                                class="rounded-lg w-full h-auto object-cover shadow-md" />
-                            <img class="py-8" height="309x" width="433px" src="./assests/images/about3.png"
-                                alt="Confident professional woman"
-                                class="rounded-lg w-full h-auto object-cover shadow-md" />
-                        </div>
+                        <img src="./assets/images/about3.png" alt="Confident professional woman"
+                            class="rounded-lg w-full h-auto object-cover shadow-md" />
                     </div>
+                </div>
 
-
-                    <!-- Text Content -->
-                    <div class="lg:w-1/2 mt-10 lg:mt-0 text-black space-y-8">
-                        <p
-                            class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8">
-                            STARGATEz Resume Writers specialize in transforming career aspirations into impactful
-                            resumes
-                            and profiles that stand out. With over <span class="text-yellow-500 font-bold">10+
-                                years</span>
-                            of expertise, our team of highly experienced and certified resume writers has been helping
-                            professionals across industries achieve their career goals.
-                        </p>
-                        <p
-                            class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8 py-4">
-                            Our resume writers bring a wealth of knowledge and insights, backed by advanced
-                            qualifications
-                            from top universities and colleges in India and abroad, including Post Graduate Diplomas,
-                            Master's Degrees, and Bachelor's Degrees. This strong academic foundation, combined with
-                            years
-                            of hands-on experience in resume writing, profile building, and HR, ensures that every
-                            profile
-                            we craft is tailored to perfection.
-                        </p>
-                    </div>
+                <!-- Text Content -->
+                <div class="lg:w-1/2 text-black space-y-6">
+                    <p class="text-lg leading-relaxed">
+                        STARGATEz Resume Writers specialize in transforming career aspirations into impactful resumes
+                        and profiles that stand out. With over <span class="text-yellow-500 font-bold">10+ years</span>
+                        of expertise, our team of highly experienced and certified resume writers has been helping
+                        professionals across industries achieve their career goals.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Our resume writers bring a wealth of knowledge and insights, backed by advanced
+                        qualifications from top universities and colleges in India and abroad, including Post Graduate
+                        Diplomas,
+                        Master's Degrees, and Bachelor's Degrees. This strong academic foundation, combined with
+                        years of hands-on experience in resume writing, profile building, and HR, ensures that every
+                        profile we craft is tailored to perfection.
+                    </p>
 
                 </div>
-                <div>
-                    <p
-                        class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8">
-                        We are proud to serve clients worldwide, offering personalized services that highlight
-                        individual strengths, align with career objectives, and leave a lasting impression on employers.
-                        At STARGATEz, we believe in delivering first-rate quality, prompt responses, and on-time
-                        delivery with a personal touch for every client.
-                    </p>
-                    <p
-                        class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8 text-xl leading-8 py-8">
-                        Let STARGATEz Resume Writers help you take the next step in your career with confidence. Partner
-                        with us today to unlock your full potential!
-                    </p>
-                </div>
-                
 
             </div>
-        </section>
-
-
-        <!-- diverse-clientele Section -->
-        <section class="bg-[#F7A4001A] bg-opacity-25 px-6 lg:px-24 py-16">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl lg:text-5xl font-semibold text-center text-black mb-10 leading-tight">Diverse <span
-                        class="text-yellow-500 font-bold">Clientele</span>
-                </h2>
-                <div class="flex flex-col gap-12 lg:flex-row py-8 lg:space-x-12">
-
-                    <!-- Text Content -->
-                    <div class="lg:w-1/2 mt-10 lg:mt-0 text-black space-y-6">
-                        <p
-                            class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8">
-                            <span class="font-bold">Industries :</span> Defense, Banking & Financial, Big 4s,
-                            Engineering/ Manufacturing, FMCG/ FMCD, Oil & Gas/ Mining, Retail/ eCommerce/Consumer
-                            Durable, Health Care/ Pharmaceutical, Research & Development, Automobile/Automotive, Supply
-                            Chain & Logistics, PL/Transportation, Real Estate/Construction, IT & ITES, Media/
-                            Entertainment/ Gaming.
-                        </p>
-                        <p
-                            class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8">
-                            <span class="font-bold">Domains / Functions :</span> Strategy, Sales & Marketing, HR,
-                            Information Technology, Project Management, Program Management, Product Development &
-                            Management, Research, Finance & Accounts, Risk & Compliance, Audit, Operations, Physician/
-                            Dentistry, Nursing, Consulting, Commercial, Administration, Production, Distribution, Supply
-                            Chain/ Logistics, Procurement, CRM, Customer Experience, CSR, Corporate Communication,
-                            Public Relations, Executive Assistant, R&D, Learning & Development, Education
-                        </p>
-                    </div>
-
-                    <!-- Images Grid -->
-                    <div class="gap-8 lg:w-1/2">
-                        <img height="676px" width="594px" src="./assests/images/Mask group.png"
-                            alt="Professional woman holding a cup"
-                            class="rounded-lg w-full h-auto object-cover shadow-md" />
-                        <div>
-                        </div>
-
-                    </div>
-
-                </div>
-        </section>
-
-        <!-- why us-->
-        <section class="py-12 px-6 md:px-16 lg:px-32 text-center">
-            <div class="max-w-7xl mx-auto">
-                <p
-                    class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8">
-                    At <span class="text-yellow-500">STARGATEz</span>, we excel in creating impactful and professional
-                    resumes, cover letters, and LinkedIn profiles tailored to highlight your unique strengths. Our goal
-                    is to help you stand out in today’s competitive job market by showcasing your expertise and
-                    accomplishments in a way that resonates with recruiters and hiring managers.
+            <div>
+                <p class="text-black text-lg">
+                    We are proud to serve clients worldwide, offering personalized services that highlight
+                    individual strengths, align with career objectives, and leave a lasting impression on employers.
+                    At STARGATEz, we believe in delivering first-rate quality, prompt responses, and on-time
+                    delivery with a personal touch for every client.
                 </p>
-                <p
-                    class="font-montserrat text-[20px] py-8 font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8">
-                    Let us craft the tools you need to unlock your full career potential!</p>
+                <p class="text-black space-y-8 text-lg ">
+                    Let STARGATEz Resume Writers help you take the next step in your career with confidence. Partner
+                    with us today to unlock your full potential!
+                </p>
             </div>
-            <!-- Heading -->
-            <h2 class="text-2xl md:text-3xl font-bold py-2 text-gray-900">
-                Why <span class="text-orange-500">Us</span>
+        </div>
+    </section>
+
+    <!-- diverse-clientele Section -->
+    <section class="bg-[rgb(254,246,229)] bg-opacity-10 px-6 lg:px-24 py-16">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl lg:text-5xl font-semibold text-center text-black mb-10 leading-tight">
+                Diverse <span class="text-yellow-500 font-bold">Clientele</span>
             </h2>
 
-            <!-- Cards Container -->
-            <div class="mt-8 flex flex-wrap justify-center gap-14">
-                <!-- Card 1 -->
-                <div class="w-[270px] h-[270px] [perspective:1000px]">
-                    <div
-                        class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
-                        <!-- Front -->
-                        <div
-                            class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
-                            <img src="./assests/images/why1.png" alt="Search Icon">
-                        </div>
-                        <!-- Back -->
-                        <div
-                            class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
-                            <p
-                                class="font-montserrat text-lg font-medium leading-7 tracking-wide text-white text-center">
-                                Optimized for ATS systems to increase your chances of selection.</p>
-                        </div>
-                    </div>
+            <div class="flex flex-col lg:flex-row gap-12 lg:py-8">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 lg:mt-0 text-black space-y-6">
+                    <p class="font-montserrat text-xl font-medium leading-8 text-left">
+                        <span class="font-bold">Industries :</span> Defense, Banking & Financial, Big 4s, Engineering/
+                        Manufacturing, FMCG/ FMCD, Oil & Gas/ Mining, Retail/ eCommerce/Consumer Durable, Health Care/
+                        Pharmaceutical, Research & Development, Automobile/Automotive, Supply Chain & Logistics, PL/
+                        Transportation, Real Estate/Construction, IT & ITES, Media/ Entertainment/ Gaming.
+                    </p>
+                    <p class="font-montserrat text-xl font-medium leading-8 text-left">
+                        <span class="font-bold">Domains / Functions :</span> Strategy, Sales & Marketing, HR,
+                        Information
+                        Technology, Project Management, Program Management, Product Development & Management, Research,
+                        Finance & Accounts, Risk & Compliance, Audit, Operations, Physician/ Dentistry, Nursing,
+                        Consulting,
+                        Commercial, Administration, Production, Distribution, Supply Chain/ Logistics, Procurement, CRM,
+                        Customer Experience, CSR, Corporate Communication, Public Relations, Executive Assistant, R&D,
+                        Learning & Development, Education.
+                    </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="w-[270px] h-[270px] [perspective:1000px]">
-                    <div
-                        class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
-                        <!-- Front -->
-                        <div
-                            class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
-                            <img src="./assests/images/why2.png" alt="Search Icon">
-                        </div>
-                        <!-- Back -->
-                        <div
-                            class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
-                            <p
-                                class="font-montserrat text-lg font-medium leading-7 tracking-wide text-center text-white">
-                                Optimized for ATS systems to increase your chances of selection.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="w-[270px] h-[270px] [perspective:1000px]">
-                    <div
-                        class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
-                        <!-- Front -->
-                        <div
-                            class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
-                            <img src="./assests/images/why3.png" alt="Chart Icon">
-                        </div>
-                        <!-- Back -->
-                        <div
-                            class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
-                            <p
-                                class="font-montserrat text-lg font-medium leading-7 tracking-wide text-center text-white">
-                                Our
-                                success is reflected in our clients’ job placements.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="w-[270px] h-[270px] [perspective:1000px]">
-                    <div
-                        class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
-                        <!-- Front -->
-                        <div
-                            class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
-                            <img src="./assests/images/why4.png" alt="Clock Icon">
-                        </div>
-                        <!-- Back -->
-                        <div
-                            class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
-                            <p
-                                class="font-montserrat text-lg font-medium leading-7 tracking-wide text-center text-white">
-                                Quick
-                                delivery without compromising quality.</p>
-                        </div>
-                    </div>
+                <!-- Images Grid -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="./assets/images/Mask group.png" alt="Professional woman holding a cup"
+                        class="rounded-lg w-full h-auto object-cover shadow-md aspect-[594/676]" />
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- our mission Section -->
-        <section class="bg-[#000232] px-6 lg:px-24 py-24">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex flex-col gap-12 lg:flex-row py-8 lg:space-x-12">
+    <!-- why us-->
+    <section class="py-12 px-6 md:px-16 lg:px-32 text-center">
+        <div class="max-w-7xl mx-auto">
+            <p
+                class="font-montserrat text-[20px] md:text-xl lg:text-2xl font-medium leading-[28px] md:leading-[36px] lg:leading-[40px] tracking-[0.02em] text-left text-gray-700">
+                At <span class="text-yellow-500">STARGATEz</span>, we excel in creating impactful and professional
+                resumes, cover letters, and LinkedIn profiles tailored to highlight your unique strengths. Our goal
+                is to help you stand out in today’s competitive job market by showcasing your expertise and
+                accomplishments in a way that resonates with recruiters and hiring managers.
+            </p>
+            <p
+                class="font-montserrat text-[20px] md:text-xl lg:text-2xl py-6 font-medium leading-[28px] md:leading-[36px] lg:leading-[40px] tracking-[0.02em] text-left text-gray-700">
+                Let us craft the tools you need to unlock your full career potential!
+            </p>
+        </div>
 
-                    <!-- Images Grid -->
-                    <div class="gap-8 lg:w-1/2">
-                        <img height="676px" width="594px" src="./assests/images/our mission.png"
-                            alt="Professional woman holding a cup"
-                            class="rounded-lg w-full h-auto object-cover shadow-md" />
-                        <div>
-                        </div>
+        <!-- Heading -->
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold py-4 text-gray-900">
+            Why <span class="text-orange-500">Us</span>
+        </h2>
 
+        <!-- Cards Container -->
+        <div class="mt-8 flex flex-wrap justify-center gap-8 md:gap-14 lg:gap-16">
+            <!-- Card 1 -->
+            <div class="w-[270px] h-[270px] [perspective:1000px]">
+                <div
+                    class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
+                    <!-- Front -->
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
+                        <img src="./assets/images/why1.png" alt="Search Icon">
                     </div>
-
-                    <!-- Text Content -->
-                    <div class="lg:w-1/2 mt-10 lg:mt-0 space-y-24">
-                        <h2 class="text-4xl lg:text-5xl font-semibold text-left mb-10 text-white">
-                            Our <span class="text-yellow-500 font-bold">Mission</span>
-                        </h2>
-
-                        <p
-                            class="font-montserrat text-[20px] font-medium leading-[40px] tracking-[0.02em] text-left decoration-none text-xl leading-8 text-white">
-                            Our mission is to empower professionals by crafting impactful resumes that unlock doors to
-                            exceptional career opportunities and drive long-term success.
+                    <!-- Back -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
+                        <p class="font-montserrat text-lg font-medium leading-7 tracking-wide text-white text-center">
+                            Optimized for ATS systems to increase your chances of selection.
                         </p>
-
                     </div>
-
-
-                </div>
-        </section>
-
-        <!-- our services -->
-        <section class="py-16 px-6">
-            <h2 class="text-3xl font-semibold text-center">
-                Our <span class="text-yellow-500">Services</span>
-            </h2>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-2xl shadow-md p-4">
-                    <img src="./assests/images/service1.png" alt="Professional CV Writing"
-                        class="w-[340px] h-[335px] object-cover rounded-lg">
-                    <h3 class="mt-4 font-semibold text-lg">Professional CV Writing</h3>
-                    <p class="text-gray-600 mt-2 text-sm">
-                        Craft a compelling CV that highlights your skills, experience, and accomplishments, ensuring you
-                        stand out in a competitive job market.
-                    </p>
-                </div>
-                <!-- Card 2 -->
-                <div class="bg-white rounded-2xl shadow-md p-4">
-                    <img src="./assests/images/service2.png" alt="Customized Cover Letter Writing"
-                        class="w-[340px] h-[335px] object-cover rounded-lg">
-                    <h3 class="mt-4 font-semibold text-lg">Customized Cover Letter Writing</h3>
-                    <p class="text-gray-600 mt-2 text-sm">
-                        Make a lasting impression with a personalized, well-structured cover letter tailored to your
-                        desired role and industry.
-                    </p>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white rounded-2xl shadow-md p-4">
-                    <img src="./assests/images/service3.png" alt="LinkedIn Profile Optimization"
-                        class="w-[340px] h-[335px] object-cover rounded-lg">
-                    <h3 class="mt-4 font-semibold text-lg">LinkedIn Profile Optimization</h3>
-                    <p class="text-gray-600 mt-2 text-sm">
-                        Enhance your professional online presence with a strategically optimized LinkedIn profile that
-                        attracts recruiters and opens doors to new opportunities.
-                    </p>
                 </div>
             </div>
-        </section>
 
-        <!-- our process -->
-        <section class="py-12 px-6 bg-gray-100">
-            <h2 class="text-3xl py-8 font-semibold text-center">
+            <!-- Card 2 -->
+            <div class="w-[270px] h-[270px] [perspective:1000px]">
+                <div
+                    class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
+                    <!-- Front -->
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
+                        <img src="./assets/images/why2.png" alt="Search Icon">
+                    </div>
+                    <!-- Back -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
+                        <p class="font-montserrat text-lg font-medium leading-7 tracking-wide text-center text-white">
+                            Optimized for ATS systems to increase your chances of selection.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="w-[270px] h-[270px] [perspective:1000px]">
+                <div
+                    class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
+                    <!-- Front -->
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
+                        <img class="" src="./assets/images/why3.png" alt="Chart Icon">
+                    </div>
+                    <!-- Back -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
+                        <p class="font-montserrat text-lg font-medium leading-7 tracking-wide text-center text-white">
+                            Our success is reflected in our clients’ job placements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="w-[270px] h-[270px] [perspective:1000px]">
+                <div
+                    class="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group">
+                    <!-- Front -->
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center bg-white rounded-xl shadow-lg border [backface-visibility:hidden]">
+                        <img src="./assets/images/why4.png" alt="Clock Icon">
+                    </div>
+                    <!-- Back -->
+                    <div
+                        class="absolute inset-0 flex items-center justify-center bg-[#14176C] bg-opacity-200 text-gray-900 p-6 rounded-xl shadow-lg [backface-visibility:hidden] [transform:rotateY(.5turn)] group-hover:[transform:rotateY(0)]">
+                        <p class="font-montserrat text-lg font-medium leading-7 tracking-wide text-center text-white">
+                            Quick delivery without compromising quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="bg-[#000232] px-6 lg:px-24 py-12 lg:py-24">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col gap-12 lg:flex-row lg:space-x-12 py-8">
+
+                <!-- Image Section -->
+                <div class="lg:w-1/2">
+                    <img src="./assets/images/our mission.png" alt="Professional man holding a cup"
+                        class="w-full h-auto object-cover rounded-lg shadow-md aspect-w-3 aspect-h-2" />
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:w-1/2 mt-10 lg:mt-0 space-y-6 lg:space-y-8">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+                        Our <span class="text-yellow-500 font-bold">Mission</span>
+                    </h2>
+
+                    <p class="text-lg sm:text-xl lg:text-2xl font-medium text-white leading-relaxed">
+                        Our mission is to empower professionals by crafting impactful resumes that unlock doors to
+                        exceptional career
+                        opportunities and drive long-term success.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="py-16 px-6">
+        <h2 class="text-3xl font-semibold text-center">
+            Our <span class="text-yellow-500">Services</span>
+        </h2>
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <img src="./assets/images/service1.png" alt="Professional CV Writing"
+                    class="w-full h-64 object-cover rounded-lg">
+                <h3 class="mt-6 font-semibold text-xl text-center">Professional CV Writing</h3>
+                <p class="text-gray-600 mt-2 text-sm text-center">
+                    Craft a compelling CV that highlights your skills, experience, and accomplishments, ensuring you
+                    stand out in a competitive job market.
+                </p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <img src="./assets/images/service2.png" alt="Customized Cover Letter Writing"
+                    class="w-full h-64 object-cover rounded-lg">
+                <h3 class="mt-6 font-semibold text-xl text-center">Customized Cover Letter Writing</h3>
+                <p class="text-gray-600 mt-2 text-sm text-center">
+                    Make a lasting impression with a personalized, well-structured cover letter tailored to your
+                    desired role and industry.
+                </p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center">
+                <img src="./assets/images/service3.png" alt="LinkedIn Profile Optimization"
+                    class="w-full h-64 object-cover rounded-lg">
+                <h3 class="mt-6 font-semibold text-xl text-center">LinkedIn Profile Optimization</h3>
+                <p class="text-gray-600 mt-2 text-sm text-center">
+                    Enhance your professional online presence with a strategically optimized LinkedIn profile that
+                    attracts recruiters and opens doors to new opportunities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- our process -->
+    <section class="py-12 px-6 bg-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-semibold text-center mb-8">
                 Our <span class="text-yellow-500">Process</span>
             </h2>
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto justify-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 <!-- Step 1 -->
-                <div class="bg-white rounded-2xl shadow-md p-6 text-center relative h-[347px] w-[370px] mx-auto">
+                <div class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto">
                     <span class="absolute top-4 left-4 text-4xl text-gray-300 font-bold">01</span>
                     <div class="flex justify-center">
-                        <img src="./assests/images/process_icon1.png" alt="Initial Consultation" class="w-25 h-25">
+                        <img src="./assets/images/process_icon1.png" alt="Initial Consultation" class="w-20 h-20">
                     </div>
                     <h3 class="mt-4 font-semibold text-lg">Initial Consultation</h3>
                     <p class="text-gray-600 mt-2 text-sm">
@@ -368,10 +371,10 @@
                     </p>
                 </div>
                 <!-- Step 2 -->
-                <div class="bg-white rounded-2xl shadow-md p-6 text-center relative h-[347px] w-[370px] mx-auto">
+                <div class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto">
                     <span class="absolute top-4 left-4 text-4xl text-gray-300 font-bold">02</span>
                     <div class="flex justify-center">
-                        <img src="./assests/images/process_icon2.png" alt="Tailored Draft Creation" class="w-25 h-25">
+                        <img src="./assets/images/process_icon2.png" alt="Tailored Draft Creation" class="w-20 h-20">
                     </div>
                     <h3 class="mt-4 font-semibold text-lg">Tailored Draft Creation</h3>
                     <p class="text-gray-600 mt-2 text-sm">
@@ -380,10 +383,10 @@
                     </p>
                 </div>
                 <!-- Step 3 -->
-                <div class="bg-white rounded-2xl shadow-md p-6 text-center relative h-[347px] w-[370px] mx-auto">
+                <div class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto">
                     <span class="absolute top-4 left-4 text-4xl text-gray-300 font-bold">03</span>
                     <div class="flex justify-center">
-                        <img src="./assests/images/process_icon3.png" alt="Review and Finalization" class="w-25 h-25">
+                        <img src="./assets/images/process_icon3.png" alt="Review and Finalization" class="w-20 h-20">
                     </div>
                     <h3 class="mt-4 font-semibold text-lg">Review and Finalization</h3>
                     <p class="text-gray-600 mt-2 text-sm">
@@ -392,394 +395,354 @@
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- timeline -->
-        <section class="flex flex-col items-center space-y-6">
-            <!-- Heading -->
-            <h2 class="text-black text-2xl font-semibold">
-                Our <span class="text-orange-500">Timeline</span>
+    <!-- timeline -->
+
+    <!-- pricing -->
+    <section class="bg-gray-100 py-10">
+        <div class="max-w-7xl mx-auto h-auto px-8">
+            <h2 class="text-center text-3xl font-bold text-gray-800">
+                Our <span class="text-yellow-500">Pricing</span>
             </h2>
 
-            <div class="relative flex items-center space-x-6">
-                <!-- Left Content -->
-                <div class="bg-amber-50 p-6 rounded-lg shadow-md w-80">
-                    <h3 class="text-lg font-semibold">Regular</h3>
-                    <div class="flex items-start space-x-2 mt-2">
-                        <img src="./assests/images/checkmark.png" alt="Tick" class="w-4 h-4">
-                        <p class="text-sm text-gray-700">
-                            First draft CV / Resume in 7 working days followed by the other services.
-                        </p>
+            <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+                <!-- Silver Package -->
+                <div class="bg-blue-900 text-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
+                    <h3
+                        class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
+                        Silver Package</h3>
+                    <p
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
+                        (0 - 2 Years)</p>
+                    <div class="bg-white text-blue-900 text-4xl font-bold mt-4 w-full py-3">
+                        <p class="px-6">1500 INR</p>
                     </div>
+                    <h4
+                        class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
+                        Features</h4>
+                    <ul
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
+                        <li class="flex items-center"><img src="./assets/images/checkmark-white.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> CV - 800</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark-white.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Cover Letter - 200</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark-white.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> LinkedIn Profile - 500</li>
+                    </ul>
                 </div>
 
-                <!-- Timeline Image (Single Image with Circles & Line) -->
-                <img src="./assests/images/timeline.png" alt="Timeline" class="h-40">
-
-                <!-- Right Content -->
-                <div class="bg-amber-50 p-6 rounded-lg shadow-md w-80">
-                    <h3 class="text-lg font-semibold">Fastrack Mode</h3>
-                    <div class="flex items-start space-x-2 mt-2">
-                        <img src="./assests/images/checkmark.png" alt="Tick" class="w-4 h-4">
-                        <p class="text-sm text-gray-700">
-                            Delivery in 3 Working Days (150% of normal price)
-                        </p>
+                <!-- Silver Plus Package -->
+                <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
+                    <h3
+                        class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
+                        Silver Plus Package</h3>
+                    <p
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
+                        (2 - 4 Years)</p>
+                    <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
+                        <p class="px-6">3500 INR</p>
                     </div>
-                    <div class="flex items-start space-x-2 mt-2">
-                        <img src="./assests/images/checkmark.png" alt="Tick" class="w-4 h-4">
-                        <p class="text-sm text-gray-700">
-                            Delivery in 1 working day (200% of normal Price)
-                        </p>
-                    </div>
+                    <h4
+                        class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
+                        Features</h4>
+                    <ul
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> CV - 1500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Cover Letter - 500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Bio Profiles (One-Pager) - 500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> LinkedIn Profile - 1000</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
 
-        <!-- pricing -->
-        <section class="bg-gray-100 py-10">
-            <div class="max-w-7xl mx-auto h-auto px-8">
-                <h2 class="text-center text-3xl font-bold text-gray-800">
-                    Our <span class="text-yellow-500">Pricing</span>
-                </h2>
-
-                <div class="grid md:grid-cols-3 gap-12 mt-12">
-                    <!-- Silver Package -->
-                    <div class="bg-blue-900 text-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
-                        <h3
-                            class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
-                            Silver Package</h3>
-                        <p
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
-                            (0 - 2 Years)</p>
-                        <div class="bg-white text-blue-900 text-4xl font-bold mt-4 w-full py-3">
-                            <p class="px-6">1500 INR</p>
-                        </div>
-                        <h4
-                            class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
-                            Features</h4>
-                        <ul
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
-                            <li class="flex items-center"><img src="./assests/images/checkmark-white.png"
-                                    class="w-5 h-5 mr-2"> CV - 800</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark-white.png"
-                                    class="w-5 h-5 mr-2"> Cover Letter - 200
-                            </li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark-white.png"
-                                    class="w-5 h-5 mr-2"> LinkedIn Profile -
-                                500</li>
-                        </ul>
+                <!-- Gold Package -->
+                <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
+                    <h3
+                        class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
+                        Gold Package</h3>
+                    <p
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
+                        (4 - 10 Years)</p>
+                    <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
+                        <p class="px-6">4500 INR</p>
                     </div>
+                    <h4
+                        class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
+                        Features</h4>
+                    <ul
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> CV - 1800</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Cover Letter - 500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Bio Profiles - 1000</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> LinkedIn Profile - 1200</li>
+                    </ul>
+                </div>
 
-                    <!-- Silver Plus Package -->
-                    <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
-                        <h3
-                            class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
-                            Silver Plus Package</h3>
-                        <p
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
-                            (2 - 4 Years)</p>
-                        <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
-                            <p class="px-6">3500 INR</p>
-                        </div>
-                        <h4
-                            class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
-                            Features</h4>
-                        <ul
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> CV - 1500</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Cover Letter - 500
-                            </li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Bio Profiles<span
-                                    class="font-[Montserrat] text-[14px] font-medium leading-[17.07px] tracking-[0.02em] text-left">(One-Pager)
-                                </span> -
-                                500</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> LinkedIn Profile -
-                                1000</li>
-                        </ul>
+                <!-- Gold Plus Package -->
+                <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
+                    <h3
+                        class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
+                        Gold Plus Package</h3>
+                    <p
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
+                        (10 - 15 Years)</p>
+                    <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
+                        <p class="px-6">5500 INR</p>
                     </div>
+                    <h4
+                        class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
+                        Features</h4>
+                    <ul
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> CV - 2500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Cover Letter - 500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Bio Profiles - 1000</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> LinkedIn Profile - 1500</li>
+                    </ul>
+                </div>
 
-
-                    <!-- Gold Package -->
-                    <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
-                        <h3
-                            class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
-                            Gold Package</h3>
-                        <p
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
-                            (4 - 10 Years)</p>
-                        <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
-                            <p class="px-6">4500 INR</p>
-                        </div>
-                        <h4
-                            class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
-                            Features</h4>
-                        <ul
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> CV - 1800</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Cover Letter - 500
-                            </li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Bio Profiles - 1000</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> LinkedIn Profile -
-                                1200</li>
-                        </ul>
+                <!-- Platinum Package -->
+                <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
+                    <h3
+                        class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
+                        Platinum Package</h3>
+                    <p
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
+                        (15 - 20 Years)</p>
+                    <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
+                        <p class="px-6">7500 INR</p>
                     </div>
+                    <h4
+                        class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
+                        Features</h4>
+                    <ul
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> CV - 3200</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Cover Letter - 800</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Bio Profiles - 1500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> LinkedIn Profile - 2000</li>
+                    </ul>
+                </div>
 
-                    <!-- Gold plus Package -->
-                    <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
-                        <h3
-                            class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
-                            Gold Plus Package</h3>
-                        <p
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
-                            (10 - 15 Years)</p>
-                        <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
-                            <p class="px-6">5500 INR</p>
-                        </div>
-                        <h4
-                            class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
-                            Features</h4>
-                        <ul
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> CV - 2500</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Cover Letter - 500
-                            </li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Bio Profiles - 1000</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> LinkedIn Profile -
-                                1500</li>
-                        </ul>
+                <!-- Platinum Plus -->
+                <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
+                    <h3
+                        class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
+                        Platinum Plus</h3>
+                    <p
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
+                        (20 - 25 Years)</p>
+                    <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
+                        <p class="px-6">9500 INR</p>
                     </div>
+                    <h4
+                        class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
+                        Features</h4>
+                    <ul
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> CV - 4200</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Cover Letter - 800</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Bio Profiles - 2000</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> LinkedIn Profile - 2500</li>
+                    </ul>
+                </div>
 
-                    <!-- Platinum Package -->
-                    <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
-                        <h3
-                            class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
-                            Platinum Package</h3>
-                        <p
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
-                            (15 - 20 Years)</p>
-                        <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
-                            <p class="px-6">7500 INR</p>
-                        </div>
-                        <h4
-                            class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
-                            Features</h4>
-                        <ul
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> CV - 3200</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Cover Letter - 800
-                            </li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Bio Profiles - 1500</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> LinkedIn Profile -
-                                2000</li>
-                        </ul>
+                <div></div>
+
+                <!-- Diamond Package -->
+                <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
+                    <h3
+                        class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
+                        Diamond Package</h3>
+                    <p
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
+                        (25+ Years)</p>
+                    <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
+                        <p class="px-6">12000 INR</p>
                     </div>
-
-                    <!-- Platinum Plus -->
-                    <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
-                        <h3
-                            class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
-                            Platinum Plus</h3>
-                        <p
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
-                            (20 - 25 Years)</p>
-                        <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
-                            <p class="px-6">9500 INR</p>
-                        </div>
-                        <h4
-                            class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
-                            Features</h4>
-                        <ul
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> CV - 4200</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Cover Letter - 800
-                            </li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Bio Profiles - 2000</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> LinkedIn Profile -
-                                2500</li>
-                        </ul>
-                    </div>
-
-                    <div></div>
-
-                    <!-- Diamond Package -->
-                    <div class="bg-white py-8 rounded-xl shadow-lg flex flex-col items-left text-left">
-                        <h3
-                            class="font-[Montserrat] text-[30px] font-semibold leading-[36.57px] tracking-[0.02em] text-left px-6">
-                            Diamond Package</h3>
-                        <p
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6 py-2">
-                            (25 - 30 Years)</p>
-                        <div class="bg-[#14176C1A] bg-opacity-10 text-blue-900 text-4xl font-bold mt-4 w-full py-3">
-                            <p class="px-6">1100 INR</p>
-                        </div>
-                        <h4
-                            class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
-                            Features</h4>
-                        <ul
-                            class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> CV - 3200</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Cover Letter - 800
-                            </li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> Bio Profiles - 1500</li>
-                            <li class="flex items-center"><img src="./assests/images/checkmark.png"
-                                    class="w-5 h-5 mr-2"> LinkedIn Profile -
-                                2000</li>
-                        </ul>
-                    </div>
+                    <h4
+                        class="font-[Montserrat] text-[24px] font-semibold leading-[29.26px] tracking-[0.02em] text-left mt-4 px-6 py-3">
+                        Features</h4>
+                    <ul
+                        class="font-[Montserrat] text-[20px] font-medium leading-[24.38px] tracking-[0.02em] text-left text-sm px-6">
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> CV - 5500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Cover Letter - 1000</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> Bio Profiles - 2500</li>
+                        <li class="flex items-center"><img src="./assets/images/checkmark.png" alt="checkmark"
+                                class="w-5 h-5 mr-2"> LinkedIn Profile - 3000</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- assement -->
-        <section class="bg-[#0F0F2D] py-10 px-4 md:px-8 lg:px-16 flex justify-center">
-            <div class="w-[65%]">
-                <h2 class="text-center text-white text-2xl font-semibold">
-                    Free <span class="text-yellow-500">Assessment</span>
-                </h2>
-                <p class="text-center text-gray-300 mt-2 text-sm">
-                    Have questions or ready to get started? Reach out to us today!
+    <!-- assessment -->
+    <div class="bg-white p-6"></div>
+    <section class="bg-[#0F0F2D] py-10 px-4 md:px-8 lg:px-32 flex justify-center">
+        <div class="max-w-screen-lg w-full">
+            <h2 class="text-center text-white text-3xl font-semibold md:text-4xl">
+                Free <span class="text-yellow-500">Assessment</span>
+            </h2>
+            <p class="text-center text-gray-300 mt-2 text-sm md:text-base">
+                Have questions or ready to get started? Reach out to us today!
+            </p>
+
+            <form class="mt-6 bg-transparent">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Full Name *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                    <input type="email" placeholder="EMail Id *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                    <input type="text" placeholder="Phone Number *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                    <input type="text" placeholder="Role you're targeting *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                    <input type="text" placeholder="Total Experience in Years *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                    <input type="text" placeholder="Current / Last Company *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                    <input type="text" placeholder="Current / Last CTC *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                    <input type="text" placeholder="Current Location *"
+                        class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2" />
+                </div>
+
+                <textarea placeholder="Comments *"
+                    class="w-full h-32 mt-4 p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"></textarea>
+
+                <div class="flex flex-col md:flex-row items-center gap-4 mt-4">
+                    <button
+                        class="w-full md:w-auto flex items-center bg-white text-gray-800 px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all duration-200 ease-in-out">
+                        <img src="./assets/images/upload.png" class="w-6 h-6 mr-2" alt="Attach Resume" /> Attach Resume
+                    </button>
+                    <button
+                        class="w-full md:w-auto bg-yellow-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all duration-200 ease-in-out">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <section class="bg-[#0F0F2D] text-white">
+        <div class="bg-white p-6 mr-0"></div>
+        <div class=" py-10 px-4 md:px-8 lg:px-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Logo and Map -->
+            <div class="flex flex-col items-start">
+                <img src="./assests/images/logo.png" alt="Stargatez Logo" class="w-40 mb-4" />
+                <iframe class="w-64 h-40 rounded-lg"
+                    src="https://maps.google.com/maps?q=Madison,WI&output=embed"></iframe>
+            </div>
+
+            <!-- Address Blocks -->
+            <div>
+                <h3 class="font-semibold text-lg uppercase">USA - Wisconsin</h3>
+                <p class="text-gray-300 text-sm mt-2 leading-relaxed">
+                    <img src="./assests/images/mapVector.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
+                    234 Randolph Dr, Apt 203d, <br />
+                    Madison, WI 53717, <br />
+                    Wisconsin, USA.
                 </p>
-
-                <form class="mt-6 bg-transparent">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Full Name *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                        <input type="email" placeholder="EMail Id *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                        <input type="text" placeholder="Phone Number *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                        <input type="text" placeholder="Role you're targeting *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                        <input type="text" placeholder="Total Experience in Years *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                        <input type="text" placeholder="Current / Last Company *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                        <input type="text" placeholder="Current / Last CTC *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                        <input type="text" placeholder="Current Location *"
-                            class="w-full p-3 rounded-lg bg-white text-gray-800 text-sm outline-none" />
-                    </div>
-
-                    <textarea placeholder="Comments *"
-                        class="w-full h-32 mt-4 p-3 rounded-lg bg-white text-gray-800 text-sm outline-none"></textarea>
-
-                    <div class="flex flex-col md:flex-row items-center gap-4 mt-4">
-                        <button
-                            class="w-full md:w-auto flex items-center bg-white text-gray-800 px-6 py-3 rounded-lg shadow-md">
-                            <img src="./assests/images/upload.png" class="w-5 h-5 mr-2" alt="Upload" /> Attach Resume
-                        </button>
-                        <button
-                            class="w-full md:w-auto bg-yellow-500 text-white px-6 py-3 rounded-lg shadow-md">SUBMIT</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <!-- footer -->
-        <section class="bg-[#0F0F2D] text-white">
-            <div class="bg-white p-8 mr-0"></div>
-            <div class=" py-10 px-4 md:px-8 lg:px-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Logo and Map -->
-                <div class="flex flex-col items-start">
-                    <img src="./assests/images/logo.png" alt="Stargatez Logo" class="w-40 mb-4" />
-                    <iframe class="w-64 h-40 rounded-lg"
-                        src="https://maps.google.com/maps?q=Madison,WI&output=embed"></iframe>
-                </div>
-
-                <!-- Address Blocks -->
-                <div>
-                    <h3 class="font-semibold text-lg uppercase">USA - Wisconsin</h3>
-                    <p class="text-gray-300 text-sm mt-2 leading-relaxed">
-                        <img src="./assests/images/mapVector.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
-                        234 Randolph Dr, Apt 203d, <br />
-                        Madison, WI 53717, <br />
-                        Wisconsin, USA.
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-lg uppercase">Malaysia - Kuala Lumpur</h3>
-                    <p class="text-gray-300 text-sm mt-2 leading-relaxed">
-                        <img src="./assests/images/mapVector.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
-                        B6-9, Taman Serdang Perdana <br />
-                        Jalan Serdang Perdana <br />
-                        43300 Serikembangan
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-lg uppercase">India - Kolkata</h3>
-                    <p class="text-gray-300 text-sm mt-2 leading-relaxed">
-                        <img src="./assests/images/mapVector.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
-                        25/5, Nadia - 741404, <br />
-                        West Bengal
-                    </p>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-lg uppercase">India - Bengaluru</h3>
-                    <p class="text-gray-300 text-sm mt-2 leading-relaxed">
-                        <img src="location-icon.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
-                        New No 16, Asherkhanna Street <br />
-                        Kamaraj Road, Bengaluru 560042
-                    </p>
-                </div>
             </div>
 
-            <!-- Footer Links -->
-            <div class="py-10 px-4 md:px-8 lg:px-16 mt-8 border-t border-gray-600 pt-4 flex flex-wrap justify-center gap-6 text-gray-300 text-sm">
-                <a href="#" class="hover:text-white">About Us</a>
-                <a href="#" class="hover:text-white">Services</a>
-                <a href="#" class="hover:text-white">Industries</a>
-                <a href="#" class="hover:text-white">Career</a>
-                <a href="#" class="hover:text-white">FAQ</a>
-                <a href="#" class="hover:text-white">Our Locations</a>
-                <a href="#" class="hover:text-white">Corporate Profile</a>
-                <a href="#" class="hover:text-white">Contact Us</a>
-                <a href="#" class="hover:text-white">Job Seekers - Apply</a>
+            <div>
+                <h3 class="font-semibold text-lg uppercase">Malaysia - Kuala Lumpur</h3>
+                <p class="text-gray-300 text-sm mt-2 leading-relaxed">
+                    <img src="./assests/images/mapVector.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
+                    B6-9, Taman Serdang Perdana <br />
+                    Jalan Serdang Perdana <br />
+                    43300 Serikembangan
+                </p>
             </div>
 
-            <!-- Copyright -->
-            <div class="py-4 px-4 md:px-8 lg:px-16 text-center text-gray-400 text-sm mt-4">
-                © 2025 <span class=" py-4 text-yellow-500 font-semibold">Stargatez</span>. All Rights Reserved
+            <div>
+                <h3 class="font-semibold text-lg uppercase">India - Kolkata</h3>
+                <p class="text-gray-300 text-sm mt-2 leading-relaxed">
+                    <img src="./assests/images/mapVector.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
+                    25/5, Nadia - 741404, <br />
+                    West Bengal
+                </p>
             </div>
-        </section>
+
+            <div>
+                <h3 class="font-semibold text-lg uppercase">India - Bengaluru</h3>
+                <p class="text-gray-300 text-sm mt-2 leading-relaxed">
+                    <img src="location-icon.png" class="inline-block w-4 h-4 mr-1" alt="Location" />
+                    New No 16, Asherkhanna Street <br />
+                    Kamaraj Road, Bengaluru 560042
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="py-10 px-4 md:px-8 lg:px-16 mt-8 border-t border-gray-600 pt-4 flex flex-wrap justify-center gap-6 text-gray-300 text-sm">
+            <a href="#" class="hover:text-white">About Us</a>
+            <a href="#" class="hover:text-white">Services</a>
+            <a href="#" class="hover:text-white">Industries</a>
+            <a href="#" class="hover:text-white">Career</a>
+            <a href="#" class="hover:text-white">FAQ</a>
+            <a href="#" class="hover:text-white">Our Locations</a>
+            <a href="#" class="hover:text-white">Corporate Profile</a>
+            <a href="#" class="hover:text-white">Contact Us</a>
+            <a href="#" class="hover:text-white">Job Seekers - Apply</a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="py-4 px-4 md:px-8 lg:px-16 text-center text-gray-400 text-sm mt-4">
+            © 2025 <span class=" py-4 text-yellow-500 font-semibold">Stargatez</span>. All Rights Reserved
+        </div>
+    </section>
 
 
 
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeButton = document.getElementById('close-menu');
 
-        <script>
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-0'); // Ensure the menu slides in
+            mobileMenu.classList.toggle('translate-x-full'); // Remove translate-x-full when opened
+        });
 
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        </script>
-    </div>
+        closeButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full'); // Ensure menu slides out
+            mobileMenu.classList.remove('translate-x-0');
+        });
+
+        // Close the mobile menu if clicked outside of it
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+            }
+        });
+    </script>
+
 </body>
 
 </html>
