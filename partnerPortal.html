@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stargatez CV Writing Services - Helping you craft the perfect resume for your career journey.">
+    <title>Hero Section</title>
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body class="font-montserrat">
+
+    <!-- Hero Section -->
+    <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-cover bg-black bg-center bg-no-repeat bg-fixed"
+        style="background-image: url('./assets/images/partnerPortalBanner.png');">
+        <!-- Overlay for better readability -->
+        <div class="absolute inset-0 bg-[#000000B2]"></div>
+
+        <!-- Navbar -->
+        <nav class="absolute top-0 left-0 w-full bg-black/40 backdrop-blur-md z-50">
+            <div
+                class="max-w-screen-2xl mx-auto px-6 sm:px-12 lg:px-24 py-8 flex items-center justify-between relative">
+                <!-- Logo -->
+                <img class="h-10 sm:h-12 relative z-20" src="./assets/images/logo.png" alt="Stargatez Logo"
+                    loading="lazy">
+
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex space-x-6 text-base md:text-lg relative z-20">
+                    <li><a href="#" class="hover:text-yellow-400 transition">HOME</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">ABOUT US</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">SERVICES <img class="inline px-3"
+                                src="./assets/images/serviceVector.png" alt=""></a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">INDUSTRIES</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">CONTACT US</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">PARTNER</a></li>
+                    <li><a href="#" class="hover:text-yellow-400 transition">JOB SEEKERS</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button"
+                    class="lg:hidden text-3xl text-white relative z-20 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    aria-label="Open menu">☰</button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="fixed top-0 right-0 w-full h-full bg-black/90 transform  transition-transform duration-300 ease-in-out z-40 lg:hidden">
+                <button id="close-menu"
+                    class="absolute top-4 right-4 text-3xl text-white p-4 focus:outline-none focus:ring-2 focus:ring-yellow-400 lg:hidden"
+                    aria-label="Close menu">×</button>
+                <ul class="bg-black mt-16 space-y-4 text-lg px-8 py-4">
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">HOME</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">ABOUT
+                            US</a></li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">SERVICES</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">INDUSTRIES</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">CONTACT
+                            US</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">PARTNER</a>
+                    </li>
+                    <li><a href="#"
+                            class="block hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition">JOB
+                            SEEKERS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section Content -->
+        <div
+            class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start max-w-7xl space-y-6 mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold">
+                Welcome to the <br>STARGATEz <span class="text-yellow-400">Partner Portal
+            </h1>
+
+        </div>
+
+    </div>
+
+    <!-- Section -->
+    <section class="max-w-4xl mx-auto px-6 py-12 gap-12 items-center">
+        <img class="rounded-2xl" src="./assets/images/coworkers-team-working-brainstorming-concept 1.png" alt="">
+        <div>
+            <p class="font-medium mt-5 leading-2 text-lg">At <span class="text-yellow-400">STARGATEz</span>,
+                collaboration is the cornerstone of our success. This Partner Portal serves as your gateway to seamless,
+                transparent, and efficient collaboration, enabling you to share high-quality candidate profiles that
+                meet the dynamic needs of our Customers.</p>
+            <p class="font-medium mt-5 leading-2 text-lg">As a valued <span class="text-yellow-400">Partner</span>, You
+                play an integral role in helping us deliver exceptional talent solutions.</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <div class="bg-gray-100 p-6 md:p-10 rounded-lg max-w-4xl mx-auto">
+        <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Partner Name</label>
+                    <input type="text" class="w-full border placeholder-[#14176CCC] border-blue-900 p-2 rounded-md"
+                        placeholder="Full Name of the Company | Freelancer Name">
+                </div>
+                <div></div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Candidate Name</label>
+                    <input type="text" class="w-full border placeholder-[#14176CCC] border-blue-900 p-2 rounded-md"
+                        placeholder="Candidate Name as it appears in the Resume">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Candidate Phone Number</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="10 Digit Phone Number">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Candidate Email ID</label>
+                    <input type="email" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Valid Email ID">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Role Applying For</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Role Mentioned in the Job Description">
+                </div>
+                
+            </div>
+
+            <div>
+                <label class="block text-[#14176C] font-semibold">Skills</label>
+                <textarea class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                    placeholder="Copy and Paste your entire Resume"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Total Experience (Years)</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Example: 5 or 5.6 or 5.10">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Relevant Experience (Years)</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Example: 5 or 5.6 or 5.10">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Current / Last Company</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Name of the Current / Last Company">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Current / Last CTC (Lakhs)</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Example: 5 or 5.80 or 5.88">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Expected CTC (Lakhs)</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Example: 5 or 5.80 or 5.88">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Notice Period (Days)</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Number of Days">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Current Location</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md" placeholder="Location">
+                </div>
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Comments</label>
+                    <input type="text" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md"
+                        placeholder="Anything Noteworthy">
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                <div>
+                    <label class="block text-[#14176C] font-semibold">Attach Resume</label>
+                    <input type="file" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md bg-white">
+                </div>
+                <button type="submit"
+                    class="bg-blue-900 text-white px-6 py-2 rounded-md w-full md:w-auto">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- footer -->
+    <footer class="bg-[#000121F2] text-white py-10 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="col-span-1 flex flex-col items-start">
+                    <img src="./assets/images/logo.png" alt="stargatez logo" class="w-40 mb-4">
+                    <iframe class="w-72 h-40 rounded-lg"
+                        src="https://maps.google.com/maps?q=Madison,WI&output=embed"></iframe>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center">
+                            <img src="./assets/images/mapVector.png" alt="Location" class="w-4 h-4 mr-2"> USA -
+                            WISCONSIN
+                        </h3>
+                        <p class="text-sm">234 Randolph Dr, Apt 203d, Madison, WI 53717, Wisconsin, USA.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center">
+                            <img src="./assets/images/mapVector.png" alt="Location" class="w-4 h-4 mr-2"> MALAYSIA -
+                            KUALA LUMPUR
+                        </h3>
+                        <p class="text-sm">B6-9, Taman Serdang Perdana, Jalan Serdang Perdana, 43300 Serikembangan</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center">
+                            <img src="./assets/images/mapVector.png" alt="Location" class="w-4 h-4 mr-2"> INDIA -
+                            KOLKATA
+                        </h3>
+                        <p class="text-sm">25/5, Nadia - 741404, West Bengal</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2 flex items-center">
+                            <img src="./assets/images/mapVector.png" alt="Location" class="w-4 h-4 mr-2"> INDIA -
+                            BENGALURU
+                        </h3>
+                        <p class="text-sm">New No 16, Asherkhanna Street, Kamaraj Road, Bengaluru 560042</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" px-4 md:px-8 lg:px-16 mt-8 pt-4 flex flex-wrap justify-between gap-6 text-gray-300 text-sm">
+                <a href="#" class="hover:text-white">About Us</a>
+                <a href="#" class="hover:text-white">Services</a>
+                <a href="#" class="hover:text-white">Industries</a>
+                <a href="#" class="hover:text-white">CONTACT US</a>
+                <a href="#" class="hover:text-white">FAQ</a>
+                <a href="#" class="hover:text-white">Our Locations</a>
+                <a href="#" class="hover:text-white">Corporate Profile</a>
+                <a href="#" class="hover:text-white">Contact Us</a>
+                <a href="#" class="hover:text-white">Job Seekers - Apply</a>
+            </div>
+
+            <hr class="border-gray-600 my-6">
+
+            <p class="text-center text-gray-400 text-sm mt-4">&copy; 2025 <span
+                    class="text-yellow-400">stargatez</span>. All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+
+    <!-- JavaScript for Mobile Menu -->
+    <!-- <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeButton = document.getElementById('close-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-0'); // Ensure the menu slides in
+            mobileMenu.classList.toggle('translate-x-full'); // Remove translate-x-full when opened
+        });
+
+        closeButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full'); // Ensure menu slides out
+            mobileMenu.classList.remove('translate-x-0');
+        });
+
+        // Close the mobile menu if clicked outside of it
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.classList.remove('translate-x-0');
+            }
+        });
+    </script> -->
+
+</body>
+
+</html>
