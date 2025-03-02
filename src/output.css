@@ -291,9 +291,6 @@
       max-width: 96rem;
     }
   }
-  .mx-2 {
-    margin-inline: calc(var(--spacing) * 2);
-  }
   .mx-3 {
     margin-inline: calc(var(--spacing) * 3);
   }
@@ -1516,11 +1513,6 @@
       line-height: 40px;
     }
   }
-  .xl\:max-w-3xl {
-    @media (width >= 80rem) {
-      max-width: var(--container-3xl);
-    }
-  }
   .xl\:max-w-4xl {
     @media (width >= 80rem) {
       max-width: var(--container-4xl);
@@ -1529,16 +1521,6 @@
   .xl\:grid-cols-3 {
     @media (width >= 80rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .\32 xl\:max-w-2xl {
-    @media (width >= 96rem) {
-      max-width: var(--container-2xl);
-    }
-  }
-  .\32 xl\:max-w-3xl {
-    @media (width >= 96rem) {
-      max-width: var(--container-3xl);
     }
   }
   .\32 xl\:max-w-5xl {
