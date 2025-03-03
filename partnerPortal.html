@@ -194,14 +194,26 @@
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-[#14176C] font-semibold">Attach Resume</label>
-                    <input type="file" class="w-full placeholder-[#14176CCC] border border-blue-900 p-2 rounded-md bg-white">
+                    <label class="block font-medium text-[#14176C]">Attach Resume</label>
+                    <label for="coverLetter" id="file_upload_block" class="w-full flex items-center gap-2 px-4 py-2 mt-1 border border-gray-300 rounded-md text-center cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:bg-gray-100">
+                        <img class="h-6 w-6" src="./assets/images/upload_svgrepo.com.png" alt="">Choose File To Upload
+                    </label>
+                    <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" class="hidden">
+                    
                 </div>
-                <button type="submit"
-                    class="bg-blue-900 text-white px-6 py-2 rounded-md w-full md:w-auto">SUBMIT</button>
+                <div>
+                    <label class="block font-medium text-[#14176C]">&nbsp;</label>
+                    <button
+                        class="md:h-[48px] bg-[#14176C] text-white hover:bg-white hover:text-black py-1.5 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
+                        Submit
+                    </button>
+                    <!-- <input type="button" placeholder="Anything Noteworthy"
+                        class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" /> -->
+                </div>
             </div>
+
         </form>
     </div>
 
