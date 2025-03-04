@@ -8,7 +8,7 @@
         content="Stargatez CV Writing Services - Helping you craft the perfect resume for your career journey.">
     <title>Hero Section</title>
     <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
-
+    <script src="./assets/js/script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
@@ -18,136 +18,247 @@
 
     <!-- Header Section -->
     <header>
+        <nav id="navbar"
+            class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
+            <a href="./Resume-Writer.html.html">
+                <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
+            </a>
+
+            <button class="lg:hidden" id="menu-toggle">
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-7">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+            </button>
+            <!-- menu -->
+            <ul id="menu"
+                class="lg:flex items-center gap-10 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
+
+                <li class="relative group" id="manufacturing">
+                    <a href="./home.html" class="text-white uppercase nav-link">home</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="products">
+                    <a href="./aboutUs.html"
+                        class="block uppercase text-yellow-500 cursor-default md:py-3 nav-link">About Us</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+
+                </li>
+                <li class="relative group menu" id="services">
+                    <a href="#" class="block text-white cursor-default md:py-3">Services</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                    <!-- Dropdown -->
+                    <div
+                        class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 procurement-project-management">
+
+                            Service 1</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 lv-installation">
+                            Service 2</a>
+
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 training">
+
+                            Service 3</a>
+                    </div>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./industries.html" class="block uppercase text-white cursor-default md:py-3">Industries</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./contact_us.html" class="block uppercase text-white cursor-default md:py-3">Contact Us</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./partnerPortal.html" class="block uppercase text-white cursor-default md:py-3">Partner</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./jobSeekers.html" class="block uppercase text-white cursor-default md:py-3">Job
+                        Seekers</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+
+
+
+            </ul>
+
+        </nav>
+
         <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-cover bg-black bg-center bg-no-repeat bg-fixed"
             style="background-image: url('./assets/images/jobseeker_banner.png');">
             <!-- Overlay for better readability -->
             <div class="absolute inset-0 bg-[#000000B2]"></div>
 
             <!-- Navbar -->
-            <nav class="absolute top-0 left-0 w-full bg-black/40 backdrop-blur-md z-50">
-                <div
-                    class="max-w-screen-2xl mx-auto px-6 sm:px-12 lg:px-24 py-8 flex items-center justify-between relative">
-                    <!-- Logo -->
-                    <img class="h-10 sm:h-12 relative z-20" src="./assets/images/logo.png" alt="Stargatez Logo"
-                        loading="lazy">
-
-                    <!-- Desktop Menu -->
-                    <ul class="hidden lg:flex space-x-6 text-base relative z-20">
-                        <li><a href="./home.html" class="hover:text-yellow-400 transition">HOME</a></li>
-                        <li><a href="./aboutUs.html" class="hover:text-yellow-400 transition">ABOUT US</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">SERVICES <img class="inline px-3"
-                                    src="./assets/images/serviceVector.png" alt=""></a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">INDUSTRIES</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">CONTACT US</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">PARTNER</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">JOB SEEKERS</a></li>
-                    </ul>
-
-
-            </nav>
 
             <!-- Hero Section Content -->
-            <div class="flex items-center justify-center min-h-screen bg-cover bg-center px-4" style="background-image: url('your-image-url.jpg');">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white text-center">
+            <div class="flex items-center justify-center min-h-screen bg-cover bg-center px-4"
+                style="background-image: url('your-image-url.jpg');">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-white text-center">
                     <!-- First Circle -->
                     <div>
-                        <div class="w-40 h-40 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
+                        <div
+                            class="w-50 h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
                             <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Founded</p>
                             <p class="text-4xl font-bold text-white drop-shadow-md">2014</p>
                         </div>
-                        <p class="text-xs mt-2 text-white drop-shadow-md">Kuala Lumpur, Malaysia</p>
+                        <p class="text-lg mt-2 text-white drop-shadow-md">Kuala Lumpur, Malaysia</p>
                     </div>
-            
+
                     <!-- Second Circle -->
                     <div>
-                        <div class="w-40 h-40 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
+                        <div
+                            class="w-50 h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
                             <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Customers</p>
                             <p class="text-4xl font-bold text-white drop-shadow-md">100+</p>
                         </div>
                     </div>
-            
+
                     <!-- Third Circle (with Image) -->
                     <div>
-                        <div class="w-40 h-40 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
-                            <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Global Footprint</p>
+                        <div
+                            class="w-50 h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
+                            <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Global<br>Footprint</p>
                             <img src="./assets/images/Globe.png" alt="Globe Icon" class="w-10 h-10 mt-2 drop-shadow-md">
                         </div>
-                        <p class="text-xs mt-2 text-white drop-shadow-md">USA | Canada | Malaysia | India</p>
+                        <p class="text-lg mt-2 text-white drop-shadow-md">USA | Canada | Malaysia | India</p>
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
     </header>
 
-    <!-- Section -->
-    <section class="container mx-auto py-12 grid md:grid-cols-2 gap-12 items-center">
-        <!-- Left Content -->
-        <div class="relative mx-3 md:mx-0">
-            <span class="bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-3 rounded-lg">Earn in Dollars</span>
-            <h1 class="mt-4 text-3xl md:text-4xl font-bold leading-snug">
-                Discover <span class="text-yellow-500">high-paying global opportunities</span> tailored to your skills
-                and aspirations.
-            </h1>
-            <img src="./assets/images/holding-world-my-hands-attractive-female-travel-agent-showing-globe-smiling-while-working-her-modern-office 1.png"
-                alt="Global Opportunities" class="w-full rounded-lg shadow-lg mt-8">
+    <!-- Timeline Section -->
+    <section>
+        <div class="relative w-full container mx-auto mt-12 py-10">
+            <div class="absolute left-1/2 top-0 w-1 h-full bg-blue-500 transform -translate-x-1/2"></div>
 
-        </div>
-        <!-- Right Content -->
-        <div>
-
-            <div class="mt-6 space-y-4 mx-3 md:mx-0">
-                <div class="flex items-start space-x-3">
-                    <img src="./assets/images/blackcheckmark.png" alt="icon" class="w-5 h-5 mt-1">
-                    <p class="text-gray-700 font-medium">
-                        <strong>Receive Tailored Job Updates :</strong> Stay informed about the best roles that match
-                        your profile.
-                    </p>
-                </div>
-                <div class="flex items-start space-x-3">
-                    <img src="./assets/images/blackcheckmark.png" alt="icon" class="w-5 h-5 mt-1">
-                    <p class="text-gray-700 font-medium ">
-                        <strong>Explore Diverse Opportunities :</strong>
-                    </p>
-
-                </div>
-                <div class="space-y-5">
-                    <button class="max-w-2xl bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
-                        <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
-                            Permanent Roles</span>
-                    </button>
-                    <button class="max-w-2xl bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
-                        <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
-                            Contract Roles</span>
-                    </button>
-                    <button class="max-w-3xl bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
-                        <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
-                            Remote Roles</span>
-                    </button>
-                    <button class="max-w-2xl bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
-                        <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
-                            Freelancing Opportunities</span>
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-2 gap-6 mt-16">
-                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
-                        <h3 class=" bg-[#14176C1A] text-[#14176C] font-semibold">Get Hired and Advance Your Career</h3>
-                        <p class="text-gray-600 text-sm p-3">Unlock new possibilities with top-tier global employers.
-                        </p>
+            <!-- 2014 -->
+            <div class="relative flex items-center mb-16">
+                <div class="w-1/2 flex justify-end pr-10">
+                    <div class="bg-[#2196F31A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-blue-500 text-white text-lg w-full font-medium text-center py-1 inline-block">A &
+                            H ALLIANCE SDN. BHD.</h3>
+                        <img class="absolute mt-6 px-4" src="./assets/images/malaysia 1.png" alt="malaysiaMap">
+                        <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (1).png"
+                            alt="Office" class="w-full h-64 mt-2 rounded-lg">
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">March 11, 2014 incorporated under the Companies
+                            Act 1965
+                            as a Private Limited Company</p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Headquartered in Kuala Lumpur, Malaysia</p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Manpower consultancy, manpower recruitment, and
+                            placement/
+                            pre-departure training & services company supporting the South East Asia & Middle East
+                            market</p>
                     </div>
-                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
-                        <h3 class=" bg-[#14176C1A] text-[#14176C] font-semibold">Work for<br> Top Companies</h3>
-                        <p class="text-gray-600 text-sm p-3">Collaborate with industry leaders and accelerate your
-                            professional growth.</p>
-                    </div>
+                </div>
+                <div class="w-1/2 flex items-center">
+                    <div class="bg-[#2196F3] text-white text-sm px-8 py-3 rounded-md">2014</div>
                 </div>
             </div>
+
+            <!-- 2019 -->
+            <div class="relative flex items-center mb-16 flex-row-reverse">
+                <div class="w-1/2 flex justify-start pl-10">
+                    <div class="bg-[#FEF6E5] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3
+                            class="bg-[#F7A400] text-white px-3 inline-block text-lg w-full font-medium text-center py-1">
+                            GLEAFINK</h3>
+                        <div class="flex gap-4">
+                            <div>
+                                <img class="absolute mt-6 px-4" src="./assets/images/united-states-of-america 1.png"
+                                    alt="USA">
+                                <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2.png"
+                                    alt="Building" class=" mt-2 rounded-lg">
+                            </div>
+
+                            <div>
+                                <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
+                                <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
+                                    alt="Building" class=" mt-2 rounded-lg">
+                            </div>
+
+                        </div>
+
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Headquartered in Madison, Wisconsin and Delivery
+                            Center in
+                            Bengaluru, India </p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6"> GLEAFINK is a leading data & advanced analytics
+                            company,
+                            empowering businesses to make data-driven decisions for a smarter future.</p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                    <div class="bg-yellow-500 text-white text-sm px-8 py-3 rounded-md">2019</div>
+                </div>
+            </div>
+
+            <!-- 2021 -->
+            <div class="relative flex items-center mb-16">
+                <div class="w-1/2 flex justify-end pr-10">
+                    <div class="bg-[#F72C5B1A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-[#F72C5B] text-white text-lg w-full font-medium text-center py-1 inline-block">
+                            CAREER
+                            FLUTE</h3>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Career Flute is a Job Portal with a vision to be
+                            the preferred partner in enabling curated talent through an innovative professional
+                            development and hiring platform.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex items-center">
+                    <div class="bg-[#F72C5B] text-white text-sm px-8 py-3 rounded-md">2021</div>
+                </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="relative flex items-center mb-16 flex-row-reverse">
+                <div class="w-1/2 flex justify-start pl-10">
+                    <div class="bg-[#8900E41A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-[#8900E4] text-white text-lg w-full font-medium text-center py-1 inline-block">A &
+                            H ALLIANCE SDN. BHD.</h3>
+                            <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
+                            <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
+                                alt="Building" class="w-full h-64 mt-2 rounded-lg">
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Registered under the Emigration Act, 1983, for the recruitment and deployment of Indian workers to foreign employers.</p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Training & Development Center in Kolkata, India.</p>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="w-1/2 flex justify-end">
+                    <div class="bg-[#8900E4] text-white text-sm px-8 py-3 rounded-md">2014</div>
+                </div>
+            </div>
+            
+
         </div>
 
-
     </section>
+
 
     <!-- Form Section -->
     <section class="container mx-auto">

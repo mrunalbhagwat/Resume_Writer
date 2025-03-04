@@ -8,7 +8,8 @@
         content="Stargatez CV Writing Services - Helping you craft the perfect resume for your career journey.">
     <title>Hero Section</title>
     <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
-
+    <script src="./assets/js/script.js"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
 </head>
@@ -17,156 +18,97 @@
 
     <!-- Header Section -->
     <header>
-        <nav id="navbar" class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
-        <a href="index.html">
-            <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
-        </a>
+        <nav id="navbar"
+            class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
+            <a href="./Resume-Writer.html.html">
+                <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
+            </a>
 
-        <button class="lg:hidden" id="menu-toggle">
+            <button class="lg:hidden" id="menu-toggle">
 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-7">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-7">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
 
-        </button>
-        <!-- menu -->
-        <ul id="menu"
-            class="lg:flex items-center gap-10 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
+            </button>
+            <!-- menu -->
+            <ul id="menu"
+                class="lg:flex items-center gap-10 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
 
-            <li class="relative group" id="manufacturing">
-                <a href="manufacturing.html" class="text-white nav-link">Manufacturing</a>
-                <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-            </li>
-            <li class="relative group menu" id="products">
-                <a href="#" class="block text-white cursor-default md:py-3 nav-link">Products</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-                <!-- Dropdown -->
-                <div
-                    class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-96 md:py-4 group-hover:block">
-                    <a href="fluid-transfer.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 fluid-transfer">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/transfer.svg" alt="icon">
-                        Fluid Transfer Solution</a>
-                    <a href="controlled-bolting-hydraulic-equipments.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 controlled-bolting-hydraulic-equipments">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/tool.svg" alt="icon">Controlled
-                        Bolting and
-                        Hydraulic Equipment</a>
-                    <a href="hydrotesting-chemical-injection-skids.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 hydrotesting-chemical-injection-skids">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/water.svg" alt="icon">
-                        Hydrotesting and Injection
-                        Skids</a>
-                    <a href="on-site-atex-machining.html"
-                        class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 on-site-atex-machining">
+                <li class="relative group" id="manufacturing">
+                    <a href="./home.html" class="text-white uppercase nav-link">home</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="products">
+                    <a href="./aboutUs.html" class="block uppercase text-white cursor-default md:py-3 nav-link">About Us</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
 
-                        <img class="mr-2 size-3.5" src="assets/images/icons/meter-2.svg" alt="icon">
+                </li>
+                <li class="relative group menu" id="services">
+                    <a href="#" class="block text-white cursor-default md:py-3">Services</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                    <!-- Dropdown -->
+                    <div
+                        class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 procurement-project-management">
 
-                        On Site ATEX Machining</a>
-                </div>
-            </li>
-            <li class="relative group menu" id="services">
-                <a href="#" class="block text-white cursor-default md:py-3">Services</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-                <!-- Dropdown -->
-                <div
-                    class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
-                    <a href="procurement-project-management.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 procurement-project-management">
+                            Service 1</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 lv-installation">
+                            Service 2</a>
 
-                        <img class="mr-2 size-3.5" src="assets/images/icons/project.svg" alt="icon">
-                        Procurement & Project
-                        Management</a>
-                    <a href="lv-installation.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 lv-installation">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/maintain.svg" alt="icon">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 training">
+                            
+                            Service 3</a>
+                    </div>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./industries.html" class="block uppercase text-white cursor-default md:py-3">Industries</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./contact_us.html" class="block uppercase text-white cursor-default md:py-3">Contact Us</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./partnerPortal.html" class="block uppercase text-white cursor-default md:py-3">Partner</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./jobSeekers.html" class="block uppercase text-yellow-500 cursor-default md:py-3">Job Seekers</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
 
-                        LV Installation &
-                        Maintenance</a>
 
-                    <a href="trainings.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 training">
-                        <img class="mr-2 size-4" src="assets/images/icons/degree.svg" alt="icon">
 
-                        Trainings</a>
-                </div>
-            </li>
-            <li class="relative group menu" id="explore-active">
-                <a href="#" class="block text-white cursor-default md:py-3">Explore</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-                <!-- Dropdown -->
-                <div
-                    class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-60 md:py-4 group-hover:block">
-                    <a href="about-us.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 about">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/about.svg" alt="icon">About us</a>
-                    <a href="certifications.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 certifications">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/certification.svg"
-                            alt="icon">Certification</a>
-                    <a href="careers.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 careers">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/career.svg" alt="icon">Careers</a>
-                    <a href="contact.html"
-                        class="flex items-center gap-3 px-3 py-2 text-white hover:bg-gray-100 contact">
-                        <img class="mr-2 size-3.5" src="assets/images/icons/contact.svg" alt="icon">Contact
-                        us</a>
-                </div>
-            </li>
+            </ul>
 
-            <div class="block pt-3 md:hidden">
-                <a href="contact.html"
-                    class="bg-primary py-2.5 px-6 rounded-lg font-medium hover:bg-white text-white translate-all duration-300">Contact
-                    us</a>
-            </div>
-
-        </ul>
-        <div class="hidden md:block">
-            <a href="contact.html"
-                class="2xl:text-xl 2xl:py-3 2xl:px-6 bg-primary py-2.5 px-6 rounded-lg font-medium hover:bg-white text-white translate-all duration-300">Contact
-                us</a>
-        </div>
         </nav>
 
         <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-cover bg-black bg-center bg-no-repeat bg-fixed"
             style="background-image: url('./assets/images/jobseeker_banner.png');">
-            <!-- Overlay for better readability -->
 
-             <!-- navigation -->
-           
             <div class="absolute inset-0 bg-[#000000B2]"></div>
 
-            <!-- Navbar -->
-            <!-- <nav class="absolute top-0 left-0 w-full bg-black/40 backdrop-blur-md z-50">
-                <div
-                    class="max-w-screen-2xl mx-auto px-6 sm:px-12 lg:px-24 py-8 flex items-center justify-between relative">
-                    <img class="h-10 sm:h-12 relative z-20" src="./assets/images/logo.png" alt="Stargatez Logo"
-                        loading="lazy">
-
-                    <ul class="hidden lg:flex space-x-6 text-base relative z-20">
-                        <li><a href="./home.html" class="hover:text-yellow-400 transition">HOME</a></li>
-                        <li><a href="./aboutUs.html" class="hover:text-yellow-400 transition">ABOUT US</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">SERVICES <img class="inline px-3"
-                                    src="./assets/images/serviceVector.png" alt=""></a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">INDUSTRIES</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">CONTACT US</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">PARTNER</a></li>
-                        <li><a href="#" class="hover:text-yellow-400 transition">JOB SEEKERS</a></li>
-                    </ul>
-
-
-            </nav> -->
-
+            
             <!-- Hero Section Content -->
             <div
                 class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start max-w-7xl space-y-6 mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
@@ -179,7 +121,7 @@
             </div>
 
 
-           
+
 
         </div>
 
@@ -268,12 +210,12 @@
 
         <!-- Form Section -->
         <div class="bg-[#14176C0D] 2xl:max-w-5xl xl:max-w-6xl md:p-10 mx-auto rounded-lg p-8 mt-6">
-            <form class="space-y-6">
+            <form class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block font-medium text-[#14176C]">Candidate Name</label>
                         <input type="text" placeholder="Name of the Candidate as it appears in the Resume"
-                            class="border truncate placeholder-[#14176CCC] md:placeholder:text-base placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                            class="border  placeholder-[#14176CCC] truncate md:placeholder:text-base placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                     </div>
                     <div>
                         <label class="block font-medium text-[#14176C]">Candidate Phone Number</label>
@@ -360,7 +302,7 @@
                     <div>
                         <label class="block font-medium text-[#14176C]">&nbsp;</label>
                         <button
-                            class="md:h-[48px] bg-[#14176C] text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
+                            class="md:h-[48px] bg-primary text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
                             Submit
                         </button>
                         <!-- <input type="button" placeholder="Anything Noteworthy"
