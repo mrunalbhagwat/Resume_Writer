@@ -17,101 +17,103 @@
 <body class="font-montserrat">
 
     <!-- Header Section -->
-    <header>
-        <nav id="navbar"
-            class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
-            <a href="./Resume-Writer.html.html">
-                <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
-            </a>
+    <header class="relative w-full h-[85vh] lg:h-screen overflow-hidden">
+        <nav id=" navbar"
+        class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
+        <a href="./Resume-Writer.html">
+            <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
+        </a>
 
-            <button class="lg:hidden" id="menu-toggle">
+        <button class="lg:hidden" id="menu-toggle">
 
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-7">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
 
-            </button>
-            <!-- menu -->
-            <ul id="menu"
-                class="lg:flex items-center gap-10 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
+        </button>
+        <!-- menu -->
+        <ul id="menu"
+            class="lg:flex items-center gap-10 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
 
-                <li class="relative group" id="manufacturing">
-                    <a href="./home.html" class="text-white uppercase nav-link">home</a>
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                    </span>
-                </li>
-                <li class="relative group menu" id="products">
-                    <a href="./aboutUs.html"
-                        class="block uppercase text-yellow-500 cursor-default md:py-3 nav-link">About Us</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                    </span>
+            <li class="relative group" id="manufacturing">
+                <a href="./home.html" class="text-white uppercase nav-link">home</a>
+                <span
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                </span>
+            </li>
+            <li class="relative group menu" id="products">
+                <a href="./aboutUs.html" class="block uppercase text-yellow-500 cursor-default md:py-3 nav-link">About
+                    Us</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                </span>
 
-                </li>
-                <li class="relative group menu" id="services">
-                    <a href="#" class="block text-white cursor-default md:py-3">Services</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                    </span>
-                    <!-- Dropdown -->
-                    <div
-                        class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
-                        <a href="#"
-                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 procurement-project-management">
+            </li>
+            <li class="relative group menu" id="services">
+                <a href="#" class="block text-white cursor-default md:py-3">Services</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                </span>
+                <!-- Dropdown -->
+                <div
+                    class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
+                    <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 procurement-project-management">
 
-                            Service 1</a>
-                        <a href="#"
-                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 lv-installation">
-                            Service 2</a>
+                        Service 1</a>
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 lv-installation">
+                        Service 2</a>
 
-                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 training">
+                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 training">
 
-                            Service 3</a>
-                    </div>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a href="./industries.html" class="block uppercase text-white cursor-default md:py-3">Industries</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a href="./contact_us.html" class="block uppercase text-white cursor-default md:py-3">Contact Us</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a href="./partnerPortal.html" class="block uppercase text-white cursor-default md:py-3">Partner</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a href="./jobSeekers.html" class="block uppercase text-white cursor-default md:py-3">Job
-                        Seekers</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                    </span>
-                </li>
+                        Service 3</a>
+                </div>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a href="./industries.html" class="block uppercase text-white cursor-default md:py-3">Industries</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a href="./contact_us.html" class="block uppercase text-white cursor-default md:py-3">Contact Us</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a href="./partnerPortal.html" class="block uppercase text-white cursor-default md:py-3">Partner</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a href="./jobSeekers.html" class="block uppercase text-white cursor-default md:py-3">Job
+                    Seekers</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                </span>
+            </li>
 
 
 
-            </ul>
+        </ul>
 
         </nav>
+        <video autoplay="" muted="" loop="" class="absolute inset-0 object-cover w-full h-full hidden md:block">
+            <source src="assets/videos/dummy.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay="" muted="" loop="" class="absolute inset-0 object-cover w-full h-full md:hidden">
+            <source src="assets/videos/manufacturing_mob.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-        <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-cover bg-black bg-center bg-no-repeat bg-fixed"
-            style="background-image: url('./assets/images/jobseeker_banner.png');">
-            <!-- Overlay for better readability -->
+        <div
+            class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-center bg-no-repeat bg-fixed">
+
             <div class="absolute inset-0 bg-[#000000B2]"></div>
-
-            <!-- Navbar -->
-
-            <!-- Hero Section Content -->
             <div class="flex items-center justify-center min-h-screen bg-cover bg-center px-4"
                 style="background-image: url('your-image-url.jpg');">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-white text-center">
@@ -239,21 +241,23 @@
                     <div class="bg-[#8900E41A] shadow-lg rounded-lg p-5 max-w-sm">
                         <h3 class="bg-[#8900E4] text-white text-lg w-full font-medium text-center py-1 inline-block">A &
                             H ALLIANCE SDN. BHD.</h3>
-                            <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
-                            <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
-                                alt="Building" class="w-full h-64 mt-2 rounded-lg">
-                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Registered under the Emigration Act, 1983, for the recruitment and deployment of Indian workers to foreign employers.</p>
-                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Training & Development Center in Kolkata, India.</p>
-                        
+                        <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
+                        <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
+                            alt="Building" class="w-full h-64 mt-2 rounded-lg">
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Registered under the Emigration Act, 1983, for the
+                            recruitment and deployment of Indian workers to foreign employers.</p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Training & Development Center in Kolkata, India.
+                        </p>
+
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="w-1/2 flex justify-end">
                     <div class="bg-[#8900E4] text-white text-sm px-8 py-3 rounded-md">2014</div>
                 </div>
             </div>
-            
+
 
         </div>
 

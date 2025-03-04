@@ -17,10 +17,10 @@
 <body class="font-montserrat">
 
     <!-- Header Section -->
-    <header>
+    <header class="relative w-full h-[85vh] lg:h-screen overflow-hidden">
         <nav id="navbar"
             class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
-            <a href="./Resume-Writer.html.html">
+            <a href="./Resume-Writer.html">
                 <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
             </a>
 
@@ -102,14 +102,21 @@
             </ul>
 
         </nav>
+        <video autoplay="" muted="" loop="" class="absolute inset-0 object-cover w-full h-full hidden md:block">
+            <source src="assets/videos/dummy.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay="" muted="" loop="" class="absolute inset-0 object-cover w-full h-full md:hidden">
+            <source src="assets/videos/manufacturing_mob.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-        <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-cover bg-black bg-center bg-no-repeat bg-fixed"
-            style="background-image: url('./assets/images/jobseeker_banner.png');">
+        <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12  bg-center bg-no-repeat bg-fixed">
 
             <div class="absolute inset-0 bg-[#000000B2]"></div>
 
             
-            <!-- Hero Section Content -->
+            
             <div
                 class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start max-w-7xl space-y-6 mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
 
@@ -292,11 +299,11 @@
                     <div>
                         <label class="block font-medium text-[#14176C]">Attach Resume</label>
                         <label for="coverLetter" id="file_upload_block"
-                            class="w-full flex items-center gap-2 px-4 py-3 mt-1 border border-[#14176C] rounded-md text-center cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:bg-gray-100">
+                            class="w-full flex items-center gap-2 px-4 py-3 mt-1 border border-[#14176C] rounded-md text-center cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:bg-gray-100 ">
                             <img class="h-6 w-6" src="./assets/images/upload_svgrepo.com.png" alt="">Choose File To
                             Upload
                         </label>
-                        <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" class="hidden">
+                        <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" class="hidden ">
 
                     </div>
                     <div>
