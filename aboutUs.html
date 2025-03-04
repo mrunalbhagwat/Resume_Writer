@@ -19,86 +19,90 @@
     <!-- Header Section -->
     <header class="relative w-full h-[85vh] lg:h-screen overflow-hidden">
         <nav id=" navbar"
-        class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
-        <a href="./Resume-Writer.html">
-            <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
-        </a>
+            class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-10 px-5  ">
+            <a href="./Resume-Writer.html">
+                <img class="h-10 sm:h-12 relative z-20" src="assets/images/logo.png" alt="logo">
+            </a>
 
-        <button class="lg:hidden" id="menu-toggle">
+            <button class="lg:hidden" id="menu-toggle">
 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="size-7">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-7">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
 
-        </button>
-        <!-- menu -->
-        <ul id="menu"
-            class="lg:flex items-center gap-10 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
+            </button>
+            <!-- menu -->
+            <ul id="menu"
+                class="lg:flex items-center gap-10 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
 
-            <li class="relative group" id="manufacturing">
-                <a href="./home.html" class="text-white uppercase nav-link">home</a>
-                <span
-                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-            </li>
-            <li class="relative group menu" id="products">
-                <a href="./aboutUs.html" class="block uppercase text-yellow-500 cursor-default md:py-3 nav-link">About
-                    Us</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
+                <li class="relative group" id="manufacturing">
+                    <a href="./home.html" class="text-white uppercase nav-link">home</a>
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="products">
+                    <a href="./aboutUs.html"
+                        class="block uppercase text-yellow-500 cursor-default md:py-3 nav-link">About
+                        Us</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
 
-            </li>
-            <li class="relative group menu" id="services">
-                <a href="#" class="block text-white cursor-default md:py-3">Services</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-                <!-- Dropdown -->
-                <div
-                    class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
-                    <a href="#"
-                        class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 procurement-project-management">
+                </li>
+                <li class="relative group menu" id="services">
+                    <a href="#" class="block text-white cursor-default uppercase md:py-3">Services</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                    <!-- Dropdown -->
+                    <div
+                        class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase procurement-project-management">
 
-                        Service 1</a>
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 lv-installation">
-                        Service 2</a>
+                            Service 1</a>
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase lv-installation">
+                            Service 2</a>
 
-                    <a href="#" class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 training">
+                        <a href="#"
+                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase training">
 
-                        Service 3</a>
-                </div>
-            </li>
-            <li class="relative group menu" id="explore-active">
-                <a href="./industries.html" class="block uppercase text-white cursor-default md:py-3">Industries</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-            </li>
-            <li class="relative group menu" id="explore-active">
-                <a href="./contact_us.html" class="block uppercase text-white cursor-default md:py-3">Contact Us</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-            </li>
-            <li class="relative group menu" id="explore-active">
-                <a href="./partnerPortal.html" class="block uppercase text-white cursor-default md:py-3">Partner</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-            </li>
-            <li class="relative group menu" id="explore-active">
-                <a href="./jobSeekers.html" class="block uppercase text-white cursor-default md:py-3">Job
-                    Seekers</a>
-                <span
-                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
-                </span>
-            </li>
+                            Service 3</a>
+                    </div>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./industries.html" class="block uppercase text-white cursor-default md:py-3">Industries</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./contact_us.html" class="block uppercase text-white cursor-default md:py-3">Contact Us</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./partnerPortal.html" class="block uppercase text-white cursor-default md:py-3">Partner</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
+                <li class="relative group menu" id="explore-active">
+                    <a href="./jobSeekers.html" class="block uppercase text-white cursor-default md:py-3">Job
+                        Seekers</a>
+                    <span
+                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link">
+                    </span>
+                </li>
 
 
 
-        </ul>
+            </ul>
 
         </nav>
         <video autoplay="" muted="" loop="" class="absolute inset-0 object-cover w-full h-full hidden md:block">
@@ -258,124 +262,390 @@
                 </div>
             </div>
 
+            <!-- 2021 -->
+            <div class="relative flex items-center mb-16">
+                <div class="w-1/2 flex justify-end pr-10">
+                    <div class="bg-[#F72C5B1A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-[#F72C5B] text-white text-lg w-full font-medium text-center py-1 inline-block">
+                            CAREER
+                            FLUTE</h3>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Career Flute is a Job Portal with a vision to be
+                            the preferred partner in enabling curated talent through an innovative professional
+                            development and hiring platform.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex items-center">
+                    <div class="bg-[#F72C5B] text-white text-sm px-8 py-3 rounded-md">2021</div>
+                </div>
+            </div>
+
+
 
         </div>
 
     </section>
 
+    <!-- about us -->
+    <section class="bg-[#2196F31A]  ">
+        <div class="container mx-auto ">
+            <h2 class="text-3xl font-semibold text-center text-black leading-relaxed mt-8 p-6">
+                About <span class="text-yellow-500 font-bold">Us</span>
+            </h2>
 
-    <!-- Form Section -->
+            <div class="flex flex-col m-3 md:mx-0 lg:flex-row gap-12 lg:py-8">
+                <!-- Images Grid -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="./assets/images/team-meeting-modern-office 1.png" alt="Professional woman holding a cup"
+                        class="rounded-lg w-full h-auto object-cover shadow-md" />
+                </div>
+                <!-- Text Content -->
+                <div class="lg:w-1/2 lg:mt-0 text-black space-y-6">
+                    <p class=" text-sm md:text-lg leading-relaxed text-left">
+                        Welcome to A & H ALLIANCE SDN. BHD., where innovation meets excellence. Founded on March 11,
+                        2014, and incorporated under the Companies Act 1965, we are a Private Limited Company based in
+                        Kuala Lumpur, Malaysia. Our journey began with a mission to bridge the gap between talent and
+                        opportunity by offering comprehensive manpower recruitment, placement, and pre-departure
+                        training services. Over the years, we have proudly served multiple industries across South East
+                        Asia and Middle East.
+                    </p>
+                    <p class=" text-sm md:text-lg leading-relaxed md:mt-12 text-left">
+                        Today, our expertise extends far beyond recruitment. Through our subsidiaries and partnerships,
+                        we have diversified into cutting-edge technology solutions, workforce empowerment, and strategic
+                        consulting, making us a trusted name across multiple industries.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- our ventures -->
     <section class="container mx-auto">
-        <!-- Header Section -->
-        <div class="bg-[#14176C] text-white p-6 rounded-xl text-center italic text-2xl font-semibold mx-3 md:mx-0">
-            <p>“Your dream job is closer than you think. Join <span class="text-yellow-400">stargatez</span> and take
-                the next step in your career journey!”</p>
+        <!-- Section Title -->
+        <h2 class="text-center text-3xl mt-8 md:mt-12 font-semibold text-gray-900">
+            Our <span class="text-yellow-500">Ventures</span>
+        </h2>
+
+        <div class="container mx-auto">
+            <!-- GLEAFINK -->
+            <div class="flex flex-col md:flex-row items-center md:items-center gap-6">
+                <div class="flex-shrink-0 self-center">
+                    <img src="./assets/images/our_venture1.png" alt="GLEAFINK Logo"
+                        class="w-40 md:w-48 mx-auto mt-8 md:mt-12" />
+                </div>
+                <div class="mx-3 md:mx-0 mt-8 md:mt-12 text-left">
+                    <p class="text-gray-700 leading-relaxed">
+                        At GLEAFINK, we transform the retail industry by turning data into actionable growth. Our
+                        state-of-the-art data products and services empower retailers to make smarter decisions,
+                        optimize efficiency, and drive sustainable success in a highly competitive marketplace.
+                    </p>
+                    <p class="mt-4 text-gray-700 leading-relaxed">
+                        Our mission is to revolutionize retail through innovative data solutions, fostering growth, and
+                        enhancing operational excellence. By providing the tools and insights businesses need to thrive
+                        in an ever-evolving environment, GLEAFINK is shaping the future of retail.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CAREER FLUTE -->
+            <div class="flex flex-col md:flex-row items-center md:items-center gap-6">
+                <div class="flex-shrink-0 self-center">
+                    <img src="./assets/images/our_venture2.png" alt="Career Flute Logo"
+                        class="w-40 md:w-48 mx-auto mt-8 md:mt-12" />
+                </div>
+                <div class="text-left mx-3 md:mx-0 mt-8 md:mt-12">
+                    <p class="text-gray-700 leading-relaxed">
+                        Career Flute is a Job Portal, an innovative platform for professional development and hiring. A
+                        pioneer in talent upskilling and development, collaborating with leading Ed Tech companies to
+                        address the industry's growing demand for skilled professionals.
+                    </p>
+                    <p class="mt-4 text-gray-700 leading-relaxed">
+                        With an extensive database of over 2 million (and growing) tech and digital professionals, we
+                        connect candidates with tailored upskilling, certification, and career advancement programs.
+                    </p>
+
+                    <div class="mt-6 text-gray-700">
+                        <p class="font-semibold">Our dual mission is clear:</p>
+                        <ul class="mt-2 space-y-2 text-gray-700">
+                            <li class="flex items-center gap-2">
+                                <img class="w-5 h-5 " src="./assets/images/blackcheckmark.png" alt="checkmark">
+                                <span>Empower individuals to achieve their career aspirations by offering personalized
+                                    learning opportunities.</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img class="w-5 h-5" src="./assets/images/blackcheckmark.png" alt="checkmark">
+                                <span>Equip the industry with skilled talent capable of adapting to technological
+                                    advancements.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STARATEZ -->
+            <div class="flex flex-col md:flex-row  items-center md:items-center gap-6">
+                <div class="flex-shrink-0 self-center">
+                    <img src="./assets/images/our_venture3.png" alt="Staratez Logo"
+                        class="w-40 md:w-48 mx-auto mt-8 md:mt-12" />
+                </div>
+                <div class="text-left mx-3 md:mx-0">
+                    <p class="text-gray-700 mt-8 md:mt-12 leading-relaxed">
+                        <span class="text-yellow-500 font-semibold">staratez</span> is at the forefront of Digital
+                        Transformation, Technology Consulting, and Global Strategic Staffing. We simplify hiring by
+                        connecting top-tier tech and digital talent with organizations worldwide.
+                    </p>
+                    <p class="mt-4 md:mb-8 text-gray-700 leading-relaxed">
+                        Our data-driven approach ensures hiring processes are efficient, reliable, and tailored to the
+                        unique demands of each business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- offer -->
+    <section class="relative bg-cover bg-center "
+        style="background-image: url('./assets/images/top-shape.png'), url('./assets/images/bottom-shape.png'); background-position: top right, bottom left; background-repeat: no-repeat;">
+        <h2 class="text-3xl text-center pt-8 font-semibold">
+            What <span class="text-yellow-500 font-bold">We Offer</span>
+        </h2>
+
+        <div class="container mx-auto p-3 md:p-12 flex flex-col md:flex-row items-start">
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2 space-y-6 flex flex-col mt-4 md:mt-8 items-start md:items-start text-left">
+                <div class="space-y-6 md:space-y-16">
+                    <div class="flex items-start">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">01.</span>
+                        <div>
+                            <h3 class="font-semibold">Top 3% Talent</h3>
+                            <p class="text-gray-600 text-sm">AI-enabled screening processes ensure only the best
+                                professionals join your team.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">02.</span>
+                        <div>
+                            <h3 class="font-semibold">Extensive Network</h3>
+                            <p class="text-gray-600 text-sm">A database of over 2 million vetted tech and digital
+                                professionals.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">03.</span>
+                        <div>
+                            <h3 class="font-semibold">Experienced Recruitment Team</h3>
+                            <p class="text-gray-600 text-sm">Over 100 seasoned recruiters adept at meeting diverse
+                                industry needs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">04.</span>
+                        <div>
+                            <h3 class="font-semibold">Global Talent</h3>
+                            <p class="text-gray-600 text-sm">Skilled professionals ready to work across time zones and
+                                adapt to remote work environments.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">05.</span>
+                        <div>
+                            <h3 class="font-semibold">Cross-Cultural Effectiveness</h3>
+                            <p class="text-gray-600 text-sm">Seamless integration of global talent into diverse
+                                organizational cultures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="w-full md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                <img src="./assets/images/business-team-meeting 1.png" alt="Business Meeting"
+                    class="w-full max-w-md rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- why choose  -->
+    <section>
+        <div
+            class="max-w-6xl mx-auto bg-white rounded-3xl shadow-lg p-8 md:p-12 flex flex-col md:flex-row items-center">
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2">
+                <img src="./assets/images/whyChoose.png" alt="Happy Team" class="w-full max-w-md rounded-xl shadow-lg">
+            </div>
+
+            <!-- Right Content -->
+            <div class="w-full md:w-1/2 space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
+                <h2 class="text-2xl md:text-3xl font-semibold">
+                    Why Choose <span class="text-yellow-500 font-bold">stargatez</span>
+                </h2>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
+                        <p class="text-black text-sm">Save up to 40% on hiring costs.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
+                        <p class="text-black text-sm">Onboard top talent within two weeks or less.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
+                        <p class="text-black text-sm">Access niche professionals with specialized skills.</p>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
+                        <p class="text-black text-sm">Integrate global talent with a focus on long-term value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- our process -->
+    <section class=" bg-[#14176C1A] pb-12 md:pb-20">
+        <div class="container mx-auto mt-10 md:mt-16">
+            <h2 class="text-3xl py-5 font-semibold text-center">
+                Our <span class="text-yellow-500">Commitment</span>
+            </h2>
+            <div
+                class="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 container mx-auto mt-6 md:mt-8">
+                <!-- Step 1 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
+                    <span
+                        class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">01</span>
+                    <div class="flex justify-center">
+                        <img src="./assets/images/commitment_icon.png" alt="Data-Driven Decisions" class="w-20 h-20">
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Data-Driven Decisions</h3>
+                    <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                        Take the guesswork out of hiring.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
+                    <span
+                        class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">02</span>
+                    <div class="flex justify-center">
+                        <img src="./assets/images/commitment_icon (1).png" alt="Rapid Onboarding" class="w-20 h-20">
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Rapid Onboarding</h3>
+                    <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                        Secure the right talent quickly and efficiently.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
+                    <span
+                        class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">03</span>
+                    <div class="flex justify-center">
+                        <img src="./assets/images/commitment_icon (2).png" alt="Risk Mitigation" class="w-20 h-20">
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Risk Mitigation</h3>
+                    <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                        Reduce hiring risks with precise vetting processes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header Section -->
+    <section class="container mx-auto">
+        <div
+            class="bg-[#14176C1A] text-[#14176C] p-6 rounded-xl text-center italic text-2xl font-semibold mt-6 md:mt-12 mx-3 md:mx-0">
+            <p>“From staffing to strategic consulting, <span class="font-bold">STARGATEz</span> delivers solutions that
+                align with your goals, ensuring your organization thrives in today’s fast-paced digital landscape.”</p>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="bg-[#000232]  mt-8 md:mt-12">
+        <div class="container mx-auto ">
+            <div class="flex flex-col m-3 md:mx-0 gap-8 lg:flex-row lg:space-x-12 py-6">
+
+                <!-- Text Content -->
+                <div class="lg:w-1/2 mt-10 lg:mt-5 space-y-6 lg:space-y-8">
+                    <h2 class="text-3xl font-semibold text-white">
+                        Our <span class="text-yellow-500 font-bold">Vision</span>
+                    </h2>
+
+                    <p class="text-lg md:text-xl font-medium text-white leading-relaxed">
+                        To be a global leader in workforce solutions and technology-driven innovations, empowering
+                        businesses and individuals to achieve sustainable growth and success.
+                    </p>
+                </div>
+
+                <!-- Image Section -->
+                <div class="lg:w-1/2">
+                    <img src="./assets/images/business-strategy-success-target-goals 1.png"
+                        alt="Professional man holding a cup"
+                        class="w-full h-auto object-cover rounded-lg shadow-md aspect-w-3 aspect-h-2" />
+                </div>
+
+            </div>
+
+            <div class="flex flex-col m-3 md:mx-0 gap-8 lg:flex-row lg:space-x-12 py-6">
+
+                <!-- Image Section -->
+                <div class="lg:w-1/2">
+                    <img src="./assets/images/our mission.png" alt="Professional man holding a cup"
+                        class="w-full h-auto object-cover rounded-lg shadow-md aspect-w-3 aspect-h-2" />
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:w-1/2 mt-10 lg:mt-5 space-y-6 lg:space-y-8">
+                    <h2 class="text-3xl font-semibold text-white">
+                        Our <span class="text-yellow-500 font-bold">Mission</span>
+                    </h2>
+
+                    <p class="text-lg md:text-xl font-medium text-white leading-relaxed">
+                        Our mission is to empower professionals by crafting impactful resumes that unlock doors to
+                        exceptional career
+                        opportunities and drive long-term success.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- apply -->
+    <section>
+        <div class="w-full mt-4 md:mt-12">
+            <!-- Background Image Section -->
+            <div class="relative bg-cover bg-center h-72 flex items-center justify-center px-6"
+                style="background-image: url('./assets/images/apply_img.png');">
+                <div class="absolute inset-0 bg-[#000121CC]"></div> <!-- Dark Overlay -->
+
+                <!-- Content -->
+                <div class="relative text-center text-white max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-semibold">
+                        Apply as a <span class="text-yellow-400 font-bold">Talent</span>
+                    </h2>
+                    <p class="mt-5 text-lg md:text-xl font-medium">
+                        Don’t Miss a Great Opportunity
+                    </p>
+                    <p class="mt-5 text-sm md:text-base text-gray-200">
+                        Wish to keep up to date with the latest job opportunities.
+                    </p>
+
+                    <!-- Button -->
+                    <button
+                        class="mt-6 bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 transition">
+                        APPLY NOW
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Blue Border -->
+            <div class="w-full mt-8 bg-white"></div>
         </div>
 
-        <!-- Form Section -->
-        <div class="bg-[#14176C0D] 2xl:max-w-5xl xl:max-w-4xl md:p-10 mx-auto rounded-lg p-8 mt-6">
-            <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Candidate Name</label>
-                        <input type="text" placeholder="Name of the Candidate as it appears in the Resume"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Candidate Phone Number</label>
-                        <input type="text" placeholder="10 digit Phone Number"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Candidate Email ID</label>
-                        <input type="email" placeholder="Valid Email ID"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Role Applying For</label>
-                        <input type="text" placeholder="Role Mentioned in the Job Description"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                </div>
-                <div>
-                    <label class="block font-medium text-[#14176C]">Skills</label>
-                    <textarea placeholder="Copy and Paste your entire Resume"
-                        class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full h-24"></textarea>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Total Experience (Years)</label>
-                        <input type="text" placeholder="Example: 5 or 5.6 or 5.10"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Relevant Experience (Years)</label>
-                        <input type="text" placeholder="Example: 5 or 5.6 or 5.10"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Current / Last Company</label>
-                        <input type="text" placeholder="Name of the Current / Last Company"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Current / Last CTC (Lakhs)</label>
-                        <input type="text" placeholder="Example: 5 or 5.80 or 5.88"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Expected CTC (Lakhs)</label>
-                        <input type="text" placeholder="Example: 5 or 5.80 or 5.88"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Notice Period (Days)</label>
-                        <input type="text" placeholder="Number of Days"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Current Location</label>
-                        <input type="text" placeholder="City, State"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Comments</label>
-                        <input type="text" placeholder="Anything Noteworthy"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" />
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-6">
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Attach Resume</label>
-                        <label for="coverLetter" id="file_upload_block"
-                            class="w-full flex items-center gap-2 px-4 py-3 mt-1 border border-[#14176C] rounded-md text-center cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:bg-gray-100">
-                            <img class="h-6 w-6" src="./assets/images/upload_svgrepo.com.png" alt="">Choose File To
-                            Upload
-                        </label>
-                        <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" class="hidden">
-
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">&nbsp;</label>
-                        <button
-                            class="md:h-[48px] bg-[#14176C] text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
-                            Submit
-                        </button>
-                        <!-- <input type="button" placeholder="Anything Noteworthy"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" /> -->
-                    </div>
-                </div>
-
-            </form>
-        </div>
     </section>
 
     <!-- footer -->
@@ -419,7 +689,7 @@
             </div>
 
             <div class=" px-4 md:px-8 lg:px-16 mt-8 pt-4 flex flex-wrap justify-between gap-6 text-gray-300 text-sm">
-                <a href="./aboutUs.html" class="hover:text-white">About Us</a>
+                <a href="#" class="hover:text-white">About Us</a>
                 <a href="#" class="hover:text-white">Services</a>
                 <a href="#" class="hover:text-white">Industries</a>
                 <a href="#" class="hover:text-white">CONTACT US</a>
