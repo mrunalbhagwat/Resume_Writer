@@ -17,7 +17,7 @@
 <body class="font-montserrat">
 
     <!-- Header Section -->
-    <header class="relative w-full h-[85vh] lg:h-screen overflow-hidden">
+    <header class="relative w-full h-[85vh] lg:h-screen ">
         <nav id="navbar"
             class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md  md:px-20 px-8">
             <a href="./Resume-Writer.html">
@@ -118,7 +118,7 @@
             <div class="absolute inset-0 bg-[#000000B2]"></div>
             <div class="flex items-center justify-center min-h-screen bg-cover bg-center px-4"
                 style="background-image: url('your-image-url.jpg');">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-white text-center">
+                <div class="grid grid-cols-1 md:grid-cols-3 mt-4 gap-4 md:gap-16 text-white text-center">
                     <!-- First Circle -->
                     <div>
                         <div
@@ -466,35 +466,37 @@
     </section>
 
     <!-- why choose  -->
-    <section>
+    <section class="bg-white py-12">
         <div
-            class="container mx-auto bg-white  p-8 md:p-16 flex flex-col md:flex-row items-center">
+            class="container mx-auto px-6 md:px-12 flex flex-col  xl:flex-row 2xl:flex-col items-center gap-10 xl:gap-16">
             <!-- Left Content -->
-            <div class="w-full md:w-1/2">
-                <img src="./assets/images/whyChoose.png" alt="Happy Team" class="w-full max-w-md rounded-xl shadow-lg">
+            <div class="w-full md:w-1/2 xl:w-full flex justify-center">
+                <img src="./assets/images/whyChoose.png" alt="Happy Team"
+                    class="w-auto max-w-lg rounded-xl shadow-lg object-cover">
             </div>
 
             <!-- Right Content -->
-            <div class="w-full md:w-1/2 space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
-                <h2 class="text-2xl md:text-3xl font-semibold">
+            <div
+                class="w-full md:w-1/2 xl:w-full space-y-6 flex flex-col items-start xl:items-start text-left xl:text-left lg:max-w-3xl">
+                <h2 class="text-3xl md:text-4xl font-semibold leading-tight">
                     Why Choose <span class="text-yellow-500 font-bold">stargatez</span>
                 </h2>
-                <div class="space-y-4">
+                <div class="space-y-5">
                     <div class="flex items-center">
-                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
-                        <p class="text-black text-sm">Save up to 40% on hiring costs.</p>
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-6 h-6 mr-3">
+                        <p class="text-black text-lg">Save up to 40% on hiring costs.</p>
                     </div>
                     <div class="flex items-center">
-                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
-                        <p class="text-black text-sm">Onboard top talent within two weeks or less.</p>
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-6 h-6 mr-3">
+                        <p class="text-black text-lg">Onboard top talent within two weeks or less.</p>
                     </div>
                     <div class="flex items-center">
-                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
-                        <p class="text-black text-sm">Access niche professionals with specialized skills.</p>
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-6 h-6 mr-3">
+                        <p class="text-black text-lg">Access niche professionals with specialized skills.</p>
                     </div>
                     <div class="flex items-center">
-                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-5 h-5 mr-2">
-                        <p class="text-black text-sm">Integrate global talent with a focus on long-term value.</p>
+                        <img src="./assets/images/checkmark.png" alt="Checkmark" class="w-6 h-6 mr-3">
+                        <p class="text-black text-lg">Integrate global talent with a focus on long-term value.</p>
                     </div>
                 </div>
             </div>
@@ -507,8 +509,7 @@
             <h2 class="text-3xl py-5 font-semibold text-center">
                 Our <span class="text-yellow-500">Commitment</span>
             </h2>
-            <div
-                class="grid  grid-cols-1  lg:grid-cols-3  gap-6 container mx-auto mt-6 md:mt-8">
+            <div class="grid  grid-cols-1  lg:grid-cols-3  gap-6 container mx-auto mt-6 md:mt-8">
                 <!-- Step 1 -->
                 <div
                     class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
