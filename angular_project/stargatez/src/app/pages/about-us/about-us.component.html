@@ -1,1 +1,544 @@
-<p>about-us works!</p>
+
+    <app-header [webVideoPath]="videoLink" [phoneVideoPath]="videoLink">
+
+        <div
+            class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-center bg-no-repeat bg-fixed">
+
+            <div class="absolute inset-0 bg-[#00000066]"></div>
+            <div class="flex items-center justify-center min-h-screen bg-cover bg-center px-4"
+                style="background-image: url('your-image-url.jpg');">
+                <div class="grid grid-cols-1 md:grid-cols-3  md:mt-4 gap-4 md:gap-16 text-white text-center">
+                    <!-- First Circle -->
+                    <div>
+                        <div
+                            class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
+                            <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Founded</p>
+                            <p class="text-2xl md:text-3xl mt-4 font-bold text-white drop-shadow-md">2014</p>
+                        </div>
+                        <p class="md:text-lg text-sm mt-2 md:mt-4 text-white drop-shadow-md">Kuala Lumpur, Malaysia</p>
+                    </div>
+
+                    <!-- Second Circle -->
+                    <div>
+                        <div
+                            class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
+                            <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Customers</p>
+                            <p class="text-2xl md:text-3xl font-bold mt-4 text-white drop-shadow-md">100+</p>
+                        </div>
+                    </div>
+
+                    <!-- Third Circle (with Image) -->
+                    <div>
+                        <div
+                            class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
+                            <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Global<br>Footprint</p>
+                            <img src="./assets/images/Globe.png" alt="Globe Icon" class="w-10 h-10 mt-4 drop-shadow-md">
+                        </div>
+                        <p class="md:text-lg text-sm mt-2 md:mt-4 text-white drop-shadow-md">USA | Canada | Malaysia | India</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </app-header>
+    <!-- Timeline Section -->
+    <section>
+        <div class="relative w-full container mx-auto mt-6 md:mt-12 py-10">
+            <div class="absolute left-1/2 top-0 w-1 h-full bg-blue-500 transform -translate-x-1/2"></div>
+
+            <!-- 2014 -->
+            <div class="relative flex items-center mb-16">
+                <div class="w-1/2 flex justify-end pr-10">
+                    <div class="bg-[#2196F31A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-blue-500 text-white text-lg w-full font-medium text-center py-1 inline-block">A &
+                            H ALLIANCE SDN. BHD.</h3>
+                        <img class="absolute mt-6 px-4" src="./assets/images/malaysia 1.png" alt="malaysiaMap">
+                        <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (1).png"
+                            alt="Office" class="w-full h-64 mt-2 rounded-lg">
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">March 11, 2014 incorporated under the Companies
+                            Act 1965
+                            as a Private Limited Company</p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Headquartered in Kuala Lumpur, Malaysia</p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Manpower consultancy, manpower recruitment, and
+                            placement/
+                            pre-departure training & services company supporting the South East Asia & Middle East
+                            market</p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex items-center">
+                    <div class="bg-[#2196F3] text-white text-sm px-8 py-3 rounded-md">2014</div>
+                </div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="relative flex items-center mb-16 flex-row-reverse">
+                <div class="w-1/2 flex justify-start pl-10">
+                    <div class="bg-[#FEF6E5] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3
+                            class="bg-[#F7A400] text-white px-3 inline-block text-lg w-full font-medium text-center py-1">
+                            GLEAFINK</h3>
+                        <div class="flex gap-4">
+                            <div>
+                                <img class="absolute mt-6 px-4" src="./assets/images/united-states-of-america 1.png"
+                                    alt="USA">
+                                <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2.png"
+                                    alt="Building" class=" mt-2 rounded-lg">
+                            </div>
+
+                            <div>
+                                <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
+                                <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
+                                    alt="Building" class=" mt-2 rounded-lg">
+                            </div>
+
+                        </div>
+
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Headquartered in Madison, Wisconsin and Delivery
+                            Center in
+                            Bengaluru, India </p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6"> GLEAFINK is a leading data & advanced analytics
+                            company,
+                            empowering businesses to make data-driven decisions for a smarter future.</p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                    <div class="bg-yellow-500 text-white text-sm px-8 py-3 rounded-md">2019</div>
+                </div>
+            </div>
+
+            <!-- 2021 -->
+            <div class="relative flex items-center mb-16">
+                <div class="w-1/2 flex justify-end pr-10">
+                    <div class="bg-[#F72C5B1A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-[#F72C5B] text-white text-lg w-full font-medium text-center py-1 inline-block">
+                            CAREER
+                            FLUTE</h3>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Career Flute is a Job Portal with a vision to be
+                            the preferred partner in enabling curated talent through an innovative professional
+                            development and hiring platform.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex items-center">
+                    <div class="bg-[#F72C5B] text-white text-sm px-8 py-3 rounded-md">2021</div>
+                </div>
+            </div>
+
+            <!-- 2022 -->
+            <div class="relative flex items-center mb-16 flex-row-reverse">
+                <div class="w-1/2 flex justify-start pl-10">
+                    <div class="bg-[#8900E41A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-[#8900E4] text-white text-lg w-full font-medium text-center py-1 inline-block">A &
+                            H ALLIANCE SDN. BHD.</h3>
+                        <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
+                        <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
+                            alt="Building" class="w-full h-64 mt-2 rounded-lg">
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Registered under the Emigration Act, 1983, for the
+                            recruitment and deployment of Indian workers to foreign employers.</p>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Training & Development Center in Kolkata, India.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="w-1/2 flex justify-end">
+                    <div class="bg-[#8900E4] text-white text-sm px-8 py-3 rounded-md">2014</div>
+                </div>
+            </div>
+
+            <!-- 2021 -->
+            <div class="relative flex items-center mb-16">
+                <div class="w-1/2 flex justify-end pr-10">
+                    <div class="bg-[#F72C5B1A] shadow-lg rounded-lg p-5 max-w-sm">
+                        <h3 class="bg-[#F72C5B] text-white text-lg w-full font-medium text-center py-1 inline-block">
+                            CAREER
+                            FLUTE</h3>
+                        <p class="text-gray-700 text-sm mt-2 md:mt-6">Career Flute is a Job Portal with a vision to be
+                            the preferred partner in enabling curated talent through an innovative professional
+                            development and hiring platform.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-1/2 flex items-center">
+                    <div class="bg-[#F72C5B] text-white text-sm px-8 py-3 rounded-md">2021</div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <!-- about us -->
+    <section class="bg-[#2196F31A]  ">
+        <div class="container mx-auto ">
+            <h2 class="text-3xl font-semibold text-center text-black leading-relaxed mt-8 p-3">
+                About <span class="text-yellow-500 font-bold">Us</span>
+            </h2>
+
+            <div class="flex flex-col m-3 md:mx-0 lg:flex-row gap-12 lg:py-2">
+                <!-- Images Grid -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <img src="./assets/images/team-meeting-modern-office 1.png" alt="Professional woman holding a cup"
+                        class="rounded-lg w-72 h-auto object-cover shadow-md" />
+                </div>
+                <!-- Text Content -->
+                <div class="lg:w-1/2 lg:mt-0 text-black space-y-6">
+                    <p class=" text-sm md:text-base leading-relaxed text-left">
+                        Welcome to A & H ALLIANCE SDN. BHD., where innovation meets excellence. Founded on March 11,
+                        2014, and incorporated under the Companies Act 1965, we are a Private Limited Company based in
+                        Kuala Lumpur, Malaysia. Our journey began with a mission to bridge the gap between talent and
+                        opportunity by offering comprehensive manpower recruitment, placement, and pre-departure
+                        training services. Over the years, we have proudly served multiple industries across South East
+                        Asia and Middle East.
+                    </p>
+                    <p class=" text-sm md:text-base leading-relaxed md:mt-12 text-left">
+                        Today, our expertise extends far beyond recruitment. Through our subsidiaries and partnerships,
+                        we have diversified into cutting-edge technology solutions, workforce empowerment, and strategic
+                        consulting, making us a trusted name across multiple industries.
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- our ventures -->
+    <section class="container mx-auto">
+        <!-- Section Title -->
+        <h2 class="text-center text-3xl mt-8 md:mt-12 font-semibold text-gray-900">
+            Our <span class="text-yellow-500">Ventures</span>
+        </h2>
+
+        <div class="container mx-auto md:px-18">
+            <!-- GLEAFINK -->
+            <div class="flex flex-col md:flex-row items-center md:items-center gap-12">
+                <div class="flex-shrink-0 self-center">
+                    <img src="./assets/images/our_venture1.png" alt="GLEAFINK Logo"
+                        class="w-40 md:w-48 mx-auto mt-8 md:mt-12" />
+                </div>
+                <div class="mx-3 md:mx-0 md:mt-12 text-left">
+                    <p class="text-black leading-relaxed">
+                        At GLEAFINK, we transform the retail industry by turning data into actionable growth. Our
+                        state-of-the-art data products and services empower retailers to make smarter decisions,
+                        optimize efficiency, and drive sustainable success in a highly competitive marketplace.
+                    </p>
+                    <p class="mt-4 text-black leading-relaxed">
+                        Our mission is to revolutionize retail through innovative data solutions, fostering growth, and
+                        enhancing operational excellence. By providing the tools and insights businesses need to thrive
+                        in an ever-evolving environment, GLEAFINK is shaping the future of retail.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CAREER FLUTE -->
+            <div class=" flex flex-col md:flex-row items-center md:items-center gap-12">
+                <div class=" flex-shrink-0 self-center">
+                    <img src="./assets/images/our_venture2.png" alt="Career Flute Logo"
+                        class="w-40 md:w-48 mx-auto mt-8 md:mt-12" />
+                </div>
+                <div class="text-left mx-3 md:mx-0  md:mt-12">
+                    <p class="text-black leading-relaxed">
+                        Career Flute is a Job Portal, an innovative platform for professional development and hiring. A
+                        pioneer in talent upskilling and development, collaborating with leading Ed Tech companies to
+                        address the industry's growing demand for skilled professionals.
+                    </p>
+                    <p class="mt-4 text-black leading-relaxed">
+                        With an extensive database of over 2 million (and growing) tech and digital professionals, we
+                        connect candidates with tailored upskilling, certification, and career advancement programs.
+                    </p>
+
+                    <div class="mt-6 text-black">
+                        <p class="font-semibold">Our dual mission is clear:</p>
+                        <ul class="mt-2 space-y-2 text-black">
+                            <li class="flex items-center gap-2">
+                                <img class="w-5 h-5 " src="./assets/images/blackcheckmark.png" alt="checkmark">
+                                <span>Empower individuals to achieve their career aspirations by offering personalized
+                                    learning opportunities.</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <img class="w-5 h-5" src="./assets/images/blackcheckmark.png" alt="checkmark">
+                                <span>Equip the industry with skilled talent capable of adapting to technological
+                                    advancements.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STARATEZ -->
+            <div class="flex flex-col md:flex-row  items-center md:items-center md:gap-12">
+                <div class="flex-shrink-0 self-center">
+                    <img src="./assets/images/our_venture3.png" alt="Staratez Logo"
+                        class="w-40 md:w-48 mx-auto mt-8 md:mt-6" />
+                </div>
+                <div class="text-left mx-3 md:mx-0">
+                    <p class="text-black mt-6 md:mt-12 leading-relaxed">
+                        <span class="text-yellow-500 font-semibold">staratez</span> is at the forefront of Digital
+                        Transformation, Technology Consulting, and Global Strategic Staffing. We simplify hiring by
+                        connecting top-tier tech and digital talent with organizations worldwide.
+                    </p>
+                    <p class="mt-4 md:mb-8 text-black leading-relaxed">
+                        Our data-driven approach ensures hiring processes are efficient, reliable, and tailored to the
+                        unique demands of each business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- offer -->
+    <section class="relative bg-cover bg-center "
+        style="background-image: url('./assets/images/top-shape.png'), url('./assets/images/bottom-shape.png'); background-position: top right, bottom left; background-repeat: no-repeat;">
+        <h2 class="text-3xl text-center pt-8 font-semibold">
+            What <span class="text-yellow-500 font-bold">We Offer</span>
+        </h2>
+
+        <div class="container mx-auto p-3 md:p-12 flex flex-col md:flex-row items-start justify-between">
+            <!-- Left Content -->
+            <div class="w-full md:w-1/2 space-y-6 flex flex-col mt-4 md:mt-8 items-start md:items-start text-left">
+                <div class="space-y-6 md:space-y-12">
+                    <div class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">01.</span>
+                        <div>
+                            <h3 class="font-semibold text-lg ">Top 3% Talent</h3>
+                            <p class="text-gray-600 text-base">AI-enabled screening processes ensure only the best
+                                professionals join your team.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">02.</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Extensive Network</h3>
+                            <p class="text-gray-600 text-base">A database of over 2 million vetted tech and digital
+                                professionals.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">03.</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Experienced Recruitment Team</h3>
+                            <p class="text-gray-600 text-base">Over 100 seasoned recruiters adept at meeting diverse
+                                industry needs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">04.</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Global Talent</h3>
+                            <p class="text-gray-600 text-base">Skilled professionals ready to work across time zones and
+                                adapt to remote work environments.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2">
+                        <span class="text-yellow-500 font-semibold text-lg mr-3">05.</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">Cross-Cultural Effectiveness</h3>
+                            <p class="text-gray-600 text-base">Seamless integration of global talent into diverse
+                                organizational cultures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class=" mt-8 md:mt-0 flex justify-center">
+                <img src="./assets/images/business-team-meeting 1.png" alt="Business Meeting"
+                    class="w-96 h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- why choose  -->
+    <section class="bg-white py-12">
+    
+
+        <div class="grid md:grid-cols-2 container mx-auto place-items-center mt-10 gap-10">
+            <img src="assets/images/whyChoose.png"
+                alt="Business Transformation" class="h-auto order-2 md:order-1 w-full object-cover rounded-lg shadow-lg">
+            <div class="md:text-left order-1 md:order-2 mb-4">
+                <h3 class="md:text-4xl text-2xl font-semibold mb-5">
+                    Why Choose <span class="text-yellow-500">stargatez</span>
+                </h3>
+
+                <!-- <div class="flex gap-4">
+                    <div>
+                        <a class="inline-flex justify-center whitespace-nowrap rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-200 dark:text-slate-800 bg-gradient-to-r from-slate-800 to-slate-700 dark:from-slate-200 dark:to-slate-100 dark:hover:bg-slate-100 shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] dark:before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]" href="#0">Available For Work</a>
+                    </div>
+                    <div class="dark">
+                        <a class="inline-flex justify-center whitespace-nowrap rounded-lg px-3.5 py-2.5 text-sm font-medium text-slate-200 dark:text-slate-800 bg-gradient-to-r from-slate-800 to-slate-700 dark:from-slate-200 dark:to-slate-100 dark:hover:bg-slate-100 shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.2)_50%,transparent_75%,transparent_100%)] dark:before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]" href="#0">Available For Work</a>
+                    </div>
+                </div> -->
+
+                <ul class="mt-4 space-y-3 text-gray-700 text-lg xl:text-xl">
+                    <li class="flex items-center gap-3">
+                        <img src="./assets/images/checkmark.png" alt="✔" class="w-5 h-5">
+                        Save up to 40% on hiring costs.
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="./assets/images/checkmark.png" alt="✔" class="w-5 h-5">
+                        Onboard top talent within two weeks or less.
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="./assets/images/checkmark.png" alt="✔" class="w-5 h-5">
+                        Access niche professionals with specialized skills.
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="./assets/images/checkmark.png" alt="✔" class="w-5 h-5">
+                        Integrate global talent with a focus on long-term value.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- our commitment -->
+    <section class=" bg-[#14176C1A] pb-12 md:pb-20">
+        <div class="container mx-auto mt-10 md:mt-16">
+            <h2 class="text-3xl py-5 font-semibold text-center">
+                Our <span class="text-yellow-500">Commitment</span>
+            </h2>
+            <div class="grid  grid-cols-1  lg:grid-cols-3  gap-6 container mx-auto mt-6 md:mt-8">
+                <!-- Step 1 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
+                    <span
+                        class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">01</span>
+                    <div class="flex justify-center">
+                        <img src="./assets/images/commitment_icon.png" alt="Data-Driven Decisions" class="w-20 h-20">
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Data-Driven Decisions</h3>
+                    <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                        Take the guesswork out of hiring.
+                    </p>
+                </div>
+                <!-- Step 2 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
+                    <span
+                        class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">02</span>
+                    <div class="flex justify-center">
+                        <img src="./assets/images/commitment_icon (1).png" alt="Rapid Onboarding" class="w-20 h-20">
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Rapid Onboarding</h3>
+                    <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                        Secure the right talent quickly and efficiently.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div
+                    class="bg-white rounded-2xl shadow-md p-6 text-center relative max-w-sm mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
+                    <span
+                        class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">03</span>
+                    <div class="flex justify-center">
+                        <img src="./assets/images/commitment_icon (2).png" alt="Risk Mitigation" class="w-20 h-20">
+                    </div>
+                    <h3 class="mt-4 font-semibold text-lg">Risk Mitigation</h3>
+                    <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                        Reduce hiring risks with precise vetting processes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header Section -->
+    <section class="container mx-auto">
+        <div
+            class="bg-[#14176C1A] text-[#14176C] p-6 rounded-xl text-center italic text-xl font-semibold mt-6 md:mt-12 mx-3 md:mx-0">
+            <p>“From staffing to strategic consulting, <span class="font-bold">STARGATEz</span> delivers solutions that
+                align with your goals, ensuring your organization thrives in today’s fast-paced digital landscape.”</p>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="bg-[#000232]  mt-8 md:mt-12">
+        <div class="container mx-auto p-10">
+            <div class="flex flex-col m-3 md:mx-0 gap-8 lg:flex-row lg:space-x-8 py-6">
+
+                <!-- Text Content -->
+                <div class="lg:w-1/2 mt-10 lg:mt-20 space-y-6 lg:space-y-8">
+                    <h2 class="text-3xl font-semibold text-white">
+                        Our <span class="text-yellow-500 font-bold">Vision</span>
+                    </h2>
+
+                    <p class="text-sm md:text-base font-medium text-white leading-relaxed">
+                        To be a global leader in workforce solutions and technology-driven innovations, empowering
+                        businesses and individuals to achieve sustainable growth and success.
+                    </p>
+                </div>
+
+                <!-- Image Section -->
+                <div class="lg:w-1/2">
+                    <img src="./assets/images/business-strategy-success-target-goals 1.png"
+                        alt="Professional man holding a cup"
+                        class="w-full h-auto object-cover rounded-lg shadow-md aspect-w-3 aspect-h-2" />
+                </div>
+
+            </div>
+
+            <div class="flex flex-col m-3 md:mx-0 gap-8 lg:flex-row lg:space-x-8 py-6">
+
+                <!-- Image Section -->
+                <div class="lg:w-1/2">
+                    <img src="./assets/images/our mission.png" alt="Professional man holding a cup"
+                        class="w-full h-auto object-cover rounded-lg shadow-md aspect-w-3 aspect-h-2" />
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:w-1/2 mt-10 lg:mt-20 space-y-6 lg:space-y-8">
+                    <h2 class="text-3xl font-semibold text-white">
+                        Our <span class="text-yellow-500 font-bold">Mission</span>
+                    </h2>
+
+                    <p class="text-sm md:text-base font-medium text-white leading-relaxed">
+                        Our mission is to empower professionals by crafting impactful resumes that unlock doors to
+                        exceptional career
+                        opportunities and drive long-term success.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- apply -->
+    <section>
+        <div class="w-full mt-4 md:mt-12">
+            <!-- Background Image Section -->
+            <div class="relative bg-cover bg-center h-72 flex items-center justify-center px-6"
+                style="background-image: url('./assets/images/apply_img.png');">
+                <div class="absolute inset-0 bg-[#000121CC]"></div> <!-- Dark Overlay -->
+
+                <!-- Content -->
+                <div class="relative text-center text-white max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-semibold">
+                        Apply as a <span class="text-yellow-400 font-bold">Talent</span>
+                    </h2>
+                    <p class="mt-5 text-lg md:text-xl font-medium">
+                        Don’t Miss a Great Opportunity
+                    </p>
+                    <p class="mt-5 text-sm md:text-base text-gray-200">
+                        Wish to keep up to date with the latest job opportunities.
+                    </p>
+
+                    <!-- Button -->
+                    <button
+                        class="mt-6 bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 transition">
+                        APPLY NOW
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Blue Border -->
+            <div class="w-full mt-8 bg-white"></div>
+        </div>
+
+    </section>  
+
+
+    <app-footer></app-footer>
+

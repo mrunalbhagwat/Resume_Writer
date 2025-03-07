@@ -8,4 +8,5 @@ import { Component, Input, Output } from '@angular/core';
 export class HeaderComponent {
   @Input() phoneVideoPath: any;
   @Input() webVideoPath: any;
+  showMenu: any = false;
 }

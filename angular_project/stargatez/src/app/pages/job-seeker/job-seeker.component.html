@@ -1,7 +1,8 @@
-<app-header>
-    <div class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12  bg-center bg-no-repeat bg-fixed">
+<app-header [webVideoPath]="videoLink" [phoneVideoPath]="videoLink">
+    <div
+        class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12  bg-center bg-no-repeat bg-fixed">
 
-        <div class="absolute inset-0 bg-[#000000B2]"></div>
+        <div class="absolute inset-0 bg-[#00000066]"></div>
 
         <div
             class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start container space-y-6 mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
@@ -15,3 +16,193 @@
 
     </div>
 </app-header>
+
+
+
+<!-- Section -->
+<section class="container mx-auto py-8 md:py-12 grid md:grid-cols-2 gap-12 items-center">
+    <!-- Left Content -->
+    <div class="relative mx-5 md:mx-0">
+        <span class="bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-3 rounded-lg">Earn in Dollars</span>
+        <h1 class="mt-4 text-xl md:text-3xl font-bold leading-snug">
+            Discover <span class="text-yellow-500">high-paying global opportunities</span> tailored to your skills
+            and aspirations.
+        </h1>
+        <img src="./assets/images/holding-world-my-hands-attractive-female-travel-agent-showing-globe-smiling-while-working-her-modern-office 1.png"
+            alt="Global Opportunities" class="w-full rounded-lg shadow-lg mt-8">
+
+    </div>
+    <!-- Right Content -->
+    <div>
+
+        <div class="mt-6 space-y-4 mx-3 md:mx-0">
+            <div class="flex items-start space-x-3">
+                <img src="./assets/images/blackcheckmark.png" alt="icon" class="w-5 h-5 mt-1">
+                <p class="text-gray-700 font-medium">
+                    <strong>Receive Tailored Job Updates :</strong> Stay informed about the best roles that match
+                    your profile.
+                </p>
+            </div>
+            <div class="flex items-start space-x-3">
+                <img src="./assets/images/blackcheckmark.png" alt="icon" class="w-5 h-5 mt-1">
+                <p class="text-gray-700 font-medium ">
+                    <strong>Explore Diverse Opportunities :</strong>
+                </p>
+
+            </div>
+            <div class="space-y-5">
+                <button
+                    class="min-w-full md:min-w-xs bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
+                    <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
+                        Permanent Roles</span>
+                </button>
+                <button
+                    class="min-w-full md:min-w-xs  bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
+                    <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
+                        Contract Roles</span>
+                </button>
+                <button
+                    class="min-w-full md:min-w-xs bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
+                    <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
+                        Remote Roles</span>
+                </button>
+                <button
+                    class="min-w-full md:min-w-xs  bg-[#F7A4001A] text-gray-900 py-2 px-4 rounded-lg flex items-center ">
+                    <img class="px-2" src="./assets/images/arrow-jobpage.png" alt="arrow" class="w-4 h-4"><span>
+                        Freelancing Opportunities</span>
+                </button>
+            </div>
+
+            <div class="grid grid-col-1 md:grid-cols-2 gap-6 mt-8 md:mt-16">
+                <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                    <h3 class=" bg-[#14176C1A] p-3 text-[#14176C] font-semibold">Get Hired and Advance Your Career
+                    </h3>
+                    <p class="text-gray-600 text-sm p-3">Unlock new possibilities with top-tier global employers.
+                    </p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                    <h3 class=" bg-[#14176C1A] p-3 text-[#14176C] font-semibold">Work for<br> Top Companies</h3>
+                    <p class="text-gray-600 text-sm p-3">Collaborate with industry leaders and accelerate your
+                        professional growth.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<!-- Form Section -->
+<section class="container mx-auto">
+    <!-- Header Section -->
+    <div class="bg-[#14176C] text-white p-6 rounded-xl text-center italic text-xl font-semibold mx-3 md:mx-0">
+        <p>“Your dream job is closer than you think. Join <span class="text-yellow-400">stargatez</span> and take
+            the next step in your career journey!”</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="bg-[#14176C0D] 2xl:max-w-5xl xl:max-w-6xl md:p-10 mx-auto rounded-lg p-8 mt-6">
+        <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Name</label>
+                    <input type="text" placeholder="Name of the Candidate as it appears in the Resume"
+                        class="border  placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number</label>
+                    <input type="text" placeholder="10 digit Phone Number"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Email ID</label>
+                    <input type="email" placeholder="Valid Email ID"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Role Applying For</label>
+                    <input type="text" placeholder="Role Mentioned in the Job Description"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Skills</label>
+                <textarea placeholder="Copy and Paste your entire Resume"
+                    class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full h-24"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Experience (Years)</label>
+                    <input type="text" placeholder="Example: 5 or 5.6 or 5.10"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Relevant Experience (Years)</label>
+                    <input type="text" placeholder="Example: 5 or 5.6 or 5.10"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last Company</label>
+                    <input type="text" placeholder="Name of the Current / Last Company"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC (Lakhs)</label>
+                    <input type="text" placeholder="Example: 5 or 5.80 or 5.88"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected CTC (Lakhs)</label>
+                    <input type="text" placeholder="Example: 5 or 5.80 or 5.88"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period (Days)</label>
+                    <input type="text" placeholder="Number of Days"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location</label>
+                    <input type="text" placeholder="City, State"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Comments</label>
+                    <input type="text" placeholder="Anything Noteworthy"
+                        class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-6">
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Attach Resume</label>
+                    <label for="coverLetter" id="file_upload_block"
+                        class="w-full flex items-center gap-2 px-4 py-3 mt-1 border border-[#14176C] rounded-md text-center cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:bg-gray-100 ">
+                        <img class="h-6 w-6" src="./assets/images/upload_svgrepo.com.png" alt="">Choose File To
+                        Upload
+                    </label>
+                    <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" class="hidden ">
+
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">&nbsp;</label>
+                    <button
+                        class="md:h-[48px] bg-primary text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
+                        Submit
+                    </button>
+                    <!-- <input type="button" placeholder="Anything Noteworthy"
+                            class="border placeholder-sm placeholder-[#14176CCC]/60 border-blue-900 p-3 rounded w-full" /> -->
+                </div>
+            </div>
+
+        </form>
+    </div>
+</section>
+<app-footer></app-footer>

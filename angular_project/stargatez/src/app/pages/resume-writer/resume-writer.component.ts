@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './resume-writer.component.scss'
 })
 export class ResumeWriterComponent {
+  videoLink: any = 'assets/videos/resume_writer.mp4';
 
 }

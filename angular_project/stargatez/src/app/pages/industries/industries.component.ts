@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './industries.component.scss'
 })
 export class IndustriesComponent {
+  videoLink: any = 'assets/videos/startups.mp4';
 
 }

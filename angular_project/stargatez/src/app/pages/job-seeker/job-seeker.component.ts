@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './job-seeker.component.scss'
 })
 export class JobSeekerComponent {
-
+  videoLink: any = 'assets/videos/corporate_meetings.mp4';
 }

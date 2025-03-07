@@ -1,1 +1,123 @@
-<p>contact-us works!</p>
+    <app-header [phoneVideoPath]="videoLink" [webVideoPath]="videoLink">
+        <div
+            class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-center bg-no-repeat bg-fixed">
+
+            <div class="absolute inset-0 bg-[#0000008c]"></div>
+            <div
+                class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start container space-y-6 mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
+                <p class="text-sm uppercase lg:text-base">Leading companies worldwide trust us to help them
+                    achieve
+                    their hiring goals</p>
+                <h1 class="text-3xl uppercase lg:text-4xl leading-12 font-semibold">
+                    Empower your <br><span class="text-yellow-400">STARGATEz </span>experience
+                </h1>
+
+            </div>
+
+        </div>
+    </app-header>
+    <!-- map -->
+    <section class="p-6">
+        <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+            <!-- United States -->
+            <div
+                class="flex flex-col md:flex-row space-x-0 md:space-x-4 transition-all duration-300 hover:-translate-y-1 bg-white shadow-lg p-4 rounded-lg items-center md:items-start">
+                <img src="assets/images/office_1.png" alt="Wisconsin"
+                    class="w-64 h-64 rounded-lg object-cover">
+                <div class="mt-4 md:mt-0 text-center md:text-left">
+                    <img src="./assets/images/united-states-of-america 1.png" alt="USA Flag"
+                        class="w-10 mx-auto md:mx-0">
+                    <h2 class="text-lg mt-2 font-bold text-indigo-900">UNITED STATES</h2>
+                    <h3 class="text-md font-semibold text-gray-700">Wisconsin</h3>
+                    <div class="flex mt-2 items-start space-x-2 text-sm text-gray-600">
+                        <img src="./assets/images/Vector.png" alt="Location" class="w-6 h-6">
+                        <p>234 Randolph Dr, Apt 203d,<br>Madison, WI 53717<br>Wisconsin, USA.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Malaysia -->
+            <div
+                class="flex flex-col md:flex-row space-x-0 md:space-x-4 transition-all duration-300 hover:-translate-y-1 bg-white shadow-lg p-4 rounded-lg items-center md:items-start">
+                <img src="assets/images/office_2.png"
+                    alt="Kuala Lumpur" class="w-64 h-64 rounded-lg object-cover">
+                <div class="mt-4 md:mt-0 text-center md:text-left">
+                    <img src="./assets/images/malaysia 1.png" alt="Malaysia Flag" class="w-10 mx-auto md:mx-0">
+                    <h2 class="text-lg mt-2 font-bold text-indigo-900">MALAYSIA</h2>
+                    <h3 class="text-md font-semibold text-gray-700">Kuala Lumpur</h3>
+                    <div class="flex mt-2 items-start space-x-2 text-sm text-gray-600">
+                        <img src="./assets/images/Vector.png" alt="Location" class="w-6 h-6">
+                        <p>B6-9, Taman Serdang<br>Perdana Jalan Serdang<br>Perdana 43300,<br>Serikembangan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- India - Kolkata -->
+            <div
+                class="flex flex-col md:flex-row space-x-0 md:space-x-4 transition-all duration-300 hover:-translate-y-1 bg-white shadow-lg p-4 rounded-lg items-center md:items-start">
+                <img src="assets/images/office_3.png" alt="Kolkata"
+                    class="w-64 h-64 rounded-lg object-cover">
+                <div class="mt-4 md:mt-0 text-center md:text-left">
+                    <img src="./assets/images/world 1.png" alt="India Flag" class="w-10 mx-auto md:mx-0">
+                    <h2 class="text-lg mt-2 font-bold text-indigo-900">INDIA</h2>
+                    <h3 class="text-md font-semibold text-gray-700">Kolkata</h3>
+                    <div class="flex mt-2 items-start space-x-2 text-sm text-gray-600">
+                        <img src="./assets/images/Vector.png" alt="Location" class="w-6 h-6">
+                        <p>25/5, Nadia - 741404, West Bengal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- India - Bengaluru -->
+            <div
+                class="flex flex-col md:flex-row space-x-0 md:space-x-4 transition-all duration-300 hover:-translate-y-1 bg-white shadow-lg p-4 rounded-lg items-center md:items-start">
+                <img src="assets/images/office_4.png"
+                    alt="Bengaluru" class="w-64 h-64 rounded-lg object-cover">
+                <div class="mt-4 md:mt-0 text-center md:text-left">
+                    <img src="./assets/images/world 1.png" alt="India Flag" class="w-10 mx-auto md:mx-0">
+                    <h2 class="text-lg mt-2 font-bold text-indigo-900">INDIA</h2>
+                    <h3 class="text-md font-semibold text-gray-700">Bengaluru</h3>
+                    <div class="flex mt-2 items-start space-x-2 text-sm text-gray-600">
+                        <img src="./assets/images/Vector.png" alt="Location" class="w-6 h-6">
+                        <p>New No 16, Asherkhanna<br>Street, Kamaraj Road,<br>Bengaluru 560042.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- apply -->
+    <section>
+        <div class="w-full mt-4">
+            <!-- Background Image Section -->
+            <div class="relative bg-cover bg-center h-72 flex items-center justify-center px-6"
+                style="background-image: url('./assets/images/apply_img.png');">
+                <div class="absolute inset-0 bg-[#000121CC]"></div> <!-- Dark Overlay -->
+
+                <!-- Content -->
+                <div class="relative text-center text-white max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-semibold">
+                        Apply as a <span class="text-yellow-400 font-bold">Talent</span>
+                    </h2>
+                    <p class="mt-5 text-lg md:text-xl font-medium">
+                        Don’t Miss a Great Opportunity
+                    </p>
+                    <p class="mt-5 text-sm md:text-base text-gray-200">
+                        Wish to keep up to date with the latest job opportunities.
+                    </p>
+
+                    <!-- Button -->
+                    <button
+                        class="mt-6 bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 transition">
+                        APPLY NOW
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Blue Border -->
+            <div class="w-full mt-8 bg-white"></div>
+        </div>
+
+    </section>
+
+    <app-footer></app-footer>
