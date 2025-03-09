@@ -1,40 +1,40 @@
+<!-- Hero Section -->
+<header class="bg-[#000000] relative w-full h-[90vh] lg:h-screen overflow-hidden">
+    <nav id="navbar"
+        class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md md:px-20 px-8">
+        <a routerLink="/">
+            <img class="md:h-8 h-6 relative z-20" src="assets/images/logo.png" alt="logo">
+        </a>
 
-    <!-- Hero Section -->
-    <header class="relative w-full h-[90vh] lg:h-screen overflow-hidden">
-        <nav id="navbar"
-            class="fixed w-full p-5 transition-all duration-300 z-50 flex items-center justify-between bg-black/40 backdrop-blur-md md:px-20 px-8">
-            <a routerLink="/">
-                <img class="md:h-8 h-6 relative z-20" src="assets/images/logo.png" alt="logo">
-            </a>
+        <button (click)="showMenu = !showMenu" class="lg:hidden" id="menu-toggle">
 
-            <button (click)="showMenu = !showMenu" class="lg:hidden" id="menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"
+                class="size-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="white" class="size-7">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
+        </button>
+        <!-- menu -->
+        <ul id="menu"
+            class="lg:flex items-center gap-8 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
 
-            </button>
-            <!-- menu -->
-            <ul id="menu"
-                class="lg:flex items-center gap-8 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#CDCCCD] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg hidden">
+            <li class="relative group" id="manufacturing">
 
-                <li class="relative group" id="manufacturing">
-                    
-                    <div  routerLinkActive="text-yellow-500" routerLink="/resume-writer" class="text-white nav-link cursor-pointer">Resume Writer</div>
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="products">
-                    <div  routerLinkActive="text-yellow-500" routerLink="/about-us" class="block text-white  md:py-3 nav-link cursor-pointer">About Us</div>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
+                <div routerLinkActive="text-yellow-500" routerLink="/resume-writer"
+                    class="text-white nav-link cursor-pointer">Resume Writer</div>
+                <span
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="products">
+                <div routerLinkActive="text-yellow-500" routerLink="/about-us"
+                    class="block text-white  md:py-3 nav-link cursor-pointer">About Us</div>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
 
-                </li>
-                <!-- <li class="relative group menu" id="services">
+            </li>
+            <!-- <li class="relative group menu" id="services">
                     <a href="#" class="block text-white   md:py-3">Services</a>
                     <span
                         class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
@@ -55,125 +55,129 @@
                             Service 3</a>
                     </div>
                 </li> -->
-                <li class="relative group menu" id="explore-active">
-                    <div  routerLinkActive="text-yellow-500" routerLink="/industries" class="block text-white  md:py-3 cursor-pointer">Industries</div>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <div  routerLinkActive="text-yellow-500" routerLink="/contact-us" class="block text-white cursor-pointer md:py-3">Contact Us</div>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a routerLink="/partner-portal" routerLinkActive="text-yellow-500" class="block text-white  md:py-3">Partner</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>  
-                <li class="relative group menu" id="explore-active">
-                    <a routerLink="/strategic-staffing" routerLinkActive="text-yellow-500" class="block text-white  md:py-3">Strategic Staffing</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a  routerLinkActive="text-yellow-500" routerLink="/job-seeker" class="block text-white  md:py-3">Job Seekers</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
+            <li class="relative group menu" id="explore-active">
+                <div routerLinkActive="text-yellow-500" routerLink="/industries"
+                    class="block text-white  md:py-3 cursor-pointer">Industries</div>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <div routerLinkActive="text-yellow-500" routerLink="/contact-us"
+                    class="block text-white cursor-pointer md:py-3">Contact Us</div>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a routerLink="/partner-portal" routerLinkActive="text-yellow-500"
+                    class="block text-white  md:py-3">Partner</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a routerLink="/strategic-staffing" routerLinkActive="text-yellow-500"
+                    class="block text-white  md:py-3">Strategic Staffing</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a routerLinkActive="text-yellow-500" routerLink="/job-seeker" class="block text-white  md:py-3">Job
+                    Seekers</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
 
 
 
-            </ul>  
-            
-            <ul id="menu" *ngIf="showMenu"
-                class="items-center gap-8 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50  2xl:text-lg font-normal bg-[#000000e4] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg lg:hidden m-4">
+        </ul>
 
-                <li class="relative group" id="manufacturing">
-                    
-                    <div  routerLinkActive="text-yellow-500" routerLink="/resume-writer" class="text-white nav-link cursor-pointer">Resume Writer</div>
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="products">
-                    <div  routerLinkActive="text-yellow-500" routerLink="/about-us" class="block text-white  md:py-3 nav-link cursor-pointer">About Us</div>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
+        <ul id="menu" 
+        class="{{showMenu ? 'opacity-100 scale-100' : ''}} items-center gap-8 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center 
+               top-full py-8 lg:py-0 z-50 2xl:text-lg font-normal bg-[#000000e4] lg:bg-transparent space-y-3 
+               lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg lg:hidden m-4 
+               transition-all duration-400 ease-in-out transform scale-95 opacity-0">
+    
+            <li class="relative group" id="manufacturing">
 
-                </li>
-                <!-- <li class="relative group menu" id="services">
-                    <a href="#" class="block text-white   md:py-3">Services</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                    <div
-                        class="absolute left-0 z-10 hidden w-56 py-2 overflow-hidden text-xs bg-gray-200 border border-gray-200 rounded-md shadow-md md:text-sm 2xl:text-base md:w-80 md:py-4 group-hover:block">
-                        <a href="#"
-                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase procurement-project-management">
+                <div routerLinkActive="text-yellow-500" routerLink="/resume-writer"
+                    class="text-white nav-link cursor-pointer">Resume Writer</div>
+                <span
+                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="products">
+                <div routerLinkActive="text-yellow-500" routerLink="/about-us"
+                    class="block text-white  md:py-3 nav-link cursor-pointer">About Us</div>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
 
-                            Service 1</a>
-                        <a href="#"
-                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase lv-installation">
-                            Service 2</a>
-
-                        <a href="#"
-                            class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase training">
-                            
-                            Service 3</a>
-                    </div>
-                </li> -->
-                <li class="relative group menu" id="explore-active">
-                    <div  routerLinkActive="text-yellow-500" routerLink="/industries" class="block text-white  md:py-3 cursor-pointer">Industries</div>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <div  routerLinkActive="text-yellow-500" routerLink="/contact-us" class="block text-white cursor-pointer md:py-3">Contact Us</div>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a routerLink="/partner-portal" routerLinkActive="text-yellow-500" class="block text-white  md:py-3">Partner</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>  
-                <li class="relative group menu" id="explore-active">
-                    <a routerLink="/strategic-staffing" routerLinkActive="text-yellow-500" class="block text-white  md:py-3">Strategic Staffing</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
-                <li class="relative group menu" id="explore-active">
-                    <a  routerLinkActive="text-yellow-500" routerLink="/job-seeker" class="block text-white  md:py-3">Job Seekers</a>
-                    <span
-                        class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
-                    </span>
-                </li>
+            </li>
+           
+            <li class="relative group menu" id="explore-active">
+                <div routerLinkActive="text-yellow-500" routerLink="/industries"
+                    class="block text-white  md:py-3 cursor-pointer">Industries</div>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <div routerLinkActive="text-yellow-500" routerLink="/contact-us"
+                    class="block text-white cursor-pointer md:py-3">Contact Us</div>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a routerLink="/partner-portal" routerLinkActive="text-yellow-500"
+                    class="block text-white  md:py-3">Partner</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a routerLink="/strategic-staffing" routerLinkActive="text-yellow-500"
+                    class="block text-white  md:py-3">Strategic Staffing</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
+            <li class="relative group menu" id="explore-active">
+                <a routerLinkActive="text-yellow-500" routerLink="/job-seeker" class="block text-white  md:py-3">Job
+                    Seekers</a>
+                <span
+                    class="absolute md:bottom-2 bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-1/2 active-nav-link cursor-pointer">
+                </span>
+            </li>
 
 
 
-            </ul>
+        </ul>
 
-        </nav>
+    </nav>
 
-        <video autoplay="" muted="" loop="" class="absolute inset-0 object-cover w-full h-full hidden md:block">
+    <figure>
+        <video loading="lazy" id="webVideoPath" autoplay muted loop playsinline preload="auto"
+            class="absolute inset-0 w-full h-full object-cover hidden md:block"  [src]="webVideoPath">
             <source [src]="webVideoPath" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video autoplay="" muted="" loop="" class="absolute inset-0 object-cover w-full h-screen md:hidden">
+    </figure>
+
+    
+
+    <figure>
+        <video loading="lazy" id="phoneVideoPath" autoplay muted loop playsinline preload="auto"
+            class="absolute inset-0 w-full h-full object-cover md:hidden"  [src]="phoneVideoPath">
             <source [src]="phoneVideoPath" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+    </figure>
 
-       <ng-content></ng-content>
+    <ng-content></ng-content>
 
-    </header>
+</header>
