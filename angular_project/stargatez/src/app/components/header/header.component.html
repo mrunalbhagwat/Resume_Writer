@@ -161,7 +161,7 @@
     </nav>
 
     <figure>
-        <video loading="lazy" id="webVideoPath" autoplay muted loop playsinline preload="auto"
+        <video #webVideo loading="lazy" id="webVideoPath" autoplay muted loop playsinline preload="auto"
             class="absolute inset-0 w-full h-full object-cover hidden md:block"  [src]="webVideoPath">
             <source [src]="webVideoPath" type="video/mp4">
             Your browser does not support the video tag.
@@ -171,7 +171,7 @@
     
 
     <figure>
-        <video loading="lazy" id="phoneVideoPath" autoplay muted loop playsinline preload="auto"
+        <video #phoneVideo loading="lazy" id="phoneVideoPath" autoplay muted loop playsinline preload="auto"
             class="absolute inset-0 w-full h-full object-cover md:hidden"  [src]="phoneVideoPath">
             <source [src]="phoneVideoPath" type="video/mp4">
             Your browser does not support the video tag.

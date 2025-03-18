@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject, Input, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-header',
@@ -10,8 +10,32 @@ export class HeaderComponent implements AfterViewInit {
   @Input() webVideoPath: any;
   showMenu: any = false;
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
+  @ViewChild('phoneVideo', { static: false }) phoneVideoElement!: ElementRef<HTMLVideoElement>;
+  @ViewChild('webVideo', { static: false }) webVideoElement!: ElementRef<HTMLVideoElement>;
 
   ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {  
+      const phoneVideo = this.phoneVideoElement.nativeElement;
+      const webVideo = this.webVideoElement.nativeElement;
+      phoneVideo.muted = true;
+      webVideo.muted = true;
+
+      // Listen for mousemove event
+      window.addEventListener('mousemove', () => this.explicitPlayVideo(phoneVideo));
+      window.addEventListener('mousemove', () => this.explicitPlayVideo(webVideo));
+
+    }
+
+    this.playVideo();
+  }
+
+  explicitPlayVideo(video: HTMLVideoElement) {
+    if (video.paused) {
+      video.play().catch(err => console.log('Autoplay prevented:', err));
+    }
+  }
+
+  playVideo() {
 
     if (isPlatformBrowser(this.platformId)) {  
       // ✅ Ensures it's running in the browser
