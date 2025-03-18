@@ -13,6 +13,8 @@ import { PartnerPortalComponent } from './pages/partner-portal/partner-portal.co
 import { StrategicStaffingComponent } from './pages/strategic-staffing/strategic-staffing.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CareerFluteComponent } from './pages/career-flute/career-flute.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { FooterComponent } from './components/footer/footer.component';
     PartnerPortalComponent,
     StrategicStaffingComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CareerFluteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
