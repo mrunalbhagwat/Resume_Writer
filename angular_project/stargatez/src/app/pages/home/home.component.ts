@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  constructor(private route: ActivatedRoute) {}
+  
   videoLink: any = 'assets/videos/hom_vid.mp4';
 
   cards: any = [
@@ -26,4 +29,12 @@ export class HomeComponent {
       imagePath: '/assets/icons/global_icon.png'
     }
   ]
+  ngOnInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
 }

@@ -54,14 +54,14 @@
                     class="flex flex-col items-center justify-center cursor-pointer mb-0 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition duration-300 hover:border-blue-500">
 
                     <!-- Upload Icon -->
-                    <img src="assets/images/Featured icon.svg" alt="Upload Icon">
+                    <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
 
                     <!-- Upload Text -->
                     <div class="mt-2 flex items-center text-center">
-                        <div class="text-sm font-semibold text-gray-700">
+                        <div class="text-sm font-semibold text-[#14176C]">
                             Click to upload CV / Resume <span class="text-gray-500">or drag and drop</span>
                         </div>
-                        
+
                     </div>
 
                     <!-- Hidden File Input -->
@@ -74,28 +74,29 @@
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Name</label>
                     <input type="text" placeholder="Name of the Candidate as it appears in the Resume"
-                        class="border  placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                        class="border  placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs  border-blue-900 p-3 rounded w-full" />
                 </div>
+
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location</label>
 
                     <div class="relative">
-                        <!-- Select Dropdown with Integrated Styling -->
+                        <!-- Select Dropdown with Dynamic Styling -->
                         <select id="location" required
-                            class="border placeholder-sm placeholder-[#14176CCC]/60 truncate placeholder:text-xs border-blue-900 p-3 rounded w-full outline-none ">
-                            <option selected disabled>Enter your location</option>
-                            <option>New York</option>
-                            <option>Los Angeles</option>
-                            <option>Chicago</option>
-                            <option>Houston</option>
-                            <option>Phoenix</option>
+                            class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-base">
+                            <option value="" disabled selected hidden>Enter your location</option>
+                            <option class="text-black text-sm">New York</option>
+                            <option class="text-black text-sm">Los Angeles</option>
+                            <option class="text-black text-sm">Chicago</option>
+                            <option class="text-black text-sm">Houston</option>
+                            <option class="text-black text-sm">Phoenix</option>
                         </select>
                     </div>
                 </div>
 
+
                 <div class="mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number <span
-                            class="text-red-600">*</span></label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number</label>
 
                     <div class="relative flex items-center border border-blue-900 rounded w-full">
                         <!-- Country Flag Dropdown -->
@@ -111,9 +112,6 @@
                         <input type="tel" placeholder="07410 10123" maxlength="10" required
                             class="placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs p-2 w-full outline-none">
                     </div>
-
-                    <!-- Error Message (only visible when input is empty) -->
-                    <small class="text-red-600 hidden peer-invalid:block">Phone number is required</small>
                 </div>
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Email ID</label>
@@ -137,7 +135,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">
-                        Confirm Password <span class="text-red-500">*</span>
+                        Confirm Password
                     </label>
                     <div class="relative">
                         <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" id="password"
@@ -159,24 +157,25 @@
                     <input type="text" placeholder="Enter your Designation"
                         class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
+
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period</label>
 
                     <div class="relative">
-                        <!-- Input Field -->
-                        <!-- Select Dropdown -->
-                        <select id="notice-period-select"
-                            class="border border-blue-900 p-3 rounded w-full outline-none">
-                            <option selected disabled >Select notice period</option>
-                            <option>Immediate Joining</option>
-                            <option>7 days</option>
-                            <option>15 days</option>
-                            <option>30 days</option>
-                            <option>60 days</option>
-                            <option>90 days</option>
+                        <!-- Select Dropdown with Dynamic Styling -->
+                        <select id="notice" required
+                            class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-base">
+                            <option value="" disabled selected hidden>Enter your notice period</option>
+                            <option class="text-black text-sm">Immediate Joining</option>
+                            <option class="text-black text-sm">7 days</option>
+                            <option class="text-black text-sm">15 days</option>
+                            <option class="text-black text-sm">30 days</option>
+                            <option class="text-black text-sm">60 days</option>
+                            <option class="text-black text-sm">90 days</option>
                         </select>
                     </div>
                 </div>
+
 
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Highest Qualification</label>
@@ -191,43 +190,53 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="mb-3">
                         <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Year</label>
-                        <select required
-                            class="border border-blue-900 p-3 rounded w-full outline-none focus:ring-blue-500 focus:border-blue-500 text-sm text-black">
-                            <option selected disabled>0 Year</option>
-                            <option>1 Year</option>
-                            <option>2 Years</option>
-                            <option>3 Years</option>
-                            <option>4 Years</option>
-                            <option>5+ Years</option>
-                        </select>
+
+                        <div class="relative">
+                            <!-- Select Dropdown with Dynamic Styling -->
+                            <select id="location" required
+                                class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-base">
+                                <option value="" disabled selected hidden>0 Year</option>
+                                <option class="text-black text-sm">Fresher</option>
+                                <option class="text-black text-sm">1 Year</option>
+                                <option class="text-black text-sm">2 Year</option>
+                                <option class="text-black text-sm">3 Year</option>
+                                <option class="text-black text-sm">4 Year</option>
+                                <option class="text-black text-sm">5+ Year</option>
+                            </select>
+                        </div>
                     </div>
-                    
+
                     <div class="mb-3">
-                        <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Months</label>
-                        <select required
-                            class="border border-blue-900 p-3 rounded w-full outline-none focus:ring-blue-500 focus:border-blue-500 text-sm text-black">
-                            <option selected disabled>0 Month</option>
-                            <option>1 Month</option>
-                            <option>2 Months</option>
-                            <option>3 Months</option>
-                            <option>4 Months</option>
-                            <option>5 Months</option>
-                            <option>6 Months</option>
-                            <option>7 Months</option>
-                            <option>8 Months</option>
-                            <option>9 Months</option>
-                            <option>10 Months</option>
-                            <option>11 Months</option>
-                        </select>
+                        <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Month</label>
+
+                        <div class="relative">
+                            <!-- Select Dropdown with Dynamic Styling -->
+                            <select id="month" required
+                                class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-base">
+                                <option value="" disabled selected hidden>0 month</option>
+                                <option class="text-black text-sm">Fresher</option>
+                                <option class="text-black text-sm">1 month</option>
+                                <option class="text-black text-sm">2 month</option>
+                                <option class="text-black text-sm">3 month</option>
+                                <option class="text-black text-sm">4 month</option>
+                                <option class="text-black text-sm">5 month</option>
+                                <option class="text-black text-sm">6 month</option>
+                                <option class="text-black text-sm">7 month</option>
+                                <option class="text-black text-sm">8 month</option>
+                                <option class="text-black text-sm">9 month</option>
+                                <option class="text-black text-sm">10 month</option>
+                                <option class="text-black text-sm">11 month</option>
+                            </select>
+                        </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Salary</label>
                     <div class="flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
-                        <select class="bg-white outline-none text-gray-700 pr-3">
+                        <select class=" outline-none text-gray-700 pr-3">
                             <option>₹ (INR)</option>
                             <option>$ (USD)</option>
                             <option>€ (EUR)</option>
@@ -242,7 +251,7 @@
                             <option>NZD</option>
                         </select>
                         <!-- Salary Input (Middle) -->
-                        <input type="text" placeholder="Enter your current salary" required
+                        <input type="number" placeholder="Enter your current salary" required
                             class="w-full px-2 py-2 outline-none placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->
                         <select class="bg-transparent test-sm outline-none text-gray-700 pl-3">
@@ -259,7 +268,7 @@
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected Salary</label>
                     <div class="flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
-                        <select class="bg-white outline-none text-gray-700 pr-3">
+                        <select class="outline-none text-gray-700 pr-3">
                             <option>₹ (INR)</option>
                             <option>$ (USD)</option>
                             <option>€ (EUR)</option>
@@ -274,7 +283,7 @@
                             <option>NZD</option>
                         </select>
                         <!-- Salary Input (Middle) -->
-                        <input type="text" placeholder="Enter your expected salary" required
+                        <input type="number" placeholder="Enter your expected salary" required
                             class="w-full px-2 py-2 outline-none placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->
                         <select class="bg-transparent test-sm outline-none text-gray-700 pl-3">
@@ -291,53 +300,60 @@
 
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Key Skills</label>
+
                     <div class="relative">
-                        <select required class="border placeholder-sm placeholder-[#14176CCC]/60 truncate placeholder:text-xs border-blue-900 p-3 rounded w-full outline-none focus:ring-blue-500 focus:border-blue-500">
-                            <option selected disabled>Enter your key skills</option>
-                            <option>JavaScript</option>
-                            <option>React</option>
-                            <option>Node.js</option>
-                            <option>Python</option>
-                            <option>Java</option>
-                            <option>C++</option>
-                            <option>SQL</option>
-                            <option>Machine Learning</option>
+                        <!-- Select Dropdown with Dynamic Styling -->
+                        <select id="location" required
+                            class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-base">
+                            <option value="" disabled selected hidden>Enter your skills</option>
+                            <option class="text-black text-sm">JavaScript</option>
+                            <option class="text-black text-sm">React</option>
+                            <option class="text-black text-sm">Node.js</option>
+                            <option class="text-black text-sm">Python</option>
+                            <option class="text-black text-sm">Java</option>
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Industry</label>
+
                     <div class="relative">
-                        <select required class="border placeholder-sm placeholder-[#14176CCC]/60 truncate placeholder:text-xs border-blue-900 p-3 rounded w-full outline-none focus:ring-blue-500 focus:border-blue-500">
-                            <option selected disabled>Enter industry</option>
-                            <option>IT & Software</option>
-                            <option>Finance</option>
-                            <option>Healthcare</option>
-                            <option>Education</option>
-                            <option>Manufacturing</option>
-                            <option>Marketing</option>
-                            <option>Consulting</option>
+                        <!-- Select Dropdown with Dynamic Styling -->
+                        <select id="industry" required
+                            class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-base">
+                            <option value="" disabled selected hidden>Enter your industry</option>
+                            <option class="text-black text-sm">IT & Software</option>
+                            <option class="text-black text-sm">Finance</option>
+                            <option class="text-black text-sm">Healthcare</option>
+                            <option class="text-black text-sm">Education</option>
+                            <option class="text-black text-sm">Manufacturing</option>
+                            <option class="text-black text-sm">Marketing</option>
+                            <option class="text-black text-sm">Consulting</option>
+
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Preferred Location</label>
+
                     <div class="relative">
-                        <select required class="border placeholder-sm placeholder-[#14176CCC]/60 truncate placeholder:text-xs border-blue-900 p-3 rounded w-full outline-none focus:ring-blue-500 focus:border-blue-500">
-                            <option selected disabled>Enter your preferred location</option>
-                            <option>New York</option>
-                            <option>Los Angeles</option>
-                            <option>Chicago</option>
-                            <option>Houston</option>
-                            <option>Phoenix</option>
-                            <option>San Francisco</option>
-                            <option>Seattle</option>
+                        <!-- Select Dropdown with Dynamic Styling -->
+                        <select id="preferredLocation" required
+                            class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-base">
+                            <option value="" disabled selected hidden>Enter your preferred location</option>
+                            <option class="text-black text-sm">New York</option>
+                            <option class="text-black text-sm">Los Angeles</option>
+                            <option class="text-black text-sm">Chicago</option>
+                            <option class="text-black text-sm">Houston</option>
+                            <option class="text-black text-sm">Phoenix</option>
+                            <option class="text-black text-sm">San Francisco</option>
+                            <option class="text-black text-sm">Seattle</option>
                         </select>
                     </div>
                 </div>
-                
+
 
             </div>
 
