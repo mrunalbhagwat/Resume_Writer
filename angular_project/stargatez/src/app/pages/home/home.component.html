@@ -239,15 +239,15 @@
         Strategic <span class="text-yellow-500">Staffing</span>
     </h2>
 
-    <div class="flex flex-wrap justify-center gap-12 px-4 py-8 md:py-12">
+    <div class="flex flex-wrap justify-center gap-6 px-4 py-8 ">
         <ng-container *ngFor="let card of cards">
-            <div class="flex justify-center flex-cols-1 md:flex-rows-3">
-                <div class="group relative w-72 h-80 rounded-lg bg-white gradient-button shadow-lg overflow-hidden cursor-pointer"
+            <div class="flex flex-wrap justify-center px-4 py-8">
+                <div class="group relative w-80 h-80 rounded-lg bg-white gradient-button shadow-lg overflow-hidden cursor-pointer border border-black"
                     (mouseenter)="restartTyping(card)">
                     <!-- Front Side -->
-                    <div class="p-6 h-full flex flex-col items-center justify-center">
+                    <div class=" h-full flex flex-col items-center justify-center">
                         <img class="w-[35%]" [src]="card.imagePath" alt="Image">
-                        <h3 class="mt-4 text-xl font-bold text-gray-800">{{ card.name }}</h3>
+                        <h3 class="mt-8 text-lg font-medium text-gray-800">{{ card.name }}</h3>
                     </div>
 
                     <!-- Back Side (Visible on Hover) -->

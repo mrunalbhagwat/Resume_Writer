@@ -25,7 +25,7 @@ export class CareerFluteComponent {
   // Handle file selection from input
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
-    
+
     if (input.files && input.files.length > 0) {
       this.fileName = input.files[0].name;
       input.value = ''; // Reset input so the same file can be reselected
