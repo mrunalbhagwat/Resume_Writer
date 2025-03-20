@@ -57,15 +57,23 @@
                     <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
 
                     <!-- Upload Text -->
-                    <div class="mt-2 flex items-center text-center">
-                        <div class="text-sm font-semibold text-[#14176C]">
+                    <div class="mt-2 flex flex-col items-center justify-center p-6  rounded-lg cursor-pointer transition"
+                        (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)"
+                        (click)="fileInput.click()" [ngClass]="{ 'border-blue-500 bg-blue-50': isDragging }">
+
+                        <div class="text-sm font-semibold text-[#14176C] text-center">
                             Click to upload CV / Resume <span class="text-gray-500">or drag and drop</span>
                         </div>
 
+                        <input type="file" #fileInput id="upload-my-cv" class="hidden"
+                            (change)="onFileSelected($event)">
+
+                        <!-- Show file name -->
+                        <p *ngIf="fileName" class="mt-2 text-sm text-gray-700">
+                            Uploaded: <span class="font-medium">{{ fileName }}</span>
+                        </p>
                     </div>
 
-                    <!-- Hidden File Input -->
-                    <input type="file" id="upload-my-cv" class="hidden">
                 </label>
 
             </div>
@@ -127,7 +135,7 @@
                         <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" id="password"
                             [ngModelOptions]="{standalone: true}" placeholder="********" autocomplete="new-password"
                             maxlength="12" required
-                            class="w-full px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3" />
+                            class="w-full px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3" />
                         <span class="absolute inset-y-0 right-3 flex items-center text-gray-500 cursor-pointer">
                             <i (click)="togglePassword()" class="fa {{ showPassword ? 'fa-eye' : 'fa-eye-slash' }}"></i>
                         </span>
@@ -138,15 +146,20 @@
                         Confirm Password
                     </label>
                     <div class="relative">
-                        <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" id="password"
+                        <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="confirmPassword" id="confirmPassword"
                             [ngModelOptions]="{standalone: true}" placeholder="********" autocomplete="new-password"
                             maxlength="12" required
-                            class="w-full px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 " />
+                            class="w-full px-4 py-3 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3" />
                         <span class="absolute inset-y-0 right-3 flex items-center text-gray-500 cursor-pointer">
                             <i (click)="togglePassword()" class="fa {{ showPassword ? 'fa-eye' : 'fa-eye-slash' }}"></i>
                         </span>
                     </div>
+                    <!-- Password Mismatch Error Message -->
+                    <p *ngIf="password && confirmPassword && password !== confirmPassword" class="text-red-500 text-xs mt-1">
+                        Passwords do not match.
+                    </p>
                 </div>
+                
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Company</label>
                     <input type="text" placeholder="Enter your Company"
