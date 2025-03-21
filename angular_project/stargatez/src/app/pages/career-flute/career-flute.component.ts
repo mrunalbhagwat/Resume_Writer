@@ -109,6 +109,10 @@ export class CareerFluteComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
+  onSkillsUpdate(e: any) {
+    this.cvForm.get('skills')?.setValue([... e.target.value.split(','), this.cvForm.get('skills').value]);
+  }
+
   parseResume(base64Content: string, file: File) {
     // const prompt = `Parse the following resume and return only a JSON object with these exact keys:
     // ['fullName', 'currentLocation', 'phoneNumber', 'email', 'currentCompany', 'designation',

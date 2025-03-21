@@ -234,19 +234,9 @@
 
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Key Skills</label>
-
-                    <div class="relative">
-                        <!-- Select Dropdown with Dynamic Styling -->
-                        <select formControlName="skills" id="location" required
-                            class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-sm">
-                            <option value="" disabled selected hidden>Enter your skills</option>
-                            <option class="text-black text-sm">JavaScript</option>
-                            <option class="text-black text-sm">React</option>
-                            <option class="text-black text-sm">Node.js</option>
-                            <option class="text-black text-sm">Python</option>
-                            <option class="text-black text-sm">Java</option>
-                        </select>
-                    </div>
+                    <input type="text" placeholder="Enter your Skills" (change)="onSkillsUpdate($event)"
+                    class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                   
 
                     <!-- <div id="chip"
                         class="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
@@ -291,8 +281,8 @@
                 </div>
 
             </div>
-            <div class="flex flex-wrap gap-2 mb-6">
-                <span *ngFor="let skill of webDevSkills">
+            <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-6">
+                <span *ngFor="let skill of cvForm.get('skills').value">
                     <div id="chip"
                         class="relative rounded-md flex bg-blue-200 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-blue transition-all shadow-sm">
                         {{skill}}
