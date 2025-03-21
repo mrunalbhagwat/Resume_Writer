@@ -1,0 +1,6 @@
+<ng-container *ngIf="apiService.showSpinner$ | async">
+    <div class="mx-auto spinner-container backdrop-brightness-40 fixed inset-0 flex items-center justify-center z-100 w-full" >
+        <div class="loader"></div>
+    </div>
+    
+</ng-container>

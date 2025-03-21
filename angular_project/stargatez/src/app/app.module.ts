@@ -14,7 +14,9 @@ import { StrategicStaffingComponent } from './pages/strategic-staffing/strategic
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CareerFluteComponent } from './pages/career-flute/career-flute.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,15 @@ import { FormsModule } from '@angular/forms';
     StrategicStaffingComponent,
     HeaderComponent,
     FooterComponent,
-    CareerFluteComponent
+    CareerFluteComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
