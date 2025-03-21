@@ -6,7 +6,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrl: './career-flute.component.scss'
 })
 export class CareerFluteComponent {
-  videoLink: any = 'assets/videos/dubai_city.mp4';
+  videoLink: any = 'assets/videos/career_flute.mp4';
   password: string = '';
   confirmPassword: string = '';
   showPassword: boolean = false;

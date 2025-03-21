@@ -1,48 +1,10 @@
-<app-header [webVideoPath]="videoLink" [phoneVideoPath]="videoLink">
-
+<app-header [videoHeight]="'half'" [webVideoPath]="videoLink" [phoneVideoPath]="videoLink">
     <div
-        class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-center bg-no-repeat bg-fixed">
-
+        class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12  bg-center bg-no-repeat bg-fixed">
         <div class="absolute inset-0 bg-[#00000066]"></div>
-        <div class="flex items-center justify-center min-h-screen bg-cover bg-center px-4"
-            style="background-image: url('your-image-url.jpg');">
-            <div class="grid grid-cols-1 md:grid-cols-3  md:mt-4 gap-4 md:gap-16 text-white text-center">
-                <!-- First Circle -->
-                <div>
-                    <div
-                        class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
-                        <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Founded</p>
-                        <p class="text-2xl md:text-3xl mt-4 font-bold text-white drop-shadow-md">2014</p>
-                    </div>
-                    <p class="font-semibold md:text-lg text-sm mt-2 md:mt-4 text-white drop-shadow-md">Kuala Lumpur,
-                        Malaysia</p>
-                </div>
-
-                <!-- Second Circle -->
-                <div>
-                    <div
-                        class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
-                        <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Customers</p>
-                        <p class="text-2xl md:text-3xl font-bold mt-4 text-white drop-shadow-md">100+</p>
-                    </div>
-                </div>
-
-                <!-- Third Circle (with Image) -->
-                <div>
-                    <div
-                        class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
-                        <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Global<br>Footprint</p>
-                        <img src="./assets/images/Globe.png" alt="Globe Icon" class="w-10 h-10 mt-4 drop-shadow-md">
-                    </div>
-                    <p class="font-semibold md:text-lg text-sm mt-2 md:mt-4 text-white drop-shadow-md">USA | Canada |
-                        Malaysia | India</p>
-                </div>
-            </div>
-        </div>
-
+       
     </div>
 </app-header>
-
 
 <!-- Form Section -->
 <section class="container mx-auto">

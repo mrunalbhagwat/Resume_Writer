@@ -239,10 +239,10 @@
         Strategic <span class="text-yellow-500">Staffing</span>
     </h2>
 
-    <div class="flex flex-wrap justify-center gap-6 px-4 py-8 ">
+    <div class="flex flex-wrap justify-center gap-6 px-4 py-8">
         <ng-container *ngFor="let card of cards">
-            <div class="flex flex-wrap justify-center px-4 py-8">
-                <div class="group relative w-80 h-80 rounded-lg bg-white gradient-button shadow-lg overflow-hidden cursor-pointer border border-black"
+            <div class="flex flex-wrap justify-center md:w-[30%] w-full">
+                <div class="group relative h-80 rounded-lg bg-white gradient-button shadow-lg overflow-hidden cursor-pointer border border-black"
                     (mouseenter)="restartTyping(card)">
                     <!-- Front Side -->
                     <div class=" h-full flex flex-col items-center justify-center">

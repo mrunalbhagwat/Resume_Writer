@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   
-  typingSpeed: number = 100; // Speed in milliseconds
+  typingSpeed: number = 50; // Speed in milliseconds
   typingTimeout: any; // Store timeout reference
 
   constructor(private route: ActivatedRoute) { }

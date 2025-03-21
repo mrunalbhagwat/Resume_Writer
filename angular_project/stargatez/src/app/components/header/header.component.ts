@@ -8,6 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class HeaderComponent implements AfterViewInit {
   @Input() phoneVideoPath: any;
   @Input() webVideoPath: any;
+  @Input() videoHeight: any = 'full';
   showMenu: any = false;
   constructor(@Inject(PLATFORM_ID) private platformId: object) {}
   @ViewChild('phoneVideo', { static: false }) phoneVideoElement!: ElementRef<HTMLVideoElement>;
