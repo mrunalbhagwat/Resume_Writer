@@ -63,7 +63,7 @@
                 <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location <span class="text-red-500">*</span> </label>
                     <input formControlName="currentLocation" type="text"
-                        placeholder="Name of the Candidate as it appears in the Resume"
+                        placeholder="Enter your Current Location"
                         class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} border  text-sm placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs  border-blue-900 p-3 rounded w-full" />
                     <!-- <div class="relative"> -->
                     <!-- Select Dropdown with Dynamic Styling -->
@@ -99,7 +99,7 @@
                         </select>
 
                         <!-- Phone Input Field -->
-                        <input formControlName="phoneNumber" type="tel" placeholder="07410 10123" maxlength="10"
+                        <input formControlName="phoneNumber" type="tel" placeholder="10 Digit Phone Number" maxlength="10"
                             required
                             class="{{cvForm.get('phoneNumber')?.invalid && cvForm.get('phoneNumber')?.touched ? 'border-red-500 border-2' : ''}} text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs p-2 w-full outline-none">
                     </div>
@@ -273,7 +273,7 @@
 
                 <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Salary</label>
-                    <div class="flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
+                    <div class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
                         <select formControlName="currentSalaryCurrency" class="outline-none text-gray-700 pr-3">
                             <ng-container *ngFor="let currency of currencies">
@@ -299,7 +299,7 @@
 
                 <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected Salary</label>
-                    <div class="flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
+                    <div class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
                         <select formControlName="expectedSalaryCurrency" class="outline-none text-gray-700 pr-3">
                             <ng-container *ngFor="let currency of currencies">
