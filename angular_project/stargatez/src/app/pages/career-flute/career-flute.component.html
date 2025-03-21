@@ -17,13 +17,12 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div></div>
                 <!-- File Upload Box -->
+                <!-- Drag-and-drop with event bindings -->
                 <label for="upload-my-cv"
-                    class="flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition duration-300 hover:border-blue-500 w-full h-32">
+                    class="flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition duration-300 hover:border-blue-500 w-full h-32"
+                    (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
 
-                    <!-- Upload Icon -->
                     <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
-
-                    <!-- Upload Text -->
                     <div class="mt-2 text-sm font-semibold text-[#14176C]">
                         Click to upload CV / Resume <span class="text-gray-500">or drag and drop</span>
                     </div>
@@ -32,24 +31,23 @@
                         (change)="onFileSelected($event)">
                 </label>
 
-                <!-- Uploaded File Box (Visible after upload) -->
+                <!-- Uploaded File Box -->
                 <div *ngIf="fileUploaded"
                     class="flex items-center justify-between bg-blue-50 border border-gray-300 rounded-lg p-4 w-full">
                     <div class="flex flex-col">
-                        <!-- File Name & Size -->
                         <span class="text-sm font-semibold text-black">{{ fileName }}</span>
                         <span class="text-xs text-gray-500">{{ fileSize }}</span>
-                        <!-- Progress Bar -->
                         <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
                             <div class="bg-blue-500 h-1.5 rounded-full" [style.width]="uploadProgress + '%'"></div>
                         </div>
                     </div>
 
-                    <!-- Download Icon -->
-                    <button (click)="downloadFile($event)"
+                    <!-- Download Icon: Ensures download only when clicked -->
+                    <button type="button" (click)="downloadFile($event)"
                         class="cursor-pointer bg-blue-600 text-white rounded p-2 text-base">
                         <i class="fa fa-download"></i>
                     </button>
+
                 </div>
 
             </div>
@@ -235,8 +233,8 @@
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Key Skills</label>
                     <input type="text" placeholder="Enter your Skills" (change)="onSkillsUpdate($event)"
-                    class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
-                   
+                        class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+
 
                     <!-- <div id="chip"
                         class="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">

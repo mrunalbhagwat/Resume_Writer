@@ -18,7 +18,7 @@ export class CareerFluteComponent implements OnInit {
   isLoading: boolean = false;
   webDevSkills = ["HTML", "CSS", "JavaScript", "React", "Angular", "Vue.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "MySQL", "GraphQL", "REST API", "Webpack", "TypeScript"];
 
-  constructor(private fb: FormBuilder, public apiService: ApiService) {}
+  constructor(private fb: FormBuilder, public apiService: ApiService) { }
 
   onSubmit() {
     if (this.cvForm?.valid) {
@@ -79,6 +79,11 @@ export class CareerFluteComponent implements OnInit {
   isDownloading: boolean = false;
 
   onFileSelected(event: any) {
+    event.preventDefault(); // Prevent unintended form submissions
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.processFile(input.files[0]);
+    }
     const file = event.target.files[0];
     this.processFile(event.target.files[0]);
 
@@ -110,7 +115,8 @@ export class CareerFluteComponent implements OnInit {
   }
 
   onSkillsUpdate(e: any) {
-    this.cvForm.get('skills')?.setValue([... e.target.value.split(','), this.cvForm.get('skills').value]);
+    this.cvForm.get('skills')?.setValue([...e.target.value.split(','), this.cvForm.get('skills').value]);
+    debugger;
   }
 
   parseResume(base64Content: string, file: File) {
@@ -204,7 +210,8 @@ export class CareerFluteComponent implements OnInit {
     this.isDragging = false;
 
     if (event.dataTransfer?.files.length) {
-      this.processFile(event.dataTransfer.files[0]);
+      const file = event.dataTransfer.files[0];
+      this.processFile(file);
     }
   }
 
@@ -236,17 +243,17 @@ export class CareerFluteComponent implements OnInit {
     }, 500);
   }
 
-  downloadFile(event: Event) {
-    event.stopPropagation(); // Prevent double triggering
-    if (this.fileUrl && !this.isDownloading) {
-      this.isDownloading = true;
-      const link = document.createElement('a');
-      link.href = this.fileUrl;
-      link.download = this.fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setTimeout(() => (this.isDownloading = false), 500); // Prevent multiple downloads
-    }
+  downloadFile(event: MouseEvent) {
+  event.stopPropagation(); // Stops parent elements from triggering unwanted downloads
+  if (this.fileUrl && !this.isDownloading) {
+    this.isDownloading = true;
+    const link = document.createElement('a');
+    link.href = this.fileUrl;
+    link.download = this.fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => (this.isDownloading = false), 500); // Prevent multiple downloads
   }
+}
 }
