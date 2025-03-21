@@ -16,6 +16,8 @@ export class CareerFluteComponent implements OnInit {
   parsedData: any = null;
   errorMessage: string = '';
   isLoading: boolean = false;
+  currencies: any = [];
+  countryCallCodes: any = [];
   webDevSkills = [
     'HTML',
     'CSS',
@@ -37,41 +39,45 @@ export class CareerFluteComponent implements OnInit {
   constructor(private fb: FormBuilder, public apiService: ApiService) {}
 
   onSubmit() {
-    if (this.cvForm?.valid) {
-      console.log(this.cvForm.value);
+    if (this.cvForm?.invalid) {
+      this.cvForm.markAllAsTouched();
+      return;
     }
+
+    console.log(this.cvForm.value);
   }
 
   ngOnInit() {
     this.cvForm = this.fb.group({
+      resume: [''],
       fullName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      currentLocation: ['', Validators.required],
+      countryCode: ['+91'],
       phoneNumber: ['', Validators.required],
-      expectedSalary: ['', Validators.required],
-      expectedSalaryCurrency: ['₹(INR)', Validators.required],
-      expectedSalaryFrequency: ['Yearly', Validators.required],
-      skills: ['', Validators.required],
-      industry: ['', Validators.required],
-      preferredLocation: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      currentCompany: ['', Validators.required],
+      designation: ['', Validators.required],
       noticePeriod: ['', Validators.required],
-      highestQualification: ['', Validators.required],
+      qualification: ['', Validators.required],
       university: ['', Validators.required],
       totalExpYear: ['', Validators.required],
       totalExpMonths: ['', Validators.required],
+      preferredLocation: ['India', Validators.required],
+      industry: ['', Validators.required],
       currentSalary: ['', Validators.required],
-      currentSalaryCurrency: ['₹(INR)', Validators.required],
+      currentSalaryCurrency: ['INR', Validators.required],
       currentSalaryFrequency: ['Yearly', Validators.required],
+      expectedSalary: ['', Validators.required],
+      expectedSalaryCurrency: ['INR', Validators.required],
+      expectedSalaryFrequency: ['Yearly', Validators.required],
+      skills: ['', Validators.required],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
-      resume: ['', Validators.required],
       skillsInput: [''],
-      currentLocation: ['', Validators.required],
-      currentCompany: ['', Validators.required],
-      designation: ['', Validators.required],
-      qualification: ['', Validators.required],
       showPassword: [false], // Store visibility state in FormControl
       showConfirmPassword: [false], // Store visibility state in FormControl
     });
+    this.fetchCountries();
   }
 
   togglePassword() {
@@ -126,6 +132,30 @@ export class CareerFluteComponent implements OnInit {
     };
 
     reader.readAsDataURL(file);
+  }
+
+  fetchCountries() {
+    this.apiService.fetchAllCountries().subscribe((response: any) => {
+      const currencySet = new Set();
+      response.forEach((country: any) => {  
+        if (country.currencies) {
+          Object.keys(country.currencies).forEach(code => {
+            if (!currencySet.has(code)) {
+              currencySet.add(code);
+              this.currencies.push({ 
+                code, 
+                countryName: country.name.common,
+                name: country.currencies[code].name,
+                dialCode: country.idd?.root + (country.idd?.suffixes ? country.idd.suffixes[0] : '')
+              });
+            }
+          });
+        }
+      });
+
+
+      console.log(this.currencies);
+    });
   }
 
   onSkillsUpdate(e: any) {

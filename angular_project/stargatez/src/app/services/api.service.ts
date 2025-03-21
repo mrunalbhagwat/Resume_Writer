@@ -22,4 +22,8 @@ export class ApiService {
   
     return this.http.post(`${this.GEMINI_API_URL}`, data, { headers });
   }
+
+  fetchAllCountries() {
+    return this.http.get('https://restcountries.com/v3.1/all');
+  }
 }
