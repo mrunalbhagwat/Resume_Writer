@@ -53,14 +53,14 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Name</label>
                     <input formControlName="fullName" type="text"
                         placeholder="Name of the Candidate as it appears in the Resume"
                         class="border  text-sm placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs  border-blue-900 p-3 rounded w-full" />
                 </div>
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location</label>
                     <input formControlName="currentLocation" type="text"
                         placeholder="Name of the Candidate as it appears in the Resume"
@@ -80,7 +80,7 @@
                 </div>
 
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number</label>
 
                     <div class="relative flex items-center border border-blue-900 rounded w-full">
@@ -99,13 +99,13 @@
                             class="text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs p-2 w-full outline-none">
                     </div>
                 </div>
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Email ID</label>
                     <input formControlName="email" type="email" placeholder="Valid Email ID"
                         class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <!-- password -->
-                <div class="mb-3">
+                <!-- <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">
                         Set Password
                     </label>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">
                         Confirm Password
                     </label>
@@ -136,26 +136,25 @@
                                 [ngClass]="cvForm.get('showConfirmPassword')?.value ? 'fa-eye' : 'fa-eye-slash'"></i>
                         </span>
                     </div>
-                    <!-- Password Mismatch Error Message -->
                     <p *ngIf="cvForm.hasError('passwordMismatch')" class="text-red-500 text-xs mt-1">
                         Passwords do not match.
                     </p>
-                </div>
+                </div> -->
 
 
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Company</label>
                     <input formControlName="currentCompany" type="text" placeholder="Enter your Company"
                         class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Designation</label>
                     <input formControlName="designation" type="text" placeholder="Enter your Designation"
                         class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period</label>
 
                     <div class="relative">
@@ -175,91 +174,34 @@
                 </div>
 
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Highest Qualification</label>
                     <input formControlName="qualification" type="text" placeholder="Enter your Qualification"
                         class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">University</label>
                     <input formControlName="university" type="text" placeholder="Enter your University"
                         class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="mb-3">
+                    <div class="md:mb-3">
                         <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Year</label>
-
-                        <div class="relative">
-                            <!-- Select Dropdown with Dynamic Styling -->
-                            <select id="location" required formControlName="totalExpYear"
-                                class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-sm">
-                                <option value="" disabled selected hidden>0 Year</option>
-                                <option class="text-black text-sm">Fresher</option>
-                                <option class="text-black text-sm">1 Year</option>
-                                <option class="text-black text-sm">2 Year</option>
-                                <option class="text-black text-sm">3 Year</option>
-                                <option class="text-black text-sm">4 Year</option>
-                                <option class="text-black text-sm">5+ Year</option>
-                            </select>
-                        </div>
+                        <input formControlName="totalExpYear" type="text" placeholder="Enter Total Years Experience"
+                        class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                     </div>
 
-                    <div class="mb-3">
+                    <div class="md:mb-3">
                         <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Month</label>
-
-                        <div class="relative">
-                            <select id="month" required formControlName="totalExpMonths"
-                                class="border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-sm">
-                                <option value="" disabled selected hidden>0 month</option>
-                                <option class="text-black text-sm">Fresher</option>
-                                <option class="text-black text-sm">1 month</option>
-                                <option class="text-black text-sm">2 month</option>
-                                <option class="text-black text-sm">3 month</option>
-                                <option class="text-black text-sm">4 month</option>
-                                <option class="text-black text-sm">5 month</option>
-                                <option class="text-black text-sm">6 month</option>
-                                <option class="text-black text-sm">7 month</option>
-                                <option class="text-black text-sm">8 month</option>
-                                <option class="text-black text-sm">9 month</option>
-                                <option class="text-black text-sm">10 month</option>
-                                <option class="text-black text-sm">11 month</option>
-                            </select>
-                        </div>
+                        <input formControlName="totalExpMonths" type="text" placeholder="Enter Total Months Experience"
+                        class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                        
                     </div>
 
                 </div>
 
 
-                <div class="mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Key Skills</label>
-                    <input type="text" placeholder="Enter your Skills" (change)="onSkillsUpdate($event)"
-                        class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
-
-
-                    <!-- <div id="chip"
-                        class="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
-                        Dismissible
-
-                        <button
-                            class="flex items-center justify-center transition-all p-1 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
-                            type="button" onclick="closeAlert()">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                class="w-4 h-4">
-                                <path
-                                    d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
-                            </svg>
-                        </button>
-                    </div> -->
-                </div>
-
-                <div class="mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Industry</label>
-
-                    <input formControlName="industry" type="text" placeholder="Enter your Industry"
-                        class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
-                </div>
-
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Preferred Location</label>
 
                     <div class="relative">
@@ -278,6 +220,36 @@
                     </div>
                 </div>
 
+
+                <div class="md:mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Industry</label>
+
+                    <input formControlName="industry" type="text" placeholder="Enter your Industry"
+                        class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                </div>
+
+                <div class="md:mb-3">
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Key Skills</label>
+                    <input type="text" formControlName="skillsInput" placeholder="Enter your Skills & Press Enter" (change)="onSkillsUpdate($event)"
+                    class="border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                   
+
+                    <!-- <div id="chip"
+                        class="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
+                        Dismissible
+
+                        <button
+                            class="flex items-center justify-center transition-all p-1 rounded-md text-white hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
+                            type="button" onclick="closeAlert()">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="w-4 h-4">
+                                <path
+                                    d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+                            </svg>
+                        </button>
+                    </div> -->
+                </div>
+                
             </div>
             <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-6">
                 <span *ngFor="let skill of cvForm.get('skills').value">
@@ -286,8 +258,8 @@
                         {{skill}}
 
                         <button
-                            class="flex items-center justify-center transition-all p-1 rounded-md text-blue hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
-                            type="button" onclick="closeAlert()">
+                            class="flex cursor-pointer items-center justify-center transition-all p-1 rounded-md text-blue hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
+                            type="button" (click)="deleteSkillChip(skill)">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
                                 class="w-4 h-4">
                                 <path
@@ -300,7 +272,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Salary</label>
                     <div class="flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
@@ -334,7 +306,7 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected Salary</label>
                     <div class="flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
@@ -368,7 +340,7 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">&nbsp;</label>
                     <button
                         class="md:h-[48px] bg-primary text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">

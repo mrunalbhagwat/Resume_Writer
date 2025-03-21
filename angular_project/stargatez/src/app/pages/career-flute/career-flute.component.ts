@@ -16,9 +16,25 @@ export class CareerFluteComponent implements OnInit {
   parsedData: any = null;
   errorMessage: string = '';
   isLoading: boolean = false;
-  webDevSkills = ["HTML", "CSS", "JavaScript", "React", "Angular", "Vue.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "MySQL", "GraphQL", "REST API", "Webpack", "TypeScript"];
+  webDevSkills = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Angular',
+    'Vue.js',
+    'Tailwind CSS',
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'MySQL',
+    'GraphQL',
+    'REST API',
+    'Webpack',
+    'TypeScript',
+  ];
 
-  constructor(private fb: FormBuilder, public apiService: ApiService) { }
+  constructor(private fb: FormBuilder, public apiService: ApiService) {}
 
   onSubmit() {
     if (this.cvForm?.valid) {
@@ -48,6 +64,7 @@ export class CareerFluteComponent implements OnInit {
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
       resume: ['', Validators.required],
+      skillsInput: [''],
       currentLocation: ['', Validators.required],
       currentCompany: ['', Validators.required],
       designation: ['', Validators.required],
@@ -101,9 +118,6 @@ export class CareerFluteComponent implements OnInit {
         const fileContent = e.target.result;
         const base64Content = fileContent.split(',')[1];
         this.parseResume(base64Content, file);
-        // const parsedResume = this.parseResume(base64Content, file);
-        // this.parsedData = parsedResume;
-        // this.errorMessage = '';
       } catch (error: any) {
         this.errorMessage = `Error parsing resume: ${error.message}`;
       } finally {
@@ -115,8 +129,13 @@ export class CareerFluteComponent implements OnInit {
   }
 
   onSkillsUpdate(e: any) {
-    this.cvForm.get('skills')?.setValue([...e.target.value.split(','), this.cvForm.get('skills').value]);
-    debugger;
+    this.cvForm
+      .get('skills')
+      ?.setValue([
+        e.target.value,
+        ...this.cvForm.get('skills').value,
+      ]);
+      this.cvForm.get('skillsInput').setValue('');
   }
 
   parseResume(base64Content: string, file: File) {
@@ -164,21 +183,18 @@ export class CareerFluteComponent implements OnInit {
     };
 
     this.apiService.parseResume(requestBody).subscribe((response: any) => {
-      const parsedData = JSON.parse(
+      let parsedData = JSON.parse(
         response?.candidates?.[0]?.content?.parts?.[0]?.text || '{}'
       );
       console.log(parsedData);
+      // remove all null values from parsedData 
+      parsedData = Object.fromEntries(
+        Object.entries(parsedData).filter(([_, v]) => v !== null)
+      );
       this.apiService.showSpinner$.next(false);
       this.cvForm.patchValue(parsedData);
       this.errorMessage = '';
     });
-
-    // try {
-    //   const response = await this.http.post<any>(this.GEMINI_API_URL, requestBody).toPromise();
-    //   return JSON.parse(response?.candidates?.[0]?.content?.parts?.[0]?.text || '{}');
-    // } catch (error) {
-    //   throw new Error('API request failed');
-    // }
   }
 
   getMimeType(fileType: string): string {
@@ -244,16 +260,25 @@ export class CareerFluteComponent implements OnInit {
   }
 
   downloadFile(event: MouseEvent) {
-  event.stopPropagation(); // Stops parent elements from triggering unwanted downloads
-  if (this.fileUrl && !this.isDownloading) {
-    this.isDownloading = true;
-    const link = document.createElement('a');
-    link.href = this.fileUrl;
-    link.download = this.fileName;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setTimeout(() => (this.isDownloading = false), 500); // Prevent multiple downloads
+    event.stopPropagation(); // Stops parent elements from triggering unwanted downloads
+    if (this.fileUrl && !this.isDownloading) {
+      this.isDownloading = true;
+      const link = document.createElement('a');
+      link.href = this.fileUrl;
+      link.download = this.fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => (this.isDownloading = false), 500); // Prevent multiple downloads
+    }
   }
-}
+
+  deleteSkillChip(chip: any) {
+    const skills = this.cvForm.get('skills').value;
+    const index = skills.indexOf(chip);
+    if (index !== -1) {
+      skills.splice(index, 1);
+      this.cvForm.get('skills').setValue(skills);
+    }
+  }
 }
