@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './strategic-staffing.component.scss'
 })
 export class StrategicStaffingComponent {
-  videoLink: any = 'assets/videos/handshake.mp4';
+  // videoLink: any = 'assets/videos/handshake.mp4';
+  videoLink: any = 'assets/videos/corporate_meetings.mp4';
+  // videoLink: any = 'assets/videos/strategic_banner.mp4';
+
 
   cards: any = [
     {

@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './partner-portal.component.scss'
 })
 export class PartnerPortalComponent {
-  videoLink: any = 'assets/videos/team_gathering.mp4';
+  // videoLink: any = 'assets/videos/team_gathering.mp4';
+  videoLink: any = 'assets/videos/handshake.mp4';
+
 
 }
