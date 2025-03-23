@@ -209,17 +209,22 @@ export class CareerFluteComponent implements OnInit {
         top_p: 0.8,
         top_k: 40,
         max_output_tokens: 2048,
-      },
+      }, 
     };
 
-    this.apiService.parseResume(requestBody).subscribe((response: any) => {
-      let parsedData = JSON.parse(
-        response?.candidates?.[0]?.content?.parts?.[0]?.text || '{}'
-      );
-      console.log(parsedData);
+    // this.apiService.parseResume(requestBody).subscribe((response: any) => {
+    this.apiService.parseResumeAllFiles(file).subscribe((response: any) => {
+      if(response.countryCode && !response.countryCode.includes('+')) {
+        response.countryCode = '+' + response.countryCode.trim();
+      }
+      // console.log(response);
+      // let parsedData = JSON.parse(
+      //   response?.candidates?.[0]?.content?.parts?.[0]?.text || '{}'
+      // );
+      // console.log(parsedData);
       // remove all null values from parsedData 
-      parsedData = Object.fromEntries(
-        Object.entries(parsedData).filter(([_, v]) => v !== null)
+      const parsedData = Object.fromEntries(
+        Object.entries(response).filter(([_, v]) => v !== null)
       );
       this.apiService.showSpinner$.next(false);
       this.cvForm.patchValue(parsedData);
