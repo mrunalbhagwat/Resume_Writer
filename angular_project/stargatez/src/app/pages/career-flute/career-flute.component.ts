@@ -47,7 +47,7 @@ export class CareerFluteComponent implements OnInit {
     console.log(this.cvForm.value);
   }
 
-  ngOnInit() {
+  ngOnInit() { // web hook
     this.cvForm = this.fb.group({
       resume: [''],
       fullName: ['', Validators.required],
