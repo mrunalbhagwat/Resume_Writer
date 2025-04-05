@@ -54,16 +54,17 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Name <span class="text-red-500">*</span> </label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Name <span
+                            class="text-red-500">*</span> </label>
                     <input formControlName="fullName" type="text"
                         placeholder="Name of the Candidate as it appears in the Resume"
                         class="{{cvForm.get('fullName')?.invalid && cvForm.get('fullName')?.touched ? 'border-red-500 border-2' : ''}} border  text-sm placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs  border-blue-900 p-3 rounded w-full" />
                 </div>
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location <span class="text-red-500">*</span> </label>
-                    <input formControlName="currentLocation" type="text"
-                        placeholder="Enter your Current Location"
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location <span
+                            class="text-red-500">*</span> </label>
+                    <input formControlName="currentLocation" type="text" placeholder="Enter your Current Location"
                         class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} border  text-sm placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs  border-blue-900 p-3 rounded w-full" />
                     <!-- <div class="relative"> -->
                     <!-- Select Dropdown with Dynamic Styling -->
@@ -81,11 +82,13 @@
 
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number <span class="text-red-500">*</span></label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number <span
+                            class="text-red-500">*</span></label>
 
                     <div class="relative flex items-center border border-blue-900 rounded w-full">
                         <!-- Country Flag Dropdown -->
-                        <select formControlName="countryCode" class="bg-gray-100 text-sm p-1 rounded-l focus:outline-none border-r border-blue-900">
+                        <select formControlName="countryCode"
+                            class="bg-gray-100 text-sm p-1 rounded-l focus:outline-none border-r border-blue-900">
                             <ng-container>
                                 <option *ngFor="let country of currencies" [value]="country.dialCode">
                                     {{ country.dialCode }}
@@ -99,13 +102,14 @@
                         </select>
 
                         <!-- Phone Input Field -->
-                        <input formControlName="phoneNumber" type="tel" placeholder="10 Digit Phone Number" maxlength="10"
-                            required
+                        <input formControlName="phoneNumber" type="tel" placeholder="10 Digit Phone Number"
+                            maxlength="10" required
                             class="{{cvForm.get('phoneNumber')?.invalid && cvForm.get('phoneNumber')?.touched ? 'border-red-500 border-2' : ''}} text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs p-2 w-full outline-none">
                     </div>
                 </div>
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Email ID <span class="text-red-500">*</span></label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Email ID <span
+                            class="text-red-500">*</span></label>
                     <input formControlName="email" type="email" placeholder="Valid Email ID"
                         class="{{cvForm.get('email')?.invalid && cvForm.get('email')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
@@ -149,19 +153,21 @@
 
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Company <span class="text-red-500">*</span> </label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Company <span
+                            class="text-red-500">*</span> </label>
                     <input formControlName="currentCompany" type="text" placeholder="Enter your Company"
                         class="{{cvForm.get('currentCompany')?.invalid && cvForm.get('currentCompany')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Designation <span class="text-red-500">*</span> </label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Designation <span
+                            class="text-red-500">*</span> </label>
                     <input formControlName="designation" type="text" placeholder="Enter your Designation"
                         class="{{cvForm.get('designation')?.invalid && cvForm.get('designation')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period <span class="text-red-500">*</span> </label>
-
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period <span
+                            class="text-red-500">*</span> </label>
                     <div class="relative">
                         <!-- Select Dropdown with Dynamic Styling -->
                         <select formControlName="noticePeriod" id="notice" required
@@ -180,58 +186,68 @@
 
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Highest Qualification <span class="text-red-500">*</span> </label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Highest Qualification <span
+                            class="text-red-500">*</span> </label>
                     <input formControlName="qualification" type="text" placeholder="Enter your Qualification"
                         class="{{cvForm.get('qualification')?.invalid && cvForm.get('qualification')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">University <span class="text-red-500">*</span> </label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">University <span
+                            class="text-red-500">*</span> </label>
                     <input formControlName="university" type="text" placeholder="Enter your University"
                         class="{{cvForm.get('university')?.invalid && cvForm.get('university')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="md:mb-3">
-                        <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Year <span class="text-red-500">*</span> </label>
+                        <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Year <span
+                                class="text-red-500">*</span> </label>
                         <input formControlName="totalExpYear" type="text" placeholder="Enter Total Years Experience"
-                        class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                            class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                     </div>
 
                     <div class="md:mb-3">
-                        <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Month <span class="text-red-500">*</span> </label>
+                        <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Exp Month <span
+                                class="text-red-500">*</span> </label>
                         <input formControlName="totalExpMonths" type="text" placeholder="Enter Total Months Experience"
-                        class="{{cvForm.get('totalExpMonths')?.invalid && cvForm.get('totalExpMonths')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
-                        
+                            class="{{cvForm.get('totalExpMonths')?.invalid && cvForm.get('totalExpMonths')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+
                     </div>
 
                 </div>
 
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Preferred Location <span class="text-red-500">*</span> </label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Preferred Location <span
+                            class="text-red-500">*</span> </label>
 
                     <div class="relative">
                         <!-- Select Dropdown with Dynamic Styling -->
                         <select formControlName="preferredLocation" id="preferredLocation" required
                             class="{{cvForm.get('preferredLocation')?.invalid && cvForm.get('preferredLocation')?.touched ? 'border-red-500 border-2' : ''}} border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-sm">
                             <option value="" disabled selected hidden>Enter your preferred location</option>
-                            <option class="{{cvForm.get('preferredLocation')?.invalid && cvForm.get('preferredLocation')?.touched ? 'border-red-500 border-2' : ''}} text-black text-sm" *ngFor="let country of currencies">{{ country?.countryName | titlecase}}</option>
+                            <option
+                                class="{{cvForm.get('preferredLocation')?.invalid && cvForm.get('preferredLocation')?.touched ? 'border-red-500 border-2' : ''}} text-black text-sm"
+                                *ngFor="let country of currencies">{{ country?.countryName | titlecase}}</option>
                         </select>
                     </div>
                 </div>
 
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Industry <span class="text-red-500">*</span> </label>
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Industry <span
+                            class="text-red-500">*</span> </label>
 
                     <input formControlName="industry" type="text" placeholder="Enter your Industry"
                         class="{{cvForm.get('industry')?.invalid && cvForm.get('industry')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
 
                 <div class="md:mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Key Skills <span class="text-red-500">*</span> </label>
-                    <input type="text" formControlName="skillsInput" placeholder="Enter your Skills & Press Enter" (change)="onSkillsUpdate($event)"
-                    class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
-                   
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Key Skills <span
+                            class="text-red-500">*</span> </label>
+                    <input type="text" formControlName="skillsInput" placeholder="Enter your Skills & Press Enter"
+                        (change)="onSkillsUpdate($event)"
+                        class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+
 
                     <!-- <div id="chip"
                         class="relative rounded-md flex bg-slate-800 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-white transition-all shadow-sm">
@@ -248,7 +264,7 @@
                         </button>
                     </div> -->
                 </div>
-                
+
             </div>
             <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-6">
                 <span *ngFor="let skill of cvForm.get('skills').value">
@@ -273,7 +289,8 @@
 
                 <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Salary</label>
-                    <div class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
+                    <div
+                        class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
                         <select formControlName="currentSalaryCurrency" class="outline-none text-gray-700 pr-3">
                             <ng-container *ngFor="let currency of currencies">
@@ -299,7 +316,8 @@
 
                 <div class="md:mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected Salary</label>
-                    <div class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
+                    <div
+                        class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                         <!-- Currency Dropdown (Prefix) -->
                         <select formControlName="expectedSalaryCurrency" class="outline-none text-gray-700 pr-3">
                             <ng-container *ngFor="let currency of currencies">

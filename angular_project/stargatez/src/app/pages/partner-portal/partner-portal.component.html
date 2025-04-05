@@ -1,170 +1,272 @@
-    <app-header [phoneVideoPath]="videoLink" [webVideoPath]="videoLink">
+<app-spinner>
+
+</app-spinner>
+<app-header [phoneVideoPath]="videoLink" [webVideoPath]="videoLink">
+
+    <div
+        class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-center bg-no-repeat bg-fixed">
+
+        <div class="absolute inset-0 bg-[#000000B2]"></div>
+
 
         <div
-            class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-center bg-no-repeat bg-fixed">
+            class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start space-y-6 md:mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
 
-            <div class="absolute inset-0 bg-[#000000B2]"></div>
+            <h1 class="text-lg lg:text-4xl font-semibold md:leading-11">
+                Welcome to the <br>STARGATEz <span class="text-yellow-400">Partner Portal </span>
+            </h1>
 
+        </div>
 
-            <div
-                class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start space-y-6 md:mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
+    </div>
+</app-header>
+<!-- Section -->
+<section class="container mx-auto px-6 py-8 md:py-12 gap-12 items-center">
+    <img class="rounded-2xl w-full" src="./assets/images/coworkers-team-working-brainstorming-concept 1.png"
+        alt="Team Collaboration">
+    <div class="w-full">
+        <p class="font-medium mt-5 lg:text-base text-sm leading-relaxed">
+            At <span class="text-yellow-400">STARGATEz</span>, collaboration is the cornerstone of our success. This
+            Partner Portal serves as your gateway to seamless, transparent, and efficient collaboration, enabling
+            you
+            to share high-quality candidate profiles that meet the dynamic needs of our Customers.
+        </p>
+        <p class="font-medium mt-5 text-lg leading-relaxed">
+            As a valued <span class="text-yellow-400">Partner</span>, you play an integral role in helping us
+            deliver
+            exceptional talent solutions.
+        </p>
+    </div>
+</section>
 
-                <h1 class="text-lg lg:text-4xl font-semibold md:leading-11">
-                    Welcome to the <br>STARGATEz <span class="text-yellow-400">Partner Portal </span>
-                </h1>
-  
+<!-- Form Section -->
+<div class="bg-[#14176C0D] 2xl:max-w-5xl xl:max-w-6xl md:p-10 mx-auto rounded-lg p-8 mt-6">
+    <form class="space-y-4" [formGroup]="cvForm" (ngSubmit)="onSubmit()">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <label for="upload-my-cv"
+                class="flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition duration-300 hover:border-blue-500 w-full h-32"
+                (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+
+                <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
+                <div class="mt-2 text-sm font-semibold text-[#14176C]">
+                    Click to upload CV / Resume <span class="text-gray-500">or drag and drop</span>
+                </div>
+
+                <input formControlName="resume" type="file" #fileInput id="upload-my-cv" class="hidden"
+                    (change)="onFileSelected($event)">
+            </label>
+
+            <!-- Uploaded File Box -->
+            <div *ngIf="fileUploaded"
+                class="flex items-center justify-between bg-blue-50 border border-gray-300 rounded-lg p-4 w-full">
+                <div class="flex flex-col">
+                    <span class="text-sm font-semibold text-black">{{ fileName }}</span>
+                    <span class="text-xs text-gray-500">{{ fileSize }}</span>
+                    <div class="w-full bg-gray-200 rounded-full h-1.5 mt-1">
+                        <div class="bg-blue-500 h-1.5 rounded-full" [style.width]="uploadProgress + '%'"></div>
+                    </div>
+                </div>
+
+                <!-- Download Icon: Ensures download only when clicked -->
+                <button type="button" (click)="downloadFile($event)"
+                    class="cursor-pointer bg-blue-600 text-white rounded p-2 text-base">
+                    <i class="fa fa-download"></i>
+                </button>
+
             </div>
-
         </div>
-    </app-header>
-    <!-- Section -->
-    <section class="container mx-auto px-6 py-8 md:py-12 gap-12 items-center">
-        <img class="rounded-2xl w-full" src="./assets/images/coworkers-team-working-brainstorming-concept 1.png"
-            alt="Team Collaboration">
-        <div class="w-full">
-            <p class="font-medium mt-5 lg:text-base text-sm leading-relaxed">
-                At <span class="text-yellow-400">STARGATEz</span>, collaboration is the cornerstone of our success. This
-                Partner Portal serves as your gateway to seamless, transparent, and efficient collaboration, enabling
-                you
-                to share high-quality candidate profiles that meet the dynamic needs of our Customers.
-            </p>
-            <p class="font-medium mt-5 text-lg leading-relaxed">
-                As a valued <span class="text-yellow-400">Partner</span>, you play an integral role in helping us
-                deliver
-                exceptional talent solutions.
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Partner Name</label>
+                <input formControlName="partnerName" type="text"
+                    placeholder="Name of the Partner"
+                    class="{{cvForm.get('partnerName')?.invalid && cvForm.get('partnerName')?.touched ? 'border-red-500 border-2' : ''}} border  placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+            
+            <div></div>
         </div>
-    </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Name</label>
+                <input formControlName="fullName" type="text"
+                    placeholder="Name of the Candidate as it appears in the Resume"
+                    class="{{cvForm.get('fullName')?.invalid && cvForm.get('fullName')?.touched ? 'border-red-500 border-2' : ''}} border  placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+            
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number</label>
+                <div class="relative flex items-center border border-blue-900 rounded w-full">
+                    <!-- Country Flag Dropdown -->
+                    <select formControlName="countryCode"
+                        class="bg-gray-100 text-sm p-1 rounded-l focus:outline-none border-r border-blue-900">
+                        <ng-container>
+                            <option *ngFor="let country of currencies" [value]="country.dialCode">
+                                {{ country.dialCode }}
+                            </option>
+                        </ng-container>
+                        <!-- <option value="IN" selected>IN +91</option>
+                            <option value="US">US +1</option>
+                            <option value="UK">UK +44</option>
+                            <option value="AU">AU +61</option>
+                            <option value="CA">CA +1</option> -->
+                    </select>
 
-    <!-- Form Section -->
-    <section class="container bg-[#14176C0D] 2xl:max-w-5xl xl:max-w-6xl md:p-10 mx-auto rounded-lg p-8 mt-6">
-        <div>
-            <form class="space-y-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Partner Name</label>
-                        <input type="text"
-                            class="w-full border placeholder-[#14176CCC] truncate placeholder:text-xs border-blue-900 p-3 rounded-md"
-                            placeholder="Full Name of the Company | Freelancer Name">
-                    </div>
-                    <div></div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Candidate Name</label>
-                        <input type="text"
-                            class="w-full border placeholder-[#14176CCC] border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Candidate Name as it appears in the Resume">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Candidate Phone Number</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="10 Digit Phone Number">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Candidate Email ID</label>
-                        <input type="email"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Valid Email ID">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Role Applying For</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Role Mentioned in the Job Description">
-                    </div>
+                    <!-- Phone Input Field -->
+                    <input formControlName="phoneNumber" type="tel" placeholder="10 Digit Phone Number" maxlength="10"
+                        required
+                        class="{{cvForm.get('phoneNumber')?.invalid && cvForm.get('phoneNumber')?.touched ? 'border-red-500 border-2' : ''}} text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs p-2 w-full outline-none">
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Email ID</label>
+                <input formControlName="email" type="email" placeholder="Valid Email ID"
+                    class="{{cvForm.get('email')?.invalid && cvForm.get('email')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Role Applying For</label>
+                <input formControlName="role" type="text" placeholder="Role Mentioned in the Job Description"
+                    class="{{cvForm.get('role')?.invalid && cvForm.get('role')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="mb-2 text-sm block font-medium text-[#14176C]">Skills</label>
+            <input type="text" formControlName="skillsInput" placeholder="Enter your Skills & Press Enter"
+                (change)="onSkillsUpdate($event)"
+                class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+        </div>
+        <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-6">
+            <span *ngFor="let skill of cvForm.get('skills').value">
+                <div id="chip"
+                    class="relative rounded-md flex bg-blue-200 py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-blue transition-all shadow-sm">
+                    {{skill}}
 
+                    <button
+                        class="flex cursor-pointer items-center justify-center transition-all p-1 rounded-md text-blue hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
+                        type="button" (click)="deleteSkillChip(skill)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                            <path
+                                d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+                        </svg>
+                    </button>
                 </div>
 
-                <div>
-                    <label class="block text-[#14176C] font-semibold">Skills</label>
-                    <textarea
-                        class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                        placeholder="Copy and Paste your entire Resume"></textarea>
+            </span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Experience (Years)</label>
+                <input formControlName="totalExpYear" type="text" placeholder="Example: 5 or 5.6 or 5.10"
+                    class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Relevant Experience (Years)</label>
+                <input formControlName="totalExpYear" type="text" placeholder="Example: 5 or 5.6 or 5.10"
+                    class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last Company</label>
+                <input formControlName="currentCompany" type="text" placeholder="Name of the Current / Last Company"
+                    class="{{cvForm.get('currentCompany')?.invalid && cvForm.get('currentCompany')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC (Lakhs)</label>
+                <div
+                    class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
+                    <!-- Currency Dropdown (Prefix) -->
+                    <select formControlName="currentSalaryCurrency" class="outline-none text-gray-700 pr-3">
+                        <ng-container *ngFor="let currency of currencies">
+                            <option>{{ currency.code }}</option>
+                        </ng-container>
+                    </select>
+
+                    <!-- Salary Input (Middle) -->
+                    <input formControlName="currentSalary" type="number" placeholder="Enter your current salary"
+                        required
+                        class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
+                    <!-- Term Dropdown (Suffix) -->
+                    <select formControlName="currentSalaryFrequency"
+                        class="bg-transparent test-sm outline-none text-gray-700 pl-3">
+                        <option>Yearly</option>
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Daily</option>
+                        <option>Hourly</option>
+                    </select>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Total Experience (Years)</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Example: 5 or 5.6 or 5.10">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Relevant Experience (Years)</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Example: 5 or 5.6 or 5.10">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Current / Last Company</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Name of the Current / Last Company">
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected CTC (Lakhs)</label>
+                <div
+                    class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
+                    <!-- Currency Dropdown (Prefix) -->
+                    <select formControlName="expectedSalaryCurrency" class="outline-none text-gray-700 pr-3">
+                        <ng-container *ngFor="let currency of currencies">
+                            <option>{{ currency.code }}</option>
+                        </ng-container>
+                    </select>
+                    <!-- Salary Input (Middle) -->
+                    <input formControlName="expectedSalary" type="number" placeholder="Enter your expected salary"
+                        required
+                        class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
+                    <!-- Term Dropdown (Suffix) -->
+                    <select formControlName="expectedSalaryFrequency"
+                        class="bg-transparent test-sm outline-none text-gray-700 pl-3">
+                        <option>Yearly</option>
+                        <option>Monthly</option>
+                        <option>Weekly</option>
+                        <option>Daily</option>
+                        <option>Hourly</option>
+                    </select>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Current / Last CTC (Lakhs)</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Example: 5 or 5.80 or 5.88">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Expected CTC (Lakhs)</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Example: 5 or 5.80 or 5.88">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Notice Period (Days)</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Number of Days">
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period (Days)</label>
+                <div class="relative">
+                    <!-- Select Dropdown with Dynamic Styling -->
+                    <select formControlName="noticePeriod" id="notice" required placeholder="Enter your notice period"
+                        class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-sm">
+                        <option value="" disabled selected hidden>Enter your notice period</option>
+                        <option class="text-black text-sm">Immediate Joining</option>
+                        <option class="text-black text-sm">7 days</option>
+                        <option class="text-black text-sm">15 days</option>
+                        <option class="text-black text-sm">30 days</option>
+                        <option class="text-black text-sm">60 days</option>
+                        <option class="text-black text-sm">90 days</option>
+                    </select>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Current Location</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Location">
-                    </div>
-                    <div>
-                        <label class="block text-[#14176C] font-semibold">Comments</label>
-                        <input type="text"
-                            class="w-full placeholder-[#14176CCC] border border-blue-900 p-3 rounded-md truncate placeholder:text-xs"
-                            placeholder="Anything Noteworthy">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block font-medium text-[#14176C]">Attach Resume</label>
-                        <label for="coverLetter" id="file_upload_block"
-                            class="w-full flex items-center gap-2 px-4 py-2 mt-1 border border-gray-300 rounded-md text-center cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent hover:bg-gray-100">
-                            <img class="h-6 w-6" src="./assets/images/upload_svgrepo.com.png" alt="">Choose File To
-                            Upload
-                        </label>
-                        <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" class="hidden">
-
-                    </div>
-                    <div>
-                        <label class="block font-medium text-[#14176C]">&nbsp;</label>
-                        <button
-                            class="md:h-[48px] bg-primary text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
-                            Submit
-                        </button>
-                        <!-- <input type="button" placeholder="Anything Noteworthy"
-                            class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" /> -->
-                    </div>
-                </div>
-
-            </form>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location</label>
+                <input formControlName="currentLocation" type="text" placeholder="City, State"
+                    class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Comments</label>
+                <input type="text" placeholder="Anything Noteworthy"
+                    class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
         </div>
 
-    </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-6">
+            <div></div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">&nbsp;</label>
+                <button
+                    class="md:h-[48px] bg-primary text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
+                    Submit
+                </button>
+                <!-- <input type="button" placeholder="Anything Noteworthy"
+                            class="border placeholder-sm placeholder-[#14176CCC]/60 border-blue-900 p-3 rounded w-full" /> -->
+            </div>
+        </div>
 
+    </form>
+</div>
 
-    <app-footer></app-footer>
+<app-footer></app-footer>
