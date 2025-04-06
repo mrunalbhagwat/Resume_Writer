@@ -224,6 +224,9 @@ export class PartnerPortalComponent {
       // );
       // console.log(parsedData);
       // remove all null values from parsedData 
+      if (response.designation) {
+        this.cvForm.get('role').setValue(response.designation);
+      }
       const parsedData = Object.fromEntries(
         Object.entries(response).filter(([_, v]) => v !== null)
       );

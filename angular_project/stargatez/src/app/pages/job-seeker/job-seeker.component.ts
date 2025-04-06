@@ -229,6 +229,10 @@ export class JobSeekerComponent implements OnInit {
         const parsedData = Object.fromEntries(
           Object.entries(response).filter(([_, v]) => v !== null)
         );
+        
+        if (response.designation) {
+          this.cvForm.get('role').setValue(response.designation);
+        }
         this.apiService.showSpinner$.next(false);
         this.cvForm.patchValue(parsedData);
         this.errorMessage = '';
