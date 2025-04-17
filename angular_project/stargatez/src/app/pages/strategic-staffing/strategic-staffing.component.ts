@@ -13,20 +13,25 @@ export class StrategicStaffingComponent {
 
   cards: any = [
     {
-      name: 'Contract Placement',
-      imagePath: '/assets/icons/contract_placement.png'
+      name: 'IT Staff Augmentation/Contract Placement',
+      imagePath: '/assets/icons/contract_placement.png',
+      desc: 'IT Professionals and consultants staffed on temporary contract assignments and billed on a time & material basis.'
     }, {
-      name: 'Contract Hire',
-      imagePath: '/assets/icons/contract_hire.png'
+      name: 'Contract to Hire',
+      imagePath: '/assets/icons/contract_hire.png',
+      desc: 'Low-risk opportunity to evalute on-the-job skills on a contract basis before making a permanent hiring decision.'
     }, {
       name: 'Permanent Placements',
-      imagePath: '/assets/icons/permanent_placements.png'
+      imagePath: '/assets/icons/permanent_placements.png',
+      desc: 'Candidate sourcing and screening for direct hire.'
     }, {
       name: 'Managed Project Services',
-      imagePath: '/assets/icons/managed_project.png'
+      imagePath: '/assets/icons/managed_project.png',
+      desc: 'Project teams to manage specific phases of project lifecycle or entire IT initiative.'
     }, {
       name: 'Global Recruitment',
-      imagePath: '/assets/icons/global_icon.png'
+      imagePath: '/assets/icons/global_icon.png',
+      desc: 'Deployment global teams across worldwide locations (CAREER FLUTE or client locations).'
     }
   ]
 }

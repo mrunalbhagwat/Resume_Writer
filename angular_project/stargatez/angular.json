@@ -37,9 +37,12 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/libs/aos/aos.css",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/libs/aos/aos.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

@@ -17,37 +17,37 @@ export class HomeComponent implements OnInit {
 
   cards: any = [
     {
-      name: 'Contract Placement',
+      name: 'IT Staff Augmentation/Contract Placement',
       imagePath: '/assets/icons/contract_placement.png',
-      fullText: "We provide skilled contract professionals.",
+      fullText: "IT Professionals and consultants staffed on temporary contract assignments and billed on a time & material basis.",
       displayedText: "",
       typingTimeout: null
     },
     {
-      name: 'Contract Hire',
+      name: 'Contract to Hire',
       imagePath: '/assets/icons/contract_hire.png',
-      fullText: "Hire talent on a contract-to-hire basis.",
+      fullText: "Low-risk opportunity to evalute on-the-job skills on a contract basis before making a permanent hiring decision.",
       displayedText: "",
       typingTimeout: null
     },
     {
       name: 'Permanent Placements',
       imagePath: '/assets/icons/permanent_placements.png',
-      fullText: "Find the best full-time employees.",
+      fullText: "Candidate sourcing and screening for direct hire.",
       displayedText: "",
       typingTimeout: null
     },
     {
       name: 'Managed Project Services',
       imagePath: '/assets/icons/managed_project.png',
-      fullText: "Let us handle your projects end-to-end.",
+      fullText: "Project teams to manage specific phases of project lifecycle or entire IT initiative.",
       displayedText: "",
       typingTimeout: null
     },
     {
       name: 'Global Recruitment',
       imagePath: '/assets/icons/global_icon.png',
-      fullText: "Recruit talent from around the world.",
+      fullText: "Deployment global teams across worldwide locations (CAREER FLUTE or client locations).",
       displayedText: "",
       typingTimeout: null
     }
