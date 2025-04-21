@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+declare var AOS: any;
 
 @Component({
   selector: 'app-home',
@@ -54,6 +55,14 @@ export class HomeComponent implements OnInit {
   ];
 
   ngOnInit() {
+    setTimeout(() => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 1000,
+          once: true
+        });
+      }
+    }, 0);
     this.route.fragment.subscribe(fragment => {
       if (fragment) {
         document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
