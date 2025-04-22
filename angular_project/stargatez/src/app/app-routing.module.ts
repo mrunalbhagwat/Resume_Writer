@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
@@ -24,8 +24,13 @@ const routes: Routes = [
   { path:  'career-flute', component: CareerFluteComponent},
 ];
 
+const routerOptions: ExtraOptions = {
+  anchorScrolling: 'enabled',
+  scrollOffset: [0, 64]
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,13 +1,14 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+declare var AOS: any;
 
 @Component({
   selector: 'app-partner-portal',
   templateUrl: './partner-portal.component.html',
   styleUrl: './partner-portal.component.scss'
 })
-export class PartnerPortalComponent {
+export class PartnerPortalComponent implements OnInit{
   // videoLink: any = 'assets/videos/team_gathering.mp4';
   videoLink: any = 'assets/videos/handshake.mp4';
 
@@ -46,7 +47,16 @@ export class PartnerPortalComponent {
     console.log(this.cvForm.value);
   }
 
-  ngOnInit() { // web hook
+  ngOnInit() {
+    setTimeout(() => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 1000,
+          once: true
+        });
+      }
+    }, 0);
+   // web hook
     this.cvForm = this.fb.group({
       resume: [''],
       fullName: ['', Validators.required],

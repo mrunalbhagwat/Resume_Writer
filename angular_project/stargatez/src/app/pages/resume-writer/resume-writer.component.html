@@ -12,7 +12,7 @@
                 WELCOME TO <span class="text-yellow-400">STARGATEZ</span><br>CV WRITING SERVICES
             </h1>
             <p class="text-xs md:text-base">Ready to take your career to the next level?</p>
-            <a href="#"
+            <a href="#" routerLink="/resume-writer" fragment="targetSection"
                 class="inline-block bg-yellow-400 text-black font-medium text-sm md:text-base md:py-4 py-2 md:px-8 px-4 text-center rounded-lg hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-500 transition-all md:w-[200px] w-[60%]">
                 GET STARTED
             </a>
@@ -112,6 +112,7 @@
     </div>
 </section>
 
+
 <!-- why us-->
 <section data-aos="fade-up" class="m-4 md:mx-0">
     <div class="container mx-auto">
@@ -134,43 +135,68 @@
     <!-- Cards Container -->
     <div data-aos="fade-up" class="container mx-auto flex flex-col md:flex-row justify-center items-center gap-6">
         <!-- Card 1 -->
-        <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all">
 
-            <p class="text-center text-sm">We create personalized CVs tailored to your industry, experience, and career
-                aspirations.</p>
-            <img src="./assets/icons/customised_resume_icon.png" alt="Resume Icon" class="w-16 mb-4 mt-4">
+        <div
+            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
+
+            <!-- Original content stays untouched -->
+            <img src="./assets/icons/customised_resume_icon.png" alt="Resume Icon" class="w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">Customized Resumes <br>Aligned with Your Goals</h3>
+
+            <!-- Overlay hover effect (added only) -->
+            <div class="absolute flex flex-col items-center justify-center rounded-xl h-full w-full md:h-[250px] md:w-[250px] bg-neutral-900/90 opacity-0 transition-all duration-500 group-hover:opacity-100 cursor-pointer"
+                onclick="OnClick()">
+                <p class="text-center">We create personalized CVs tailored to your industry, experience, and career
+                    aspirations.</p>
+            </div>
         </div>
 
         <!-- Card 2 -->
         <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all">
+            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
 
-            <p class="text-center text-sm">Our resumes are designed to pass Applicant Tracking Systems (ATS), ensuring
-                they reach recruiters.</p>
-            <img src="./assets/icons/ats_optimisation.png" alt="ATS Icon" class="w-16 mb-4 mt-4">
+
+            <img src="./assets/icons/ats_optimisation.png" alt="ATS Icon" class="w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">ATS Optimization <br> Expertise</h3>
+
+            <!-- Overlay hover effect (added only) -->
+            <div class="absolute flex flex-col items-center justify-center rounded-xl h-full w-full md:h-[250px] md:w-[250px] bg-neutral-900/90 opacity-0 transition-all duration-500 group-hover:opacity-100 cursor-pointer"
+                onclick="OnClick()">
+                <p class="text-center text-sm">Our resumes are designed to pass Applicant Tracking Systems (ATS),
+                    ensuring
+                    they reach recruiters.</p>
+            </div>
         </div>
 
         <!-- Card 3 -->
         <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all">
+            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
 
-            <p class="text-center text-sm">Success stories from clients across industries highlight our ability to
-                deliver results.</p>
-            <img src="./assets/icons/proven_track.png" alt="Chart Icon" class="w-16 mb-4 mt-4">
+
+            <img src="./assets/icons/proven_track.png" alt="Chart Icon" class="w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">Proven Track Record</h3>
+
+            <!-- Overlay hover effect (added only) -->
+            <div class="absolute flex flex-col items-center justify-center rounded-xl h-full w-full md:h-[250px] md:w-[250px] bg-neutral-900/90 opacity-0 transition-all duration-500 group-hover:opacity-100 cursor-pointer"
+                onclick="OnClick()">
+                <p class="text-center text-sm">Success stories from clients across industries highlight our ability to
+                    deliver results.</p>
+            </div>
         </div>
 
         <!-- Card 4 -->
         <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all">
+            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
 
-            <p class="text-center text-sm">Enjoy quick delivery without compromising quality, along with exceptional
-                customer support.</p>
-            <img src="./assets/icons/turnaround.png" alt="Clock Icon" class="w-16 mb-4 mt-4">
+
+            <img src="./assets/icons/turnaround.png" alt="Clock Icon" class="w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">Fast Turnaround & <br> Stellar Support</h3>
+            <!-- Overlay hover effect (added only) -->
+            <div class="absolute flex flex-col items-center justify-center rounded-xl h-full w-full md:h-[250px] md:w-[250px] bg-neutral-900/90 opacity-0 transition-all duration-500 group-hover:opacity-100 cursor-pointer"
+                onclick="OnClick()">
+                <p class="text-center text-sm">Enjoy quick delivery without compromising quality, along with exceptional
+                    customer support.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -552,7 +578,7 @@
 </section>
 
 <!-- assessment -->
-<section data-aos="fade-up" id="free-assesment">
+<section data-aos="fade-up" id="targetSection">
     <div class="w-full mt-4 md:mt-12">
         <!-- Background Image Section -->
         <div class="relative bg-cover bg-center p-12 h-full flex items-center justify-center p-6"

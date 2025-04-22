@@ -1,15 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+declare var AOS: any;
 
 @Component({
   selector: 'app-strategic-staffing',
   templateUrl: './strategic-staffing.component.html',
   styleUrl: './strategic-staffing.component.scss'
 })
-export class StrategicStaffingComponent {
+export class StrategicStaffingComponent implements OnInit{
   // videoLink: any = 'assets/videos/handshake.mp4';
   videoLink: any = 'assets/videos/corporate_meetings.mp4';
   // videoLink: any = 'assets/videos/strategic_banner.mp4';
 
+  ngOnInit(): void {
+    setTimeout(() => {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 1000,
+          once: true
+        });
+      }
+    }, 0);
+  }
+  
 
   cards: any = [
     {

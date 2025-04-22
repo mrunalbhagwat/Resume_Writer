@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+declare var AOS: any;
 
 @Component({
   selector: 'app-job-seeker',
@@ -50,6 +51,14 @@ export class JobSeekerComponent implements OnInit {
     }
   
     ngOnInit() { // web hook
+      setTimeout(() => {
+        if (typeof AOS !== 'undefined') {
+          AOS.init({
+            duration: 1000,
+            once: true
+          });
+        }
+      }, 0);
       this.cvForm = this.fb.group({
         resume: [''],
         fullName: ['', Validators.required],
