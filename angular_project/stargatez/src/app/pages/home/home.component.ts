@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     {
       name: 'Global Recruitment',
       imagePath: '/assets/icons/global_icon.png',
-      fullText: "Deployment global teams across worldwide locations (CAREER FLUTE or client locations).",
+      fullText: "Deploying global teams across worldwide locations (Stargatez or client locations).",
       displayedText: "",
       typingTimeout: null
     }
