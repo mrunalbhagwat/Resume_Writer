@@ -1,40 +1,40 @@
 <app-header [webVideoPath]="videoLink" [phoneVideoPath]="videoLink">
 
     <div
-        class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12 bg-center bg-no-repeat bg-fixed">
+        class="relative flex flex-col items-center justify-center min-h-screen px-6 text-white bg-fixed bg-center bg-no-repeat sm:px-12">
 
         <div class="absolute inset-0 bg-[#00000066]"></div>
-        <div class="flex items-center justify-center min-h-screen bg-cover bg-center px-4"
+        <div class="flex items-center justify-center min-h-screen px-4 bg-center bg-cover"
             style="background-image: url('your-image-url.jpg');">
-            <div class="grid grid-cols-1 md:grid-cols-3  md:mt-4 gap-4 md:gap-16 text-white text-center">
+            <div class="grid grid-cols-1 gap-4 text-center text-white md:grid-cols-3 md:mt-4 md:gap-16">
                 <!-- First Circle -->
-                <div>
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-easing="ease-in-out">
                     <div
-                        class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
-                        <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Founded</p>
-                        <p class="text-2xl md:text-3xl mt-4 font-bold text-white drop-shadow-md">2014</p>
+                        class="flex flex-col items-center justify-center mx-auto bg-black bg-opacity-50 border border-gray-200 rounded-full w-30 h-30 md:w-50 md:h-50">
+                        <p class="text-sm tracking-wide text-white uppercase drop-shadow-md">Founded</p>
+                        <p class="mt-4 text-2xl font-bold text-white md:text-3xl drop-shadow-md">2014</p>
                     </div>
-                    <p class="font-semibold md:text-lg text-sm mt-2 md:mt-4 text-white drop-shadow-md">Kuala Lumpur,
+                    <p class="mt-2 text-sm font-semibold text-white md:text-lg md:mt-4 drop-shadow-md">Kuala Lumpur,
                         Malaysia</p>
                 </div>
 
                 <!-- Second Circle -->
-                <div>
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-easing="ease-in-out">
                     <div
-                        class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
-                        <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Customers</p>
-                        <p class="text-2xl md:text-3xl font-bold mt-4 text-white drop-shadow-md">100+</p>
+                        class="flex flex-col items-center justify-center mx-auto bg-black bg-opacity-50 border border-gray-200 rounded-full w-30 h-30 md:w-50 md:h-50">
+                        <p class="text-sm tracking-wide text-white uppercase drop-shadow-md">Customers</p>
+                        <p class="mt-4 text-2xl font-bold text-white md:text-3xl drop-shadow-md">100+</p>
                     </div>
                 </div>
 
                 <!-- Third Circle (with Image) -->
-                <div>
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out">
                     <div
-                        class="w-30 h-30 md:w-50 md:h-50 mx-auto flex flex-col items-center justify-center rounded-full bg-black bg-opacity-50 border border-gray-200">
-                        <p class="text-sm uppercase tracking-wide text-white drop-shadow-md">Global<br>Footprint</p>
+                        class="flex flex-col items-center justify-center mx-auto bg-black bg-opacity-50 border border-gray-200 rounded-full w-30 h-30 md:w-50 md:h-50">
+                        <p class="text-sm tracking-wide text-white uppercase drop-shadow-md">Global<br>Footprint</p>
                         <img src="./assets/images/Globe.png" alt="Globe Icon" class="w-10 h-10 mt-4 drop-shadow-md">
                     </div>
-                    <p class="font-semibold md:text-lg text-sm mt-2 md:mt-4 text-white drop-shadow-md">USA | Canada |
+                    <p class="mt-2 text-sm font-semibold text-white md:text-lg md:mt-4 drop-shadow-md">USA | Canada |
                         Malaysia | India</p>
                 </div>
             </div>
@@ -43,23 +43,24 @@
     </div>
 </app-header>
 <!-- Timeline Section -->
-<section data-aos="fade-up" >
+<section>
 
-    <div data-aos="fade-up"  id="timeline" class="flex flex-col grid-cols-9 p-2 px-4 mx-auto md:grid container my-12">
+    <div id="timeline" class="container flex flex-col grid-cols-9 p-2 px-4 mx-auto my-12 md:grid">
         <!-- Timeline Item 1 -->
-        <div data-aos="fade-up" class="flex flex-row-reverse md:contents">
-            <div id="item-1"
-                class=" transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md transition-all relative md:p-10 p-8 my-6 bg-[#2196F31A] rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto max-w-lg timeline-item">
-                <h3 class="bg-blue-500 text-white text-lg w-full font-medium text-center py-1 inline-block">A &
+        <div class="flex flex-row-reverse md:contents">
+            <div data-aos="fade-right" data-aos-duration="2000" data-aos-delay="100" data-aos-easing="ease-out-cubic"
+                id="item-1"
+                class="duration-300 hover:-translate-y-1.5 hover:shadow-md transition-all relative md:p-10 p-8 my-6 bg-[#2196F31A] rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto max-w-lg timeline-item">
+                <h3 class="inline-block w-full py-1 text-lg font-medium text-center text-white bg-blue-500">A &
                     H ALLIANCE SDN. BHD.</h3>
-                <img class="absolute mt-6 px-4" src="./assets/images/malaysia 1.png" alt="malaysiaMap">
+                <img class="absolute px-4 mt-6" src="./assets/images/malaysia 1.png" alt="malaysiaMap">
                 <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (1).png" alt="Office"
                     class="w-full h-64 mt-2 rounded-lg">
-                <p class="text-gray-700 text-sm mt-2 md:mt-6">March 11, 2014 incorporated under the Companies
+                <p class="mt-2 text-sm text-gray-700 md:mt-6">March 11, 2014 incorporated under the Companies
                     Act 1965
                     as a Private Limited Company</p>
-                <p class="text-gray-700 text-sm mt-2 md:mt-6">Headquartered in Kuala Lumpur, Malaysia</p>
-                <p class="text-gray-700 text-sm mt-2 md:mt-6">Manpower consultancy, manpower recruitment, and
+                <p class="mt-2 text-sm text-gray-700 md:mt-6">Headquartered in Kuala Lumpur, Malaysia</p>
+                <p class="mt-2 text-sm text-gray-700 md:mt-6">Manpower consultancy, manpower recruitment, and
                     placement/
                     pre-departure training & services company supporting the South East Asia & Middle East
                     market</p>
@@ -80,7 +81,7 @@
         </div>
 
         <!-- Timeline Item 2 -->
-        <div data-aos="fade-up" class="flex md:contents">
+        <div class="flex md:contents">
             <div class="relative col-start-5 col-end-6 transition-all duration-300 mr-7 md:mx-auto">
                 <div class="flex items-center justify-center w-6 h-full">
                     <div class="w-1 h-full transition-all duration-300 bar bg-primary/30"></div>
@@ -93,42 +94,44 @@
                         class="absolute w-6 h-6 -mt-3 scale-125 border-4 border-white rounded-full bg-primary top-1/2 circle">
                     </div> -->
             </div>
-            <div id="item-2"
+            <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="100" data-aos-easing="ease-out-cubic"
+                id="item-2"
                 class="hover:-translate-y-1.5 hover:shadow-md transition-all relative md:p-10 p-8 my-6  bg-[#F7A400]/10 rounded-xl col-start-6 col-end-10 mr-auto max-w-lg timeline-item">
                 <h3 class="bg-[#F7A400] text-white px-3 inline-block text-lg w-full font-medium text-center py-1">
                     GLEAFINK</h3>
                 <div class="flex gap-4">
                     <div>
-                        <img class="absolute mt-6 px-4" src="./assets/images/united-states-of-america 1.png" alt="USA">
+                        <img class="absolute px-4 mt-6" src="./assets/images/united-states-of-america 1.png" alt="USA">
                         <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2.png"
-                            alt="Building" class=" mt-2 rounded-lg">
+                            alt="Building" class="mt-2 rounded-lg ">
                     </div>
 
                     <div>
-                        <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
+                        <img class="absolute px-4 mt-6" src="./assets/images/world 1.png" alt="India">
                         <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
-                            alt="Building" class=" mt-2 rounded-lg">
+                            alt="Building" class="mt-2 rounded-lg ">
                     </div>
 
                 </div>
 
-                <p class="text-gray-700 text-sm mt-2 md:mt-6">Headquartered in Madison, Wisconsin and Delivery
+                <p class="mt-2 text-sm text-gray-700 md:mt-6">Headquartered in Madison, Wisconsin and Delivery
                     Center in
                     Bengaluru, India </p>
-                <p class="text-gray-700 text-sm mt-2 md:mt-6"> GLEAFINK is a leading data & advanced analytics
+                <p class="mt-2 text-sm text-gray-700 md:mt-6"> GLEAFINK is a leading data & advanced analytics
                     company,
                     empowering businesses to make data-driven decisions for a smarter future.</p>
             </div>
         </div>
 
         <!-- Timeline Item 3 -->
-        <div data-aos="fade-up" class="flex flex-row-reverse md:contents">
-            <div id="item-3"
+        <div class="flex flex-row-reverse md:contents">
+            <div data-aos="zoom-in" data-aos-duration="800" data-aos-delay="50" data-aos-easing="ease-in-out"
+                id="item-3"
                 class="hover:-translate-y-1.5 hover:shadow-md transition-all relative md:p-10 p-8 my-6  bg-[#F72C5B]/10 rounded-xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto max-w-lg timeline-item">
                 <h3 class="bg-[#F72C5B] text-white text-lg w-full font-medium text-center py-1 inline-block">
                     CAREER
                     FLUTE</h3>
-                <p class="text-gray-700 text-sm mt-2 md:mt-6">Career Flute is a Job Portal with a vision to be
+                <p class="mt-2 text-sm text-gray-700 md:mt-6">Career Flute is a Job Portal with a vision to be
                     the preferred partner in enabling curated talent through an innovative professional
                     development and hiring platform.
                 </p>
@@ -148,7 +151,7 @@
         </div>
 
         <!-- Timeline 4 -->
-        <div data-aos="fade-up"  class="flex md:contents">
+        <div class="flex md:contents">
             <div class="relative col-start-5 col-end-6 transition-all duration-300 mr-7 md:mx-auto">
                 <div class="flex items-center justify-center w-6 h-full">
                     <div class="w-1 h-full transition-all duration-300 bar bg-primary/30"></div>
@@ -161,20 +164,21 @@
                     2022
                 </div>
             </div>
-            <div id="item-2" class="rounded-xl relative my-6  col-start-6 col-end-10 mr-auto max-w-lg timeline-item">
+            <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000" data-aos-easing="ease-out-quad"
+                id="item-2" class="relative max-w-lg col-start-6 col-end-10 my-6 mr-auto rounded-xl timeline-item">
                 <div class="hover:-translate-y-1.5 transition bg-[#8900E4]/10 md:p-10 p-8 hover:shadow-md rounded-xl">
                     <h3 class="bg-[#8900E4] text-white text-lg w-full font-medium text-center py-1 inline-block">
                         M/S AH ALLIANCE HR <br>
                         SOLUTIONS & PLACEMENTs
                     </h3>
-                    <img class="absolute mt-6 px-4" src="./assets/images/world 1.png" alt="India">
+                    <img class="absolute px-4 mt-6" src="./assets/images/world 1.png" alt="India">
                     <img src="./assets/images/toned-image-modern-office-buildings-central-hong-kong 2 (2).png"
                         alt="Building" class="w-full h-64 mt-2 rounded-lg">
-                    <p class="text-gray-700 text-sm mt-2 md:mt-6">
+                    <p class="mt-2 text-sm text-gray-700 md:mt-6">
                         Registered under the Emigration Act, 1983, for the recruitment and deployment of Indian workers
                         to foreign employers.
                     </p>
-                    <p class="text-gray-700 text-sm mt-2 md:mt-6">
+                    <p class="mt-2 text-sm text-gray-700 md:mt-6">
                         Training & Development Center in Kolkata, India.
                     </p>
                 </div>
@@ -182,7 +186,7 @@
                     <div>
                         <img class="w-60" src="assets/images/External_Affairs.png" alt="">
                     </div>
-                    <p class="text-gray-700 text-sm ">Registered with the Ministry of External Affairs of India,
+                    <p class="text-sm text-gray-700 ">Registered with the Ministry of External Affairs of India,
                         recognized by the High Commission of India abroad to meet the requirements of International
                         Clients.</p>
                 </div>
@@ -190,20 +194,21 @@
         </div>
 
         <!-- Timeline Item 4 -->
-        <div data-aos="fade-up"  class="flex flex-row-reverse md:contents">
-            <div id="item-3"
-                class=" relative my-6   col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto max-w-lg timeline-item">
+        <div class="flex flex-row-reverse md:contents">
+            <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100" data-aos-easing="ease-out-cubic"
+                id="item-3"
+                class="relative max-w-lg col-start-1 col-end-5 my-6 mr-auto md:mr-0 md:ml-auto timeline-item">
                 <div
                     class="bg-[#00979C]/10 md:p-10 p-8  rounded-xl hover:-translate-y-1.5 hover:shadow-md transition-all">
                     <h3 class="bg-[#00979C] text-white text-lg w-full font-medium text-center py-1 inline-block">
                         stargatez
                     </h3>
-                    <p class="text-gray-700 text-sm mt-2 md:mt-6">
+                    <p class="mt-2 text-sm text-gray-700 md:mt-6">
                         A leader in Digital Transformation, Technology Consulting, and Global Strategic Staffing, we
                         simplify hiring and connect top tech and digital talent with the right organizations. Our
                         approach is data-driven, ensuring hiring is reliable, fast, and efficient.
                     </p>
-                    <p class="text-gray-700 text-sm mt-2 md:mt-6">
+                    <p class="mt-2 text-sm text-gray-700 md:mt-6">
                         Global operations spanning the USA, Canada, Malaysia, and offshore delivery centers in India, we
                         provide comprehensive, scalable, and flexible solutions.
                     </p>
@@ -212,7 +217,7 @@
                     <div>
                         <img class="w-60" src="assets/images/export_stargatez_ico.png" alt="">
                     </div>
-                    <p class="text-gray-700 text-sm ">
+                    <p class="text-sm text-gray-700 ">
                         Assessed and certified by RBS Cert. as meeting the requirements of ISO 9001:2015 Quality
                         Management System for the following scope of activities: Manpower Consultancy/ Manpower
                         Recruitment and Placement/Pre-Departure Training Services.
@@ -240,21 +245,21 @@
 <!-- about us -->
 <section data-aos="fade-up" class="bg-[#2196F31A] pt-4 pb-6">
     <div class="container mx-auto ">
-        <h2 class="text-3xl font-semibold text-center text-black leading-relaxed mt-4 p-3">
-            About <span class="text-yellow-500 font-bold">Us</span>
+        <h2 class="p-3 mt-4 text-3xl font-semibold leading-relaxed text-center text-black">
+            About <span class="font-bold text-yellow-500">Us</span>
         </h2>
 
 
 
-        <div data-aos="fade-up" class="flex flex-col m-3 md:mx-0 lg:flex-row gap-12 lg:py-2">
+        <div data-aos="fade-up" class="flex flex-col gap-12 m-3 md:mx-0 lg:flex-row lg:py-2">
             <!-- Images Grid -->
-            <div class="lg:w-1/2 flex justify-center">
+            <div class="flex justify-center lg:w-1/2">
                 <img src="./assets/images/team-meeting-modern-office 1.png" alt="Professional woman holding a cup"
                     class="rounded-lg w-full h-auto md:h-[30rem] object-cover shadow-md" />
             </div>
             <!-- Text Content -->
-            <div class="lg:w-1/2 lg:mt-0 text-black space-y-6">
-                <p class=" text-sm md:text-base leading-relaxed text-left">
+            <div class="space-y-6 text-black lg:w-1/2 lg:mt-0">
+                <p class="text-sm leading-relaxed text-left md:text-base">
                     Welcome to A & H ALLIANCE SDN. BHD., where innovation meets excellence. Founded on March 11,
                     2014, and incorporated under the Companies Act 1965, we are a Private Limited Company based in
                     Kuala Lumpur, Malaysia. Our journey began with a mission to bridge the gap between talent and
@@ -262,7 +267,7 @@
                     training services. Over the years, we have proudly served multiple industries across South East
                     Asia and Middle East.
                 </p>
-                <p class=" text-sm md:text-base leading-relaxed md:mt-12 text-left">
+                <p class="text-sm leading-relaxed text-left md:text-base md:mt-12">
                     Today, our expertise extends far beyond recruitment. Through our subsidiaries and partnerships,
                     we have diversified into cutting-edge technology solutions, workforce empowerment, and strategic
                     consulting, making us a trusted name across multiple industries.
@@ -277,24 +282,24 @@
 <!-- our ventures -->
 <section data-aos="fade-up" class="container mx-auto">
     <!-- Section Title -->
-    <h2 class="text-center text-3xl mt-8 md:mt-12 font-semibold text-gray-900">
+    <h2 class="mt-8 text-3xl font-semibold text-center text-gray-900 md:mt-12">
         Our <span class="text-yellow-500">Ventures</span>
     </h2>
 
     <div data-aos="fade-up" class="container mx-auto md:px-18">
         <!-- GLEAFINK -->
-        <div data-aos="fade-up" class="flex flex-col md:flex-row items-center md:items-center gap-12">
-            <div class="flex-shrink-0 self-center">
+        <div data-aos="fade-up" class="flex flex-col items-center gap-12 md:flex-row md:items-center">
+            <div class="self-center flex-shrink-0">
                 <img src="./assets/images/our_venture1.png" alt="GLEAFINK Logo"
-                    class="w-40 md:w-48 mx-auto mt-8 md:mt-12" />
+                    class="w-40 mx-auto mt-8 md:w-48 md:mt-12" />
             </div>
-            <div class="mx-3 md:mx-0 md:mt-12 text-left">
-                <p class="text-black leading-relaxed">
+            <div class="mx-3 text-left md:mx-0 md:mt-12">
+                <p class="leading-relaxed text-black">
                     At GLEAFINK, we transform the retail industry by turning data into actionable growth. Our
                     state-of-the-art data products and services empower retailers to make smarter decisions,
                     optimize efficiency, and drive sustainable success in a highly competitive marketplace.
                 </p>
-                <p class="mt-4 text-black leading-relaxed">
+                <p class="mt-4 leading-relaxed text-black">
                     Our mission is to revolutionize retail through innovative data solutions, fostering growth, and
                     enhancing operational excellence. By providing the tools and insights businesses need to thrive
                     in an ever-evolving environment, GLEAFINK is shaping the future of retail.
@@ -303,18 +308,18 @@
         </div>
 
         <!-- CAREER FLUTE -->
-        <div data-aos="fade-up" class=" flex flex-col md:flex-row items-center md:items-center gap-12">
-            <div class=" flex-shrink-0 self-center">
+        <div data-aos="fade-up" class="flex flex-col items-center gap-12 md:flex-row md:items-center">
+            <div class="self-center flex-shrink-0 ">
                 <img src="./assets/images/our_venture2.png" alt="Career Flute Logo"
-                    class="w-40 md:w-48 mx-auto mt-8 md:mt-12" />
+                    class="w-40 mx-auto mt-8 md:w-48 md:mt-12" />
             </div>
-            <div class="text-left mx-3 md:mx-0  md:mt-12">
-                <p class="text-black leading-relaxed">
+            <div class="mx-3 text-left md:mx-0 md:mt-12">
+                <p class="leading-relaxed text-black">
                     Career Flute is a Job Portal, an innovative platform for professional development and hiring. A
                     pioneer in talent upskilling and development, collaborating with leading Ed Tech companies to
                     address the industry's growing demand for skilled professionals.
                 </p>
-                <p class="mt-4 text-black leading-relaxed">
+                <p class="mt-4 leading-relaxed text-black">
                     With an extensive database of over 2 million (and growing) tech and digital professionals, we
                     connect candidates with tailored upskilling, certification, and career advancement programs.
                 </p>
@@ -349,7 +354,7 @@
                     Transformation, Technology Consulting, and Global Strategic Staffing. We simplify hiring by
                     connecting top-tier tech and digital talent with organizations worldwide.
                 </p>
-                <p class="mt-4 md:mb-8 text-black leading-relaxed">
+                <p class="mt-4 leading-relaxed text-black md:mb-8">
                     Our data-driven approach ensures hiring processes are efficient, reliable, and tailored to the
                     unique demands of each business.
                 </p>
@@ -359,53 +364,53 @@
 </section>
 
 <!-- offer -->
-<section data-aos="fade-up" class="relative bg-cover bg-center "
+<section data-aos="fade-up" class="relative bg-center bg-cover "
     style="background-image: url('./assets/images/top-shape.png'), url('./assets/images/bottom-shape.png'); background-position: top right, bottom left; background-repeat: no-repeat;">
-    <h2 class="text-3xl text-center pt-8 font-semibold">
-        What <span class="text-yellow-500 font-bold">We Offer</span>
+    <h2 class="pt-8 text-3xl font-semibold text-center">
+        What <span class="font-bold text-yellow-500">We Offer</span>
     </h2>
 
-    <div class="container mx-auto p-3 md:p-12 flex flex-col md:flex-row items-start justify-between">
+    <div class="container flex flex-col items-start justify-between p-3 mx-auto md:p-12 md:flex-row">
         <!-- Left Content -->
-        <div class="w-full md:w-1/2 space-y-6 flex flex-col mt-4 md:mt-8 items-start md:items-start text-left">
+        <div class="flex flex-col items-start w-full mt-4 space-y-6 text-left md:w-1/2 md:mt-8 md:items-start">
             <div class="space-y-6 md:space-y-12">
                 <div class="flex items-start gap-2">
-                    <span class="text-yellow-500 font-semibold text-lg mr-3">01.</span>
+                    <span class="mr-3 text-lg font-semibold text-yellow-500">01.</span>
                     <div>
-                        <h3 class="font-semibold text-lg ">Top 3% Talent</h3>
-                        <p class="text-gray-600 text-base">AI-enabled screening processes ensure only the best
+                        <h3 class="text-lg font-semibold ">Top 3% Talent</h3>
+                        <p class="text-base text-gray-600">AI-enabled screening processes ensure only the best
                             professionals join your team.</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-2">
-                    <span class="text-yellow-500 font-semibold text-lg mr-3">02.</span>
+                    <span class="mr-3 text-lg font-semibold text-yellow-500">02.</span>
                     <div>
-                        <h3 class="font-semibold text-lg">Extensive Network</h3>
-                        <p class="text-gray-600 text-base">A database of over 2 million vetted tech and digital
+                        <h3 class="text-lg font-semibold">Extensive Network</h3>
+                        <p class="text-base text-gray-600">A database of over 2 million vetted tech and digital
                             professionals.</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-2">
-                    <span class="text-yellow-500 font-semibold text-lg mr-3">03.</span>
+                    <span class="mr-3 text-lg font-semibold text-yellow-500">03.</span>
                     <div>
-                        <h3 class="font-semibold text-lg">Experienced Recruitment Team</h3>
-                        <p class="text-gray-600 text-base">Over 100 seasoned recruiters adept at meeting diverse
+                        <h3 class="text-lg font-semibold">Experienced Recruitment Team</h3>
+                        <p class="text-base text-gray-600">Over 100 seasoned recruiters adept at meeting diverse
                             industry needs.</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-2">
-                    <span class="text-yellow-500 font-semibold text-lg mr-3">04.</span>
+                    <span class="mr-3 text-lg font-semibold text-yellow-500">04.</span>
                     <div>
-                        <h3 class="font-semibold text-lg">Global Talent</h3>
-                        <p class="text-gray-600 text-base">Skilled professionals ready to work across time zones and
+                        <h3 class="text-lg font-semibold">Global Talent</h3>
+                        <p class="text-base text-gray-600">Skilled professionals ready to work across time zones and
                             adapt to remote work environments.</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-2">
-                    <span class="text-yellow-500 font-semibold text-lg mr-3">05.</span>
+                    <span class="mr-3 text-lg font-semibold text-yellow-500">05.</span>
                     <div>
-                        <h3 class="font-semibold text-lg">Cross-Cultural Effectiveness</h3>
-                        <p class="text-gray-600 text-base">Seamless integration of global talent into diverse
+                        <h3 class="text-lg font-semibold">Cross-Cultural Effectiveness</h3>
+                        <p class="text-base text-gray-600">Seamless integration of global talent into diverse
                             organizational cultures.</p>
                     </div>
                 </div>
@@ -413,22 +418,22 @@
         </div>
 
         <!-- Right Image -->
-        <div class=" mt-8 md:mt-0 flex justify-center">
+        <div class="flex justify-center mt-8 md:mt-0">
             <img src="./assets/images/business-team-meeting 1.png" alt="Business Meeting"
-                class="w-96 h-auto rounded-xl shadow-lg">
+                class="h-auto shadow-lg w-96 rounded-xl">
         </div>
     </div>
 </section>
 
 <!-- why choose  -->
-<section data-aos="fade-up" class="bg-white py-12">
+<section data-aos="fade-up" class="py-12 bg-white">
 
 
-    <div class="grid md:grid-cols-2 container mx-auto place-items-center mt-10 gap-10">
+    <div class="container grid gap-10 mx-auto mt-10 md:grid-cols-2 place-items-center">
         <img src="assets/images/whyChoose.png" alt="Business Transformation"
-            class="h-auto order-2 md:order-1 w-full object-cover rounded-lg shadow-lg">
-        <div class="md:text-left order-1 md:order-2 mb-4">
-            <h3 class="md:text-4xl text-2xl font-semibold mb-5">
+            class="order-2 object-cover w-full h-auto rounded-lg shadow-lg md:order-1">
+        <div class="order-1 mb-4 md:text-left md:order-2">
+            <h3 class="mb-5 text-2xl font-semibold md:text-4xl">
                 Why Choose <span class="text-yellow-500">stargatez</span>
             </h3>
 
@@ -441,7 +446,7 @@
                     </div>
                 </div> -->
 
-            <ul class="mt-4 space-y-3 text-gray-700 text-lg xl:text-xl">
+            <ul class="mt-4 space-y-3 text-lg text-gray-700 xl:text-xl">
                 <li class="flex items-center gap-3">
                     <img src="./assets/images/checkmark.png" alt="✔" class="w-5 h-5">
                     Save up to 40% on hiring costs.
@@ -466,43 +471,43 @@
 <!-- our commitment -->
 <section data-aos="fade-up" class=" bg-[#14176C1A] pb-12 md:pb-20">
     <div class="container mx-auto mt-10 md:mt-16">
-        <h2 class="text-3xl py-5 font-semibold text-center">
+        <h2 class="py-5 text-3xl font-semibold text-center">
             Our <span class="text-yellow-500">Commitment</span>
         </h2>
-        <div class="grid  grid-cols-1  lg:grid-cols-3  gap-10 container mx-auto mt-6 md:mt-8">
+        <div class="container grid grid-cols-1 gap-10 mx-auto mt-6 lg:grid-cols-3 md:mt-8">
             <!-- Step 1 -->
             <div
                 class="w-full bg-white rounded-2xl shadow-md p-6 text-center relative  mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
-                <span class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">01</span>
+                <span class="absolute text-4xl font-bold text-gray-300 top-4 left-4 group-hover:text-white">01</span>
                 <div class="flex justify-center">
                     <img src="./assets/images/commitment_icon.png" alt="Data-Driven Decisions" class="w-20 h-20">
                 </div>
-                <h3 class="mt-4 font-semibold text-lg">Data-Driven Decisions</h3>
-                <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                <h3 class="mt-4 text-lg font-semibold">Data-Driven Decisions</h3>
+                <p class="mt-2 text-sm text-gray-600 group-hover:text-white">
                     Take the guesswork out of hiring.
                 </p>
             </div>
             <!-- Step 2 -->
             <div
                 class="w-full bg-white rounded-2xl shadow-md p-6 text-center relative  mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
-                <span class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">02</span>
+                <span class="absolute text-4xl font-bold text-gray-300 top-4 left-4 group-hover:text-white">02</span>
                 <div class="flex justify-center">
                     <img src="./assets/images/commitment_icon (1).png" alt="Rapid Onboarding" class="w-20 h-20">
                 </div>
-                <h3 class="mt-4 font-semibold text-lg">Rapid Onboarding</h3>
-                <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                <h3 class="mt-4 text-lg font-semibold">Rapid Onboarding</h3>
+                <p class="mt-2 text-sm text-gray-600 group-hover:text-white">
                     Secure the right talent quickly and efficiently.
                 </p>
             </div>
             <!-- Step 3 -->
             <div
                 class="w-full bg-white rounded-2xl shadow-md p-6 text-center relative  mx-auto transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-md hover:bg-[#14176C] hover:text-white group">
-                <span class="absolute top-4 left-4 text-4xl text-gray-300 font-bold group-hover:text-white">03</span>
+                <span class="absolute text-4xl font-bold text-gray-300 top-4 left-4 group-hover:text-white">03</span>
                 <div class="flex justify-center">
                     <img src="./assets/images/commitment_icon (2).png" alt="Risk Mitigation" class="w-20 h-20">
                 </div>
-                <h3 class="mt-4 font-semibold text-lg">Risk Mitigation</h3>
-                <p class="text-gray-600 mt-2 text-sm group-hover:text-white">
+                <h3 class="mt-4 text-lg font-semibold">Risk Mitigation</h3>
+                <p class="mt-2 text-sm text-gray-600 group-hover:text-white">
                     Reduce hiring risks with precise vetting processes.
                 </p>
             </div>
@@ -521,16 +526,16 @@
 
 <!-- Our Mission Section -->
 <section data-aos="fade-up" class="bg-[#000232]  mt-8 md:mt-12">
-    <div data-aos="fade-up" class="container mx-auto p-10">
-        <div data-aos="fade-up" class="flex flex-col m-3 md:mx-0 gap-8 lg:flex-row lg:space-x-8 py-6">
+    <div data-aos="fade-up" class="container p-10 mx-auto">
+        <div data-aos="fade-up" class="flex flex-col gap-8 py-6 m-3 md:mx-0 lg:flex-row lg:space-x-8">
 
             <!-- Text Content -->
-            <div class="lg:w-1/2 mt-10 lg:mt-20 space-y-6 lg:space-y-8">
+            <div class="mt-10 space-y-6 lg:w-1/2 lg:mt-20 lg:space-y-8">
                 <h2 class="text-3xl font-semibold text-white">
-                    Our <span class="text-yellow-500 font-bold">Vision</span>
+                    Our <span class="font-bold text-yellow-500">Vision</span>
                 </h2>
 
-                <p class="text-sm md:text-base font-medium text-white leading-relaxed">
+                <p class="text-sm font-medium leading-relaxed text-white md:text-base">
                     To be a global leader in workforce solutions and technology-driven innovations, empowering
                     businesses and individuals to achieve sustainable growth and success.
                 </p>
@@ -540,26 +545,26 @@
             <div class="lg:w-1/2">
                 <img src="./assets/images/business-strategy-success-target-goals 1.png"
                     alt="Professional man holding a cup"
-                    class="w-full h-auto object-cover rounded-lg shadow-md aspect-w-3 aspect-h-2" />
+                    class="object-cover w-full h-auto rounded-lg shadow-md aspect-w-3 aspect-h-2" />
             </div>
 
         </div>
 
-        <div data-aos="fade-up" class="flex flex-col m-3 md:mx-0 gap-8 lg:flex-row lg:space-x-8 py-6">
+        <div data-aos="fade-up" class="flex flex-col gap-8 py-6 m-3 md:mx-0 lg:flex-row lg:space-x-8">
 
             <!-- Image Section -->
             <div class="lg:w-1/2">
                 <img src="./assets/images/our mission.png" alt="Professional man holding a cup"
-                    class="w-full h-auto object-cover rounded-lg shadow-md aspect-w-3 aspect-h-2" />
+                    class="object-cover w-full h-auto rounded-lg shadow-md aspect-w-3 aspect-h-2" />
             </div>
 
             <!-- Text Content -->
-            <div class="lg:w-1/2 mt-10 lg:mt-20 space-y-6 lg:space-y-8">
+            <div class="mt-10 space-y-6 lg:w-1/2 lg:mt-20 lg:space-y-8">
                 <h2 class="text-3xl font-semibold text-white">
-                    Our <span class="text-yellow-500 font-bold">Mission</span>
+                    Our <span class="font-bold text-yellow-500">Mission</span>
                 </h2>
 
-                <p class="text-sm md:text-base font-medium text-white leading-relaxed">
+                <p class="text-sm font-medium leading-relaxed text-white md:text-base">
                     To connect talent and opportunity across industries, enabling innovation, operational excellence,
                     and transformative growth.
                     <br><br>
@@ -577,25 +582,25 @@
 <section>
     <div data-aos="fade-up" class="w-full mt-4 md:mt-12">
         <!-- Background Image Section -->
-        <div class="relative bg-cover bg-center h-72 flex items-center justify-center px-6"
+        <div class="relative flex items-center justify-center px-6 bg-center bg-cover h-72"
             style="background-image: url('./assets/images/apply_img.png');">
             <div class="absolute inset-0 bg-[#000121CC]"></div> <!-- Dark Overlay -->
 
             <!-- Content -->
-            <div class="relative text-center text-white max-w-3xl mx-auto">
-                <h2 class="text-2xl md:text-3xl font-semibold">
-                    Apply as a <span class="text-yellow-400 font-bold">Talent</span>
+            <div class="relative max-w-3xl mx-auto text-center text-white">
+                <h2 class="text-2xl font-semibold md:text-3xl">
+                    Apply as a <span class="font-bold text-yellow-400">Talent</span>
                 </h2>
-                <p class="mt-5 text-lg md:text-xl font-medium">
+                <p class="mt-5 text-lg font-medium md:text-xl">
                     Don’t Miss a Great Opportunity
                 </p>
-                <p class="mt-5 text-sm md:text-base text-gray-200">
+                <p class="mt-5 text-sm text-gray-200 md:text-base">
                     Wish to keep up to date with the latest job opportunities.
                 </p>
 
                 <!-- Button -->
                 <button routerLink="/job-seeker"
-                    class="mt-6 bg-yellow-400 text-black font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-yellow-500 transition">
+                    class="px-6 py-2 mt-6 font-semibold text-black transition bg-yellow-400 rounded-lg shadow-md hover:bg-yellow-500">
                     APPLY NOW
                 </button>
             </div>
