@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChildren, QueryList } from '@angular/core';
 declare var AOS: any;
+
 
 @Component({
   selector: 'app-strategic-staffing',
   templateUrl: './strategic-staffing.component.html',
-  styleUrl: './strategic-staffing.component.scss'
+  styleUrls: ['./strategic-staffing.component.scss']
 })
-export class StrategicStaffingComponent implements OnInit{
+export class StrategicStaffingComponent implements OnInit {
   // videoLink: any = 'assets/videos/handshake.mp4';
   videoLink: any = 'assets/videos/corporate_meetings.mp4';
   // videoLink: any = 'assets/videos/strategic_banner.mp4';
@@ -21,7 +22,11 @@ export class StrategicStaffingComponent implements OnInit{
       }
     }, 0);
   }
+
+  @ViewChildren('counterElement') counterElements!: QueryList<ElementRef>;
   
+
+  hasAnimated = false;
 
   cards: any = [
     {
@@ -45,5 +50,82 @@ export class StrategicStaffingComponent implements OnInit{
       imagePath: '/assets/icons/global_icon.png',
       desc: 'Deploying global teams across worldwide locations (Stargatez or client locations).'
     }
-  ]
+  ];
+
+  counters = [
+    { current: 0, target: 2000000, display: '0', suffix: '+', label: 'Network of Talents', hasStarted: false },
+    { current: 0, target: 100, display: '0', suffix: '+', label: 'Experienced Recruiters', hasStarted: false },
+    { current: 0, target: 50, display: '0', suffix: '+', label: 'Global Clients', hasStarted: false },
+    { current: 0, target: 40, display: '0', suffix: '%', label: 'Savings on Hiring Costs', hasStarted: false }
+  ];
+
+
+
+  ngAfterViewInit() {
+    if (typeof window !== 'undefined') {
+      this.setupIntersectionObserver();
+    }
+  }
+
+  private setupIntersectionObserver() {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+    };
+
+    const observer = new window.IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !this.hasAnimated) {
+          this.hasAnimated = true;
+          this.startCounting();
+        }
+      });
+    }, options);
+
+    this.counterElements.forEach(element => {
+      observer.observe(element.nativeElement);
+    });
+  }
+
+  startCounting() {
+    this.counters.forEach((counter, index) => {
+      if (counter.hasStarted) return;
+      counter.hasStarted = true;
+
+      const duration = 2500;
+      const steps = 100;
+      const stepDuration = duration / steps;
+      let currentStep = 0;
+
+      const interval = setInterval(() => {
+        currentStep++;
+        const progress = currentStep / steps;
+        const easedProgress = this.easeOutCubic(progress);
+        
+        counter.current = Math.floor(counter.target * easedProgress);
+
+        if (counter.target >= 1000000) {
+          counter.display = (counter.current / 1000000).toFixed(1) + 'M';
+        } else {
+          counter.display = counter.current.toString();
+        }
+
+        if (currentStep >= steps) {
+          clearInterval(interval);
+          counter.current = counter.target;
+          if (counter.target >= 1000000) {
+            counter.display = (counter.target / 1000000).toFixed(1) + 'M';
+          } else {
+            counter.display = counter.target.toString();
+          }
+        }
+      }, stepDuration);
+    });
+  }
+
+  // Cubic easing for smoother animation
+  easeOutCubic(t: number): number {
+    return 1 - Math.pow(1 - t, 3);
+  }
 }

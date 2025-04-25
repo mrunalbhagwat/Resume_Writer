@@ -2,81 +2,81 @@
 <footer class="bg-[#000121F2] text-white py-10 px-6 md:px-16 mt-12">
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2">
-            <div class="col-span-1 flex flex-col items-start">
+            <div class="flex flex-col items-start col-span-1">
                 <img src="./assets/images/logo.png" alt="stargatez logo" class="w-40 mb-4">
-                <img src="./assets/images/map.png" alt="map" class="md:w-84  mb-4">
+                <img src="./assets/images/map.png" alt="map" class="mb-4 md:w-84">
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div>
-                    <h3 class="text-base font-semibold  flex items-start">
+                    <h3 class="flex items-start text-base font-semibold">
                         <img src="./assets/images/mapVector.png" alt="Location" class="w-4 mt-1 mr-2"> USA -
                         WISCONSIN
                     </h3>
-                    <p class="text-xs mt-2">234 Randolph Dr, Apt 203d, Madison, WI 53717, Wisconsin, USA.</p>
+                    <p class="mt-2 text-xs">234 Randolph Dr, Apt 203d, Madison, WI 53717, Wisconsin, USA.</p>
                 </div>
                 <div>
-                    <h3 class="text-base font-semibold  flex items-start">
+                    <h3 class="flex items-start text-base font-semibold">
                         <img src="./assets/images/mapVector.png" alt="Location" class="w-4 mt-1 mr-2"> MALAYSIA -
                         KUALA LUMPUR
                     </h3>
-                    <p class="text-xs mt-2">B6-9, Taman Serdang Perdana, Jalan Serdang Perdana, 43300 Serikembangan</p>
+                    <p class="mt-2 text-xs">B6-9, Taman Serdang Perdana, Jalan Serdang Perdana, 43300 Serikembangan</p>
                 </div>
                 <div>
-                    <h3 class="text-base font-semibold  flex items-start">
+                    <h3 class="flex items-start text-base font-semibold">
                         <img src="./assets/images/mapVector.png" alt="Location" class="w-4 mt-1 mr-2"> INDIA -
                         KOLKATA
                     </h3>
-                    <p class="text-xs mt-2">25/5, Nadia - 741404, West Bengal</p>
+                    <p class="mt-2 text-xs">25/5, Nadia - 741404, West Bengal</p>
                 </div>
                 <div>
-                    <h3 class="text-base font-semibold  flex items-start">
+                    <h3 class="flex items-start text-base font-semibold">
                         <img src="./assets/images/mapVector.png" alt="Location" class="w-4 mt-1 mr-2"> INDIA -
                         BENGALURU
                     </h3>
-                    <p class="text-xs mt-2">New No 16, Asherkhanna Street, Kamaraj Road, Bengaluru 560042</p>
+                    <p class="mt-2 text-xs">New No 16, Asherkhanna Street, Kamaraj Road, Bengaluru 560042</p>
                 </div>
             </div>
         </div>
 
-        <div class="px-4 md:px-8 lg:px-16 mt-8 pt-4 flex flex-wrap justify-between gap-6 text-gray-300 text-sm">
-            <a href="#" routerLink="/home" class="hover:text-white">Home</a>
-            <a href="#" routerLink="/about-us" class="hover:text-white">About Us</a>
-            <a href="#" routerLink="/about-us" class="hover:text-white">Corporate Profile</a>
-            <a href="#" routerLink="/contact-us" class="hover:text-white">Our Locations</a>
+        <div class="flex flex-wrap justify-between gap-6 px-4 pt-4 mt-8 text-sm text-gray-300 md:px-8 lg:px-16">
+            <a href="#" routerLink="/home" (click)="scrollToTop('/home')" class="hover:text-white">Home</a>
+            <a href="#" routerLink="/about-us" (click)="scrollToTop('/about-us')" class="hover:text-white">About Us</a>
+            <a href="#" routerLink="/about-us" (click)="scrollToTop('/about-us')" class="hover:text-white">Corporate Profile</a>
+            <a href="#" routerLink="/contact-us" (click)="scrollToTop('/contact-us')" class="hover:text-white">Our Locations</a>
             <!-- Services link with dropdown -->
             <div class="relative group">
-                <a href="#" routerLink="/resume-writer" class="hover:text-white">Services</a>
-                <div class="absolute bottom-full left-0 invisible opacity-0 group-hover:visible group-hover:opacity-100 w-56 mb-2 transition-all duration-300 ease-in-out">
+                <a href="#" routerLink="/resume-writer" (click)="scrollToTop('/resume-writer')" class="hover:text-white">Services</a>
+                <div class="absolute left-0 invisible w-56 mb-2 transition-all duration-300 ease-in-out opacity-0 bottom-full group-hover:visible group-hover:opacity-100">
                     <!-- Added padding to create larger hover area -->
                     <div class="pb-2">
-                        <ul class="bg-gray-200 rounded-md shadow-md py-2 text-sm">
+                        <ul class="py-2 text-sm bg-gray-200 rounded-md shadow-md">
                             <li>
                                 <a href="#" routerLink="/home" fragment="digital-capabilitites"
-                                    class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase">
+                                    class="flex items-center gap-3 px-3 py-2 text-black uppercase hover:bg-gray-100">
                                     Digital Transformation
                                 </a>
                             </li>
                             <li>
                                 <a href="https://www.gleafink.com/" target="_blank"
-                                    class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase">
+                                    class="flex items-center gap-3 px-3 py-2 text-black uppercase hover:bg-gray-100">
                                     Data Products
                                 </a>
                             </li>
                             <li>
                                 <a href="#" routerLink="/strategic-staffing"
-                                    class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase">
+                                    class="flex items-center gap-3 px-3 py-2 text-black uppercase hover:bg-gray-100">
                                     Strategic Staffing
                                 </a>
                             </li>
                             <li>
                                 <a href="#" routerLink="/resume-writer"
-                                    class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase">
+                                    class="flex items-center gap-3 px-3 py-2 text-black uppercase hover:bg-gray-100">
                                     Resume Writing
                                 </a>
                             </li>
                             <li>
                                 <a href="#" routerLink="/career-flute"
-                                    class="flex items-center gap-3 px-3 py-2 text-black hover:bg-gray-100 uppercase">
+                                    class="flex items-center gap-3 px-3 py-2 text-black uppercase hover:bg-gray-100">
                                     Career Flute
                                 </a>
                             </li>
@@ -84,15 +84,15 @@
                     </div>
                 </div>
             </div>
-            <a href="#" routerLink="/industries" class="hover:text-white">Industries</a>
-            <a href="#" routerLink="/partner-portal" class="hover:text-white">Partner</a>
-            <a href="#" routerLink="/job-seeker" class="hover:text-white">Career</a>
-            <a href="#" routerLink="/contact-us" class="hover:text-white">Contact Us</a>
+            <a href="#" routerLink="/industries" (click)="scrollToTop('/industries')" class="hover:text-white">Industries</a>
+            <a href="#" routerLink="/partner-portal" (click)="scrollToTop('/partner-portal')" class="hover:text-white">Partner</a>
+            <a href="#" routerLink="/job-seeker" (click)="scrollToTop('/job-seeker')" class="hover:text-white">Career</a>
+            <a href="#" routerLink="/contact-us" (click)="scrollToTop('/contact-us')" class="hover:text-white">Contact Us</a>
         </div>
 
-        <hr class="border-gray-600 my-6">
+        <hr class="my-6 border-gray-600">
 
-        <p class="text-center text-gray-400 text-sm mt-4">&copy; 2025 <span
-                class="text-yellow-400 centuryGothamBold lowercase ">stargatez</span>. All Rights Reserved</p>
+        <p class="mt-4 text-sm text-center text-gray-400">&copy; 2025 <span
+                class="text-yellow-400 lowercase centuryGothamBold ">stargatez</span>. All Rights Reserved</p>
     </div>
 </footer>
