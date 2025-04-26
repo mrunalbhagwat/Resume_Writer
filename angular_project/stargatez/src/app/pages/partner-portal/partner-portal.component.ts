@@ -36,6 +36,26 @@ export class PartnerPortalComponent implements OnInit{
     'TypeScript',
   ];
 
+  validateNumberInput(event: KeyboardEvent) {
+    const allowedKeys = [
+      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+    ];
+    if (allowedKeys.includes(event.key)) {
+      return; // Allow special keys
+    }
+    if (!/^\d$/.test(event.key)) {
+      event.preventDefault();
+    }
+  }
+  
+  validatePasteInput(event: ClipboardEvent) {
+    const pastedData = event.clipboardData?.getData('text') || '';
+    if (!/^\d+$/.test(pastedData)) {
+      event.preventDefault();
+    }
+  }
+  
+
   constructor(private fb: FormBuilder, public apiService: ApiService) { }
 
   onSubmit() {
@@ -46,6 +66,8 @@ export class PartnerPortalComponent implements OnInit{
 
     console.log(this.cvForm.value);
   }
+
+  
 
   ngOnInit() {
     setTimeout(() => {
@@ -62,7 +84,7 @@ export class PartnerPortalComponent implements OnInit{
       fullName: ['', Validators.required],
       currentLocation: ['', Validators.required],
       countryCode: ['+91'],
-      phoneNumber: ['', Validators.required],
+      phoneNumber: ['', Validators.required, Validators.pattern(/^\d{10}$/)],
       email: ['', [Validators.required, Validators.email]],
       currentCompany: ['', Validators.required],
       designation: ['', Validators.required],

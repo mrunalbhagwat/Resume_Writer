@@ -1,3 +1,6 @@
+<app-spinner>
+
+</app-spinner>
 <app-header [phoneVideoPath]="videoLink" [webVideoPath]="videoLink">
 
     <div
@@ -594,41 +597,187 @@
                     Have questions or ready to get started? Reach out to us today!
                 </p>
 
-                <form class="mt-6 bg-transparent">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Full Name *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                        <input type="email" placeholder="EMail Id *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                        <input type="text" placeholder="Phone Number *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                        <input type="text" placeholder="Role you're targeting *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                        <input type="text" placeholder="Total Experience in Years *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                        <input type="text" placeholder="Current / Last Company *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                        <input type="text" placeholder="Current / Last CTC *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                        <input type="text" placeholder="Current Location *"
-                            class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs" />
-                    </div>
+                <form class="mt-6 bg-transparent" [formGroup]="cvForm" (ngSubmit)="onSubmit()">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label for="upload-my-cv"
+                            class="flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition duration-300 hover:border-blue-500 w-full h-32"
+                            (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
 
-                    <textarea placeholder="Comments *"
-                        class="w-full h-32 mt-4 p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate md:placeholder:text-base placeholder:text-xs"></textarea>
+                            <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
+                            <div class="mt-2 text-sm font-semibold text-white">
+                                Click to upload CV / Resume <span class="text-gray-400">or drag and drop</span>
+                            </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-6">
-                        <div>
+                            <input formControlName="resume" type="file" #fileInput id="upload-my-cv" class="hidden"
+                                (change)="onFileSelected($event)">
+                        </label>
 
-                            <label for="coverLetter" id="file_upload_block"
-                                class="w-full flex items-center gap-2 px-4 py-3 mt-2 border border-[#14176C] rounded-lg text-center cursor-pointer text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white">
-                                <img class="h-6 w-6" src="./assets/images/upload_svgrepo.com.png" alt="">Attach
-                                Resume
-                            </label>
-                            <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx"
-                                class="hidden ">
+                        <!-- Uploaded File Box -->
+                        <div *ngIf="fileUploaded"
+                            class="flex items-center justify-between gap-4 bg-blue-50 border border-gray-300 rounded-lg p-4 w-full">
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold text-black">{{ fileName }}</span>
+                                <span class="text-xs text-gray-500">{{ fileSize }}</span>
+                                <div class=" bg-gray-200 rounded-full h-1.5 mt-1">
+                                    <div class="bg-blue-500 h-1.5 w-full rounded-full"
+                                        [style.width]="uploadProgress + '%'"></div>
+                                </div>
+                            </div>
+
+                            <!-- Download Icon: Ensures download only when clicked -->
+                            <button type="button" (click)="downloadFile($event)"
+                                class="cursor-pointer bg-blue-600 text-white rounded p-2 text-base">
+                                <i class="fa fa-download"></i>
+                            </button>
 
                         </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="mt-3 mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
+                                Name</label>
+                            <input formControlName="fullName" type="text" placeholder="Full Name *" required
+                                class="{{cvForm.get('fullName')?.invalid && cvForm.get('fullName')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+
+                        <div class="mt-3 mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
+                                Phone Number
+                            </label>
+                            <input formControlName="phoneNumber" type="tel" placeholder="10 Digit Phone Number"
+                                maxlength="10" required (keydown)="validateNumberInput($event)"
+                                (paste)="validatePasteInput($event)" required
+                                class="{{cvForm.get('phoneNumber')?.invalid && cvForm.get('phoneNumber')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
+                                Email ID
+                            </label>
+                            <input formControlName="email" type="email" placeholder="Valid Email ID"
+                                class="{{cvForm.get('email')?.invalid && cvForm.get('email')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Role
+                                Applying For
+                            </label>
+                            <input formControlName="role" type="text"
+                                placeholder="Role Mentioned in the Job Description"
+                                class="{{cvForm.get('role')?.invalid && cvForm.get('role')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Skills
+                            </label>
+                            <input type="text" formControlName="skillsInput"
+                                placeholder="Enter your Skills & Press Enter" (change)="onSkillsUpdate($event)"
+                                class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                        <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-6">
+                            <span *ngFor="let skill of cvForm.get('skills').value">
+                                <div id="chip"
+                                    class="relative rounded-md flex bg-black py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-blue transition-all shadow-sm">
+                                    {{skill}}
+
+                                    <button
+                                        class="flex cursor-pointer items-center justify-center transition-all p-1 rounded-md text-blue hover:bg-white/10 active:bg-white/10 absolute top-0.5 right-0.5"
+                                        type="button" (click)="deleteSkillChip(skill)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                            class="w-4 h-4">
+                                            <path
+                                                d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Total
+                                Experience (Years)</label>
+                            <input formControlName="totalExpYear" type="text" placeholder="Example: 5 or 5.6 or 5.10"
+                                class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Relevant
+                                Experience (Years)</label>
+                            <input formControlName="totalExpYear" type="text" placeholder="Example: 5 or 5.6 or 5.10"
+                                class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
+                                / Last Company</label>
+                            <input formControlName="currentCompany" type="text"
+                                placeholder="Name of the Current / Last Company"
+                                class="{{cvForm.get('currentCompany')?.invalid && cvForm.get('currentCompany')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
+                                / Last CTC (Lakhs)</label>
+                            <input formControlName="currentSalary" type="number"
+                                placeholder="Enter your expected salary" required
+                                class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Expected
+                                CTC (Lakhs)</label>
+                            <input formControlName="expectedSalary" type="number"
+                                placeholder="Enter your expected salary" required
+                                class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Notice
+                                Period (Days)</label>
+                            <select formControlName="noticePeriod" id="notice" required
+                                placeholder="Enter your notice period"
+                                class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs">
+                                <option value="" disabled selected hidden>Enter your notice period</option>
+                                <option class="text-black text-sm">Immediate Joining</option>
+                                <option class="text-black text-sm">7 days</option>
+                                <option class="text-black text-sm">15 days</option>
+                                <option class="text-black text-sm">30 days</option>
+                                <option class="text-black text-sm">60 days</option>
+                                <option class="text-black text-sm">90 days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
+                                Location
+                            </label>
+                            <input formControlName="currentLocation" type="text" placeholder="City, State"
+                                class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                        <div class="mb-3">
+                            <label
+                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Comments
+                            </label>
+                            <input type="text" placeholder="Anything Noteworthy"
+                                class=" w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-6">
+                        <div></div>
                         <div class="py-4 md:py-0">
                             <button
                                 class="md:h-[48px] bg-[#F7A400] text-white  py-3 lg:mt-2 px-4 text-sm rounded-lg font-medium transition-all uppercase duration-300 2xl:text-base w-full">
