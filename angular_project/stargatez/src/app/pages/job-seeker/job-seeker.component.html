@@ -23,6 +23,8 @@
 
 
 
+<!-- Notification Popup is now handled by the app-snack-bar component -->
+
 <!-- Section -->
 <section data-aos="fade-up" class="container mx-auto py-8 md:py-12 grid md:grid-cols-2 gap-12 items-center">
     <!-- Left Content -->
@@ -181,8 +183,8 @@
                 </div>
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Role Applying For</label>
-                    <input formControlName="role" type="text" placeholder="Role Mentioned in the Job Description"
-                        class="{{cvForm.get('role')?.invalid && cvForm.get('role')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                    <input formControlName="designation" type="text" placeholder="Role Mentioned in the Job Description"
+                        class="{{cvForm.get('designation')?.invalid && cvForm.get('designation')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
             </div>
             <div class="mb-3">

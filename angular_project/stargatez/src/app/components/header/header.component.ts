@@ -1,11 +1,14 @@
 import { AfterViewInit, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { appConstants } from '../../../assets/constants/app.constants';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements AfterViewInit {
+  appConstants = appConstants;  // Make it available to the template
+  careerFluteUrl = appConstants.careerFluteAppURL;  // Add the specific URL
   @Input() phoneVideoPath: any;
   @Input() webVideoPath: any;
   @Input() videoHeight: any = 'full';

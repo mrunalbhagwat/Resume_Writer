@@ -1,6 +1,7 @@
 <app-spinner>
 
 </app-spinner>
+<app-snack-bar></app-snack-bar>
 <app-header [phoneVideoPath]="videoLink" [webVideoPath]="videoLink">
 
     <div
@@ -127,8 +128,8 @@
             </div>
             <div class="mb-3">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Role Applying For</label>
-                <input formControlName="role" type="text" placeholder="Role Mentioned in the Job Description"
-                    class="{{cvForm.get('role')?.invalid && cvForm.get('role')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                <input formControlName="designation" type="text" placeholder="Role Mentioned in the Job Description"
+                    class="{{cvForm.get('designation')?.invalid && cvForm.get('designation')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
             </div>
         </div>
         <div class="mb-3">
@@ -258,7 +259,7 @@
             <div></div>
             <div class="mb-3">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">&nbsp;</label>
-                <button
+                <button type="submit"
                     class="md:h-[48px] bg-primary text-white hover:bg-white hover:text-black py-3 lg:mt-1 px-4 text-sm rounded font-medium transition-all duration-300 2xl:text-base w-full">
                     Submit
                 </button>

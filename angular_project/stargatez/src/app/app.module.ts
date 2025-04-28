@@ -17,6 +17,7 @@ import { CareerFluteComponent } from './pages/career-flute/career-flute.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     HeaderComponent,
     FooterComponent,
     CareerFluteComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SnackBarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,12 @@
+
+div[role="alert"] {
+  animation: slideInDown 0.3s ease-out;
+}
+
+// Add hover effect to close button
+button {
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.8;
+  }
+}

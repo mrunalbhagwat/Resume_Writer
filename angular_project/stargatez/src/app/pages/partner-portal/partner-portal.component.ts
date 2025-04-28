@@ -1,6 +1,7 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { SnackBarService } from '../../services/snack-bar.service';
 declare var AOS: any;
 
 @Component({
@@ -47,27 +48,72 @@ export class PartnerPortalComponent implements OnInit{
       event.preventDefault();
     }
   }
-  
+
   validatePasteInput(event: ClipboardEvent) {
     const pastedData = event.clipboardData?.getData('text') || '';
     if (!/^\d+$/.test(pastedData)) {
       event.preventDefault();
     }
   }
-  
 
-  constructor(private fb: FormBuilder, public apiService: ApiService) { }
+
+  constructor(
+    private fb: FormBuilder,
+    public apiService: ApiService,
+    private snackBarService: SnackBarService
+  ) { }
 
   onSubmit() {
     if (this.cvForm?.invalid) {
       this.cvForm.markAllAsTouched();
+      this.snackBarService.showError('Please fill in all required fields.');
       return;
     }
 
-    console.log(this.cvForm.value);
+    this.apiService.showSpinner$.next(true);
+
+    // Get form values
+    const formData = this.cvForm.value;
+
+    // Add the resume file if it exists
+    if (this.fileInput?.nativeElement?.files?.length > 0) {
+      formData.resumeFile = this.fileInput.nativeElement.files[0];
+    }
+
+    this.apiService.submitCvData(formData).subscribe({
+      next: (response: any) => {
+        console.log('CV submitted successfully:', response);
+        this.apiService.showSpinner$.next(false);
+
+        // Show success popup using SnackBarService
+        this.snackBarService.showSuccess('Your CV has been submitted successfully!');
+
+        // Reset form after successful submission
+        this.cvForm.reset();
+        this.fileName = '';
+        this.fileSize = '';
+        this.fileUrl = null;
+        this.fileUploaded = false;
+      },
+      error: (error: any) => {
+        console.error('Error submitting CV:', error);
+        this.apiService.showSpinner$.next(false);
+
+        // Show error popup using SnackBarService
+        let errorMsg = 'There was an error submitting your CV. Please try again.';
+        if (error.status === 400) {
+          errorMsg = error.error.error || 'Bad request. Please check your input.';
+        } else if (error.status === 401) {
+          errorMsg = 'Unauthorized. Please login again.';
+        } else if (error.status === 413) {
+          errorMsg = 'File size too large. Please upload a smaller file.';
+        }
+        this.snackBarService.showError(errorMsg);
+      }
+    });
   }
 
-  
+
 
   ngOnInit() {
     setTimeout(() => {
@@ -84,7 +130,7 @@ export class PartnerPortalComponent implements OnInit{
       fullName: ['', Validators.required],
       currentLocation: ['', Validators.required],
       countryCode: ['+91'],
-      phoneNumber: ['', Validators.required, Validators.pattern(/^\d{10}$/)],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
       currentCompany: ['', Validators.required],
       designation: ['', Validators.required],
@@ -96,13 +142,12 @@ export class PartnerPortalComponent implements OnInit{
       preferredLocation: ['India', Validators.required],
       industry: ['', Validators.required],
       currentSalary: ['', Validators.required],
-      currentSalaryCurrency: ['INR', Validators.required],
-      currentSalaryFrequency: ['Yearly', Validators.required],
+      currentSalaryCurrency: ['INR'],
+      currentSalaryFrequency: ['Yearly'],
       expectedSalary: ['', Validators.required],
-      expectedSalaryCurrency: ['INR', Validators.required],
-      expectedSalaryFrequency: ['Yearly', Validators.required],
+      expectedSalaryCurrency: ['INR'],
+      expectedSalaryFrequency: ['Yearly'],
       skills: ['', Validators.required],
-      role: ['', Validators.required],
       partnerName: ['', Validators.required],
       // password: ['', Validators.required],
       // confirmPassword: ['', Validators.required],
@@ -192,79 +237,88 @@ export class PartnerPortalComponent implements OnInit{
   }
 
   onSkillsUpdate(e: any) {
+    // Ensure skills is always an array
+    const currentSkills = this.cvForm.get('skills').value || [];
+    const skillsArray = Array.isArray(currentSkills) ? currentSkills : [];
+
     this.cvForm
       .get('skills')
       ?.setValue([
         e.target.value,
-        ...this.cvForm.get('skills').value,
+        ...skillsArray,
       ]);
     this.cvForm.get('skillsInput').setValue('');
   }
 
-  parseResume(base64Content: string, file: File) {
-    // const prompt = `Parse the following resume and return only a JSON object with these exact keys:
-    // ['fullName', 'currentLocation', 'phoneNumber', 'email', 'currentCompany', 'designation',
-    // 'noticePeriod', 'qualification', 'university', 'totalExpYear', 'totalExpMonths',
-    //   'currentSalary', 'expectedSalary', 'skills', 'industry', 'preferredLocation'].
-    // Do not include any explanations or additional text beyond the JSON object. Do not add country code in phoneNumber`;
+  parseResume(_: string, file: File) {
+    // Show spinner while parsing
     this.apiService.showSpinner$.next(true);
-    const prompt = `
-        Parse the following resume and return a well-structured JSON object with the exact keys:  
-        ['fullName', 'currentLocation', 'phoneNumber', 'countryCode', 'email', 'currentCompany', 'designation',  
-        'noticePeriod', 'qualification', 'university', 'totalExpYear', 'totalExpMonths',  
-        'currentSalary', 'expectedSalary', 'skills', 'industry', 'preferredLocation'].  
-    
-        **Guidelines:**  
-        - Extract accurate information for each key.  
-        - Return only the JSON object with no additional text or explanations.  
-        - Ensure "phoneNumber" does not include a country code.  
-        - Provide "country code" in "countryCode".  
-        - Maintain consistency in data formatting.`;
 
-    const requestBody = {
-      contents: [
-        {
-          role: 'user',
-          parts: [
-            { text: prompt },
-            {
-              inline_data: {
-                mime_type: this.getMimeType(file.type),
-                data: base64Content,
-              },
-            },
-          ],
-        },
-      ],
-      generationConfig: {
-        responseMimeType: 'application/json',
-        temperature: 0.2,
-        top_p: 0.8,
-        top_k: 40,
-        max_output_tokens: 2048,
-      },
-    };
+    // Keeping this commented out as it's not currently used but might be needed later
+    // const requestBody = {
+    //   contents: [
+    //     {
+    //       role: 'user',
+    //       parts: [
+    //         { text: prompt },
+    //         {
+    //           inline_data: {
+    //             mime_type: this.getMimeType(file.type),
+    //             data: base64Content,
+    //           },
+    //         },
+    //       ],
+    //     },
+    //   ],
+    //   generationConfig: {
+    //     responseMimeType: 'application/json',
+    //     temperature: 0.2,
+    //     top_p: 0.8,
+    //     top_k: 40,
+    //     max_output_tokens: 2048,
+    //   },
+    // };
 
     // this.apiService.parseResume(requestBody).subscribe((response: any) => {
-    this.apiService.parseResumeAllFiles(file).subscribe((response: any) => {
-      if (response.countryCode && !response.countryCode.includes('+')) {
-        response.countryCode = '+' + response.countryCode.trim();
+    this.apiService.parseResumeAllFiles(file).subscribe({
+      next: (response: any) => {
+        if (response.countryCode && !response.countryCode.includes('+')) {
+          response.countryCode = '+' + response.countryCode.trim();
+        }
+
+        if (response.designation) {
+          this.cvForm.get('designation').setValue(response.designation);
+        }
+
+        const parsedData = Object.fromEntries(
+          Object.entries(response).filter(([_, v]) => v !== null)
+        );
+
+        this.apiService.showSpinner$.next(false);
+        this.cvForm.patchValue(parsedData);
+        this.errorMessage = '';
+      },
+      error: (error: any) => {
+        this.apiService.showSpinner$.next(false);
+        let errorMsg = '';
+        this.cvForm.reset();
+
+        if (error.status === 400) {
+          errorMsg = error.error.error || 'Bad request. Please check your input.';
+        } else if (error.status === 401) {
+          errorMsg = 'Unauthorized. Please login again.';
+        } else if (error.status === 413) {
+          errorMsg = 'File size too large. Please upload a smaller file.';
+        } else {
+          errorMsg = 'An error occurred while parsing the resume. Please try again.';
+        }
+
+        this.errorMessage = errorMsg;
+        console.error('Resume parsing error:', error);
+
+        // Show error popup using SnackBarService
+        this.snackBarService.showError(errorMsg);
       }
-      // console.log(response);
-      // let parsedData = JSON.parse(
-      //   response?.candidates?.[0]?.content?.parts?.[0]?.text || '{}'
-      // );
-      // console.log(parsedData);
-      // remove all null values from parsedData 
-      if (response.designation) {
-        this.cvForm.get('role').setValue(response.designation);
-      }
-      const parsedData = Object.fromEntries(
-        Object.entries(response).filter(([_, v]) => v !== null)
-      );
-      this.apiService.showSpinner$.next(false);
-      this.cvForm.patchValue(parsedData);
-      this.errorMessage = '';
     });
   }
 
@@ -345,11 +399,14 @@ export class PartnerPortalComponent implements OnInit{
   }
 
   deleteSkillChip(chip: any) {
-    const skills = this.cvForm.get('skills').value;
-    const index = skills.indexOf(chip);
+    // Ensure skills is always an array
+    const skills = this.cvForm.get('skills').value || [];
+    const skillsArray = Array.isArray(skills) ? skills : [];
+
+    const index = skillsArray.indexOf(chip);
     if (index !== -1) {
-      skills.splice(index, 1);
-      this.cvForm.get('skills').setValue(skills);
+      skillsArray.splice(index, 1);
+      this.cvForm.get('skills').setValue(skillsArray);
     }
   }
 
