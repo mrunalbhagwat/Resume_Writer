@@ -81,6 +81,7 @@ export class JobSeekerComponent implements OnInit {
       // Get form values
       const formData = this.cvForm.value;
 
+      debugger;
       // Add the resume file if it exists
       if (this.fileInput?.nativeElement?.files?.length > 0) {
         formData.resumeFile = this.fileInput.nativeElement.files[0];
@@ -143,7 +144,7 @@ export class JobSeekerComponent implements OnInit {
         totalExpYear: ['', Validators.required],
         totalExpMonths: ['', Validators.required],
         preferredLocation: ['India', Validators.required],
-        industry: ['', Validators.required],
+        industry: [''],
         currentSalary: ['', Validators.required],
         currentSalaryCurrency: ['INR', Validators.required],
         currentSalaryFrequency: ['Yearly', Validators.required],
@@ -171,7 +172,7 @@ export class JobSeekerComponent implements OnInit {
     }
 
     // File Upload Logic (Fixed & Optimized)
-    @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
+    @ViewChild('fileInputJobSeeker') fileInput!: ElementRef<HTMLInputElement>;
 
     fileName: string = '';
     fileSize: string = '';
@@ -209,8 +210,6 @@ export class JobSeekerComponent implements OnInit {
         };
 
         reader.readAsDataURL(file);
-        // Reset input value to allow selecting the same file again
-        input.value = '';
       }
     }
 
