@@ -78,7 +78,9 @@ export class StrategicStaffingComponent implements OnInit {
       entries.forEach(entry => {
         if (entry.isIntersecting && !this.hasAnimated) {
           this.hasAnimated = true;
-          this.startCounting();
+          setTimeout(() => {
+            this.startCounting();
+          }, 1000);
         }
       });
     }, options);
@@ -115,7 +117,7 @@ export class StrategicStaffingComponent implements OnInit {
           clearInterval(interval);
           counter.current = counter.target;
           if (counter.target >= 1000000) {
-            counter.display = (counter.target / 1000000).toFixed(1) + 'M';
+            counter.display = (counter.target / 1000000) + 'M';
           } else {
             counter.display = counter.target.toString();
           }
