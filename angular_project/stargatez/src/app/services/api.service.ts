@@ -69,4 +69,8 @@ export class ApiService {
   fetchAllCountries() {
     return this.http.get('https://restcountries.com/v3.1/all');
   }
+
+  fetchAllCities() {
+    return this.http.get('https://countriesnow.space/api/v0.1/countries/population/cities');
+  }
 }

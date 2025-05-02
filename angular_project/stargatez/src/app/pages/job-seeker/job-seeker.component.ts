@@ -22,6 +22,9 @@ export class JobSeekerComponent implements OnInit {
     isLoading: boolean = false;
     currencies: any = [];
     countryCallCodes: any = [];
+    cities: any = [];
+    showCityDropdown: any = {};
+    filteredCitiesMap: any = {};
     // Popup state is now managed by SnackBarService
     webDevSkills = [
       'HTML',
@@ -81,7 +84,6 @@ export class JobSeekerComponent implements OnInit {
       // Get form values
       const formData = this.cvForm.value;
 
-      debugger;
       // Add the resume file if it exists
       if (this.fileInput?.nativeElement?.files?.length > 0) {
         formData.resumeFile = this.fileInput.nativeElement.files[0];
@@ -132,19 +134,19 @@ export class JobSeekerComponent implements OnInit {
       this.cvForm = this.fb.group({
         resume: [''],
         fullName: ['', Validators.required],
-        currentLocation: [''],
+        currentLocation: ['', Validators.required],
         countryCode: ['+91'],
         phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
         email: ['', [Validators.required, Validators.email]],
         currentCompany: ['', Validators.required],
         designation: ['', Validators.required],
         noticePeriod: ['', Validators.required],
-        qualification: [''],
+        qualification: ['', Validators.required],
         university: ['', Validators.required],
         totalExpYear: ['', Validators.required],
-        totalExpMonths: ['', Validators.required],
+        relevantExpYear: ['', Validators.required],
         preferredLocation: ['India', Validators.required],
-        industry: [''],
+        industry: ['', Validators.required],
         currentSalary: ['', Validators.required],
         currentSalaryCurrency: ['INR', Validators.required],
         currentSalaryFrequency: ['Yearly', Validators.required],
@@ -152,13 +154,14 @@ export class JobSeekerComponent implements OnInit {
         expectedSalaryCurrency: ['INR', Validators.required],
         expectedSalaryFrequency: ['Yearly', Validators.required],
         skills: [[], Validators.required],
-        // password: ['', Validators.required],
-        // confirmPassword: ['', Validators.required],
+        homeTown: ['', Validators.required],
+        education: ['', Validators.required],
+        comments: [''],
+        resumeContent: [''],
         skillsInput: [''],
-        // showPassword: [false], // Store visibility state in FormControl
-        // showConfirmPassword: [false], // Store visibility state in FormControl
       });
       this.fetchCountries();
+      this.getAllCities();
     }
 
     togglePassword() {
@@ -185,7 +188,7 @@ export class JobSeekerComponent implements OnInit {
     onFileSelected(event: any) {
       event.preventDefault();
       const input = event.target as HTMLInputElement;
-      
+
       if (input.files && input.files.length > 0) {
         const file = input.files[0];
         if (!file) {
@@ -195,7 +198,7 @@ export class JobSeekerComponent implements OnInit {
 
         this.isLoading = true;
         const reader = new FileReader();
-        
+
         reader.onload = async (e: any) => {
           try {
             const fileContent = e.target.result;
@@ -402,4 +405,39 @@ export class JobSeekerComponent implements OnInit {
     }
 
     // Popup functionality is now handled directly by the SnackBarService
+
+    // City-related methods
+    getAllCities() {
+      this.apiService.fetchAllCities().subscribe({
+        next: (response: any) => {
+          this.cities = response.data;
+        },
+        error: (error: any) => {
+          console.error('Error fetching cities:', error);
+        }
+      });
+    }
+
+    filterCities(event: any, fieldName: string) {
+      const query = event.target.value.toLowerCase();
+      if (!query) {
+        this.filteredCitiesMap[fieldName] = [];
+        return;
+      }
+
+      this.filteredCitiesMap[fieldName] = this.cities.filter((city: any) =>
+        city.city.toLowerCase().includes(query)
+      ).slice(0, 10); // Limit to 10 results for performance
+    }
+
+    selectCity(city: any, fieldName: string) {
+      this.cvForm.get(fieldName).setValue(city.city);
+      this.showCityDropdown[fieldName] = false;
+    }
+
+    hideCityDropdownDelayed(fieldName: string) {
+      setTimeout(() => {
+        this.showCityDropdown[fieldName] = false;
+      }, 200);
+    }
 }

@@ -2,6 +2,8 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { SnackBarService } from '../../services/snack-bar.service';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 declare var AOS: any;
 
 @Component({
@@ -12,7 +14,7 @@ declare var AOS: any;
 export class PartnerPortalComponent implements OnInit{
   // videoLink: any = 'assets/videos/team_gathering.mp4';
   videoLink: any = 'assets/videos/handshake.mp4';
-
+  cities: any = [];
   cvForm: FormGroup | any;
   parsedData: any = null;
   errorMessage: string = '';
@@ -36,6 +38,10 @@ export class PartnerPortalComponent implements OnInit{
     'Webpack',
     'TypeScript',
   ];
+  filteredCities: Observable<any[]> | undefined;
+  filteredCitiesMap: { [key: string]: any[] } = {};
+  showCityDropdown: { [key: string]: boolean } = {};
+  private dropdownTimeouts: { [key: string]: any } = {};
 
   validateNumberInput(event: KeyboardEvent) {
     const allowedKeys = [
@@ -62,6 +68,13 @@ export class PartnerPortalComponent implements OnInit{
     public apiService: ApiService,
     private snackBarService: SnackBarService
   ) { }
+
+  getAllCities() {
+    this.apiService.fetchAllCities().subscribe((response: any) => {
+      this.cities = response.data;
+      console.log(this.cities);
+    });
+  }
 
   onSubmit() {
     if (this.cvForm?.invalid) {
@@ -116,6 +129,7 @@ export class PartnerPortalComponent implements OnInit{
 
 
   ngOnInit() {
+    this.getAllCities();
     setTimeout(() => {
       if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -138,7 +152,7 @@ export class PartnerPortalComponent implements OnInit{
       qualification: ['', Validators.required],
       university: ['', Validators.required],
       totalExpYear: ['', Validators.required],
-      totalExpMonths: ['', Validators.required],
+      relevantExpYear: ['', Validators.required],
       preferredLocation: ['India', Validators.required],
       industry: ['', Validators.required],
       currentSalary: ['', Validators.required],
@@ -149,6 +163,10 @@ export class PartnerPortalComponent implements OnInit{
       expectedSalaryFrequency: ['Yearly'],
       skills: ['', Validators.required],
       partnerName: ['', Validators.required],
+      comments: [''],
+      homeTown: ['', Validators.required],
+      resumeContent: [''],
+      education: ['', Validators.required],
       // password: ['', Validators.required],
       // confirmPassword: ['', Validators.required],
       skillsInput: [''],
@@ -156,6 +174,11 @@ export class PartnerPortalComponent implements OnInit{
       // showConfirmPassword: [false], // Store visibility state in FormControl
     });
     this.fetchCountries();
+    // Setup city autocomplete
+    // this.filteredCities = this.cvForm.get('currentLocation')!.valueChanges.pipe(
+    //   startWith(''),
+    //   map(value => this._filterCities(value as string || ''))
+    // );
   }
 
   togglePassword() {
@@ -410,4 +433,35 @@ export class PartnerPortalComponent implements OnInit{
     }
   }
 
+  filterCities(event: any, controlName: string) {
+    const value = event.target.value.toLowerCase();
+    if (value.length > 0) {
+      this.filteredCitiesMap[controlName] = this.cities.filter(city => 
+        city.city.toLowerCase().includes(value)
+      ).slice(0, 10); // Limit to 10 results for performance
+    } else {
+      this.filteredCitiesMap[controlName] = [];
+    }
+  }
+
+  selectCity(city: any, formControlName: string) {
+    this.cvForm.get(formControlName)?.setValue(city.city);
+    this.showCityDropdown[formControlName] = false;
+  }
+
+  hideCityDropdownDelayed(controlName: string) {
+    // Use timeout to allow click to register before hiding
+    this.dropdownTimeouts[controlName] = setTimeout(() => {
+      this.showCityDropdown[controlName] = false;
+    }, 200);
+  }
+
+  ngOnDestroy() {
+    // Clear all timeouts
+    Object.values(this.dropdownTimeouts).forEach(timeout => {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+    });
+  }
 }
