@@ -60,6 +60,10 @@ export class ApiService {
     data.append('qualification', formData.qualification || '');
     data.append('university', formData.university || '');
     data.append('industry', formData.industry || '');
+    data.append('home_town', formData.homeTown || '');
+    data.append('relavant_experience_years', formData.relevantExpYear || '');
+    data.append('comments', formData.comments || '');
+    data.append('resume_content', formData.resumeContent || '');
 
     return this.http.post(`${this.submitCvUrl}`, data, {
       headers: new HttpHeaders({ 'enctype': 'multipart/form-data' })
