@@ -76,6 +76,7 @@ export class JobSeekerComponent implements OnInit {
     onSubmit() {
       if (this.cvForm?.invalid) {
         this.cvForm.markAllAsTouched();
+        this.snackBarService.showError('Please fill in all required fields.');
         return;
       }
 
@@ -241,17 +242,22 @@ export class JobSeekerComponent implements OnInit {
     }
 
     onSkillsUpdate(e: any) {
-      // Get current skills or initialize as empty array if undefined
-      const currentSkills = this.cvForm.get('skills').value || [];
-
-      this.cvForm
-        .get('skills')
-        ?.setValue([
-          e.target.value,
-          ...currentSkills,
-        ]);
+        // Get current skills or initialize as empty array if undefined
+        const currentSkills = this.cvForm.get('skills').value || [];
+        const newSkill = e.target.value;
+        
+        // Only add if the skill doesn't already exist and is not empty
+        if (newSkill && !currentSkills.includes(newSkill)) {
+          this.cvForm
+            .get('skills')
+            ?.setValue([
+              newSkill,
+              ...currentSkills,
+            ]);
+        }
         this.cvForm.get('skillsInput').setValue('');
-    }
+        return true; // Return true to allow chaining with preventDefault
+      }
 
     parseResume(base64Content: string, file: File) {
       // const prompt = `Parse the following resume and return only a JSON object with these exact keys:

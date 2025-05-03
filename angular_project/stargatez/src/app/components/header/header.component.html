@@ -109,7 +109,7 @@
 
         </ul>
 
-        <ul id="menu" class="{{showMenu ? 'opacity-100 scale-100' : ''}} items-center gap-8 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50 2xl:text-lg font-normal bg-[#000000e4] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg lg:hidden mx-4 max-w-[calc(100%-2rem)] transition-all duration-400 ease-in-out transform scale-95 opacity-0">
+        <ul id="menu" *ngIf="showMenu" class="items-center gap-8 lg:static absolute left-0 right-0 lg:flex-row flex-col justify-center top-full py-8 lg:py-0 z-50 2xl:text-lg font-normal bg-[#000000e4] lg:bg-transparent space-y-3 lg:space-y-0 p-4 lg:p-0 mt-4 lg:mt-0 rounded-lg lg:hidden mx-4 max-w-[calc(100%-2rem)] transition-all duration-400 ease-in-out transform animate-fade-up">
 
             <li class="relative group" id="manufacturing">
 

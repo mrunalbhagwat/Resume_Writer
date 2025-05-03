@@ -187,8 +187,8 @@
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Skills <span
                         class="text-red-500">*</span></label>
                 <input type="text" formControlName="skillsInput" placeholder="Enter your Skills & Press Enter"
-                    (change)="onSkillsUpdate($event)"
-                    class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                (keydown)="$event.key === 'Enter' ? onSkillsUpdate($event) && $event.preventDefault() : null"                        
+                class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
             </div>
             <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-3">
                 <span *ngFor="let skill of cvForm.get('skills').value">

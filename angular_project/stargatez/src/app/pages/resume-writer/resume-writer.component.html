@@ -140,10 +140,10 @@
         <!-- Card 1 -->
 
         <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
+            class="md:basis-[25%] w-full min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
 
             <!-- Original content stays untouched -->
-            <img src="./assets/icons/customised_resume_icon.png" alt="Resume Icon" class="w-16 mb-4 mt-12">
+            <img src="./assets/icons/customised_resume_icon.png" alt="Resume Icon" class="w-24 md:w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">Customized Resumes <br>Aligned with Your Goals</h3>
 
             <!-- Overlay hover effect (added only) -->
@@ -156,10 +156,10 @@
 
         <!-- Card 2 -->
         <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
+            class="md:basis-[25%] w-full  min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
 
 
-            <img src="./assets/icons/ats_optimisation.png" alt="ATS Icon" class="w-16 mb-4 mt-12">
+            <img src="./assets/icons/ats_optimisation.png" alt="ATS Icon" class="w-24 md:w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">ATS Optimization <br> Expertise</h3>
 
             <!-- Overlay hover effect (added only) -->
@@ -173,10 +173,10 @@
 
         <!-- Card 3 -->
         <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
+            class="md:basis-[25%] w-full  min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
 
 
-            <img src="./assets/icons/proven_track.png" alt="Chart Icon" class="w-16 mb-4 mt-12">
+            <img src="./assets/icons/proven_track.png" alt="Chart Icon" class="w-24 md:w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">Proven Track Record</h3>
 
             <!-- Overlay hover effect (added only) -->
@@ -189,10 +189,10 @@
 
         <!-- Card 4 -->
         <div
-            class="basis-[25%] min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
+            class="md:basis-[25%] w-full  min-h-[300px] h-full bg-[#212B3D] rounded-xl flex flex-col items-center justify-stretch p-6 shadow-lg text-white hover:-translate-y-1 hover:scale-105 transition-all relative overflow-hidden group">
 
 
-            <img src="./assets/icons/turnaround.png" alt="Clock Icon" class="w-16 mb-4 mt-12">
+            <img src="./assets/icons/turnaround.png" alt="Clock Icon" class="w-24 md:w-16 mb-4 mt-12">
             <h3 class="text-base font-semibold mt-2 text-center">Fast Turnaround & <br> Stellar Support</h3>
             <!-- Overlay hover effect (added only) -->
             <div class="absolute flex flex-col items-center justify-center rounded-xl h-full w-full md:h-[250px] md:w-[250px] bg-neutral-900/90 opacity-0 transition-all duration-500 group-hover:opacity-100 cursor-pointer"
@@ -584,7 +584,7 @@
 <section data-aos="fade-up" id="targetSection">
     <div class="w-full mt-4 md:mt-12">
         <!-- Background Image Section -->
-        <div class="relative bg-cover bg-center p-12 h-full flex items-center justify-center p-6"
+        <div class="relative bg-cover bg-center p-6 md:p-12 h-full flex items-center justify-center p-6"
             style="background-image: url('./assets/images/assesment_bg.png');">
             <div class="absolute inset-0 bg-[#000121CC]"></div> <!-- Dark Overlay -->
 
@@ -598,7 +598,7 @@
                 </p>
 
                 <form class="mt-6 bg-transparent" [formGroup]="cvForm" (ngSubmit)="onSubmit()">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <label for="upload-my-cv"
                             class="flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition duration-300 hover:border-blue-500 w-full h-32"
                             (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
@@ -611,6 +611,8 @@
                             <input formControlName="resume" type="file" #fileInput id="upload-my-cv" class="hidden"
                                 (change)="onFileSelected($event)">
                         </label>
+
+                        <div></div>
 
                         <!-- Uploaded File Box -->
                         <div *ngIf="fileUploaded"
@@ -632,19 +634,28 @@
 
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
                         <div class="mt-3 mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
-                                Name</label>
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
+                                Name <span class="text-red-500">*</span></label>
                             <input formControlName="fullName" type="text" placeholder="Full Name *" required
                                 class="{{cvForm.get('fullName')?.invalid && cvForm.get('fullName')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
 
                         <div class="mt-3 mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
-                                Phone Number
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
+                                Email ID <span class="text-red-500">*</span>
+                            </label>
+                            <input formControlName="email" type="email" placeholder="Valid Email ID"
+                                class="{{cvForm.get('email')?.invalid && cvForm.get('email')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+
+                        <div class="mt-3 mb-3">
+                            <label
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
+                                Phone Number <span class="text-red-500">*</span>
                             </label>
                             <input formControlName="phoneNumber" type="tel" placeholder="10 Digit Phone Number"
                                 maxlength="10" required (keydown)="validateNumberInput($event)"
@@ -654,36 +665,85 @@
 
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Candidate
-                                Email ID
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Educational Qualification <span class="text-red-500">*</span>
                             </label>
-                            <input formControlName="email" type="email" placeholder="Valid Email ID"
-                                class="{{cvForm.get('email')?.invalid && cvForm.get('email')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                            <input formControlName="education" type="text" placeholder="Enter Educational Qualification"
+                                class="{{cvForm.get('education')?.invalid && cvForm.get('education')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 relative">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Role
-                                Applying For
-                            </label>
-                            <input formControlName="role" type="text"
-                                placeholder="Role Mentioned in the Job Description"
-                                class="{{cvForm.get('role')?.invalid && cvForm.get('role')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Current Location <span
+                                    class="text-red-500">*</span></label>
+                            <input formControlName="currentLocation" type="text" placeholder="City, State"
+                                (input)="filterCities($event, 'currentLocation')"
+                                (focus)="showCityDropdown['currentLocation'] = true"
+                                (blur)="hideCityDropdownDelayed('currentLocation')"
+                                class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+
+                            <!-- Custom Autocomplete Dropdown -->
+                            <div *ngIf="showCityDropdown['currentLocation'] && filteredCitiesMap['currentLocation']?.length > 0"
+                                class="absolute z-10 w-full text-black text-left mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto animate-fade-up">
+                                <div *ngFor="let city of filteredCitiesMap['currentLocation']"
+                                    class="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                                    (mousedown)="selectCity(city, 'currentLocation')">
+                                    {{city.city}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 relative">
+                            <label
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Home Town <span
+                                    class="text-red-500">*</span></label>
+                            <input formControlName="homeTown" type="text" placeholder="Your Home Town"
+                                (input)="filterCities($event, 'homeTown')" (focus)="showCityDropdown['homeTown'] = true"
+                                (blur)="hideCityDropdownDelayed('homeTown')"
+                                class="{{cvForm.get('homeTown')?.invalid && cvForm.get('homeTown')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+
+                            <!-- Custom Autocomplete Dropdown -->
+                            <div *ngIf="showCityDropdown['homeTown'] && filteredCitiesMap['homeTown']?.length > 0"
+                                class="absolute z-10 w-full mt-1 text-black text-left bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto animate-fade-up">
+                                <div *ngFor="let city of filteredCitiesMap['homeTown']"
+                                    class="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                                    (mousedown)="selectCity(city, 'homeTown')">
+                                    {{city.city}}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-3">
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Skills
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Role
+                                Applying For <span class="text-red-500">*</span>
+                            </label>
+                            <input formControlName="designation" type="text"
+                                placeholder="Role Mentioned in the Job Description"
+                                class="{{cvForm.get('designation')?.invalid && cvForm.get('designation')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 mt-3">
+                        <div class="mb-3">
+                            <label class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Copy Your Resume</label>
+                            <textarea formControlName="resumeContent" placeholder="Copy Resume" col="30" rows="6"
+                                class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs">
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-3 mt-3">
+                        <div class="mb-3">
+                            <label
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Skills <span class="text-red-500">*</span>
                             </label>
                             <input type="text" formControlName="skillsInput"
-                                placeholder="Enter your Skills & Press Enter" (change)="onSkillsUpdate($event)"
+                                placeholder="Enter your Skills & Press Enter" 
+                                (keydown)="$event.key === 'Enter' ? onSkillsUpdate($event) && $event.preventDefault() : null"
                                 class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-6">
                             <span *ngFor="let skill of cvForm.get('skills').value">
                                 <div id="chip"
-                                    class="relative rounded-md flex bg-black py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-blue transition-all shadow-sm">
+                                    class="relative rounded-md flex bg-[#d3d3d3] py-0.5 pl-2.5 pr-8 border border-transparent text-sm text-[#000121F2] transition-all shadow-sm">
                                     {{skill}}
 
                                     <button
@@ -699,52 +759,51 @@
 
                             </span>
                         </div>
-
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Total
-                                Experience (Years)</label>
-                            <input formControlName="totalExpYear" type="text" placeholder="Example: 5 or 5.6 or 5.10"
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Total
+                                Experience (Years) <span class="text-red-500">*</span></label>
+                            <input formControlName="totalExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.10"
                                 class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Relevant
-                                Experience (Years)</label>
-                            <input formControlName="totalExpYear" type="text" placeholder="Example: 5 or 5.6 or 5.10"
-                                class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Relevant
+                                Experience (Years) <span class="text-red-500">*</span></label>
+                            <input formControlName="relevantExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.10"
+                                class="{{cvForm.get('relevantExpYear')?.invalid && cvForm.get('relevantExpYear')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
-                                / Last Company</label>
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
+                                / Last Company <span class="text-red-500">*</span></label>
                             <input formControlName="currentCompany" type="text"
                                 placeholder="Name of the Current / Last Company"
                                 class="{{cvForm.get('currentCompany')?.invalid && cvForm.get('currentCompany')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
-                                / Last CTC (Lakhs)</label>
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
+                                / Last CTC (Lakhs) <span class="text-red-500">*</span></label>
                             <input formControlName="currentSalary" type="number"
                                 placeholder="Enter your expected salary" required
                                 class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Expected
-                                CTC (Lakhs)</label>
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Expected
+                                CTC (Lakhs) <span class="text-red-500">*</span></label>
                             <input formControlName="expectedSalary" type="number"
                                 placeholder="Enter your expected salary" required
                                 class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Notice
-                                Period (Days)</label>
-                            <select formControlName="noticePeriod" id="notice" required
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Notice
+                                Period (Days) <span class="text-red-500">*</span></label>
+                            <!-- <select formControlName="noticePeriod" id="notice" required
                                 placeholder="Enter your notice period"
                                 class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs">
                                 <option value="" disabled selected hidden>Enter your notice period</option>
@@ -754,40 +813,35 @@
                                 <option class="text-black text-sm">30 days</option>
                                 <option class="text-black text-sm">60 days</option>
                                 <option class="text-black text-sm">90 days</option>
-                            </select>
+                            </select> -->
+                            <input formControlName="noticePeriod" type="number" placeholder="Enter your notice period"
+                            class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
                         <div class="mb-3">
                             <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
-                                Location
+                                class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Comments
                             </label>
-                            <input formControlName="currentLocation" type="text" placeholder="City, State"
-                                class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
-                        </div>
-                        <div class="mb-3">
-                            <label
-                                class="flex flex-col items-start justify-items-start mb-2 text-sm block font-medium text-white">Comments
-                            </label>
-                            <input type="text" placeholder="Anything Noteworthy"
+                            <input formControlName="comments" type="text" placeholder="Anything Noteworthy"
                                 class=" w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
 
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-6">
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 mt-4 gap-0 lg:gap-6">
+                        <div></div>
                         <div></div>
                         <div class="py-4 md:py-0">
-                            <button
-                                class="md:h-[48px] bg-[#F7A400] text-white  py-3 lg:mt-2 px-4 text-sm rounded-lg font-medium transition-all uppercase duration-300 2xl:text-base w-full">
+                            <button type="submit"
+                                class="md:h-[48px] cursor-pointer hover:bg-white hover:text-black bg-[#F7A400] text-white  py-3 lg:mt-2 px-4 text-sm rounded-lg font-medium transition-all uppercase duration-300 2xl:text-base w-full">
                                 Submit
                             </button>
                             <!-- <input type="button" placeholder="Anything Noteworthy"
                                         class="border placeholder-[#14176CCC] border-blue-900 p-3 rounded w-full" /> -->
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>

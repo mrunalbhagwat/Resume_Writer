@@ -260,17 +260,21 @@ export class PartnerPortalComponent implements OnInit{
   }
 
   onSkillsUpdate(e: any) {
-    // Ensure skills is always an array
+    // Get current skills or initialize as empty array if undefined
     const currentSkills = this.cvForm.get('skills').value || [];
-    const skillsArray = Array.isArray(currentSkills) ? currentSkills : [];
-
-    this.cvForm
-      .get('skills')
-      ?.setValue([
-        e.target.value,
-        ...skillsArray,
-      ]);
+    const newSkill = e.target.value;
+    
+    // Only add if the skill doesn't already exist and is not empty
+    if (newSkill && !currentSkills.includes(newSkill)) {
+      this.cvForm
+        .get('skills')
+        ?.setValue([
+          newSkill,
+          ...currentSkills,
+        ]);
+    }
     this.cvForm.get('skillsInput').setValue('');
+    return true; // Return true to allow chaining with preventDefault
   }
 
   parseResume(_: string, file: File) {
