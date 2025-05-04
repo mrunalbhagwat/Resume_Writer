@@ -365,7 +365,6 @@ export class ResumeWriterComponent implements OnInit {
       }
 
       filterCities(event: any, fieldName: string) {
-        debugger;
         const query = event.target.value.toLowerCase();
         if (!query) {
           this.filteredCitiesMap[fieldName] = [];

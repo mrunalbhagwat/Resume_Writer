@@ -118,7 +118,7 @@
 
                     <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
                     <div class="mt-2 text-sm font-semibold text-[#14176C]">
-                        Click to upload CV / Resume <span class="text-red-500">*</span> &nbsp; <span
+                        Click to Upload CV / Resume <span class="text-red-500">*</span> &nbsp; <span
                             class="text-gray-500">or drag and drop</span>
                     </div>
 
@@ -179,7 +179,7 @@
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Educational Qualification <span
                             class="text-red-500">*</span></label>
-                    <input formControlName="qualification" type="text" placeholder="Enter Educational Qualification"
+                    <input formControlName="qualification" type="text" placeholder="Highest Qualification"
                         class="{{cvForm.get('qualification')?.invalid && cvForm.get('qualification')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="mb-3 relative">
@@ -204,7 +204,7 @@
                 <div class="mb-3 relative">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Home Town <span
                             class="text-red-500">*</span></label>
-                    <input formControlName="homeTown" type="text" placeholder="Your Home Town"
+                    <input formControlName="homeTown" type="text" placeholder="City, State"
                         (input)="filterCities($event, 'homeTown')" (focus)="showCityDropdown['homeTown'] = true"
                         (blur)="hideCityDropdownDelayed('homeTown')"
                         class="{{cvForm.get('homeTown')?.invalid && cvForm.get('homeTown')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
@@ -272,13 +272,13 @@
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Experience (Years) <span
                             class="text-red-500">*</span></label>
-                    <input formControlName="totalExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.10"
+                    <input formControlName="totalExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.11"
                         class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Relevant Experience (Years) <span
                             class="text-red-500">*</span></label>
-                    <input formControlName="relevantExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.10"
+                    <input formControlName="relevantExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.11"
                         class="{{cvForm.get('relevantExpYear')?.invalid && cvForm.get('relevantExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="mb-3">
@@ -302,7 +302,7 @@
                         </select> -->
 
                         <!-- Salary Input (Middle) -->
-                        <input formControlName="currentSalary" type="number" placeholder="Example: 5 or 5.6 or 5.10"
+                        <input formControlName="currentSalary" type="number" placeholder="Example: 5 or 5.06 or 5.60"
                             required
                             class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->
@@ -324,7 +324,7 @@
                         <!-- Currency Dropdown (Prefix) -->
                         <!-- </select> -->
                         <!-- Salary Input (Middle) -->
-                        <input formControlName="expectedSalary" type="number" placeholder="Example: 5 or 5.6 or 5.10"
+                        <input formControlName="expectedSalary" type="number" placeholder="Example: 5 or 5.06 or 5.60"
                             required
                             class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->
@@ -343,7 +343,7 @@
                             class="text-red-500">*</span></label>
                     <div class="relative">
                         <!-- Select Dropdown with Dynamic Styling -->
-                        <input formControlName="noticePeriod" type="number" placeholder="Enter your notice period"
+                        <input formControlName="noticePeriod" type="number" placeholder="0 to 90 Days"
                         class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                     </div>
                 </div>
