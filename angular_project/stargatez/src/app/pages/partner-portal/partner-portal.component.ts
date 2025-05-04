@@ -9,9 +9,9 @@ declare var AOS: any;
 @Component({
   selector: 'app-partner-portal',
   templateUrl: './partner-portal.component.html',
-  styleUrl: './partner-portal.component.scss'
+  styleUrl: './partner-portal.component.scss',
 })
-export class PartnerPortalComponent implements OnInit{
+export class PartnerPortalComponent implements OnInit {
   // videoLink: any = 'assets/videos/team_gathering.mp4';
   videoLink: any = 'assets/videos/handshake.mp4';
   cities: any = [];
@@ -45,7 +45,11 @@ export class PartnerPortalComponent implements OnInit{
 
   validateNumberInput(event: KeyboardEvent) {
     const allowedKeys = [
-      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+      'Backspace',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+      'Delete',
     ];
     if (allowedKeys.includes(event.key)) {
       return; // Allow special keys
@@ -62,12 +66,11 @@ export class PartnerPortalComponent implements OnInit{
     }
   }
 
-
   constructor(
     private fb: FormBuilder,
     public apiService: ApiService,
     private snackBarService: SnackBarService
-  ) { }
+  ) {}
 
   getAllCities() {
     this.apiService.fetchAllCities().subscribe((response: any) => {
@@ -99,7 +102,9 @@ export class PartnerPortalComponent implements OnInit{
         this.apiService.showSpinner$.next(false);
 
         // Show success popup using SnackBarService
-        this.snackBarService.showSuccess('Your CV has been submitted successfully!');
+        this.snackBarService.showSuccess(
+          'Your CV has been submitted successfully!'
+        );
 
         // Reset form after successful submission
         this.cvForm.reset();
@@ -113,20 +118,20 @@ export class PartnerPortalComponent implements OnInit{
         this.apiService.showSpinner$.next(false);
 
         // Show error popup using SnackBarService
-        let errorMsg = 'There was an error submitting your CV. Please try again.';
+        let errorMsg =
+          'There was an error submitting your CV. Please try again.';
         if (error.status === 400) {
-          errorMsg = error.error.error || 'Bad request. Please check your input.';
+          errorMsg =
+            error.error.error || 'Bad request. Please check your input.';
         } else if (error.status === 401) {
           errorMsg = 'Unauthorized. Please login again.';
         } else if (error.status === 413) {
           errorMsg = 'File size too large. Please upload a smaller file.';
         }
         this.snackBarService.showError(errorMsg);
-      }
+      },
     });
   }
-
-
 
   ngOnInit() {
     this.getAllCities();
@@ -134,44 +139,31 @@ export class PartnerPortalComponent implements OnInit{
       if (typeof AOS !== 'undefined') {
         AOS.init({
           duration: 1000,
-          once: true
+          once: true,
         });
       }
     }, 0);
-   // web hook
+    // web hook
     this.cvForm = this.fb.group({
-      resume: [''],
       fullName: ['', Validators.required],
-      currentLocation: ['', Validators.required],
-      countryCode: ['+91'],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
       email: ['', [Validators.required, Validators.email]],
-      currentCompany: ['', Validators.required],
-      designation: ['', Validators.required],
-      noticePeriod: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      currentLocation: ['', Validators.required],
+      homeTown: ['', Validators.required],
       qualification: ['', Validators.required],
-      university: ['', Validators.required],
+      designation: ['', Validators.required],
+      resumeContent: [''],
+      skills: [[], Validators.required],
       totalExpYear: ['', Validators.required],
       relevantExpYear: ['', Validators.required],
-      preferredLocation: ['India', Validators.required],
-      industry: ['', Validators.required],
+      currentCompany: ['', Validators.required],
       currentSalary: ['', Validators.required],
-      currentSalaryCurrency: ['INR'],
-      currentSalaryFrequency: ['Yearly'],
       expectedSalary: ['', Validators.required],
-      expectedSalaryCurrency: ['INR'],
-      expectedSalaryFrequency: ['Yearly'],
-      skills: ['', Validators.required],
-      partnerName: ['', Validators.required],
+      noticePeriod: ['', Validators.required],
+      resume: [''],
       comments: [''],
-      homeTown: ['', Validators.required],
-      resumeContent: [''],
-      education: ['', Validators.required],
-      // password: ['', Validators.required],
-      // confirmPassword: ['', Validators.required],
       skillsInput: [''],
-      // showPassword: [false], // Store visibility state in FormControl
-      // showConfirmPassword: [false], // Store visibility state in FormControl
+      partnerName: ['', Validators.required],
     });
     this.fetchCountries();
     // Setup city autocomplete
@@ -240,20 +232,21 @@ export class PartnerPortalComponent implements OnInit{
       const currencySet = new Set();
       response.forEach((country: any) => {
         if (country.currencies) {
-          Object.keys(country.currencies).forEach(code => {
+          Object.keys(country.currencies).forEach((code) => {
             if (!currencySet.has(code)) {
               currencySet.add(code);
               this.currencies.push({
                 code,
                 countryName: country.name.common,
                 name: country.currencies[code].name,
-                dialCode: country.idd?.root + (country.idd?.suffixes ? country.idd.suffixes[0] : '')
+                dialCode:
+                  country.idd?.root +
+                  (country.idd?.suffixes ? country.idd.suffixes[0] : ''),
               });
             }
           });
         }
       });
-
 
       console.log(this.currencies);
     });
@@ -263,15 +256,10 @@ export class PartnerPortalComponent implements OnInit{
     // Get current skills or initialize as empty array if undefined
     const currentSkills = this.cvForm.get('skills').value || [];
     const newSkill = e.target.value;
-    
+
     // Only add if the skill doesn't already exist and is not empty
     if (newSkill && !currentSkills.includes(newSkill)) {
-      this.cvForm
-        .get('skills')
-        ?.setValue([
-          newSkill,
-          ...currentSkills,
-        ]);
+      this.cvForm.get('skills')?.setValue([newSkill, ...currentSkills]);
     }
     this.cvForm.get('skillsInput').setValue('');
     return true; // Return true to allow chaining with preventDefault
@@ -331,13 +319,15 @@ export class PartnerPortalComponent implements OnInit{
         this.cvForm.reset();
 
         if (error.status === 400) {
-          errorMsg = error.error.error || 'Bad request. Please check your input.';
+          errorMsg =
+            error.error.error || 'Bad request. Please check your input.';
         } else if (error.status === 401) {
           errorMsg = 'Unauthorized. Please login again.';
         } else if (error.status === 413) {
           errorMsg = 'File size too large. Please upload a smaller file.';
         } else {
-          errorMsg = 'An error occurred while parsing the resume. Please try again.';
+          errorMsg =
+            'An error occurred while parsing the resume. Please try again.';
         }
 
         this.errorMessage = errorMsg;
@@ -345,7 +335,7 @@ export class PartnerPortalComponent implements OnInit{
 
         // Show error popup using SnackBarService
         this.snackBarService.showError(errorMsg);
-      }
+      },
     });
   }
 
@@ -440,9 +430,9 @@ export class PartnerPortalComponent implements OnInit{
   filterCities(event: any, controlName: string) {
     const value = event.target.value.toLowerCase();
     if (value.length > 0) {
-      this.filteredCitiesMap[controlName] = this.cities.filter(city => 
-        city.city.toLowerCase().includes(value)
-      ).slice(0, 10); // Limit to 10 results for performance
+      this.filteredCitiesMap[controlName] = this.cities
+        .filter((city) => city.city.toLowerCase().includes(value))
+        .slice(0, 10); // Limit to 10 results for performance
     } else {
       this.filteredCitiesMap[controlName] = [];
     }
@@ -462,7 +452,7 @@ export class PartnerPortalComponent implements OnInit{
 
   ngOnDestroy() {
     // Clear all timeouts
-    Object.values(this.dropdownTimeouts).forEach(timeout => {
+    Object.values(this.dropdownTimeouts).forEach((timeout) => {
       if (timeout) {
         clearTimeout(timeout);
       }

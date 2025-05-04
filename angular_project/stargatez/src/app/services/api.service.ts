@@ -41,6 +41,10 @@ export class ApiService {
     if (formData.resumeFile) {
       data.append('resume_file', formData.resumeFile);
     }
+    // Append resume file if available
+    if (formData.partnerName) {
+      data.append('partner_name', formData.partnerName);
+    }
 
     // Map form fields to API expected fields
     data.append('candidate_name', formData.fullName);
@@ -61,7 +65,7 @@ export class ApiService {
     data.append('university', formData.university || '');
     data.append('industry', formData.industry || '');
     data.append('home_town', formData.homeTown || '');
-    data.append('relavant_experience_years', formData.relevantExpYear || '');
+    data.append('relevant_experience_years', formData.relevantExpYear || '');
     data.append('comments', formData.comments || '');
     data.append('resume_content', formData.resumeContent || '');
 
