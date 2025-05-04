@@ -179,8 +179,8 @@
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Educational Qualification <span
                             class="text-red-500">*</span></label>
-                    <input formControlName="education" type="text" placeholder="Enter Educational Qualification"
-                        class="{{cvForm.get('education')?.invalid && cvForm.get('education')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                    <input formControlName="qualification" type="text" placeholder="Enter Educational Qualification"
+                        class="{{cvForm.get('qualification')?.invalid && cvForm.get('qualification')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div class="mb-3 relative">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location <span
@@ -234,8 +234,8 @@
 
             <div class="grid grid-cols-1 gap-6">
                 <div class="mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Copy Your Resume</label>
-                    <textarea formControlName="resumeContent" placeholder="Copy Resume" col="30" rows="6"
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Copy & Paste Your Entire Resume</label>
+                    <textarea formControlName="resumeContent" placeholder="Copy & Paste Your Entire Resume" col="30" rows="6"
                         class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full">
                     </textarea>
                 </div>
@@ -302,7 +302,7 @@
                         </select> -->
 
                         <!-- Salary Input (Middle) -->
-                        <input formControlName="currentSalary" type="number" placeholder="Enter your current salary"
+                        <input formControlName="currentSalary" type="number" placeholder="Example: 5 or 5.6 or 5.10"
                             required
                             class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->
@@ -324,7 +324,7 @@
                         <!-- Currency Dropdown (Prefix) -->
                         <!-- </select> -->
                         <!-- Salary Input (Middle) -->
-                        <input formControlName="expectedSalary" type="number" placeholder="Enter your expected salary"
+                        <input formControlName="expectedSalary" type="number" placeholder="Example: 5 or 5.6 or 5.10"
                             required
                             class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->
@@ -343,17 +343,8 @@
                             class="text-red-500">*</span></label>
                     <div class="relative">
                         <!-- Select Dropdown with Dynamic Styling -->
-                        <select formControlName="noticePeriod" id="notice" required
-                            placeholder="Enter your notice period"
-                            class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-sm">
-                            <option value="" disabled selected hidden>Enter your notice period</option>
-                            <option class="text-black text-sm">Immediate Joining</option>
-                            <option class="text-black text-sm">7 days</option>
-                            <option class="text-black text-sm">15 days</option>
-                            <option class="text-black text-sm">30 days</option>
-                            <option class="text-black text-sm">60 days</option>
-                            <option class="text-black text-sm">90 days</option>
-                        </select>
+                        <input formControlName="noticePeriod" type="number" placeholder="Enter your notice period"
+                        class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                     </div>
                 </div>
             </div>
