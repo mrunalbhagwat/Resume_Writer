@@ -144,6 +144,9 @@ export class ResumeWriterComponent implements OnInit {
         });
         this.fetchCountries();
         this.getAllCities();
+        // Initialize the character count if there's an initial value
+        const initialComments = this.cvForm.get('comments')?.value || '';
+        this.commentCharCount = initialComments.length;
       }
 
       // Password toggle methods removed as they're not needed
@@ -394,5 +397,13 @@ export class ResumeWriterComponent implements OnInit {
             clearTimeout(timeout);
           }
         });
+      }
+
+      // Add this property to the class
+      commentCharCount: number = 0;
+
+      // Add this method to the class
+      updateCharCount(event: any) {
+        this.commentCharCount = event.target.value.length;
       }
 }

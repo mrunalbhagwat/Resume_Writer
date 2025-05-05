@@ -42,6 +42,7 @@ export class PartnerPortalComponent implements OnInit {
   filteredCitiesMap: { [key: string]: any[] } = {};
   showCityDropdown: { [key: string]: boolean } = {};
   private dropdownTimeouts: { [key: string]: any } = {};
+  commentCharCount: number = 0;
 
   validateNumberInput(event: KeyboardEvent) {
     const allowedKeys = [
@@ -171,6 +172,9 @@ export class PartnerPortalComponent implements OnInit {
     //   startWith(''),
     //   map(value => this._filterCities(value as string || ''))
     // );
+    // Initialize the character count if there's an initial value
+    const initialComments = this.cvForm.get('comments')?.value || '';
+    this.commentCharCount = initialComments.length;
   }
 
   togglePassword() {
@@ -457,5 +461,9 @@ export class PartnerPortalComponent implements OnInit {
         clearTimeout(timeout);
       }
     });
+  }
+
+  updateCharCount(event: any) {
+    this.commentCharCount = event.target.value.length;
   }
 }

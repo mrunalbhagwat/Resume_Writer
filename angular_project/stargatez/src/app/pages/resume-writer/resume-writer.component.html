@@ -808,14 +808,17 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
-                        <div class="mb-3">
+                        <div class="mb-3 relative">
                             <label
                                 class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Comments
                             </label>
-                            <input formControlName="comments" type="text" placeholder="Anything Noteworthy"
-                                class=" w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
+                            <textarea formControlName="comments" placeholder="Anything Noteworthy" maxlength="500" rows="8" cols="25"
+                                (input)="updateCharCount($event)"
+                                class="w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs min-h-[100px]"></textarea>
+                            <div class="text-xs text-gray-500 absolute bottom-2 right-3">
+                                {{commentCharCount}}/500
+                            </div>
                         </div>
-
                     </div>
 
 

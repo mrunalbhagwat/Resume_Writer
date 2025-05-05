@@ -43,6 +43,7 @@ export class JobSeekerComponent implements OnInit {
       'Webpack',
       'TypeScript',
     ];
+    commentCharCount: number = 0;
 
     validateNumberInput(event: KeyboardEvent) {
       const allowedKeys = [
@@ -154,6 +155,9 @@ export class JobSeekerComponent implements OnInit {
       });
       this.fetchCountries();
       this.getAllCities();
+      // Initialize the character count if there's an initial value
+      const initialComments = this.cvForm.get('comments')?.value || '';
+      this.commentCharCount = initialComments.length;
     }
 
     togglePassword() {
@@ -436,5 +440,9 @@ export class JobSeekerComponent implements OnInit {
       setTimeout(() => {
         this.showCityDropdown[fieldName] = false;
       }, 200);
+    }
+
+    updateCharCount(event: any) {
+      this.commentCharCount = event.target.value.length;
     }
 }

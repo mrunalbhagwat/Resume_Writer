@@ -303,10 +303,14 @@
         </div>
 
         <div class="grid grid-cols-1 gap-6">
-            <div class="mb-3">
+            <div class="mb-3 relative">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Comments </label>
-                <input type="text" formControlName="comments"  placeholder="Anything Noteworthy"
-                    class="border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                <textarea formControlName="comments" placeholder="Anything Noteworthy" maxlength="500" rows="8" cols="25"
+                    (input)="updateCharCount($event)"
+                    class="border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full min-h-[100px]"></textarea>
+                <div class="text-xs text-gray-500 absolute bottom-2 right-3">
+                    {{commentCharCount}}/500
+                </div>
             </div>
         </div>
 
