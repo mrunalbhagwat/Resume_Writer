@@ -676,20 +676,9 @@
                                 class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Current Location <span
                                     class="text-red-500">*</span></label>
                             <input formControlName="currentLocation" type="text" placeholder="City, State"
-                                (input)="filterCities($event, 'currentLocation')"
-                                (focus)="showCityDropdown['currentLocation'] = true"
-                                (blur)="hideCityDropdownDelayed('currentLocation')"
                                 class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
 
-                            <!-- Custom Autocomplete Dropdown -->
-                            <div *ngIf="showCityDropdown['currentLocation'] && filteredCitiesMap['currentLocation']?.length > 0"
-                                class="absolute z-10 w-full text-black text-left mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto animate-fade-up">
-                                <div *ngFor="let city of filteredCitiesMap['currentLocation']"
-                                    class="px-4 py-2 cursor-pointer hover:bg-gray-100"
-                                    (mousedown)="selectCity(city, 'currentLocation')">
-                                    {{city.city}}
-                                </div>
-                            </div>
+                           
                         </div>
                         <div class="mb-3 relative">
                             <label
@@ -706,7 +695,7 @@
                                 <div *ngFor="let city of filteredCitiesMap['homeTown']"
                                     class="px-4 py-2 cursor-pointer hover:bg-gray-100"
                                     (mousedown)="selectCity(city, 'homeTown')">
-                                    {{city.city}}
+                                    {{city.name}}
                                 </div>
                             </div>
                         </div>
@@ -765,14 +754,16 @@
                             <label
                                 class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Total
                                 Experience (Years) <span class="text-red-500">*</span></label>
-                            <input formControlName="totalExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.11"
+                            <input formControlName="totalExpYear" type="number" placeholder="0 to 99 Years" min="0" max="99"
+                            (keydown)="validateExperienceInput($event)" (paste)="validateExperiencePaste($event)"
                                 class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
                             <label
                                 class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Relevant
                                 Experience (Years) <span class="text-red-500">*</span></label> 
-                            <input formControlName="relevantExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.11"
+                            <input formControlName="relevantExpYear" formControlName="totalExpYear" type="number" placeholder="0 to 99 Years" min="0" max="99"
+                            (keydown)="validateExperienceInput($event)" (paste)="validateExperiencePaste($event)"
                                 class="{{cvForm.get('relevantExpYear')?.invalid && cvForm.get('relevantExpYear')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
@@ -786,17 +777,19 @@
                         <div class="mb-3">
                             <label
                                 class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Current
-                                / Last CTC (Lakhs) <span class="text-red-500">*</span></label>
-                            <input formControlName="currentSalary" type="number"
-                                placeholder="Example: 5 or 5.06 or 5.60" required
+                                / Last CTC <span class="text-red-500">*</span></label>
+                            <input formControlName="currentSalary" type="number" placeholder="Min 1000, Max 9999999"
+                            required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
+                            (paste)="validateSalaryPaste($event)"
                                 class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
                             <label
                                 class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Expected
-                                CTC (Lakhs) <span class="text-red-500">*</span></label>
-                            <input formControlName="expectedSalary" type="number"
-                                placeholder="Example: 5 or 5.06 or 5.60" required
+                                CTC <span class="text-red-500">*</span></label>
+                            <input formControlName="expectedSalary" type="number" placeholder="Min 1000, Max 9999999"
+                            required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
+                            (paste)="validateSalaryPaste($event)"
                                 class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                         <div class="mb-3">
@@ -804,6 +797,8 @@
                                 class="flex items-start justify-items-start mb-2 text-sm block font-medium text-white">Notice
                                 Period (Days) <span class="text-red-500">*</span></label>
                             <input formControlName="noticePeriod" type="number" placeholder="0 to 90 Days"
+                            min="0" max="90" (keydown)="validateNoticePeriodInput($event)"
+                            (paste)="validateNoticePeriodPaste($event)"
                             class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} w-full p-4 rounded-lg bg-white text-gray-800 text-sm md:text-base outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 placeholder-[#14176C] truncate placeholder:text-xs" />
                         </div>
                     </div>

@@ -67,6 +67,56 @@ export class PartnerPortalComponent implements OnInit {
     }
   }
 
+  validateSalaryInput(event: KeyboardEvent) {
+    const allowedKeys = [
+      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+    ];
+    if (allowedKeys.includes(event.key)) {
+      return; // Allow special keys
+    }
+    
+    // Only allow digits
+    if (!/^\d$/.test(event.key)) {
+      event.preventDefault();
+      return;
+    }
+    
+    // Get current value and new value after key press
+    const input = event.target as HTMLInputElement;
+    const currentValue = input.value;
+    const newValue = currentValue + event.key;
+    
+    // Prevent input if it would result in less than 4 or more than 7 digits
+    if (newValue.length > 7) {
+      event.preventDefault();
+    }
+  }
+
+  validateSalaryPaste(event: ClipboardEvent) {
+    const pastedData = event.clipboardData?.getData('text') || '';
+    
+    // Check if pasted data contains only digits
+    if (!/^\d+$/.test(pastedData)) {
+      event.preventDefault();
+      return;
+    }
+    
+    // Get current value and new value after paste
+    const input = event.target as HTMLInputElement;
+    const currentValue = input.value;
+    const selectionStart = input.selectionStart || 0;
+    const selectionEnd = input.selectionEnd || 0;
+    const newValue = 
+      currentValue.substring(0, selectionStart) + 
+      pastedData + 
+      currentValue.substring(selectionEnd);
+    
+    // Prevent paste if it would result in less than 4 or more than 7 digits
+    if (newValue.length > 7) {
+      event.preventDefault();
+    }
+  }
+
   constructor(
     private fb: FormBuilder,
     public apiService: ApiService,
@@ -74,10 +124,110 @@ export class PartnerPortalComponent implements OnInit {
   ) {}
 
   getAllCities() {
-    this.apiService.fetchAllCities().subscribe((response: any) => {
+    this.apiService.fetchAllCities({ search: '' }).subscribe((response: any) => {
       this.cities = response.data;
       console.log(this.cities);
     });
+  }
+
+  validateNoticePeriodInput(event: KeyboardEvent) {
+    const allowedKeys = [
+      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+    ];
+    if (allowedKeys.includes(event.key)) {
+      return; // Allow special keys
+    }
+    
+    // Only allow digits
+    if (!/^\d$/.test(event.key)) {
+      event.preventDefault();
+      return;
+    }
+    
+    // Get current value and new value after key press
+    const input = event.target as HTMLInputElement;
+    const currentValue = input.value;
+    const newValue = currentValue + event.key;
+    
+    // Prevent input if it would result in a value greater than 90
+    if (parseInt(newValue) > 90) {
+      event.preventDefault();
+    }
+  }
+  
+  validateNoticePeriodPaste(event: ClipboardEvent) {
+    const pastedData = event.clipboardData?.getData('text') || '';
+    
+    // Check if pasted data contains only digits
+    if (!/^\d+$/.test(pastedData)) {
+      event.preventDefault();
+      return;
+    }
+    
+    // Get current value and new value after paste
+    const input = event.target as HTMLInputElement;
+    const currentValue = input.value;
+    const selectionStart = input.selectionStart || 0;
+    const selectionEnd = input.selectionEnd || 0;
+    const newValue = 
+      currentValue.substring(0, selectionStart) + 
+      pastedData + 
+      currentValue.substring(selectionEnd);
+    
+    // Prevent paste if it would result in a value greater than 90
+    if (parseInt(newValue) > 90) {
+      event.preventDefault();
+    }
+  }
+
+  validateExperienceInput(event: KeyboardEvent) {
+    const allowedKeys = [
+      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+    ];
+    if (allowedKeys.includes(event.key)) {
+      return; // Allow special keys
+    }
+    
+    // Only allow digits
+    if (!/^\d$/.test(event.key)) {
+      event.preventDefault();
+      return;
+    }
+    
+    // Get current value and new value after key press
+    const input = event.target as HTMLInputElement;
+    const currentValue = input.value;
+    const newValue = currentValue + event.key;
+    
+    // Prevent input if it would result in a value greater than 99
+    if (parseInt(newValue) > 99) {
+      event.preventDefault();
+    }
+  }
+  
+  validateExperiencePaste(event: ClipboardEvent) {
+    const pastedData = event.clipboardData?.getData('text') || '';
+    
+    // Check if pasted data contains only digits
+    if (!/^\d+$/.test(pastedData)) {
+      event.preventDefault();
+      return;
+    }
+    
+    // Get current value and new value after paste
+    const input = event.target as HTMLInputElement;
+    const currentValue = input.value;
+    const selectionStart = input.selectionStart || 0;
+    const selectionEnd = input.selectionEnd || 0;
+    const newValue = 
+      currentValue.substring(0, selectionStart) + 
+      pastedData + 
+      currentValue.substring(selectionEnd);
+    
+    // Prevent paste if it would result in a value greater than 99
+    if (parseInt(newValue) > 99) {
+      event.preventDefault();
+    }
   }
 
   onSubmit() {
@@ -147,20 +297,20 @@ export class PartnerPortalComponent implements OnInit {
     // web hook
     this.cvForm = this.fb.group({
       fullName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      email: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
       currentLocation: ['', Validators.required],
       homeTown: ['', Validators.required],
       qualification: ['', Validators.required],
       designation: ['', Validators.required],
       resumeContent: [''],
       skills: [[], Validators.required],
-      totalExpYear: ['', Validators.required],
-      relevantExpYear: ['', Validators.required],
+      totalExpYear: ['', [Validators.required, Validators.min(0), Validators.max(99)]],
+      relevantExpYear: ['', [Validators.required, Validators.min(0), Validators.max(99)]],
       currentCompany: ['', Validators.required],
-      currentSalary: ['', Validators.required],
-      expectedSalary: ['', Validators.required],
-      noticePeriod: ['', Validators.required],
+      currentSalary: ['', [Validators.required, Validators.min(1000), Validators.max(9999999)]],
+      expectedSalary: ['', [Validators.required, Validators.min(1000), Validators.max(9999999)]],
+      noticePeriod: ['', [Validators.required, Validators.min(0), Validators.max(90)]],
       resume: [''],
       comments: [''],
       skillsInput: [''],
@@ -259,12 +409,30 @@ export class PartnerPortalComponent implements OnInit {
   onSkillsUpdate(e: any) {
     // Get current skills or initialize as empty array if undefined
     const currentSkills = this.cvForm.get('skills').value || [];
-    const newSkill = e.target.value;
-
-    // Only add if the skill doesn't already exist and is not empty
-    if (newSkill && !currentSkills.includes(newSkill)) {
-      this.cvForm.get('skills')?.setValue([newSkill, ...currentSkills]);
+    const inputValue = e.target.value.trim();
+    
+    if (!inputValue) {
+      this.cvForm.get('skillsInput').setValue('');
+      return true;
     }
+    
+    // Split by comma and trim each skill
+    const newSkillsInput = inputValue.split(',').map(skill => skill.trim()).filter(skill => skill);
+    
+    // Create a case-insensitive set of existing skills for duplicate checking
+    const existingSkillsLowerCase = currentSkills.map(skill => skill.toLowerCase());
+    
+    // Filter out duplicates (case-insensitive)
+    const uniqueNewSkills = newSkillsInput.filter(skill => 
+      !existingSkillsLowerCase.includes(skill.toLowerCase())
+    );
+    
+    // Add unique new skills to the beginning of the array
+    if (uniqueNewSkills.length > 0) {
+      const updatedSkills = [...uniqueNewSkills, ...currentSkills];
+      this.cvForm.get('skills')?.setValue(updatedSkills);
+    }
+    
     this.cvForm.get('skillsInput').setValue('');
     return true; // Return true to allow chaining with preventDefault
   }
@@ -434,16 +602,27 @@ export class PartnerPortalComponent implements OnInit {
   filterCities(event: any, controlName: string) {
     const value = event.target.value.toLowerCase();
     if (value.length > 0) {
-      this.filteredCitiesMap[controlName] = this.cities
-        .filter((city) => city.city.toLowerCase().includes(value))
-        .slice(0, 10); // Limit to 10 results for performance
+      // Call API with city name as query parameter
+      this.apiService.fetchAllCities({ search: value }).subscribe({
+        next: (response: any) => {
+          this.filteredCitiesMap[controlName] = response.cities
+            .slice(0, 10); // Limit to 10 results for performance
+          this.showCityDropdown[controlName] = true;
+        },
+        error: (error: any) => {
+          console.error('Error searching cities:', error);
+          this.filteredCitiesMap[controlName] = [];
+          this.showCityDropdown[controlName] = false;
+        }
+      });
     } else {
       this.filteredCitiesMap[controlName] = [];
+      this.showCityDropdown[controlName] = false;
     }
   }
 
   selectCity(city: any, formControlName: string) {
-    this.cvForm.get(formControlName)?.setValue(city.city);
+    this.cvForm.get(formControlName)?.setValue(city.name);
     this.showCityDropdown[formControlName] = false;
   }
 

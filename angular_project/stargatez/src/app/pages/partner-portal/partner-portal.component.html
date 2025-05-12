@@ -128,9 +128,6 @@
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location <span
                         class="text-red-500">*</span></label>
                 <input formControlName="currentLocation" type="text" placeholder="City, State"
-                    (input)="filterCities($event, 'currentLocation')"
-                    (focus)="showCityDropdown['currentLocation'] = true"
-                    (blur)="hideCityDropdownDelayed('currentLocation')"
                     class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
 
                 <!-- Custom Autocomplete Dropdown -->
@@ -157,7 +154,7 @@
                     <div *ngFor="let city of filteredCitiesMap['homeTown']"
                         class="px-4 py-2 cursor-pointer hover:bg-gray-100"
                         (mousedown)="selectCity(city, 'homeTown')">
-                        {{city.city}}
+                        {{city.name}}
                     </div>
                 </div>
             </div>
@@ -214,13 +211,15 @@
             <div class="mb-3">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Experience (Years) <span
                         class="text-red-500">*</span></label>
-                <input formControlName="totalExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.11"
+                <input formControlName="totalExpYear" type="number" placeholder="0 to 99 Years" min="0" max="99"
+                    (keydown)="validateExperienceInput($event)" (paste)="validateExperiencePaste($event)"
                     class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
             </div>
             <div class="mb-3">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Relevant Experience (Years) <span
                         class="text-red-500">*</span></label>
-                <input formControlName="relevantExpYear" type="number" placeholder="Example: 5 or 5.6 or 5.11"
+                <input formControlName="relevantExpYear" type="number" placeholder="0 to 99 Years" min="0" max="99"
+                    (keydown)="validateExperienceInput($event)" (paste)="validateExperiencePaste($event)"
                     class="{{cvForm.get('relevantExpYear')?.invalid && cvForm.get('relevantExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
             </div>
             <div class="mb-3">
@@ -232,7 +231,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="mb-3">
-                <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC (Lakhs) <span
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC <span
                         class="text-red-500">*</span></label>
                 <div
                     class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
@@ -243,9 +242,10 @@
                         </ng-container>
                     </select> -->
 
-                    <!-- Salary Input (Middle) -->  
-                    <input formControlName="currentSalary" type="number" placeholder="Example: 5 or 5.06 or 5.60"
-                        required
+                    <!-- Salary Input (Middle) -->
+                    <input formControlName="currentSalary" type="number" placeholder="Min 1000, Max 9999999"
+                        required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
+                        (paste)="validateSalaryPaste($event)"
                         class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                     <!-- Term Dropdown (Suffix) -->
                     <!-- <select formControlName="currentSalaryFrequency"
@@ -259,15 +259,16 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected CTC (Lakhs) <span
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected CTC <span
                         class="text-red-500">*</span></label>
                 <div
                     class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
                     <!-- Currency Dropdown (Prefix) -->
                     <!-- </select> -->
                     <!-- Salary Input (Middle) -->
-                    <input formControlName="expectedSalary" type="number" placeholder="Example: 5 or 5.06 or 5.60"
-                        required
+                    <input formControlName="expectedSalary" type="number" placeholder="Min 1000, Max 9999999"
+                        required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
+                        (paste)="validateSalaryPaste($event)"
                         class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                     <!-- Term Dropdown (Suffix) -->
                     <!-- <select formControlName="expectedSalaryFrequency"
@@ -297,6 +298,8 @@
                         <option class="text-black text-sm">90 days</option>
                     </select> -->
                     <input formControlName="noticePeriod" type="number" placeholder="0 to 90 Days"
+                    min="0" max="90" (keydown)="validateNoticePeriodInput($event)"
+                    (paste)="validateNoticePeriodPaste($event)"
                     class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
             </div>

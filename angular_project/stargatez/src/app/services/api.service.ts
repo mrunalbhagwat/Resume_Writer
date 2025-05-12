@@ -78,7 +78,11 @@ export class ApiService {
     return this.http.get('https://restcountries.com/v3.1/all');
   }
 
-  fetchAllCities() {
-    return this.http.get('https://countriesnow.space/api/v0.1/countries/population/cities');
-  }
+  // fetchAllCities() {
+  //   return this.http.get('https://countriesnow.space/api/v0.1/countries/population/cities');
+  // }
+
+  fetchAllCities(params: { search: string }) {
+    return this.http.post(`https://app.careerflute.com/api/cities?search=${params.search}`, params);
+  }  
 }
