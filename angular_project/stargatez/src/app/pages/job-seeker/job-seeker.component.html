@@ -244,7 +244,7 @@
                             class="text-red-500">*</span></label>
                     <input type="text" formControlName="skillsInput" placeholder="Enter your Skills & Press Enter"
                     (keydown)="$event.key === 'Enter' ? onSkillsUpdate($event) && $event.preventDefault() : null"
-                    class="{{cvForm.get('skillsInput')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                    class="{{cvForm.get('skills')?.invalid && cvForm.get('skillsInput')?.touched ? 'border-red-500 border-2' : ''}} border text-sm placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
                 <div *ngIf="cvForm.get('skills').value" class="flex flex-wrap gap-2 mb-3">
                     <span *ngFor="let skill of cvForm.get('skills').value">
@@ -290,7 +290,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="mb-3">
-                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC (Lakhs) <span
+                    <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC <span
                             class="text-red-500">*</span></label>
                     <div
                         class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
@@ -303,7 +303,7 @@
 
                         <!-- Salary Input (Middle) -->
                         <input  placeholder="Min 1000, Max 9999999"
-                        required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
+                        required formControlName="currentSalary" maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
                         (paste)="validateSalaryPaste($event)"
                             class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->
@@ -326,7 +326,7 @@
                         <!-- </select> -->
                         <!-- Salary Input (Middle) -->
                         <input  placeholder="Min 1000, Max 9999999"
-                        required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
+                        required formControlName="expectedSalary" maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
                         (paste)="validateSalaryPaste($event)"
                             class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
                         <!-- Term Dropdown (Suffix) -->

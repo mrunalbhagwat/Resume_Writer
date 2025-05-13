@@ -485,10 +485,12 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
           errorMsg = 'Unauthorized. Please login again.';
         } else if (error.status === 413) {
           errorMsg = 'File size too large. Please upload a smaller file.';
+        } else if (error.status === 429) {
+          errorMsg = 'Too many requests. Please try again later.';
         } else {
           errorMsg =
             'An error occurred while parsing the resume. Please try again.';
-        }
+        } 
         this.errorMessage = errorMsg;
         console.error('Resume parsing error:', error);
 

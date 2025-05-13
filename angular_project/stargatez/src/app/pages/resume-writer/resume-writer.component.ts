@@ -91,6 +91,8 @@ export class ResumeWriterComponent implements OnInit {
           errorMsg = 'Unauthorized. Please login again.';
         } else if (error.status === 413) {
           errorMsg = 'File size too large. Please upload a smaller file.';
+        } else if (error.status === 429) {
+          errorMsg = 'Too many requests. Please try again later.';
         }
         this.snackBarService.showError(errorMsg);
       },
@@ -485,7 +487,7 @@ export class ResumeWriterComponent implements OnInit {
   }
 
   selectCity(city: any, fieldName: string) {
-    this.cvForm.get(fieldName).setValue(city.city);
+    this.cvForm.get(fieldName).setValue(city.name);
     this.showCityDropdown[fieldName] = false;
   }
 
