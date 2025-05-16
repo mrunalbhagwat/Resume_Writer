@@ -293,6 +293,7 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
       currentLocation: ['', Validators.required],
       homeTown: ['', Validators.required],
       qualification: ['', Validators.required],
+      submitted_from: ['job_seeker', Validators.required],
       designation: ['', Validators.required],
       resumeContent: [''],
       skills: [[], Validators.required],

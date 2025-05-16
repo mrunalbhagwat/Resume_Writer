@@ -138,6 +138,7 @@ export class ResumeWriterComponent implements OnInit {
       phoneNumber: ['', [Validators.required]],
       currentLocation: ['', Validators.required],
       homeTown: ['', Validators.required],
+      submitted_from: ['resume_writing', Validators.required],
       qualification: ['', Validators.required],
       designation: ['', Validators.required],
       resumeContent: [''],

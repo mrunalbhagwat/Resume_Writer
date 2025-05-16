@@ -306,6 +306,7 @@ export class PartnerPortalComponent implements OnInit {
       qualification: ['', Validators.required],
       designation: ['', Validators.required],
       resumeContent: [''],
+      submitted_from: ['partner', Validators.required],
       skills: [[], Validators.required],
       totalExpYear: ['', [Validators.required, Validators.min(0), Validators.max(99)]],
       relevantExpYear: ['', [Validators.required, Validators.min(0), Validators.max(99)]],
