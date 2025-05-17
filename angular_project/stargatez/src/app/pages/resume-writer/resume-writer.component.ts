@@ -12,7 +12,11 @@ declare var AOS: any;
 })
 export class ResumeWriterComponent implements OnInit {
   videoLink: any = 'assets/videos/resume_writer.mp4';
-
+  yearsList = [...Array(30).keys(), '30+'];  // [0,1,...,30,'30+']
+  monthsList = [...Array(12).keys()];  // [0,1,...,11]
+  lacsList = [...Array(100).keys()];  // [0,1,...,10]
+  thousandsList = [...Array(100).keys()];  // [0,1,...,9]
+  noticePeriodList = [...Array(91).keys()];  // [0,1,...,90]
   cvForm: FormGroup | any;
   parsedData: any = null;
   errorMessage: string = '';
@@ -144,24 +148,28 @@ export class ResumeWriterComponent implements OnInit {
       resumeContent: [''],
       skills: [[], Validators.required],
       totalExpYear: [
-        '',
-        [Validators.required, Validators.min(0), Validators.max(99)],
+        '0',
+        [Validators.required],
+      ], 
+      totalExpMonth: [
+        '0',
+        [Validators.required],
       ],
       relevantExpYear: [
-        '',
-        [Validators.required, Validators.min(0), Validators.max(99)],
+        '0',
+        [Validators.required],
+      ], 
+      relevantExpMonth: [
+        '0',
+        [Validators.required],
       ],
       currentCompany: ['', Validators.required],
-      currentSalary: [
-        '',
-        [Validators.required, Validators.min(1000), Validators.max(9999999)],
-      ],
-      expectedSalary: [
-        '',
-        [Validators.required, Validators.min(1000), Validators.max(9999999)],
-      ],
+      currentSalaryLacs: ['0', Validators.required],
+      currentSalaryThousands: ['0', Validators.required],
+      expectedSalaryLacs: ['0', Validators.required],
+      expectedSalaryThousands: ['0', Validators.required],
       noticePeriod: [
-        '',
+        '0',
         [Validators.required, Validators.min(0), Validators.max(90)],
       ],
       resume: [''],

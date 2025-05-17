@@ -34,6 +34,14 @@ export class ApiService {
     });
   }
 
+  getDynamicDay(day) {
+    let dayString = 'Day';
+    if (+day > 1) {
+      dayString = 'Days';
+    }
+    return dayString
+  } 
+  
   submitCvData(formData: any) {
     const data = new FormData();
 
@@ -52,12 +60,16 @@ export class ApiService {
     data.append('email', formData.email);
     data.append('skills', formData.skills.join(','));
     data.append('total_experience_years', formData.totalExpYear);
-    data.append('total_experience_months', formData.totalExpMonths);
+    data.append('total_experience_months', formData.totalExpMonth);
+    data.append('relevant_experience_years', formData.relevantExpYear);
+    data.append('relevant_experience_months', formData.relevantExpMonth);
     data.append('current_company', formData.currentCompany || '');
     data.append('current_location', formData.currentLocation || '');
     data.append('preferred_location', formData.preferredLocation || '');
-    data.append('current_salary', formData.currentSalary || '');
-    data.append('expected_salary', formData.expectedSalary || '');
+    data.append('current_salary_lacs', formData.currentSalaryLacs || '');
+    data.append('current_salary_thousands', formData.currentSalaryThousands || '');
+    data.append('expected_salary_lacs', formData.expectedSalaryLacs || '');
+    data.append('expected_salary_thousands', formData.expectedSalaryThousands || '');
     data.append('notice_period', formData.noticePeriod || '');
     data.append('country_code', formData.countryCode || '');
     data.append('designation', formData.designation || '');
@@ -65,7 +77,6 @@ export class ApiService {
     data.append('university', formData.university || '');
     data.append('industry', formData.industry || '');
     data.append('home_town', formData.homeTown || '');
-    data.append('relevant_experience_years', formData.relevantExpYear || '');
     data.append('comments', formData.comments || '');
     data.append('resume_content', formData.resumeContent || '');
     data.append('submitted_from', formData.submitted_from || '');

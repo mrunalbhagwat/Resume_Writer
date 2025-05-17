@@ -21,6 +21,11 @@ export class PartnerPortalComponent implements OnInit {
   isLoading: boolean = false;
   currencies: any = [];
   countryCallCodes: any = [];
+  yearsList = [...Array(30).keys(), '30+'];  // [0,1,...,30,'30+']
+  monthsList = [...Array(12).keys()];  // [0,1,...,11]
+  lacsList = [...Array(100).keys()];  // [0,1,...,10]
+  thousandsList = [...Array(100).keys()];  // [0,1,...,9]
+  noticePeriodList = [...Array(91).keys()];  // [0,1,...,90]
   webDevSkills = [
     'HTML',
     'CSS',
@@ -308,12 +313,31 @@ export class PartnerPortalComponent implements OnInit {
       resumeContent: [''],
       submitted_from: ['partner', Validators.required],
       skills: [[], Validators.required],
-      totalExpYear: ['', [Validators.required, Validators.min(0), Validators.max(99)]],
-      relevantExpYear: ['', [Validators.required, Validators.min(0), Validators.max(99)]],
+      totalExpYear: [
+        '0',
+        [Validators.required],
+      ], 
+      totalExpMonth: [
+        '0',
+        [Validators.required],
+      ],
+      relevantExpYear: [
+        '0',
+        [Validators.required],
+      ], 
+      relevantExpMonth: [
+        '0',
+        [Validators.required],
+      ],
+      noticePeriod: [
+        '0',
+        [Validators.required, Validators.min(0), Validators.max(90)],
+      ],
       currentCompany: ['', Validators.required],
-      currentSalary: ['', [Validators.required, Validators.min(1000), Validators.max(9999999)]],
-      expectedSalary: ['', [Validators.required, Validators.min(1000), Validators.max(9999999)]],
-      noticePeriod: ['', [Validators.required, Validators.min(0), Validators.max(90)]],
+      currentSalaryLacs: ['0', Validators.required],
+      currentSalaryThousands: ['0', Validators.required],
+      expectedSalaryLacs: ['0', Validators.required],
+      expectedSalaryThousands: ['0', Validators.required],
       resume: [''],
       comments: [''],
       skillsInput: [''],

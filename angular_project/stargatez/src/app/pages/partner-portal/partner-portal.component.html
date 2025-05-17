@@ -208,18 +208,48 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="mb-3">
-                <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Experience (Years) <span
-                        class="text-red-500">*</span></label>
-                <input formControlName="totalExpYear" type="number" placeholder="0 to 99 Years" min="0" max="99"
-                    (keydown)="validateExperienceInput($event)" (paste)="validateExperiencePaste($event)"
-                    class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Experience <span
+                    class="text-red-500">*</span></label>
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <select formControlName="totalExpYear"
+                        class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                        <option value="" disabled selected>Years</option>
+                        <option *ngFor="let year of yearsList" [value]="year">{{year}} Years</option>
+                    </select>
+                    <!-- <span class="text-xs text-gray-500 ml-2">Years</span> -->
+                </div>
+                <div>
+                    <select formControlName="totalExpMonth"
+                        class="{{cvForm.get('totalExpMonth')?.invalid && cvForm.get('totalExpMonth')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                        <option value="" disabled selected>Months</option>
+                        <option *ngFor="let month of monthsList" [value]="month">{{month}} Months</option>
+                    </select>
+                    <!-- <span class="text-xs text-gray-500 ml-2">Months</span> -->
+                </div>
+            </div>
             </div>
             <div class="mb-3">
-                <label class="mb-2 text-sm block font-medium text-[#14176C]">Relevant Experience (Years) <span
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Relevant Experience <span
                         class="text-red-500">*</span></label>
-                <input formControlName="relevantExpYear" type="number" placeholder="0 to 99 Years" min="0" max="99"
-                    (keydown)="validateExperienceInput($event)" (paste)="validateExperiencePaste($event)"
-                    class="{{cvForm.get('relevantExpYear')?.invalid && cvForm.get('relevantExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <select formControlName="relevantExpYear"
+                            class="{{cvForm.get('relevantExpYear')?.invalid && cvForm.get('relevantExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                            <option value="" disabled selected>Years</option>
+                            <option *ngFor="let year of yearsList" [value]="year">{{year}} Years</option>
+                        </select>
+                        <!-- <span class="text-xs text-gray-500 ml-2">Years</span> -->
+                    </div>
+                    <div>
+                        <select formControlName="relevantExpMonth"
+                            class="{{cvForm.get('relevantExpMonth')?.invalid && cvForm.get('relevantExpMonth')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                            <option value="" disabled selected>Months</option>
+                            <option *ngFor="let month of monthsList" [value]="month">{{month}} Months</option>
+                        </select>
+                        <!-- <span class="text-xs text-gray-500 ml-2">Months</span> -->
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last Company <span
@@ -229,77 +259,59 @@
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
             <div class="mb-3">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC <span
                         class="text-red-500">*</span></label>
-                <div
-                    class="{{cvForm.get('currentSalary')?.invalid && cvForm.get('currentSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
-                    <!-- Currency Dropdown (Prefix) -->
-                    <!-- <select formControlName="currentSalaryCurrency" class="outline-none text-gray-700 pr-3">
-                        <ng-container *ngFor="let currency of currencies">
-                            <option>{{ currency.code }}</option>
-                        </ng-container>
-                    </select> -->
-
-                    <!-- Salary Input (Middle) -->
-                    <input formControlName="currentSalary" type="number" placeholder="Min 1000, Max 9999999"
-                        required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
-                        (paste)="validateSalaryPaste($event)"
-                        class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
-                    <!-- Term Dropdown (Suffix) -->
-                    <!-- <select formControlName="currentSalaryFrequency"
-                        class="bg-transparent test-sm outline-none text-gray-700 pl-3">
-                        <option>Yearly</option>
-                        <option>Monthly</option>
-                        <option>Weekly</option>
-                        <option>Daily</option>
-                        <option>Hourly</option>
-                    </select> -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <select formControlName="currentSalaryLacs"
+                            class="{{cvForm.get('currentSalaryLacs')?.invalid && cvForm.get('currentSalaryLacs')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                            <option *ngFor="let lac of lacsList" [value]="lac">{{lac}} Lacs</option>
+                        </select>
+                        <!-- <span class="text-xs text-gray-500 ml-2">Lacs</span> -->
+                    </div>
+                    <div>
+                        <select formControlName="currentSalaryThousands"
+                            class="{{cvForm.get('currentSalaryThousands')?.invalid && cvForm.get('currentSalaryThousands')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                            <option *ngFor="let thousand of thousandsList" [value]="thousand">{{thousand}} Thousand</option>
+                        </select>
+                        <!-- <span class="text-xs text-gray-500 ml-2">Thousands</span> -->
+                    </div>
                 </div>
             </div>
             <div class="mb-3">
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Expected CTC <span
                         class="text-red-500">*</span></label>
-                <div
-                    class="{{cvForm.get('expectedSalary')?.invalid && cvForm.get('expectedSalary')?.touched ? 'border-red-500 border-2' : ''}} flex items-center text-sm border border-blue-900 rounded w-full px-2 py-2">
-                    <!-- Currency Dropdown (Prefix) -->
-                    <!-- </select> -->
-                    <!-- Salary Input (Middle) -->
-                    <input formControlName="expectedSalary" type="number" placeholder="Min 1000, Max 9999999"
-                        required maxlength="7" minlength="4" (keydown)="validateSalaryInput($event)"
-                        (paste)="validateSalaryPaste($event)"
-                        class="w-full px-2 py-2 outline-none text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs">
-                    <!-- Term Dropdown (Suffix) -->
-                    <!-- <select formControlName="expectedSalaryFrequency"
-                        class="bg-transparent test-sm outline-none text-gray-700 pl-3">
-                        <option>Yearly</option>
-                        <option>Monthly</option>
-                        <option>Weekly</option>
-                        <option>Daily</option>
-                        <option>Hourly</option>
-                    </select> -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <select formControlName="expectedSalaryLacs"
+                            class="{{cvForm.get('expectedSalaryLacs')?.invalid && cvForm.get('expectedSalaryLacs')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                            <option *ngFor="let lac of lacsList" [value]="lac">{{lac}} Lacs</option>
+                        </select>
+                        <!-- <span class="text-xs text-gray-500 ml-2">Lacs</span> -->
+                    </div>
+                    <div>
+                        <select formControlName="expectedSalaryThousands"
+                            class="{{cvForm.get('expectedSalaryThousands')?.invalid && cvForm.get('expectedSalaryThousands')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                            <option *ngFor="let thousand of thousandsList" [value]="thousand">{{thousand}} Thousand</option>
+                        </select>
+                        <!-- <span class="text-xs text-gray-500 ml-2">Thousands</span> -->
+                    </div>
                 </div>
             </div>
             <div class="mb-3">
-                <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period (Days) <span
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period <span
                         class="text-red-500">*</span></label>
-                <div class="relative">
-                    <!-- Select Dropdown with Dynamic Styling -->
-                    <!-- <select formControlName="noticePeriod" id="notice" required
-                        placeholder="Enter your notice period"
-                        class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border border-blue-900 p-3 rounded w-full outline-none  invalid:text-xs invalid:truncate invalid:text-[#14176CCC]/60 not-invalid:text-black not-invalid:text-sm">
-                        <option value="" disabled selected hidden>Enter your notice period</option>
-                        <option class="text-black text-sm">Immediate Joining</option>
-                        <option class="text-black text-sm">7 days</option>
-                        <option class="text-black text-sm">15 days</option>
-                        <option class="text-black text-sm">30 days</option>
-                        <option class="text-black text-sm">60 days</option>
-                        <option class="text-black text-sm">90 days</option>
-                    </select> -->
-                    <input formControlName="noticePeriod" type="number" placeholder="0 to 90 Days"
-                    min="0" max="90" (keydown)="validateNoticePeriodInput($event)"
-                    (paste)="validateNoticePeriodPaste($event)"
-                    class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                <div class="grid grid-cols-2 gap-3 items-center">
+                    <div class="relative">
+                        <!-- Select Dropdown with Dynamic Styling -->
+                        <select formControlName="noticePeriod"
+                            class="{{cvForm.get('noticePeriod')?.invalid && cvForm.get('noticePeriod')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
+                            <option *ngFor="let day of noticePeriodList" [value]="day">{{day}} {{apiService.getDynamicDay(day)}}</option>
+                        </select>
+                    </div>
+                    <!-- <span class="text-xs text-gray-500 ml-2">Days</span> -->
                 </div>
             </div>
         </div>

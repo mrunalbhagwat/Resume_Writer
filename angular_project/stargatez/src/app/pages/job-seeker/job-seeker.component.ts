@@ -19,6 +19,11 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
   // videoLink: any = 'assets/videos/corporate_meetings.mp4';
   // videoLink: any = 'assets/videos/strategic_vid_2.mp4';
   videoLink: any = 'assets/videos/strategic_banner.mp4';
+  yearsList = [...Array(30).keys(), '30+'];  // [0,1,...,30,'30+']
+  monthsList = [...Array(12).keys()];  // [0,1,...,11]
+  lacsList = [...Array(100).keys()];  // [0,1,...,10]
+  thousandsList = [...Array(100).keys()];  // [0,1,...,9]
+  noticePeriodList = [...Array(91).keys()];  // [0,1,...,90]
   // password: string = '';
   //   confirmPassword: string = '';
   //   showPassword: boolean = false;
@@ -103,6 +108,7 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
       event.preventDefault();
     }
   }
+
 
   validateNoticePeriodPaste(event: ClipboardEvent) {
     const pastedData = event.clipboardData?.getData('text') || '';
@@ -298,18 +304,28 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
       resumeContent: [''],
       skills: [[], Validators.required],
       totalExpYear: [
-        '',
-        [Validators.required, Validators.min(0), Validators.max(99)],
+        '0',
+        [Validators.required],
+      ], 
+      totalExpMonth: [
+        '0',
+        [Validators.required],
       ],
       relevantExpYear: [
-        '',
-        [Validators.required, Validators.min(0), Validators.max(99)],
+        '0',
+        [Validators.required],
+      ], 
+      relevantExpMonth: [
+        '0',
+        [Validators.required],
       ],
       currentCompany: ['', Validators.required],
-      currentSalary: ['', Validators.required],
-      expectedSalary: ['', Validators.required],
+      currentSalaryLacs: ['0', Validators.required],
+      currentSalaryThousands: ['0', Validators.required],
+      expectedSalaryLacs: ['0', Validators.required],
+      expectedSalaryThousands: ['0', Validators.required],
       noticePeriod: [
-        '',
+        '0',
         [Validators.required, Validators.min(0), Validators.max(90)],
       ],
       resume: [''],
