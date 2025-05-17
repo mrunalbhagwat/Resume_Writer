@@ -6,17 +6,17 @@
 
 <app-header [webVideoPath]="videoLink" [phoneVideoPath]="videoLink">
     <div
-        class="text-white relative min-h-screen flex flex-col justify-center items-center px-6 sm:px-12  bg-center bg-no-repeat bg-fixed">
+        class="relative flex flex-col items-center justify-center min-h-screen px-6 text-white bg-fixed bg-center bg-no-repeat sm:px-12">
 
         <div class="absolute inset-0 bg-[#00000066]"></div>
 
         <div
-            class="relative z-10 w-full flex flex-col items-left text-left lg:text-left lg:items-start container space-y-6 md:mt-20 lg:mt-0 px-6 sm:px-12 md:px-16">
+            class="container relative z-10 flex flex-col w-full px-6 space-y-6 text-left items-left lg:text-left lg:items-start md:mt-20 lg:mt-0 sm:px-12 md:px-16">
 
-            <h1 class="text-lg lg:text-5xl font-bold">
+            <h1 class="text-lg font-bold lg:text-5xl">
                 <span class="text-yellow-400">Aim </span>Higher, <span class="text-yellow-400">Dream</span> Bigger
             </h1>
-            <p class="uppercase text-xs md:text-base">Your Next Big Opportunity is just a Click Away</p>
+            <p class="text-xs uppercase md:text-base">Your Next Big Opportunity is just a Click Away</p>
 
         </div>
 
@@ -28,32 +28,32 @@
 <!-- Notification Popup is now handled by the app-snack-bar component -->
 
 <!-- Section -->
-<section data-aos="fade-up" class="container mx-auto py-8 md:py-12 grid md:grid-cols-2 gap-12 items-center">
+<section data-aos="fade-up" class="container grid items-center gap-12 py-8 mx-auto md:py-12 md:grid-cols-2">
     <!-- Left Content -->
     <div class="relative mx-5 md:mx-0">
-        <span class="bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-3 rounded-lg">Earn in Dollars</span>
-        <h1 class="mt-4 text-xl md:text-3xl font-bold leading-snug">
+        <span class="px-4 py-3 text-sm font-semibold text-blue-700 bg-blue-100 rounded-lg">Earn in Dollars</span>
+        <h1 class="mt-4 text-xl font-bold leading-snug md:text-3xl">
             Discover <span class="text-yellow-500">high-paying global opportunities</span> tailored to your skills
             and aspirations.
         </h1>
         <img src="./assets/images/holding-world-my-hands-attractive-female-travel-agent-showing-globe-smiling-while-working-her-modern-office 1.png"
-            alt="Global Opportunities" class="w-full rounded-lg shadow-lg mt-8">
+            alt="Global Opportunities" class="w-full mt-8 rounded-lg shadow-lg">
 
     </div>
     <!-- Right Content -->
     <div>
 
-        <div class="mt-6 space-y-4 mx-3 md:mx-0">
+        <div class="mx-3 mt-6 space-y-4 md:mx-0">
             <div class="flex items-start space-x-3">
                 <img src="./assets/images/blackcheckmark.png" alt="icon" class="w-5 h-5 mt-1">
-                <p class="text-gray-700 font-medium">
+                <p class="font-medium text-gray-700">
                     <strong>Receive Tailored Job Updates :</strong> Stay informed about the best roles that match
                     your profile.
                 </p>
             </div>
             <div class="flex items-start space-x-3">
                 <img src="./assets/images/blackcheckmark.png" alt="icon" class="w-5 h-5 mt-1">
-                <p class="text-gray-700 font-medium ">
+                <p class="font-medium text-gray-700 ">
                     <strong>Explore Diverse Opportunities :</strong>
                 </p>
 
@@ -81,16 +81,16 @@
                 </button>
             </div>
 
-            <div class="grid grid-col-1 md:grid-cols-2 gap-6 mt-8 md:mt-16">
-                <div class="bg-white shadow-md rounded-lg p-4 text-center">
+            <div class="grid gap-6 mt-8 grid-col-1 md:grid-cols-2 md:mt-16">
+                <div class="p-4 text-center bg-white rounded-lg shadow-md">
                     <h3 class=" bg-[#14176C1A] p-3 text-[#14176C] font-semibold">Get Hired and Advance Your Career
                     </h3>
-                    <p class="text-gray-600 text-sm p-3">Unlock new possibilities with top-tier global employers.
+                    <p class="p-3 text-sm text-gray-600">Unlock new possibilities with top-tier global employers.
                     </p>
                 </div>
-                <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                <div class="p-4 text-center bg-white rounded-lg shadow-md">
                     <h3 class=" bg-[#14176C1A] p-3 text-[#14176C] font-semibold">Work for<br> Top Companies</h3>
-                    <p class="text-gray-600 text-sm p-3">Collaborate with industry leaders and accelerate your
+                    <p class="p-3 text-sm text-gray-600">Collaborate with industry leaders and accelerate your
                         professional growth.</p>
                 </div>
             </div>
@@ -111,9 +111,9 @@
     <!-- Form Section -->
     <div class="bg-[#14176C0D] 2xl:max-w-5xl xl:max-w-6xl md:p-10 mx-auto rounded-lg p-8 mt-6">
         <form class="space-y-4" [formGroup]="cvForm" (ngSubmit)="onSubmit()">
-            <div class=" grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <label for="upload-my-cv"
-                    class="flex flex-col items-center justify-center cursor-pointer border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition duration-300 hover:border-blue-500 w-full h-32"
+                    class="flex flex-col items-center justify-center w-full h-32 p-6 text-center transition duration-300 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:border-blue-500"
                     (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
 
                     <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
@@ -128,7 +128,7 @@
 
                 <!-- Uploaded File Box -->
                 <div *ngIf="fileUploaded"
-                    class="flex items-center justify-between bg-blue-50 border border-gray-300 rounded-lg p-4 w-full">
+                    class="flex items-center justify-between w-full p-4 border border-gray-300 rounded-lg bg-blue-50">
                     <div class="flex flex-col">
                         <span class="text-sm font-semibold text-black">{{ fileName }}</span>
                         <span class="text-xs text-gray-500">{{ fileSize }}</span>
@@ -139,13 +139,13 @@
 
                     <!-- Download Icon: Ensures download only when clicked -->
                     <button type="button" (click)="downloadFile($event)"
-                        class="cursor-pointer bg-blue-600 text-white rounded p-2 text-base">
+                        class="p-2 text-base text-white bg-blue-600 rounded cursor-pointer">
                         <i class="fa fa-download"></i>
                     </button>
 
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Name <span
                             class="text-red-500">*</span></label>
@@ -164,7 +164,7 @@
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Candidate Phone Number <span
                             class="text-red-500">*</span></label>
-                    <div class="relative flex items-center border border-blue-900 rounded w-full">
+                    <div class="relative flex items-center w-full border border-blue-900 rounded">
 
                         <!-- Phone Input Field -->
                         <input formControlName="phoneNumber" type="tel" placeholder="10 Digit Phone Number" required
@@ -172,7 +172,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Educational Qualification <span
@@ -180,7 +180,7 @@
                     <input formControlName="qualification" type="text" placeholder="Highest Qualification"
                         class="{{cvForm.get('qualification')?.invalid && cvForm.get('qualification')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
-                <div class="mb-3 relative">
+                <div class="relative mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location <span
                             class="text-red-500">*</span></label>
                     <input formControlName="currentLocation" type="text" placeholder="City, State"
@@ -188,7 +188,7 @@
 
                     <!-- Custom Autocomplete Dropdown -->
                     <div *ngIf="showCityDropdown['currentLocation'] && filteredCitiesMap['currentLocation']?.length > 0"
-                        class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto animate-fade-up">
+                        class="absolute z-10 w-full mt-1 overflow-y-auto bg-white border border-gray-300 rounded-md shadow-lg max-h-60 animate-fade-up">
                         <div *ngFor="let city of filteredCitiesMap['currentLocation']"
                             class="px-4 py-2 cursor-pointer hover:bg-gray-100"
                             (mousedown)="selectCity(city, 'currentLocation')">
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-3 relative">
+                <div class="relative mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Home Town <span
                             class="text-red-500">*</span></label>
                     <input formControlName="homeTown" type="text" placeholder="City, State"
@@ -206,7 +206,7 @@
 
                     <!-- Custom Autocomplete Dropdown -->
                     <div *ngIf="showCityDropdown['homeTown'] && filteredCitiesMap['homeTown']?.length > 0"
-                        class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto animate-fade-up">
+                        class="absolute z-10 w-full mt-1 overflow-y-auto bg-white border border-gray-300 rounded-md shadow-lg max-h-60 animate-fade-up">
                         <div *ngFor="let city of filteredCitiesMap['homeTown']"
                             class="px-4 py-2 cursor-pointer hover:bg-gray-100"
                             (mousedown)="selectCity(city, 'homeTown')">
@@ -218,7 +218,7 @@
             </div>
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Role Applying For <span
                             class="text-red-500">*</span></label>
@@ -264,7 +264,7 @@
                     </span>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Total Experience <span
                             class="text-red-500">*</span></label>
@@ -273,17 +273,17 @@
                             <select formControlName="totalExpYear"
                                 class="{{cvForm.get('totalExpYear')?.invalid && cvForm.get('totalExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
                                 <option value="" disabled selected>Years</option>
-                                <option *ngFor="let year of yearsList" [value]="year">{{year}} Years</option>
+                                <option *ngFor="let year of yearsList" [value]="year">{{year}} {{apiService.getDynamicYear(year)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Years</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Years</span> -->
                         </div>
                         <div>
                             <select formControlName="totalExpMonth"
                                 class="{{cvForm.get('totalExpMonth')?.invalid && cvForm.get('totalExpMonth')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
                                 <option value="" disabled selected>Months</option>
-                                <option *ngFor="let month of monthsList" [value]="month">{{month}} Months</option>
+                                <option *ngFor="let month of monthsList" [value]="month">{{month}} {{apiService.getDynamicMonth(month)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Months</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Months</span> -->
                         </div>
                     </div>
                 </div>
@@ -295,17 +295,17 @@
                             <select formControlName="relevantExpYear"
                                 class="{{cvForm.get('relevantExpYear')?.invalid && cvForm.get('relevantExpYear')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
                                 <option value="" disabled selected>Years</option>
-                                <option *ngFor="let year of yearsList" [value]="year">{{year}} Years</option>
+                                <option *ngFor="let year of yearsList" [value]="year">{{year}} {{apiService.getDynamicYear(year)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Years</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Years</span> -->
                         </div>
                         <div>
                             <select formControlName="relevantExpMonth"
                                 class="{{cvForm.get('relevantExpMonth')?.invalid && cvForm.get('relevantExpMonth')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
                                 <option value="" disabled selected>Months</option>
-                                <option *ngFor="let month of monthsList" [value]="month">{{month}} Months</option>
+                                <option *ngFor="let month of monthsList" [value]="month">{{month}} {{apiService.getDynamicMonth(month)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Months</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Months</span> -->
                         </div>
                     </div>
                 </div>
@@ -316,7 +316,7 @@
                         class="{{cvForm.get('currentCompany')?.invalid && cvForm.get('currentCompany')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current / Last CTC <span
@@ -325,16 +325,16 @@
                         <div>
                             <select formControlName="currentSalaryLacs"
                                 class="{{cvForm.get('currentSalaryLacs')?.invalid && cvForm.get('currentSalaryLacs')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
-                                <option *ngFor="let lac of lacsList" [value]="lac">{{lac}} Lacs</option>
+                                <option *ngFor="let lac of lacsList" [value]="lac">{{lac}} {{apiService.getDynamicLac(lac)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Lacs</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Lacs</span> -->
                         </div>
                         <div>
                             <select formControlName="currentSalaryThousands"
                                 class="{{cvForm.get('currentSalaryThousands')?.invalid && cvForm.get('currentSalaryThousands')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
-                                <option *ngFor="let thousand of thousandsList" [value]="thousand">{{thousand}} Thousand</option>
+                                <option *ngFor="let thousand of thousandsList" [value]="thousand">{{thousand}} {{apiService.getDynamicThousand(thousand)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Thousands</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Thousands</span> -->
                         </div>
                     </div>
                 </div>
@@ -345,23 +345,23 @@
                         <div>
                             <select formControlName="expectedSalaryLacs"
                                 class="{{cvForm.get('expectedSalaryLacs')?.invalid && cvForm.get('expectedSalaryLacs')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
-                                <option *ngFor="let lac of lacsList" [value]="lac">{{lac}} Lacs</option>
+                                <option *ngFor="let lac of lacsList" [value]="lac">{{lac}} {{apiService.getDynamicLac(lac)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Lacs</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Lacs</span> -->
                         </div>
                         <div>
                             <select formControlName="expectedSalaryThousands"
                                 class="{{cvForm.get('expectedSalaryThousands')?.invalid && cvForm.get('expectedSalaryThousands')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full">
-                                <option *ngFor="let thousand of thousandsList" [value]="thousand">{{thousand}} Thousand</option>
+                                <option *ngFor="let thousand of thousandsList" [value]="thousand">{{thousand}} {{apiService.getDynamicThousand(thousand)}}</option>
                             </select>
-                            <!-- <span class="text-xs text-gray-500 ml-2">Thousands</span> -->
+                            <!-- <span class="ml-2 text-xs text-gray-500">Thousands</span> -->
                         </div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Notice Period <span
                             class="text-red-500">*</span></label>
-                    <div class="grid grid-cols-2 gap-3 items-center">
+                    <div class="items-center gap-3">
                         <div class="relative">
                             <!-- Select Dropdown with Dynamic Styling -->
                             <select formControlName="noticePeriod"
@@ -369,18 +369,18 @@
                                 <option *ngFor="let day of noticePeriodList" [value]="day">{{day}} {{apiService.getDynamicDay(day)}}</option>
                             </select>
                         </div>
-                        <!-- <span class="text-xs text-gray-500 ml-2">Days</span> -->
+                        <!-- <span class="ml-2 text-xs text-gray-500">Days</span> -->
                     </div>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 gap-6">
-                <div class="mb-3 relative">
+                <div class="relative mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Comments </label>
                     <textarea formControlName="comments" placeholder="Anything Noteworthy" maxlength="500" rows="8"
                         cols="25" (input)="updateCharCount($event)"
                         class="border placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs border-blue-900 p-3 rounded w-full min-h-[100px]"></textarea>
-                    <div class="text-xs text-gray-500 absolute bottom-2 right-3">
+                    <div class="absolute text-xs text-gray-500 bottom-2 right-3">
                         {{commentCharCount}}/500
                     </div>
                 </div>
@@ -390,7 +390,7 @@
 
 
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-0 lg:gap-6">
+            <div class="grid grid-cols-1 gap-0 md:grid-cols-2 lg:gap-6">
                 <div></div>
                 <div class="mb-3">
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">&nbsp;</label>

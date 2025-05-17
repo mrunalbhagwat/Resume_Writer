@@ -36,12 +36,44 @@ export class ApiService {
 
   getDynamicDay(day) {
     let dayString = 'Day';
-    if (+day > 1) {
+    if (+day > 1 || +day === 0) {
       dayString = 'Days';
     }
-    return dayString
-  } 
-  
+    return dayString;
+  }
+
+  getDynamicYear(year) {
+    let yearString = 'Year';
+    if (+year > 1 || +year === 0 || year === '30+') {
+      yearString = 'Years';
+    }
+    return yearString;
+  }
+
+  getDynamicMonth(month) {
+    let monthString = 'Month';
+    if (+month > 1 || +month === 0) {
+      monthString = 'Months';
+    }
+    return monthString;
+  }
+
+  getDynamicLac(lac) {
+    let lacString = 'Lac';
+    if (+lac > 1 || +lac === 0) {
+      lacString = 'Lacs';
+    }
+    return lacString;
+  }
+
+  getDynamicThousand(thousand) {
+    let thousandString = 'Thousand';
+    if (+thousand > 1 || +thousand === 0) {
+      thousandString = 'Thousands';
+    }
+    return thousandString;
+  }
+
   submitCvData(formData: any) {
     const data = new FormData();
 
@@ -96,5 +128,5 @@ export class ApiService {
 
   fetchAllCities(params: { search: string }) {
     return this.http.post(`https://app.careerflute.com/api/cities?search=${params.search}`, params);
-  }  
+  }
 }
