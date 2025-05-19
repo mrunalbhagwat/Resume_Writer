@@ -305,8 +305,8 @@ export class PartnerPortalComponent implements OnInit {
           'Your CV has been submitted successfully!'
         );
 
-        // Reset form after successful submission
-        this.cvForm.reset();
+        this.resetCvForm();
+        
         this.fileName = '';
         this.fileSize = '';
         this.fileUrl = null;
@@ -335,6 +335,26 @@ export class PartnerPortalComponent implements OnInit {
         this.errorPopupMessage = errorMsg;
         this.showErrorPopup = true;
       },
+    });
+  }
+
+  resetCvForm() {
+    // Reset form after successful submission
+    this.cvForm.reset();
+        
+    // Set default values again
+    this.cvForm.patchValue({
+      submitted_from: 'partner',
+      totalExpYear: '0',
+      totalExpMonth: '0',
+      relevantExpYear: '0',
+      relevantExpMonth: '0',
+      currentSalaryLacs: '0',
+      currentSalaryThousands: '0',
+      expectedSalaryLacs: '0',
+      expectedSalaryThousands: '0',
+      noticePeriod: '0',
+      skills: []
     });
   }
 
@@ -592,7 +612,7 @@ export class PartnerPortalComponent implements OnInit {
       error: (error: any) => {
         this.apiService.showSpinner$.next(false);
         let errorMsg = '';
-        this.cvForm.reset();
+        this.resetCvForm();
         this.cvForm.get('submitted_from').setValue('partner');
         if (error.status === 400) {
           errorMsg =

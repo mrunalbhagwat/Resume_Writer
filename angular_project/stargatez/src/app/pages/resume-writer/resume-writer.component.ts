@@ -49,6 +49,28 @@ export class ResumeWriterComponent implements OnInit {
     private snackBarService: SnackBarService
   ) {}
 
+
+  resetCvForm() {
+    // Reset form after successful submission
+    this.cvForm.reset();
+        
+    // Set default values again
+    this.cvForm.patchValue({
+      submitted_from: 'partner',
+      totalExpYear: '0',
+      totalExpMonth: '0',
+      relevantExpYear: '0',
+      relevantExpMonth: '0',
+      currentSalaryLacs: '0',
+      currentSalaryThousands: '0',
+      expectedSalaryLacs: '0',
+      expectedSalaryThousands: '0',
+      noticePeriod: '0',
+      skills: []
+    });
+  }
+
+
   onSubmit() {
     if (this.cvForm?.invalid) {
       this.cvForm.markAllAsTouched();
@@ -78,7 +100,7 @@ export class ResumeWriterComponent implements OnInit {
         );
 
         // Reset form after successful submission
-        this.cvForm.reset();
+        this.resetCvForm();
         this.fileName = '';
         this.fileSize = '';
         this.fileUrl = null;
@@ -87,7 +109,7 @@ export class ResumeWriterComponent implements OnInit {
       error: (error: any) => {
         console.error('Error submitting CV:', error);
         this.apiService.showSpinner$.next(false);
-
+        this.resetCvForm();
         // Show error popup using SnackBarService
         let errorMsg =
           'There was an error submitting your CV. Please try again.';
@@ -361,12 +383,6 @@ export class ResumeWriterComponent implements OnInit {
       if (response.countryCode && !response.countryCode.includes('+')) {
         response.countryCode = '+' + response.countryCode.trim();
       }
-      // console.log(response);
-      // let parsedData = JSON.parse(
-      //   response?.candidates?.[0]?.content?.parts?.[0]?.text || '{}'
-      // );
-      // console.log(parsedData);
-      // remove all null values from parsedData
       const parsedData = Object.fromEntries(
         Object.entries(response).filter(([_, v]) => v !== null)
       );
@@ -377,7 +393,31 @@ export class ResumeWriterComponent implements OnInit {
       this.apiService.showSpinner$.next(false);
       this.cvForm.patchValue(parsedData);
       this.errorMessage = '';
-    });
+    }, (error: any) => {
+      this.apiService.showSpinner$.next(false);
+      let errorMsg = '';
+      this.resetCvForm();
+      if (error.status === 400) {
+        errorMsg =
+          error.error.error || 'Bad request. Please check your input.';
+      } else if (error.status === 401) {
+        errorMsg = 'Unauthorized. Please login again.';
+      } else if (error.status === 413) {
+        errorMsg = 'File size too large. Please upload a smaller file.';
+      } else if (error.status === 429) {
+        errorMsg = 'Too many requests. Please try again later.';
+      } else {
+        errorMsg =
+          'An error occurred while parsing the resume. Please try again.';
+      } 
+      this.errorMessage = errorMsg;
+      console.error('Resume parsing error:', error);
+
+      // Show error popup using SnackBarService directly
+      this.errorPopupMessage = errorMsg;
+      this.showErrorPopup = true;
+    },
+  );
   }
 
   getMimeType(fileType: string): string {

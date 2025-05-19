@@ -259,7 +259,7 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
         );
 
         // Reset form after successful submission
-        this.cvForm.reset();
+        this.resetCvForm();
         this.fileName = '';
         this.fileSize = '';
         this.fileUrl = null;
@@ -279,8 +279,11 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
           errorMsg = 'Unauthorized. Please login again.';
         } else if (error.status === 413) {
           errorMsg = 'File size too large. Please upload a smaller file.';
+        } else if (error.status === 429) {
+          errorMsg = 'Too many requests. Please try again later.';
         }
-        this.snackBarService.showError(errorMsg);
+        this.errorPopupMessage = errorMsg;
+        this.showErrorPopup = true;
       },
     });
   }
@@ -423,6 +426,27 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
     });
   }
 
+
+  resetCvForm() {
+    // Reset form after successful submission
+    this.cvForm.reset();
+        
+    // Set default values again
+    this.cvForm.patchValue({
+      submitted_from: 'partner',
+      totalExpYear: '0',
+      totalExpMonth: '0',
+      relevantExpYear: '0',
+      relevantExpMonth: '0',
+      currentSalaryLacs: '0',
+      currentSalaryThousands: '0',
+      expectedSalaryLacs: '0',
+      expectedSalaryThousands: '0',
+      noticePeriod: '0',
+      skills: []
+    });
+  }
+
   onSkillsUpdate(e: any) {
     // Get current skills or initialize as empty array if undefined
     const currentSkills = this.cvForm.get('skills').value || [];
@@ -481,7 +505,8 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
       - Maintain consistency in data formatting.`;
 
     // this.apiService.parseResume(requestBody).subscribe((response: any) => {
-    this.apiService.parseResumeAllFiles(file).subscribe({
+    this.apiService.parseResumeAllFiles(file).subscribe(
+      {
       next: (response: any) => {
         if (response.countryCode && !response.countryCode.includes('+')) {
           response.countryCode = '+' + response.countryCode.trim();
@@ -501,7 +526,7 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
       error: (error: any) => {
         this.apiService.showSpinner$.next(false);
         let errorMsg = '';
-        this.cvForm.reset();
+        this.resetCvForm();
         if (error.status === 400) {
           errorMsg =
             error.error.error || 'Bad request. Please check your input.';
