@@ -128,5 +128,9 @@ export class ApiService {
 
   fetchAllCities(params: { search: string }) {
     return this.http.post(`https://app.careerflute.com/api/cities?search=${params.search}`, params);
-  }
+  }  
+
+  fetchAllPartners(params: { search: string }) {
+    return this.http.post(`https://app.careerflute.com/api/partners?search=${params.search}`, params);
+  }  
 }

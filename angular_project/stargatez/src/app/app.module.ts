@@ -18,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
-
+import { ErrorPopupComponent } from './components/error-popup/error-popup.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { SnackBarComponent } from './components/snack-bar/snack-bar.component';
     FooterComponent,
     CareerFluteComponent,
     SpinnerComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    ErrorPopupComponent
   ],
   imports: [
     BrowserModule,

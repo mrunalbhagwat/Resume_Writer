@@ -1,7 +1,11 @@
 <app-spinner>
 
 </app-spinner>
-<app-snack-bar></app-snack-bar>
+<app-error-popup 
+  [show]="showErrorPopup" 
+  [message]="errorPopupMessage" 
+  (close)="closeErrorPopup()">
+</app-error-popup>
 <app-header [phoneVideoPath]="videoLink" [webVideoPath]="videoLink">
 
     <div
@@ -78,14 +82,42 @@
 
             </div>
         </div>
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div class="mb-3">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="mb-3 relative"> 
                 <label class="mb-2 text-sm block font-medium text-[#14176C]">Partner Name <span class="text-red-500">*</span></label>
-                <input formControlName="partnerName" type="text" placeholder="Partner Name / Freelancer Name"
-                    class="{{cvForm.get('partnerName')?.invalid && cvForm.get('partnerName')?.touched ? 'border-red-500 border-2' : ''}} border  placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                <!-- <input formControlName="partnerName" type="text" placeholder="Partner Name / Freelancer Name"
+                    class="{{cvForm.get('partnerName')?.invalid && cvForm.get('partnerName')?.touched ? 'border-red-500 border-2' : ''}} border  placeholder-sm placeholder-[#14176CCC]/60 truncate  placeholder:text-xs border-blue-900 p-3 rounded w-full" /> -->
+                    <input formControlName="partnerName" type="text" placeholder="Enter Partner Name"
+                    (input)="filterPartnerNames($event, 'partnerName')" (focus)="showCityDropdown['partnerName'] = true"
+                    (blur)="hideDropdownDelayed('partnerName')" (change)="resetPartnerFields()"
+                    class="{{cvForm.get('partnerName')?.invalid && cvForm.get('partnerName')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+                    <!-- Custom Autocomplete Dropdown -->
+                <div *ngIf="showPartnerDropdown['partnerName'] && filteredPartnersMap['partnerName']?.length > 0"
+                    class="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto animate-fade-up">
+                    <div *ngFor="let controlField of filteredPartnersMap['partnerName']"
+                        class="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                        (mousedown)="selectPartnerName(controlField, 'partnerName')">
+                        {{controlField.name}}
+                    </div>
+                </div>
             </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Partner Email ID <span
+                        class="text-red-500">*</span></label>
+                <input formControlName="partnerEmail" type="email" placeholder="Valid Email ID"
+                    class="{{cvForm.get('partnerEmail')?.invalid && cvForm.get('partnerEmail')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
+            </div>
+            <div class="mb-3">
+                <label class="mb-2 text-sm block font-medium text-[#14176C]">Partner Phone Number <span
+                        class="text-red-500">*</span></label>
+                <div class="relative flex items-center border border-blue-900 rounded w-full">
 
-            <div></div>
+                    <!-- Phone Input Field -->
+                    <input formControlName="partnerPhoneNumber" type="tel" placeholder="10 Digit Phone Number"
+                       required 
+                        class="{{cvForm.get('partnerPhoneNumber')?.invalid && cvForm.get('partnerPhoneNumber')?.touched ? 'border-red-500 border-2' : ''}} text-sm placeholder-sm placeholder-[#14176CCC]/60 placeholder:text-xs p-3 w-full outline-none">
+                </div>
+            </div>
         </div>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div class="mb-3">
@@ -144,7 +176,7 @@
                         class="text-red-500">*</span></label>
                 <input formControlName="homeTown" type="text" placeholder="City, State"
                     (input)="filterCities($event, 'homeTown')" (focus)="showCityDropdown['homeTown'] = true"
-                    (blur)="hideCityDropdownDelayed('homeTown')"
+                    (blur)="hideDropdownDelayed('homeTown')"
                     class="{{cvForm.get('homeTown')?.invalid && cvForm.get('homeTown')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
 
                 <!-- Custom Autocomplete Dropdown -->

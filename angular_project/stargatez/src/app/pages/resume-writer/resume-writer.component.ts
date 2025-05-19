@@ -12,6 +12,8 @@ declare var AOS: any;
 })
 export class ResumeWriterComponent implements OnInit {
   videoLink: any = 'assets/videos/resume_writer.mp4';
+  errorPopupMessage: string = '';
+  showErrorPopup: boolean = false;
   yearsList = [...Array(30).keys(), '30+'];  // [0,1,...,30,'30+']
   monthsList = [...Array(12).keys()];  // [0,1,...,11]
   lacsList = [...Array(100).keys()];  // [0,1,...,10]
@@ -50,7 +52,8 @@ export class ResumeWriterComponent implements OnInit {
   onSubmit() {
     if (this.cvForm?.invalid) {
       this.cvForm.markAllAsTouched();
-      this.snackBarService.showError('Please fill in all required fields.');
+      this.errorPopupMessage = 'Please fill in all required fields.';
+      this.showErrorPopup = true;
       return;
     }
 
@@ -98,9 +101,14 @@ export class ResumeWriterComponent implements OnInit {
         } else if (error.status === 429) {
           errorMsg = 'Too many requests. Please try again later.';
         }
-        this.snackBarService.showError(errorMsg);
+        this.errorPopupMessage = errorMsg;
+        this.showErrorPopup = true;
       },
     });
+  }
+
+  closeErrorPopup() {
+    this.showErrorPopup = false;
   }
 
   validateNumberInput(event: KeyboardEvent) {

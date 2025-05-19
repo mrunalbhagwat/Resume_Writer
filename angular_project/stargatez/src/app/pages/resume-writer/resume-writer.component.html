@@ -1,6 +1,11 @@
 <app-spinner>
 
 </app-spinner>
+<app-error-popup 
+  [show]="showErrorPopup" 
+  [message]="errorPopupMessage" 
+  (close)="closeErrorPopup()">
+</app-error-popup>
 <app-header [phoneVideoPath]="videoLink" [webVideoPath]="videoLink">
 
     <div

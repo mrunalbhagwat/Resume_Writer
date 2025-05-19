@@ -28,6 +28,8 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
   //   confirmPassword: string = '';
   //   showPassword: boolean = false;
   cvForm: FormGroup | any;
+  errorPopupMessage: string = '';
+  showErrorPopup: boolean = false;
   parsedData: any = null;
   errorMessage: string = '';
   isLoading: boolean = false;
@@ -231,7 +233,8 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.cvForm?.invalid) {
       this.cvForm.markAllAsTouched();
-      this.snackBarService.showError('Please fill in all required fields.');
+      this.errorPopupMessage = 'Please fill in all required fields.';
+      this.showErrorPopup = true;      
       return;
     }
 
@@ -280,6 +283,10 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
         this.snackBarService.showError(errorMsg);
       },
     });
+  }
+
+  closeErrorPopup() {
+    this.showErrorPopup = false;
   }
 
   ngOnInit() {
@@ -512,7 +519,8 @@ export class JobSeekerComponent implements OnInit, OnDestroy {
         console.error('Resume parsing error:', error);
 
         // Show error popup using SnackBarService directly
-        this.snackBarService.showError(errorMsg);
+        this.errorPopupMessage = errorMsg;
+        this.showErrorPopup = true;
       },
       complete: () => {
         // If needed, you could show a success message here

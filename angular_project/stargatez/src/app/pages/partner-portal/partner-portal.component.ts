@@ -15,17 +15,20 @@ export class PartnerPortalComponent implements OnInit {
   // videoLink: any = 'assets/videos/team_gathering.mp4';
   videoLink: any = 'assets/videos/handshake.mp4';
   cities: any = [];
+  newPartner = true;
+  errorPopupMessage: string = '';
+  showErrorPopup: boolean = false;
   cvForm: FormGroup | any;
   parsedData: any = null;
   errorMessage: string = '';
   isLoading: boolean = false;
   currencies: any = [];
   countryCallCodes: any = [];
-  yearsList = [...Array(30).keys(), '30+'];  // [0,1,...,30,'30+']
-  monthsList = [...Array(12).keys()];  // [0,1,...,11]
-  lacsList = [...Array(100).keys()];  // [0,1,...,10]
-  thousandsList = [...Array(100).keys()];  // [0,1,...,9]
-  noticePeriodList = [...Array(91).keys()];  // [0,1,...,90]
+  yearsList = [...Array(30).keys(), '30+']; // [0,1,...,30,'30+']
+  monthsList = [...Array(12).keys()]; // [0,1,...,11]
+  lacsList = [...Array(100).keys()]; // [0,1,...,10]
+  thousandsList = [...Array(100).keys()]; // [0,1,...,9]
+  noticePeriodList = [...Array(91).keys()]; // [0,1,...,90]
   webDevSkills = [
     'HTML',
     'CSS',
@@ -45,7 +48,10 @@ export class PartnerPortalComponent implements OnInit {
   ];
   filteredCities: Observable<any[]> | undefined;
   filteredCitiesMap: { [key: string]: any[] } = {};
+  filteredPartners: Observable<any[]> | undefined;
+  filteredPartnersMap: { [key: string]: any[] } = {};
   showCityDropdown: { [key: string]: boolean } = {};
+  showPartnerDropdown: { [key: string]: boolean } = {};
   private dropdownTimeouts: { [key: string]: any } = {};
   commentCharCount: number = 0;
 
@@ -74,23 +80,27 @@ export class PartnerPortalComponent implements OnInit {
 
   validateSalaryInput(event: KeyboardEvent) {
     const allowedKeys = [
-      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+      'Backspace',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+      'Delete',
     ];
     if (allowedKeys.includes(event.key)) {
       return; // Allow special keys
     }
-    
+
     // Only allow digits
     if (!/^\d$/.test(event.key)) {
       event.preventDefault();
       return;
     }
-    
+
     // Get current value and new value after key press
     const input = event.target as HTMLInputElement;
     const currentValue = input.value;
     const newValue = currentValue + event.key;
-    
+
     // Prevent input if it would result in less than 4 or more than 7 digits
     if (newValue.length > 7) {
       event.preventDefault();
@@ -99,23 +109,23 @@ export class PartnerPortalComponent implements OnInit {
 
   validateSalaryPaste(event: ClipboardEvent) {
     const pastedData = event.clipboardData?.getData('text') || '';
-    
+
     // Check if pasted data contains only digits
     if (!/^\d+$/.test(pastedData)) {
       event.preventDefault();
       return;
     }
-    
+
     // Get current value and new value after paste
     const input = event.target as HTMLInputElement;
     const currentValue = input.value;
     const selectionStart = input.selectionStart || 0;
     const selectionEnd = input.selectionEnd || 0;
-    const newValue = 
-      currentValue.substring(0, selectionStart) + 
-      pastedData + 
+    const newValue =
+      currentValue.substring(0, selectionStart) +
+      pastedData +
       currentValue.substring(selectionEnd);
-    
+
     // Prevent paste if it would result in less than 4 or more than 7 digits
     if (newValue.length > 7) {
       event.preventDefault();
@@ -129,56 +139,62 @@ export class PartnerPortalComponent implements OnInit {
   ) {}
 
   getAllCities() {
-    this.apiService.fetchAllCities({ search: '' }).subscribe((response: any) => {
-      this.cities = response.data;
-      console.log(this.cities);
-    });
+    this.apiService
+      .fetchAllCities({ search: '' })
+      .subscribe((response: any) => {
+        this.cities = response.data;
+        console.log(this.cities);
+      });
   }
 
   validateNoticePeriodInput(event: KeyboardEvent) {
     const allowedKeys = [
-      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+      'Backspace',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+      'Delete',
     ];
     if (allowedKeys.includes(event.key)) {
       return; // Allow special keys
     }
-    
+
     // Only allow digits
     if (!/^\d$/.test(event.key)) {
       event.preventDefault();
       return;
     }
-    
+
     // Get current value and new value after key press
     const input = event.target as HTMLInputElement;
     const currentValue = input.value;
     const newValue = currentValue + event.key;
-    
+
     // Prevent input if it would result in a value greater than 90
     if (parseInt(newValue) > 90) {
       event.preventDefault();
     }
   }
-  
+
   validateNoticePeriodPaste(event: ClipboardEvent) {
     const pastedData = event.clipboardData?.getData('text') || '';
-    
+
     // Check if pasted data contains only digits
     if (!/^\d+$/.test(pastedData)) {
       event.preventDefault();
       return;
     }
-    
+
     // Get current value and new value after paste
     const input = event.target as HTMLInputElement;
     const currentValue = input.value;
     const selectionStart = input.selectionStart || 0;
     const selectionEnd = input.selectionEnd || 0;
-    const newValue = 
-      currentValue.substring(0, selectionStart) + 
-      pastedData + 
+    const newValue =
+      currentValue.substring(0, selectionStart) +
+      pastedData +
       currentValue.substring(selectionEnd);
-    
+
     // Prevent paste if it would result in a value greater than 90
     if (parseInt(newValue) > 90) {
       event.preventDefault();
@@ -187,58 +203,69 @@ export class PartnerPortalComponent implements OnInit {
 
   validateExperienceInput(event: KeyboardEvent) {
     const allowedKeys = [
-      'Backspace', 'ArrowLeft', 'ArrowRight', 'Tab', 'Delete'
+      'Backspace',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+      'Delete',
     ];
     if (allowedKeys.includes(event.key)) {
       return; // Allow special keys
     }
-    
+
     // Only allow digits
     if (!/^\d$/.test(event.key)) {
       event.preventDefault();
       return;
     }
-    
+
     // Get current value and new value after key press
     const input = event.target as HTMLInputElement;
     const currentValue = input.value;
     const newValue = currentValue + event.key;
-    
+
     // Prevent input if it would result in a value greater than 99
     if (parseInt(newValue) > 99) {
       event.preventDefault();
     }
   }
-  
+
   validateExperiencePaste(event: ClipboardEvent) {
     const pastedData = event.clipboardData?.getData('text') || '';
-    
+
     // Check if pasted data contains only digits
     if (!/^\d+$/.test(pastedData)) {
       event.preventDefault();
       return;
     }
-    
+
     // Get current value and new value after paste
     const input = event.target as HTMLInputElement;
     const currentValue = input.value;
     const selectionStart = input.selectionStart || 0;
     const selectionEnd = input.selectionEnd || 0;
-    const newValue = 
-      currentValue.substring(0, selectionStart) + 
-      pastedData + 
+    const newValue =
+      currentValue.substring(0, selectionStart) +
+      pastedData +
       currentValue.substring(selectionEnd);
-    
+
     // Prevent paste if it would result in a value greater than 99
     if (parseInt(newValue) > 99) {
       event.preventDefault();
     }
   }
 
+  closeErrorPopup() {
+    this.showErrorPopup = false;
+  }
+
   onSubmit() {
     if (this.cvForm?.invalid) {
       this.cvForm.markAllAsTouched();
-      this.snackBarService.showError('Please fill in all required fields.');
+      // Show error popup instead of snackbar
+      this.errorPopupMessage = 'Please fill in all required fields.';
+      this.showErrorPopup = true;
+      // this.snackBarService.showError('Please fill in all required fields.');
       return;
     }
 
@@ -250,6 +277,22 @@ export class PartnerPortalComponent implements OnInit {
     // Add the resume file if it exists
     if (this.fileInput?.nativeElement?.files?.length > 0) {
       formData.resumeFile = this.fileInput.nativeElement.files[0];
+    }
+
+    if (this.newPartner) {
+      // If it's a new partner, send name, email and phone
+      formData.partner_name = formData.partnerName;
+      formData.partner_email = formData.partnerEmail;
+      formData.partner_phone = formData.partnerPhoneNumber;
+    } else {
+      // If it's an existing partner, send partner_id
+      const currentPartnerName = formData.partnerName;
+      const foundPartner = this.filteredPartnersMap['partnerName']?.find(
+        (p) => p.name === currentPartnerName
+      );
+      if (foundPartner) {
+        formData.partner_id = foundPartner.id;
+      }
     }
 
     this.apiService.submitCvData(formData).subscribe({
@@ -269,11 +312,12 @@ export class PartnerPortalComponent implements OnInit {
         this.fileUrl = null;
         this.fileUploaded = false;
       },
+      // Replace the error handling in onSubmit
       error: (error: any) => {
         console.error('Error submitting CV:', error);
         this.apiService.showSpinner$.next(false);
 
-        // Show error popup using SnackBarService
+        // Set error message for popup
         let errorMsg =
           'There was an error submitting your CV. Please try again.';
         if (error.status === 400) {
@@ -286,7 +330,10 @@ export class PartnerPortalComponent implements OnInit {
         } else if (error.status === 429) {
           errorMsg = 'Too many requests. Please try again later.';
         }
-        this.snackBarService.showError(errorMsg);
+
+        // Show error popup instead of snackbar
+        this.errorPopupMessage = errorMsg;
+        this.showErrorPopup = true;
       },
     });
   }
@@ -305,7 +352,9 @@ export class PartnerPortalComponent implements OnInit {
     this.cvForm = this.fb.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required]],
+      partnerEmail: ['', [Validators.required]],
       phoneNumber: ['', [Validators.required]],
+      partnerPhoneNumber: ['', [Validators.required]],
       currentLocation: ['', Validators.required],
       homeTown: ['', Validators.required],
       qualification: ['', Validators.required],
@@ -313,22 +362,10 @@ export class PartnerPortalComponent implements OnInit {
       resumeContent: [''],
       submitted_from: ['partner', Validators.required],
       skills: [[], Validators.required],
-      totalExpYear: [
-        '0',
-        [Validators.required],
-      ], 
-      totalExpMonth: [
-        '0',
-        [Validators.required],
-      ],
-      relevantExpYear: [
-        '0',
-        [Validators.required],
-      ], 
-      relevantExpMonth: [
-        '0',
-        [Validators.required],
-      ],
+      totalExpYear: ['0', [Validators.required]],
+      totalExpMonth: ['0', [Validators.required]],
+      relevantExpYear: ['0', [Validators.required]],
+      relevantExpMonth: ['0', [Validators.required]],
       noticePeriod: [
         '0',
         [Validators.required, Validators.min(0), Validators.max(90)],
@@ -352,6 +389,40 @@ export class PartnerPortalComponent implements OnInit {
     // Initialize the character count if there's an initial value
     const initialComments = this.cvForm.get('comments')?.value || '';
     this.commentCharCount = initialComments.length;
+
+    // Watch for changes in email and phone to reset partner name
+    this.cvForm.get('partnerEmail')?.valueChanges.subscribe(() => {
+      const currentPartnerName = this.cvForm.get('partnerName')?.value;
+      const foundPartner = this.filteredPartnersMap['partnerName']?.find(
+        (p) => p.name === currentPartnerName
+      );
+      this.newPartner = false;
+      if (
+        foundPartner.email !== null &&
+        foundPartner &&
+        foundPartner.email !== this.cvForm.get('partnerEmail')?.value
+      ) {
+        this.cvForm.get('partnerName')?.setValue('');
+        this.newPartner = true;
+      }
+    });
+
+    this.cvForm.get('partnerPhoneNumber')?.valueChanges.subscribe(() => {
+      const currentPartnerName = this.cvForm.get('partnerName')?.value;
+      const foundPartner = this.filteredPartnersMap['partnerName']?.find(
+        (p) => p.name === currentPartnerName
+      );
+      this.newPartner = false;
+      if (
+        foundPartner.phone_number !== null &&
+        foundPartner &&
+        foundPartner.phone_number !=
+          this.cvForm.get('partnerPhoneNumber')?.value
+      ) {
+        this.cvForm.get('partnerName')?.setValue('');
+        this.newPartner = true;
+      }
+    });
   }
 
   togglePassword() {
@@ -399,7 +470,8 @@ export class PartnerPortalComponent implements OnInit {
         const base64Content = fileContent.split(',')[1];
         this.parseResume(base64Content, file);
       } catch (error: any) {
-        this.errorMessage = `Error parsing resume: ${error.message}`;
+        this.errorMessage = this.errorPopupMessage = `Error parsing resume: ${error.message}`;
+        this.showErrorPopup = true;
       } finally {
         this.isLoading = false;
       }
@@ -437,29 +509,34 @@ export class PartnerPortalComponent implements OnInit {
     // Get current skills or initialize as empty array if undefined
     const currentSkills = this.cvForm.get('skills').value || [];
     const inputValue = e.target.value.trim();
-    
+
     if (!inputValue) {
       this.cvForm.get('skillsInput').setValue('');
       return true;
     }
-    
+
     // Split by comma and trim each skill
-    const newSkillsInput = inputValue.split(',').map(skill => skill.trim()).filter(skill => skill);
-    
+    const newSkillsInput = inputValue
+      .split(',')
+      .map((skill) => skill.trim())
+      .filter((skill) => skill);
+
     // Create a case-insensitive set of existing skills for duplicate checking
-    const existingSkillsLowerCase = currentSkills.map(skill => skill.toLowerCase());
-    
-    // Filter out duplicates (case-insensitive)
-    const uniqueNewSkills = newSkillsInput.filter(skill => 
-      !existingSkillsLowerCase.includes(skill.toLowerCase())
+    const existingSkillsLowerCase = currentSkills.map((skill) =>
+      skill.toLowerCase()
     );
-    
+
+    // Filter out duplicates (case-insensitive)
+    const uniqueNewSkills = newSkillsInput.filter(
+      (skill) => !existingSkillsLowerCase.includes(skill.toLowerCase())
+    );
+
     // Add unique new skills to the beginning of the array
     if (uniqueNewSkills.length > 0) {
       const updatedSkills = [...uniqueNewSkills, ...currentSkills];
       this.cvForm.get('skills')?.setValue(updatedSkills);
     }
-    
+
     this.cvForm.get('skillsInput').setValue('');
     return true; // Return true to allow chaining with preventDefault
   }
@@ -516,7 +593,7 @@ export class PartnerPortalComponent implements OnInit {
         this.apiService.showSpinner$.next(false);
         let errorMsg = '';
         this.cvForm.reset();
-
+        this.cvForm.get('submitted_from').setValue('partner');
         if (error.status === 400) {
           errorMsg =
             error.error.error || 'Bad request. Please check your input.';
@@ -529,11 +606,12 @@ export class PartnerPortalComponent implements OnInit {
             'An error occurred while parsing the resume. Please try again.';
         }
 
-        this.errorMessage = errorMsg;
+        this.errorMessage = this.errorPopupMessage = errorMsg;
+        this.showErrorPopup = true;
         console.error('Resume parsing error:', error);
 
         // Show error popup using SnackBarService
-        this.snackBarService.showError(errorMsg);
+        
       },
     });
   }
@@ -632,19 +710,42 @@ export class PartnerPortalComponent implements OnInit {
       // Call API with city name as query parameter
       this.apiService.fetchAllCities({ search: value }).subscribe({
         next: (response: any) => {
-          this.filteredCitiesMap[controlName] = response.cities
-            .slice(0, 10); // Limit to 10 results for performance
+          this.filteredCitiesMap[controlName] = response.cities.slice(0, 10); // Limit to 10 results for performance
           this.showCityDropdown[controlName] = true;
         },
         error: (error: any) => {
           console.error('Error searching cities:', error);
           this.filteredCitiesMap[controlName] = [];
           this.showCityDropdown[controlName] = false;
-        }
+        },
       });
     } else {
       this.filteredCitiesMap[controlName] = [];
       this.showCityDropdown[controlName] = false;
+    }
+  }
+
+  filterPartnerNames(event: any, controlName: string) {
+    const value = event.target.value.toLowerCase();
+    if (value.length > 0) {
+      // Call API with city name as query parameter
+      this.apiService.fetchAllPartners({ search: value }).subscribe({
+        next: (response: any) => {
+          this.filteredPartnersMap[controlName] = response.partners.slice(
+            0,
+            10
+          ); // Limit to 10 results for performance
+          this.showPartnerDropdown[controlName] = true;
+        },
+        error: (error: any) => {
+          console.error('Error searching cities:', error);
+          this.filteredPartnersMap[controlName] = [];
+          this.showPartnerDropdown[controlName] = false;
+        },
+      });
+    } else {
+      this.filteredPartnersMap[controlName] = [];
+      this.showPartnerDropdown[controlName] = false;
     }
   }
 
@@ -653,7 +754,23 @@ export class PartnerPortalComponent implements OnInit {
     this.showCityDropdown[formControlName] = false;
   }
 
-  hideCityDropdownDelayed(controlName: string) {
+  selectPartnerName(partner: any, formControlName: string) {
+    this.cvForm.get(formControlName)?.setValue(partner.name);
+    // Fetch and patch partner email and phone number
+
+    partner.email
+      ? this.cvForm.get('partnerEmail')?.setValue(partner.email)
+      : this.cvForm.get('partnerEmail')?.setValue('');
+
+    partner.phone_number
+      ? this.cvForm.get('partnerPhoneNumber')?.setValue(partner.phone_number)
+      : this.cvForm.get('partnerPhoneNumber')?.setValue('');
+
+    this.showPartnerDropdown[formControlName] = false;
+    this.newPartner = false;
+  }
+
+  hideDropdownDelayed(controlName: string) {
     // Use timeout to allow click to register before hiding
     this.dropdownTimeouts[controlName] = setTimeout(() => {
       this.showCityDropdown[controlName] = false;
@@ -671,5 +788,21 @@ export class PartnerPortalComponent implements OnInit {
 
   updateCharCount(event: any) {
     this.commentCharCount = event.target.value.length;
+  }
+
+  resetPartnerFields() {
+    // Reset email and phone if partner name is changed manually
+    setTimeout(() => {
+      const partnerName = this.cvForm.get('partnerName')?.value;
+      const foundPartner = this.filteredPartnersMap['partnerName']?.find(
+        (p) => p.name === partnerName
+      );
+      this.newPartner = false;
+      if (!foundPartner) {
+        this.newPartner = true;
+        this.cvForm.get('partnerEmail')?.setValue('');
+        this.cvForm.get('partnerPhoneNumber')?.setValue('');
+      }
+    }, 300);
   }
 }

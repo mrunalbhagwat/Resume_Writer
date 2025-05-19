@@ -3,7 +3,11 @@
 </app-spinner>
 
 <app-snack-bar></app-snack-bar>
-
+<app-error-popup 
+  [show]="showErrorPopup" 
+  [message]="errorPopupMessage" 
+  (close)="closeErrorPopup()">
+</app-error-popup>
 <app-header [webVideoPath]="videoLink" [phoneVideoPath]="videoLink">
     <div
         class="relative flex flex-col items-center justify-center min-h-screen px-6 text-white bg-fixed bg-center bg-no-repeat sm:px-12">
