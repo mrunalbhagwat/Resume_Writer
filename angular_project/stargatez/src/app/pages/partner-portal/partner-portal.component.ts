@@ -136,7 +136,7 @@ export class PartnerPortalComponent implements OnInit {
     private fb: FormBuilder,
     public apiService: ApiService,
     private snackBarService: SnackBarService
-  ) {}
+  ) { }
 
   getAllCities() {
     this.apiService
@@ -417,7 +417,7 @@ export class PartnerPortalComponent implements OnInit {
         foundPartner.phone_number !== null &&
         foundPartner &&
         foundPartner.phone_number !=
-          this.cvForm.get('partnerPhoneNumber')?.value
+        this.cvForm.get('partnerPhoneNumber')?.value
       ) {
         this.cvForm.get('partnerName')?.setValue('');
         this.newPartner = true;
@@ -601,7 +601,10 @@ export class PartnerPortalComponent implements OnInit {
           errorMsg = 'Unauthorized. Please login again.';
         } else if (error.status === 413) {
           errorMsg = 'File size too large. Please upload a smaller file.';
-        } else {
+        } else if (error.status === 429) {
+          errorMsg = 'Too many requests. Please try again later.';
+        }
+        else {
           errorMsg =
             'An error occurred while parsing the resume. Please try again.';
         }
@@ -611,7 +614,7 @@ export class PartnerPortalComponent implements OnInit {
         console.error('Resume parsing error:', error);
 
         // Show error popup using SnackBarService
-        
+
       },
     });
   }

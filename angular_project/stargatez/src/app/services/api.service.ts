@@ -15,7 +15,7 @@ export class ApiService {
   baseUrl: any = "https://app.careerflute.com/api/parse-resume";
   submitCvUrl: any = "https://app.careerflute.com/api/save-resume";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   parseResume(data: any) {
     const headers = new HttpHeaders({
@@ -86,6 +86,20 @@ export class ApiService {
       data.append('partner_name', formData.partnerName);
     }
 
+    // Append resume file if available
+    if (formData.partnerEmail) {
+      data.append('partner_email', formData.partnerEmail);
+    }
+
+    // Append resume file if available
+    if (formData.partnerPhoneNumber) {
+      data.append('partner_phone_number', formData.partnerPhoneNumber);
+    }
+
+    if (formData.partner_id) {
+      data.append('partner_id', formData.partner_id);
+    }
+
     // Map form fields to API expected fields
     data.append('candidate_name', formData.fullName);
     data.append('phone_number', formData.phoneNumber);
@@ -128,9 +142,9 @@ export class ApiService {
 
   fetchAllCities(params: { search: string }) {
     return this.http.post(`https://app.careerflute.com/api/cities?search=${params.search}`, params);
-  }  
+  }
 
   fetchAllPartners(params: { search: string }) {
     return this.http.post(`https://app.careerflute.com/api/partners?search=${params.search}`, params);
-  }  
+  }
 }
