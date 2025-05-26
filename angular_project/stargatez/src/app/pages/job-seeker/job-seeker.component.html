@@ -188,6 +188,8 @@
                     <label class="mb-2 text-sm block font-medium text-[#14176C]">Current Location <span
                             class="text-red-500">*</span></label>
                     <input formControlName="currentLocation" type="text" placeholder="City, State"
+                    (input)="filterCities($event, 'currentLocation')" (focus)="showCityDropdown['currentLocation'] = true"
+                        (blur)="hideCityDropdownDelayed('currentLocation')"
                         class="{{cvForm.get('currentLocation')?.invalid && cvForm.get('currentLocation')?.touched ? 'border-red-500 border-2' : ''}} border placeholder-sm placeholder-[#14176CCC]/60  placeholder:text-xs border-blue-900 p-3 rounded w-full" />
 
                     <!-- Custom Autocomplete Dropdown -->
