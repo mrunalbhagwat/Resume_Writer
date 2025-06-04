@@ -54,7 +54,7 @@
 
                 <img src="./assets/images/Featured icon.svg" alt="Upload Icon">
                 <div class="mt-2 text-sm font-semibold text-[#14176C]">
-                    Click to Upload CV / Resume <span class="text-red-500">*</span> &nbsp; <span class="text-gray-500">or drag and drop</span>
+                    Click to Upload CV / Resume <span class="text-red-500">*</span> &nbsp; 
                 </div>
 
                 <input formControlName="resume" type="file" #fileInput id="upload-my-cv" class="hidden"
@@ -79,6 +79,15 @@
                 </button>
 
             </div>
+
+            <div *ngIf="!fileUploaded">
+                <div class="text-xs text-gray-600 bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <p class="font-medium mb-1">Important:</p>
+                    <p>Resumes that are image-based (e.g., scanned PDFs, JPG, PNG) or poorly structured PDFs (e.g., multi-column layouts, graphics-heavy designs) cannot be uploaded correctly.</p>
+                    <p class="mt-1">Please upload a text-based resume in PDF, DOC, or DOCX format, with a clear structure and minimal use of tables or graphics.</p>
+                </div>
+            </div>
+
         </div>
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div class="relative mb-3"> 
