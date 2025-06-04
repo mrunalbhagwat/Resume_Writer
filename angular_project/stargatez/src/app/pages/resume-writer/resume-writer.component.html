@@ -639,6 +639,14 @@
                             </button>
 
                         </div>
+
+                        <div *ngIf="!fileUploaded">
+                            <div class="text-xs text-gray-600 bg-blue-50 p-3 rounded-lg border border-blue-200">
+                                <p class="font-medium mb-1">Important:</p>
+                                <p>Resumes that are image-based (e.g., scanned PDFs, JPG, PNG) or poorly structured PDFs (e.g., multi-column layouts, graphics-heavy designs) cannot be uploaded correctly.</p>
+                                <p class="mt-1">Please upload a text-based resume in PDF, DOC, or DOCX format, with a clear structure and minimal use of tables or graphics.</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="grid grid-cols-1 gap-4 mt-3 md:grid-cols-3">
                         <div class="mt-3 mb-3">
