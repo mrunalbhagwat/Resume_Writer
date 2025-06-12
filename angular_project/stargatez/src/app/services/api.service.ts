@@ -12,8 +12,8 @@ export class ApiService {
   showSpinner$ = new BehaviorSubject<boolean>(false);
   jsonFilePath = 'assets/json/blogs.json'; // Path to the JSON file
   GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${appConstants.GEMINI_API_KEY}`; // Update with actual Gemini API endpoint
-  baseUrl: any = "https://app.careerflute.com/api/parse-resume";
-  submitCvUrl: any = "https://app.careerflute.com/api/save-resume";
+  baseUrl: any = "https://careerflute.com/api/parse-resume";
+  submitCvUrl: any = "https://careerflute.com/api/save-resume";
 
   constructor(private http: HttpClient) { }
 
@@ -141,10 +141,10 @@ export class ApiService {
   // }
 
   fetchAllCities(params: { search: string }) {
-    return this.http.post(`https://app.careerflute.com/api/cities?search=${params.search}`, params);
+    return this.http.post(`https://careerflute.com/api/cities?search=${params.search}`, params);
   }
 
   fetchAllPartners(params: { search: string }) {
-    return this.http.post(`https://app.careerflute.com/api/partners?search=${params.search}`, params);
+    return this.http.post(`https://careerflute.com/api/partners?search=${params.search}`, params);
   }
 }
